@@ -4,11 +4,11 @@
 
 # Site
 title: Code4Cocoa
-subtitle:
-description:
+subtitle: A Programer's Home
+description: 
 author: YuxiangQ
 language:
-timezone:
+timezone: MN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
