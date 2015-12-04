@@ -1,6 +1,6 @@
 title: UITableViewCell的重用方法的区别
 date: 2014-08-16 22:43:07
-tags: iOS,UITableViewCell,UITableView
+tags: iOS;UITableViewCell;UITableView
 ---
 **UITableView**想必是iOS开发中最常用的控件。很多Apple自带的APP都使用了它，比如:*Phone*(该APP为典型得Tab结构,其中*Favorites*,*Recents*,*Contacts*都使用了**UITableView**)、*Messages*、*Mail*、*Settings*等等。
 
