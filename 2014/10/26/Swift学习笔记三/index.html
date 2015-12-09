@@ -1,12 +1,44 @@
-extends _partial/layout
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Swift学习笔记三 · Code4Cocoa</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/jekyll.css"><!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]--></head><body><header class="row-flex-row limit-width vh-center"><a href="/" class="logo"><img src="/favicon.png"></a><nav><ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-link">主页</a></li><li class="nav-list-item"><a href="/archives/" class="nav-link active">   博客</a></li><li class="nav-list-item"><a href="/atom.xml" class="nav-link">rss</a></li><li class="nav-list-item"><a href="https://github.com/xxxxx" target="_blank" class="nav-link">   github</a></li></ul></nav></header><div class="container limit-width"><section class="row-flex-row"><div class="post"><article class="post-block"><h2 class="post-title"><a href="/2014/10/26/Swift学习笔记三/" class="post-title-link">Swift学习笔记三</a></h2><div class="post-meta"><ul class="post-tag-list"><li class="post-tag-item"><a href="/tags/Swift/" class="post-tag-link">Swift</a></li><li class="post-tag-item"><a href="/tags/iOS/" class="post-tag-link">iOS</a></li></ul><div class="post-time">Wednesday, December 9th 2015</div></div><div class="post-content"><p>这一部分主要了解运算符，因为大部分编程语言的运算符都相似，所以在这里我只记录有Swift特色的运算符。</p>
+<p>###区间运算符###<br>Swift 提供了两个方便表达一个区间的值的运算符</p>
+<p>####闭区间运算符####<br>闭区间运算符（a…b）定义一个包含从a到b(包括a和b)的所有值的区间，b必须大于a。 ‌ 闭区间运算符在迭代一个区间的所有值时是非常有用的，如在for-in循环中</p>
+<pre><code>
+for index in 1...5  {
+println("\(index) * 5 = \(index * 5)")
+}
+// 1 * 5 = 5
+// 2 * 5 = 10
+// 3 * 5 = 15
+// 4 * 5 = 20
+// 5 * 5 = 25
+</code></pre>
+####半开区间运算符####
+半开区间（a..<b）定义一个从a到b但不包括b的区间。 之所以称为半开区间，是因为该区间包含第一个值而不包括最后的值。="" <pre=""><code>
+for index in 1...< 5  {
+println("\(index) * 5 = \(index * 5)")
+}
+// 1 * 5 = 5
+// 2 * 5 = 10
+// 3 * 5 = 15
+// 4 * 5 = 20
+</code>
 
-prepend site_title
-    != page.title + " · "
+<p>###空合运算符###<br>空合运算符(a ?? b)将对可选类型a进行空判断，如果a包含一个值就进行解封，否则就返回一个默认值b.这个运算符有两个条件</p>
+<ul>
+<li>表达式a必须是Optional类型</li>
+<li>默认值b的类型必须要和a存储值的类型保持一致</li>
+</ul>
+<pre><code>
+let defaultColorName = "red"
+var userDefinedColorName:String?   //默认值为nil
+var colorNameToUse = userDefinedColorName ?? defaultColorName
+//userDefinedColorName的值为空 ，所以colorNameToUse的值为red
+</code></pre>
 
-block content
-    include _mixin/post
-    +postList(page)
-    aside.sidebar
-        include _sidebar/tag
-        include _sidebar/post
-        //- include _sidebar/toc
+<p>实际上该运算符我在C#中早已接触过，确实是非常好用，配合可空类型，使代码相当优雅。</p>
+</b）定义一个从a到b但不包括b的区间。></div></article><div class="pagination"><a href="/2014/11/19/手势的使用/" class="pagination-prev">PREV</a><a href="/2014/10/23/Swift学习笔记二/" class="pagination-next">NEXT</a></div></div><aside class="sidebar"><h3>分类标签</h3><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/App比较/">App比较</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPS/">GPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-APP/">Mac APP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swfit/">Swfit</a></li></ul><h3>最新文章</h3><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/iOS实现判断程序关闭、关机的思路/">iOS实现判断程序关闭、关机的思路</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/13/UITableView实现下拉刷新/">UITableView实现下拉刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/29/WebAPP将迎来一个好时代/">WebAPP将迎来一个好时代</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/19/手机是如何定位的/">手机是如何定位的</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/21/Swift学习笔记七/">Swift学习笔记七</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/12/自定义UITableViewCell，使用VFL布局/">自定义UITableViewCell，使用VFL布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/04/我的2014总结/">我的2014总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/01/Swift学习笔记六/">Swift学习笔记六</a></li></ul></aside></section></div><div class="extra"></div><footer class="footer"><div class="row-flex-row limit-width vh-center"><div class="copyright"><P>© 2015 <a href="/">YuxiangQ</P></div><div class="power"><p><a href="http://pinggod.com/">Sean Sun</a>, 
+<a href="https://hexo.io">Hexo</a>, 
+<a href="https://github.com/">GitHub</a>, 
+<a href="https://jekyllrb.com/">Jekyll</a></p></div></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

@@ -1,12 +1,47 @@
-extends _partial/layout
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Swift学习笔记六 · Code4Cocoa</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/jekyll.css"><!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]--></head><body><header class="row-flex-row limit-width vh-center"><a href="/" class="logo"><img src="/favicon.png"></a><nav><ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-link">主页</a></li><li class="nav-list-item"><a href="/archives/" class="nav-link active">   博客</a></li><li class="nav-list-item"><a href="/atom.xml" class="nav-link">rss</a></li><li class="nav-list-item"><a href="https://github.com/xxxxx" target="_blank" class="nav-link">   github</a></li></ul></nav></header><div class="container limit-width"><section class="row-flex-row"><div class="post"><article class="post-block"><h2 class="post-title"><a href="/2015/02/01/Swift学习笔记六/" class="post-title-link">Swift学习笔记六</a></h2><div class="post-meta"><ul class="post-tag-list"><li class="post-tag-item"><a href="/tags/Swift/" class="post-tag-link">Swift</a></li><li class="post-tag-item"><a href="/tags/iOS/" class="post-tag-link">iOS</a></li></ul><div class="post-time">Wednesday, December 9th 2015</div></div><div class="post-content"><p>Swift中的枚举拥有很棒的特性，至少以前我是没有接触过的。</p>
+<p>####枚举语法####<br>使用<strong>enum</strong>关键字，并将其整个定义放在大括号内：</p>
+<pre><code>
+enum demo{
+//定义枚举相关类容
+}
+</code></pre>
+假设我们定义指南针的四个方向：
+<pre><code>
+enum CompassPoint {
+case North
+case South
+case East
+case West
+}
+</code></pre>
+一个枚举中被定义的值是枚举的**成员值**(或者**成员**)。
+**case**关键字表明新的一样关键字被定义。
 
-prepend site_title
-    != page.title + " · "
+多个成员值也可以出现在同一行上，用逗号隔开：
+<pre><code>
+enum CompassPoint {
+case North,South,East,West
+}
 
-block content
-    include _mixin/post
-    +postList(page)
-    aside.sidebar
-        include _sidebar/tag
-        include _sidebar/post
-        //- include _sidebar/toc
+//使用方法
+var directionToHead = CompassPoint.West
+directionToHead = .North
+</code></pre>
+
+<blockquote>
+<p>注意：<br>不像 C 和 Objective-C 一样，Swift 的枚举成员在被创建时不会被赋予一个默认的整数值。在上面的CompassPoints例子中，North，South，East和West不是隐式的等于0，1，2和3。相反的，这些不同的枚举成员在CompassPoint的一种显示定义中拥有各自不同的值。</p>
+</blockquote>
+<p>####相关值####<br>Swift的枚举可以存储任何类型的相关值，如果需要的话每个成员的数据类型是可以不同的。</p>
+<p>比如我们可以定义两种商品条码的枚举：</p>
+<p><pre><code><br>enum Barcode {<br>case UPCA(Int, Int, Int)<br>case QRCode(String)<br>}<br></code></pre><br>然后可以使用任何一种条码类型创建新的条码：</p>
+<p><pre><code><br>var productBarcode = Barcode.UPCA(8, 85909_51226, 3)<br>productBarcode = .QRCode(“ABCDEFGHIJKLMNOP”)<br>//使用Switch-case<br>switch productBarcode {<br>case .UPCA(let numberSystem, let identifier, let check):<br>println(“UPC-A with value of (numberSystem), (identifier), (check).”)<br>case .QRCode(let productCode):<br>println(“QR code with value of (productCode).”)<br>}<br></code></pre></p>
+<p>####原始值####<br>作为相关值的替代，枚举成员可以被默认值（称为原始值）预先填充，其中这些原始值具有相同的类型。</p>
+<p>这是一个枚举成员存储原始ASCII的例子：</p>
+<p><pre><code><br>enum ASCIIControlCharacter: Character {<br>case Tab = “\t”<br>case LineFeed = “\n”<br>case CarriageReturn = “\r”<br>}<br></code></pre><br>原始值可以是字符串，字符，或者任何整型值或浮点型值。每个原始值在它的枚举声明中必须是唯一的。当整型值被用于原始值，如果其他枚举成员没有值时，它们会自动递增。</p>
+</div></article><div class="pagination"><a href="/2015/02/04/我的2014总结/" class="pagination-prev">PREV</a><a href="/2015/01/25/Pocket、Instapaper、Readability的比较/" class="pagination-next">NEXT</a></div></div><aside class="sidebar"><h3>分类标签</h3><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/App比较/">App比较</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPS/">GPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-APP/">Mac APP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swfit/">Swfit</a></li></ul><h3>最新文章</h3><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/iOS实现判断程序关闭、关机的思路/">iOS实现判断程序关闭、关机的思路</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/13/UITableView实现下拉刷新/">UITableView实现下拉刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/29/WebAPP将迎来一个好时代/">WebAPP将迎来一个好时代</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/19/手机是如何定位的/">手机是如何定位的</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/21/Swift学习笔记七/">Swift学习笔记七</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/12/自定义UITableViewCell，使用VFL布局/">自定义UITableViewCell，使用VFL布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/04/我的2014总结/">我的2014总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/01/Swift学习笔记六/">Swift学习笔记六</a></li></ul></aside></section></div><div class="extra"></div><footer class="footer"><div class="row-flex-row limit-width vh-center"><div class="copyright"><P>© 2015 <a href="/">YuxiangQ</P></div><div class="power"><p><a href="http://pinggod.com/">Sean Sun</a>, 
+<a href="https://hexo.io">Hexo</a>, 
+<a href="https://github.com/">GitHub</a>, 
+<a href="https://jekyllrb.com/">Jekyll</a></p></div></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

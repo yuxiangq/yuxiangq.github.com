@@ -1,12 +1,30 @@
-extends _partial/layout
-
-prepend site_title
-    != page.title + " · "
-
-block content
-    include _mixin/post
-    +postList(page)
-    aside.sidebar
-        include _sidebar/tag
-        include _sidebar/post
-        //- include _sidebar/toc
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Pocket、Instapaper、Readability的比较 · Code4Cocoa</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/jekyll.css"><!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]--></head><body><header class="row-flex-row limit-width vh-center"><a href="/" class="logo"><img src="/favicon.png"></a><nav><ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-link">主页</a></li><li class="nav-list-item"><a href="/archives/" class="nav-link active">   博客</a></li><li class="nav-list-item"><a href="/atom.xml" class="nav-link">rss</a></li><li class="nav-list-item"><a href="https://github.com/xxxxx" target="_blank" class="nav-link">   github</a></li></ul></nav></header><div class="container limit-width"><section class="row-flex-row"><div class="post"><article class="post-block"><h2 class="post-title"><a href="/2015/01/25/Pocket、Instapaper、Readability的比较/" class="post-title-link">Pocket、Instapaper、Readability的比较</a></h2><div class="post-meta"><ul class="post-tag-list"><li class="post-tag-item"><a href="/tags/App比较/" class="post-tag-link">App比较</a></li><li class="post-tag-item"><a href="/tags/稍后读/" class="post-tag-link">稍后读</a></li></ul><div class="post-time">Wednesday, December 9th 2015</div></div><div class="post-content"><p>在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。</p>
+<p>大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫<a href="http://www.udee.cn/" target="_blank" rel="external">uDee云阅读</a>。貌似已经挂了，官网已经变成建站系统了o(╯□╰)o。相关的介绍可以看这里<a href="http://www.36kr.com/p/99352.html" target="_blank" rel="external">36kr关于uDee云阅读的介绍</a>。</p>
+<p>后来我入手了The New iPad，TouchPad就送给老爸看电影了。在iOS上我开始使用<a href="https://getpocket.com/" target="_blank" rel="external">Pocket</a>，那个时候还叫Read it later。用了一段时间后发现Pocket对CocoaChina支持不是很好，只能抓取到标题，查看内容的时候还得跳转到原网页，实在是麻烦，于是开始寻找其他类似产品。</p>
+<p>某天在朋友手机上看到<a href="https://www.instapaper.com/" target="_blank" rel="external">Instapaper</a>，于是果断收了它(当时还是收费的)，完美支持CocoaChina，而且Instapaper的图标也比Pocket好看，所以开始同时使用二者，Pocket主力，Instapaper辅助。</p>
+<p>不久入了Reeder，配合着两大神器，让我阅读了不少好文。但是Reeder也无法完整显示CocoaChina的内容，每次阅读的时候我都要先保存到Instapaper，实在是麻烦。后来无意中点了一下内容上方的小板凳图标，发现竟然将内容完整的显示出来了。后来知道了那是<a href="https://www.readability.com/" target="_blank" rel="external">Readability</a>，果断入手。</p>
+<p>于是三大稍后读神器都被我凑齐了。用了一段时间后有些感悟，想和大家一起分享。</p>
+<p><strong>Pocket</strong></p>
+<p>我用得最久的稍后读类APP。 支持Chrome插件，通过插件保存网页。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>文章列表界面清爽简洁，是我喜欢的风格。在列表界面提供搜索栏，很方便。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>软件的层级架构采用抽屉式结构，给了内容更多的展示空间。同时设置里面提供深色主题，方便夜晚阅读。唯一的遗憾是主题颜色不支持自动切换。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E7%BD%91%E9%A1%B5.png" alt="image"><br>Web端配色和APP保持一致，简洁不失优雅。并且Web端提供平铺和列表两种展示方式。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20Mac.png" alt="image"><br>Pocket也是三款软件中唯一有Mac客户端的。</p>
+<p><strong>Instapaper</strong></p>
+<p>个人认为是最精致的稍后读类APP。利用JS脚本保存内容，不支持浏览器插件。需要占用一个标签栏位置，这是让我很不爽的地方。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>文章列表简洁，整个界面更偏平，可惜的是不支持搜索。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>菜单仍然是抽屉式结构，搜索功能隐藏在了这里。其他东西和Pocket大同小异。同时支持深色主题(目前包含四款主题)，更令人欣喜的是，Instapaper可以根据您的位置(需要用到GPS)和日落时间，自动调整主题的颜色。这真的是非常棒的功能。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20Web.png" alt="image"><br>Web端的整体布局和APP差异不大，唯一的变化是将搜索栏放到了列表上。</p>
+<p><strong>Readability</strong></p>
+<p>我的感觉是抓取能力最强的了，但是界面不讨个人喜欢。支持Chrome插件。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>支持搜索及分类，较Instapaper和Pocket都更强大，可以说是结合了二者的有点。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/readability%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>同样是抽屉式侧拉菜单o(╯□╰)o，非常简洁，另外我不是很喜欢那种全红的背景。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20Web.png" alt="image"><br>整体布局和APP类似，可惜的是没有了搜索功能。</p>
+<p><strong>PS:以上就是我使用了三款APP后的一些浅薄看法。其实说起来它们对于我来说，都有一个很致命的缺点。就是对于代码块的处理都不尽如人意。本来文章中排版很舒服的代码，经过它们处理后就和普通文本混杂在一起，实在是一件很头痛的事情，希望能有一款稍后读类的APP能针对程序员定制。</strong></p>
+</div></article><div class="pagination"><a href="/2015/02/01/Swift学习笔记六/" class="pagination-prev">PREV</a><a href="/2015/01/12/NumberTextField/" class="pagination-next">NEXT</a></div></div><aside class="sidebar"><h3>分类标签</h3><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/App比较/">App比较</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPS/">GPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-APP/">Mac APP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swfit/">Swfit</a></li></ul><h3>最新文章</h3><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/iOS实现判断程序关闭、关机的思路/">iOS实现判断程序关闭、关机的思路</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/13/UITableView实现下拉刷新/">UITableView实现下拉刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/29/WebAPP将迎来一个好时代/">WebAPP将迎来一个好时代</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/19/手机是如何定位的/">手机是如何定位的</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/21/Swift学习笔记七/">Swift学习笔记七</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/12/自定义UITableViewCell，使用VFL布局/">自定义UITableViewCell，使用VFL布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/04/我的2014总结/">我的2014总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/01/Swift学习笔记六/">Swift学习笔记六</a></li></ul></aside></section></div><div class="extra"></div><footer class="footer"><div class="row-flex-row limit-width vh-center"><div class="copyright"><P>© 2015 <a href="/">YuxiangQ</P></div><div class="power"><p><a href="http://pinggod.com/">Sean Sun</a>, 
+<a href="https://hexo.io">Hexo</a>, 
+<a href="https://github.com/">GitHub</a>, 
+<a href="https://jekyllrb.com/">Jekyll</a></p></div></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
