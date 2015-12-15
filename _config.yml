@@ -74,3 +74,4 @@ deploy:
   type: github
   repository: git@github.com:yuxiangq/yuxiangq.github.com.git
   branch: master
+  message: deploy
