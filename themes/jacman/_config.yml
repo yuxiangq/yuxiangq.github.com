@@ -12,7 +12,7 @@ menu:
 
 #### Widgets
 widgets: 
-- github-card
+##- github-card
 - category
 - tag
 - links
@@ -64,9 +64,9 @@ author:
   douban:     ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
   zhihu:      ## e.g. jark  for http://www.zhihu.com/people/jark
   email: yuxiang.q@hotmail.com     ## e.g. imjark@gmail.com
-  twitter: https://twitter.com/YuxiangQ   ## e.g. jarkwu for https://twitter.com/jarkwu
-  github: https://github.com/yuxiangq    ## e.g. wuchong for https://github.com/wuchong
-  facebook: https://www.facebook.com/yuxiang.qin  ## e.g. imjark for https://facebook.com/imjark
+  twitter: YuxiangQ   ## e.g. jarkwu for https://twitter.com/jarkwu
+  github: yuxiangq    ## e.g. wuchong for https://github.com/wuchong
+  facebook: yuxiang.qin  ## e.g. imjark for https://facebook.com/imjark
   linkedin:   ## e.g. wuchong1014 for https://www.linkedin.com/in/wuchong1014
   google_plus:    ## e.g. "111190881341800841449" for https://plus.google.com/u/0/111190881341800841449, the "" is needed!
   stackoverflow:  ## e.g. 3222790 for http://stackoverflow.com/users/3222790/jark
