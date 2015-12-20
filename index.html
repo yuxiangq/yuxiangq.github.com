@@ -20,6 +20,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Code4Cocoa">
 <meta name="twitter:description">
+<meta name="twitter:creator" content="@https://twitter.com/YuxiangQ">
 
     
     <link rel="alternative" href="/atom.xml" title="Code4Cocoa" type="application/atom+xml">
@@ -125,6 +126,9 @@
 
 <div class="comments-count">
 	
+	  	<span></span>
+		<a href="/2015/10/25/iOS实现判断程序关闭、关机的思路/#disqus_thread" class="comments-count-link">Comments</a>
+	
 </div>
 
 </footer>
@@ -183,6 +187,9 @@
 
 <div class="comments-count">
 	
+	  	<span></span>
+		<a href="/2015/09/13/UITableView实现下拉刷新/#disqus_thread" class="comments-count-link">Comments</a>
+	
 </div>
 
 </footer>
@@ -240,6 +247,9 @@
 
 <div class="comments-count">
 	
+	  	<span></span>
+		<a href="/2015/08/29/WebAPP将迎来一个好时代/#disqus_thread" class="comments-count-link">Comments</a>
+	
 </div>
 
 </footer>
@@ -272,7 +282,7 @@
     <div class="article-content">
         
         <p>我们目前了解到的手机定位方式，主要有四种：GPS、A-GPS、Wi-Fi、基站定位。</p>
-<h4 id="GPS">GPS</h4><p>即全球定位系统，它是利用GPS定位卫星，在全球范围内实时进行定位、导航的系统。民用定位精度为10米左右，定位精度取决于上方遮盖物，周围环境，当地政策等。所以室内是无法使用GPS进行定位的。在空旷的地方GPS定位精度高于城市中。</p>
+<h4 id="GPS"><a href="#GPS" class="headerlink" title="GPS"></a>GPS</h4><p>即全球定位系统，它是利用GPS定位卫星，在全球范围内实时进行定位、导航的系统。民用定位精度为10米左右，定位精度取决于上方遮盖物，周围环境，当地政策等。所以室内是无法使用GPS进行定位的。在空旷的地方GPS定位精度高于城市中。</p>
 <p><em>优点:精度高、不依赖网络。</em></p>
 <p><em>缺点:定位速度慢，因为GPS的使用需要搜索卫星，并且不同的设备，不同的环境搜索卫星的速度都会不一样。所以当需要快速定位，对位置精度要求不高的场景，GPS不是一个很好的选择。</em></p>
 <pre><code>
@@ -286,17 +296,17 @@ GPS定位的时候是需要通过卫星的位置、用户到卫星的距离来�
 
 </code></pre>
 
-<h4 id="A-GPS(Assisted_GPS)">A-GPS(Assisted GPS)</h4><p>A-GPS（Assisted GPS：辅助全球卫星定位系统）是结合GSM/GPRS与传统卫星定位，利用基地台代送辅助卫星信息，以缩减GPS芯片获取卫星信号的延迟时间，受遮盖的室内也能借基地台讯号弥补，减轻GPS芯片对卫星的依赖度。简而言之，就是有网络辅助的GPS。</p>
+<h4 id="A-GPS_28Assisted_GPS_29"><a href="#A-GPS_28Assisted_GPS_29" class="headerlink" title="A-GPS(Assisted GPS)"></a>A-GPS(Assisted GPS)</h4><p>A-GPS（Assisted GPS：辅助全球卫星定位系统）是结合GSM/GPRS与传统卫星定位，利用基地台代送辅助卫星信息，以缩减GPS芯片获取卫星信号的延迟时间，受遮盖的室内也能借基地台讯号弥补，减轻GPS芯片对卫星的依赖度。简而言之，就是有网络辅助的GPS。</p>
 <p>A-GPS解决方案的优势主要在其定位精度上，在室外等空旷地区，其精度在正常的GPS工作环境下，可达10米左右，堪称目前定位精度最高的一种定位技术。该技术的另一优点为：首次捕获GPS信号的时间一般仅需几秒，不像GPS的首次捕获时间可能要2～3分钟。</p>
 <p><em>优点:定位速度快、精度高。</em></p>
 <p><em>缺点:不支持室内定位、依赖网络。</em></p>
-<h4 id="Wi-Fi定位">Wi-Fi定位</h4><p>Wi-Fi定位的原理并不是很多人想的那样依靠IP地址定位，它实际是利用Wi-Fi信号来定位。当你的手机能收到某个Wi-Fi信号时，手机就会去服务器查找这个Wi-Fi信号的位置，然后再通过Wi-Fi信号强度进行纠正。比如在iOS中，系统就会提示用户，开启Wi-Fi以便获取更精确的位置信息。</p>
+<h4 id="Wi-Fi_u5B9A_u4F4D"><a href="#Wi-Fi_u5B9A_u4F4D" class="headerlink" title="Wi-Fi定位"></a>Wi-Fi定位</h4><p>Wi-Fi定位的原理并不是很多人想的那样依靠IP地址定位，它实际是利用Wi-Fi信号来定位。当你的手机能收到某个Wi-Fi信号时，手机就会去服务器查找这个Wi-Fi信号的位置，然后再通过Wi-Fi信号强度进行纠正。比如在iOS中，系统就会提示用户，开启Wi-Fi以便获取更精确的位置信息。</p>
 <pre><code>
 关于Wi-Fi信息的采集，Apple会使用专门的采集车，沿街道扫描Wi-Fi信号，并将Wi-Fi信号的强度、经纬度等相关信息上传到服务器。同时当我们的手机连接到某个Wi-F时i，手机系统也会记录下该Wi-Fi的相关信息，并尝试获取经纬度(例如通过基站定位)然后将其上传。百度地图、谷歌地图等地图相关的APP，差不多都有这样的采集措施。
 </code></pre>
 
 <p><em>优点:可室内定位，速度较快，定位精度较高、不依赖网络。</em><br><em>缺点:定位精度稳定性不高</em></p>
-<h4 id="基站定位">基站定位</h4><p>基站定位技术一般应用于手机，它是通过电信移动运营商的网络(如GSM网)获取移动终端用户的位置信息的技术。<br>基站定位的大致原理为：移动电话测量不同基站的下行导频信号，得到不同基站下行导频的TOA(Time of Arrival，到达时刻)或TDOA(Time Difference of Arrival，到达时间差)，根据该测量结果并结合基站的坐标，一般采用三角公式估算法，就能够算出移动电话的位置。实际的位置估计算法要考虑多基站(3个或3个以上)定位的情况，一般而言，附近基站数目越多，定位精度越高。</p>
+<h4 id="u57FA_u7AD9_u5B9A_u4F4D"><a href="#u57FA_u7AD9_u5B9A_u4F4D" class="headerlink" title="基站定位"></a>基站定位</h4><p>基站定位技术一般应用于手机，它是通过电信移动运营商的网络(如GSM网)获取移动终端用户的位置信息的技术。<br>基站定位的大致原理为：移动电话测量不同基站的下行导频信号，得到不同基站下行导频的TOA(Time of Arrival，到达时刻)或TDOA(Time Difference of Arrival，到达时间差)，根据该测量结果并结合基站的坐标，一般采用三角公式估算法，就能够算出移动电话的位置。实际的位置估计算法要考虑多基站(3个或3个以上)定位的情况，一般而言，附近基站数目越多，定位精度越高。</p>
 <p><em>优点：可以室内定位，定位速度快、不依赖网络。</em></p>
 <p><em>缺点：定位精度受基站覆盖率影响，定位精度不稳定。</em></p>
 
@@ -321,6 +331,9 @@ GPS定位的时候是需要通过卫星的位置、用户到卫星的距离来�
 
 
 <div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/06/19/手机是如何定位的/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -353,7 +366,7 @@ GPS定位的时候是需要通过卫星的位置、用户到卫星的距离来�
 </header>
     <div class="article-content">
         
-        <h4 id="关于Swfit中的构造器">关于Swfit中的构造器</h4><p><strong>构造器</strong>其实就是我们在其他语言中常说的<strong>构造函数</strong>。</p>
+        <h4 id="u5173_u4E8ESwfit_u4E2D_u7684_u6784_u9020_u5668"><a href="#u5173_u4E8ESwfit_u4E2D_u7684_u6784_u9020_u5668" class="headerlink" title="关于Swfit中的构造器"></a>关于Swfit中的构造器</h4><p><strong>构造器</strong>其实就是我们在其他语言中常说的<strong>构造函数</strong>。</p>
 <pre>与Objective-C中**构造函数**不同的是，Swfit的**构造器**无需返回值，它们的主要任务是保证新实例在第一次使用前完成正确的初始化(这个初始化过程包括为实例中属性值设置初始值等)。</pre>
 <pre>当你为存储型属性设置默认值或者在构造器中为其赋值时，它们的值是被直接设置的，不会触发任何属性观测器（property observers）。</pre>
 **构造器**的最简形式类似于一个不带任何参数的实例方法，以关键字*init*命名，例如：
@@ -407,6 +420,9 @@ testNum=t
 
 
 <div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/05/21/Swift学习笔记七/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -484,6 +500,9 @@ testNum=t
 
 <div class="comments-count">
 	
+	  	<span></span>
+		<a href="/2015/04/12/自定义UITableViewCell，使用VFL布局/#disqus_thread" class="comments-count-link">Comments</a>
+	
 </div>
 
 </footer>
@@ -516,26 +535,26 @@ testNum=t
     <div class="article-content">
         
         <p>2014已经结束了，在这元旦假期的最后一天，就让我来总结一下自己去年技术上的收获及见闻。</p>
-<h1 id="iOS">iOS</h1><p>去年我的主要角色是整个团队的iOS工程师及技术总负责人。当然同时还会兼职产品经理，运维等其他角色o(╯□╰)o。</p>
-<h2 id="VFL">VFL</h2><p>首先是学会使用了VFL，真是布局神器，强烈推荐。为此我将产品中大部分的布局都使用VFL进行了重写。这感觉，谁用谁知道。</p>
-<h2 id="ARC">ARC</h2><p>今年初的时候产品不再支持iOS4(我的决定^_^)，于是启用了ARC。这感觉，谁用谁知道</p>
-<h2 id="Github"><a href="https://github.com/yuxiangq" target="_blank" rel="external">Github</a></h2><p>在上面发现了不少优秀的代码，自己也参与了一些。这才是程序员的SNS。</p>
-<h3 id="XHImageViewer"><a href="https://github.com/JackTeam/XHImageViewer" target="_blank" rel="external">XHImageViewer</a></h3><p>一个图片查看控件，支持图片缩放。我为其添加了Block支持。目前正在研究用其查看超大图片。</p>
-<h3 id="AFNetworking">AFNetworking</h3><p>将产品的网络请求全部替换为AFNetworking 2.0，因为前期对网络请求层进行了一次封装，所以替换起来很顺利。</p>
-<h3 id="NumberTextField"><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h3><p>自己写的一个只允许输入数字的控件，在新的一年中还需要将其完善。</p>
-<h3 id="CocoaPods">CocoaPods</h3><p>一个优秀的第三方库管理工具，今年初的时候产品的大部分第三方库已经用其管理。</p>
-<h3 id="Alfred">Alfred</h3><p>Mac下的优秀的快速启动工具，目前我已经是它的重度用户。配合workflow，实在是神器。自己也在用Python为其编写插件。</p>
-<h3 id="Swift">Swift</h3><p>有条不紊的学习中，因为自己对C#的熟悉，所以很多Swift的新特性个人感觉并不是很惊艳。</p>
-<h1 id="-Net">.Net</h1><p>去年写.Net的时间较少，更多的是在技术大方向上的把握。</p>
-<h2 id="WebAPI">WebAPI</h2><p>一直在计划将服务器框架由WCF替换为WebAPI，在年中的时候进行了框架搭建，可惜的是因为产品功能迭代较快，没有时间完成框架替换。</p>
-<h2 id="Nuget">Nuget</h2><p>在新服务器工程中使用的引用管理工具。</p>
-<h2 id="Dapper"><a href="https://github.com/yuxiangq/dapper-dot-net" target="_blank" rel="external">Dapper</a></h2><p>一个轻量级高效率的ORM框架，重要的是针对MySQL的支持同样优秀。相较于EF的繁琐，对于习惯使用ADO.NET的朋友来说，该框架实在是太合适了。</p>
-<h1 id="阅读">阅读</h1><p>14年阅读了挺多经典的书籍，还有部分书没来得及读。除了技术相关书籍还读了部分马伯庸的小说，真的非常好。</p>
-<h2 id="Effective_Objective-C_2-0"><a href="http://book.douban.com/subject/21370593/" target="_blank" rel="external">Effective Objective-C 2.0</a></h2><p>一本很棒的书，讲了很多有关Objective-C的技巧，不过翻译挺烂的。</p>
-<h2 id="文明之光"><a href="http://book.douban.com/subject/25902942/" target="_blank" rel="external">文明之光</a></h2><p>吴军老师的书，作为一名IT工作者，开阔的视野是必不可少的，推荐阅读。</p>
-<h2 id="ASP-NET_Web_API_2框架揭秘"><a href="http://book.douban.com/subject/25923644/" target="_blank" rel="external">ASP.NET Web API 2框架揭秘</a></h2><p>讲解WebAPI的书，目前主要当词典用。</p>
-<h2 id="菊与刀"><a href="http://book.douban.com/subject/1022238/" target="_blank" rel="external">菊与刀</a></h2><p>从美国人的角度来看日本的书。</p>
-<h2 id="死于技术：索尼衰亡启示"><a href="http://book.douban.com/subject/25835910/" target="_blank" rel="external">死于技术：索尼衰亡启示 </a></h2><p>索尼确实已经衰落了，卖掉了经典的VAIO，这本书全面的剖析了索尼衰落的原因。</p>
+<h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><p>去年我的主要角色是整个团队的iOS工程师及技术总负责人。当然同时还会兼职产品经理，运维等其他角色o(╯□╰)o。</p>
+<h2 id="VFL"><a href="#VFL" class="headerlink" title="VFL"></a>VFL</h2><p>首先是学会使用了VFL，真是布局神器，强烈推荐。为此我将产品中大部分的布局都使用VFL进行了重写。这感觉，谁用谁知道。</p>
+<h2 id="ARC"><a href="#ARC" class="headerlink" title="ARC"></a>ARC</h2><p>今年初的时候产品不再支持iOS4(我的决定^_^)，于是启用了ARC。这感觉，谁用谁知道</p>
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a><a href="https://github.com/yuxiangq" target="_blank" rel="external">Github</a></h2><p>在上面发现了不少优秀的代码，自己也参与了一些。这才是程序员的SNS。</p>
+<h3 id="XHImageViewer"><a href="#XHImageViewer" class="headerlink" title="XHImageViewer"></a><a href="https://github.com/JackTeam/XHImageViewer" target="_blank" rel="external">XHImageViewer</a></h3><p>一个图片查看控件，支持图片缩放。我为其添加了Block支持。目前正在研究用其查看超大图片。</p>
+<h3 id="AFNetworking"><a href="#AFNetworking" class="headerlink" title="AFNetworking"></a>AFNetworking</h3><p>将产品的网络请求全部替换为AFNetworking 2.0，因为前期对网络请求层进行了一次封装，所以替换起来很顺利。</p>
+<h3 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h3><p>自己写的一个只允许输入数字的控件，在新的一年中还需要将其完善。</p>
+<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><p>一个优秀的第三方库管理工具，今年初的时候产品的大部分第三方库已经用其管理。</p>
+<h3 id="Alfred"><a href="#Alfred" class="headerlink" title="Alfred"></a>Alfred</h3><p>Mac下的优秀的快速启动工具，目前我已经是它的重度用户。配合workflow，实在是神器。自己也在用Python为其编写插件。</p>
+<h3 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h3><p>有条不紊的学习中，因为自己对C#的熟悉，所以很多Swift的新特性个人感觉并不是很惊艳。</p>
+<h1 id="Net"><a href="#Net" class="headerlink" title=".Net"></a>.Net</h1><p>去年写.Net的时间较少，更多的是在技术大方向上的把握。</p>
+<h2 id="WebAPI"><a href="#WebAPI" class="headerlink" title="WebAPI"></a>WebAPI</h2><p>一直在计划将服务器框架由WCF替换为WebAPI，在年中的时候进行了框架搭建，可惜的是因为产品功能迭代较快，没有时间完成框架替换。</p>
+<h2 id="Nuget"><a href="#Nuget" class="headerlink" title="Nuget"></a>Nuget</h2><p>在新服务器工程中使用的引用管理工具。</p>
+<h2 id="Dapper"><a href="#Dapper" class="headerlink" title="Dapper"></a><a href="https://github.com/yuxiangq/dapper-dot-net" target="_blank" rel="external">Dapper</a></h2><p>一个轻量级高效率的ORM框架，重要的是针对MySQL的支持同样优秀。相较于EF的繁琐，对于习惯使用ADO.NET的朋友来说，该框架实在是太合适了。</p>
+<h1 id="u9605_u8BFB"><a href="#u9605_u8BFB" class="headerlink" title="阅读"></a>阅读</h1><p>14年阅读了挺多经典的书籍，还有部分书没来得及读。除了技术相关书籍还读了部分马伯庸的小说，真的非常好。</p>
+<h2 id="Effective_Objective-C_2-0"><a href="#Effective_Objective-C_2-0" class="headerlink" title="Effective Objective-C 2.0"></a><a href="http://book.douban.com/subject/21370593/" target="_blank" rel="external">Effective Objective-C 2.0</a></h2><p>一本很棒的书，讲了很多有关Objective-C的技巧，不过翻译挺烂的。</p>
+<h2 id="u6587_u660E_u4E4B_u5149"><a href="#u6587_u660E_u4E4B_u5149" class="headerlink" title="文明之光"></a><a href="http://book.douban.com/subject/25902942/" target="_blank" rel="external">文明之光</a></h2><p>吴军老师的书，作为一名IT工作者，开阔的视野是必不可少的，推荐阅读。</p>
+<h2 id="ASP-NET_Web_API_2_u6846_u67B6_u63ED_u79D8"><a href="#ASP-NET_Web_API_2_u6846_u67B6_u63ED_u79D8" class="headerlink" title="ASP.NET Web API 2框架揭秘"></a><a href="http://book.douban.com/subject/25923644/" target="_blank" rel="external">ASP.NET Web API 2框架揭秘</a></h2><p>讲解WebAPI的书，目前主要当词典用。</p>
+<h2 id="u83CA_u4E0E_u5200"><a href="#u83CA_u4E0E_u5200" class="headerlink" title="菊与刀"></a><a href="http://book.douban.com/subject/1022238/" target="_blank" rel="external">菊与刀</a></h2><p>从美国人的角度来看日本的书。</p>
+<h2 id="u6B7B_u4E8E_u6280_u672F_uFF1A_u7D22_u5C3C_u8870_u4EA1_u542F_u793A"><a href="#u6B7B_u4E8E_u6280_u672F_uFF1A_u7D22_u5C3C_u8870_u4EA1_u542F_u793A" class="headerlink" title="死于技术：索尼衰亡启示"></a><a href="http://book.douban.com/subject/25835910/" target="_blank" rel="external">死于技术：索尼衰亡启示 </a></h2><p>索尼确实已经衰落了，卖掉了经典的VAIO，这本书全面的剖析了索尼衰落的原因。</p>
 
         
         
@@ -558,6 +577,9 @@ testNum=t
 
 
 <div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/04/我的2014总结/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -653,6 +675,9 @@ directionToHead = .North
 
 <div class="comments-count">
 	
+	  	<span></span>
+		<a href="/2015/02/01/Swift学习笔记六/#disqus_thread" class="comments-count-link">Comments</a>
+	
 </div>
 
 </footer>
@@ -730,6 +755,9 @@ directionToHead = .North
 
 <div class="comments-count">
 	
+	  	<span></span>
+		<a href="/2015/01/25/Pocket、Instapaper、Readability的比较/#disqus_thread" class="comments-count-link">Comments</a>
+	
 </div>
 
 </footer>
@@ -761,15 +789,15 @@ directionToHead = .North
 </header>
     <div class="article-content">
         
-        <h1 id="NumberTextField"><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h1><p>这是我做的一个只能输入数字的控件。<br>可以限制输入的数字长度及小数点位数。</p>
-<h2 id="使用方法">使用方法</h2><p><script src="https://gist.github.com/yuxiangq/71a2ac1dabac7b4fa556.js"></script></p>
-<h3 id="特性">特性</h3><ul>
+        <h1 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h1><p>这是我做的一个只能输入数字的控件。<br>可以限制输入的数字长度及小数点位数。</p>
+<h2 id="u4F7F_u7528_u65B9_u6CD5"><a href="#u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="使用方法"></a>使用方法</h2><p><script src="https://gist.github.com/yuxiangq/71a2ac1dabac7b4fa556.js"></script></p>
+<h3 id="u7279_u6027"><a href="#u7279_u6027" class="headerlink" title="特性"></a>特性</h3><ul>
 <li><p>去除数字前多余的0。例如，输入000123，当控件失去焦点，或者通过text获取值的时候，数字会被处理为123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/before.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/after.png" alt="image"></p>
 </li>
 <li><p>小数自动补0。例如，输入.123，当控件失去焦点，或者通过text获取值的时候，数字会处理为0.123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotbefore.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotafter.png" alt="image"></p>
 </li>
 </ul>
-<h3 id="函数">函数</h3><p><pre><code><br>-(NSString*)trimText;<br></code></pre><br>调用该函数可以直接获取经过处理的数字。</p>
+<h3 id="u51FD_u6570"><a href="#u51FD_u6570" class="headerlink" title="函数"></a>函数</h3><p><pre><code><br>-(NSString*)trimText;<br></code></pre><br>调用该函数可以直接获取经过处理的数字。</p>
 
         
         
@@ -792,6 +820,9 @@ directionToHead = .North
 
 
 <div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/01/12/NumberTextField/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -824,7 +855,7 @@ directionToHead = .North
 </header>
     <div class="article-content">
         
-        <h1 id="函数的定义及调用">函数的定义及调用</h1><p>我们使用func关键字来定义函数:</p>
+        <h1 id="u51FD_u6570_u7684_u5B9A_u4E49_u53CA_u8C03_u7528"><a href="#u51FD_u6570_u7684_u5B9A_u4E49_u53CA_u8C03_u7528" class="headerlink" title="函数的定义及调用"></a>函数的定义及调用</h1><p>我们使用func关键字来定义函数:</p>
 <pre><code>
 
 func test( / * 这里是函数参数，通常如此定义  parameter:String * / )->String{
@@ -834,14 +865,14 @@ return "test"
 test() //调用函数
 </code></pre>
 
-<h1 id="默认参数值">默认参数值</h1><p>给函数的参数定义默认值的方式和C#是一样的:</p>
+<h1 id="u9ED8_u8BA4_u53C2_u6570_u503C"><a href="#u9ED8_u8BA4_u53C2_u6570_u503C" class="headerlink" title="默认参数值"></a>默认参数值</h1><p>给函数的参数定义默认值的方式和C#是一样的:</p>
 <pre><code>
 func test(s:string= "defaultValue")->String {
 return s;//如果s没有传值，则会返回defaultValue
 }
 </code></pre>
 
-<h1 id="可变参数">可变参数</h1><p>用来输入不确定数量的参数，但是参数的类型必须一致:</p>
+<h1 id="u53EF_u53D8_u53C2_u6570"><a href="#u53EF_u53D8_u53C2_u6570" class="headerlink" title="可变参数"></a>可变参数</h1><p>用来输入不确定数量的参数，但是参数的类型必须一致:</p>
 <pre><code>
 func test(numbers:Double...)->Double {
 var total: Double = 0
@@ -879,10 +910,10 @@ b = temporaryA
 }
 </code></pre>
 
-<h1 id="函数类型">函数类型</h1><p>函数其实就是C#中的委托类型，也就是我们所说的函数指针。当然它相较于函数指针是类型安全的。</p>
+<h1 id="u51FD_u6570_u7C7B_u578B"><a href="#u51FD_u6570_u7C7B_u578B" class="headerlink" title="函数类型"></a>函数类型</h1><p>函数其实就是C#中的委托类型，也就是我们所说的函数指针。当然它相较于函数指针是类型安全的。</p>
 <p><pre><code><br>func addTwoInts(a: Int, b: Int) -&gt; Int {<br>return a + b<br>}</code></pre></p>
 <p>var mathFunction: (Int, Int) -&gt; Int = addTwoInts //mathFunction就是指向addTowInts函数的变量<br><br>如果我们要用一个变量来表示addTowInts这个函数，那么这个变量的类型就是<strong>(Int, Int) -&gt; Int</strong>，可以读作“这个函数类型，它有两个 Int 型的参数并返回一个 Int 型的值。”。<br>函数类型也是可以作为函数参数或函数返回值的。</p>
-<h1 id="嵌套函数">嵌套函数</h1><p>默认情况下，嵌套函数是对外界不可见的，但是可以被他们封闭函数（enclosing function）来调用。一个封闭函数也可以返回它的某一个嵌套函数，使得这个函数可以在其他域中被使用。</p>
+<h1 id="u5D4C_u5957_u51FD_u6570"><a href="#u5D4C_u5957_u51FD_u6570" class="headerlink" title="嵌套函数"></a>嵌套函数</h1><p>默认情况下，嵌套函数是对外界不可见的，但是可以被他们封闭函数（enclosing function）来调用。一个封闭函数也可以返回它的某一个嵌套函数，使得这个函数可以在其他域中被使用。</p>
 
         
         
@@ -905,6 +936,9 @@ b = temporaryA
 
 
 <div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/01/01/Swift学习笔记五/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -963,6 +997,9 @@ b = temporaryA
 
 
 <div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/12/19/Lock，一款有趣的应用/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -1029,6 +1066,9 @@ b = temporaryA
 
 <div class="comments-count">
 	
+	  	<span></span>
+		<a href="/2014/12/14/UICollectionViewController的用法/#disqus_thread" class="comments-count-link">Comments</a>
+	
 </div>
 
 </footer>
@@ -1086,6 +1126,9 @@ b = temporaryA
 
 
 <div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/12/05/关于如何学习一门新语言/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -1156,6 +1199,9 @@ b = temporaryA
 
 <div class="comments-count">
 	
+	  	<span></span>
+		<a href="/2014/12/04/VFL布局学习/#disqus_thread" class="comments-count-link">Comments</a>
+	
 </div>
 
 </footer>
@@ -1181,6 +1227,13 @@ b = temporaryA
 <aside class="clearfix">
 
   
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="https://github.com/yuxiangq" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
+
 
 
   
@@ -1280,31 +1333,16 @@ b = temporaryA
         
           <li>
             
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            	<a href="http://www.keyito.com/" target="_blank" title="藤可的博客">藤可的博客</a>
             
           </li>
         
     </ul>
 </div>
 
-  
-
-
   <div class="rsspart">
 	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
 </div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
-</div>
-
 
 </aside>
 </div>
@@ -1318,22 +1356,28 @@ b = temporaryA
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
-			This is my blog,believe it or not.</p>
+		<p> Hello,I&#39;m a Program <br/>
+			This is my blog,code4cocoa.</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
 		
-		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		<a href="https://github.com/https://github.com/yuxiangq" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		<a href="https://twitter.com/https://twitter.com/YuxiangQ" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		<a href="https://www.facebook.com/https://www.facebook.com/yuxiang.qin" target="_blank" class="icon-facebook" title="facebook"></a>
 		
 		
 		
 		
 		
 		
-		
-		
-		
+		<a href="mailto:yuxiang.q@hotmail.com" target="_blank" class="icon-email" title="Email Me"></a>
 		
 	</div>
 			
@@ -1402,6 +1446,26 @@ $(document).ready(function(){
 
 
 
+<script type="text/javascript">
+
+var disqus_shortname = 'code4cocoa';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
 
 
 
@@ -1433,16 +1497,6 @@ $(document).ready(function(){
 <!-- Analytics Begin -->
 
 
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 
 

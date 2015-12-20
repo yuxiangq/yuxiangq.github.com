@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A Programer's Home]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://code4cocoa.com/"/>
-  <updated>2015-12-07T08:50:21.000Z</updated>
+  <updated>2015-12-15T11:18:15.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://code4cocoa.com/2015/10/25/iOS%E5%AE%9E%E7%8E%B0%E5%88%A4%E6%96%AD%E7%A8%8B%E5%BA%8F%E5%85%B3%E9%97%AD%E3%80%81%E5%85%B3%E6%9C%BA%E7%9A%84%E6%80%9D%E8%B7%AF/"/>
     <id>http://code4cocoa.com/2015/10/25/iOS实现判断程序关闭、关机的思路/</id>
     <published>2015-10-25T02:46:52.000Z</published>
-    <updated>2015-12-07T08:50:21.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>最近在研究竞品的时候，发现其实现了检测APP是否关闭，用户是否关机的功能。当然我们知道以iOS的情况来说，是没有API能直接做到的。不过简单想了想，觉得利用多种方式配合，或许我们还是可以「判断」关机和APP关闭的。</p>
 <ol>
 <li>APP使用心跳机制和服务器保持通信。</li>
@@ -44,7 +44,7 @@
     <link href="http://code4cocoa.com/2015/09/13/UITableView%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0/"/>
     <id>http://code4cocoa.com/2015/09/13/UITableView实现下拉刷新/</id>
     <published>2015-09-13T10:45:45.000Z</published>
-    <updated>2015-12-05T07:33:20.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p><strong>下拉刷新</strong>实在是很了不起得创意。目前几乎所有APP只要涉及刷新的功能，都会采用这种方式，这已经是刷新交互的标配。</p>
 <p>在Github上有大量的开源组件能实现<strong>下拉刷新</strong>和<strong>上拉加载</strong>，在这里我推荐<strong><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">MJRefresh</a></strong>，它能帮我们很优雅的实现以上两种功能。</p>
 <p>下拉刷新的原理，大家很容易理解，就是利用UITableView偏移到一定程度，然后调用刷新方法即可。但是有些童鞋可能发现了一个问题，就是UITableViewDelegate中并没有拖动相关的方法，这是怎么回事呢？其实那是因为UITableView本身继承自UIScrollView，所以我们只需要实现UIScrollViewDelegete中的- (void)scrollViewDidScroll:(UIScrollView * )scrollView方法即可。</p>
@@ -68,7 +68,7 @@
     <link href="http://code4cocoa.com/2015/08/29/WebAPP%E5%B0%86%E8%BF%8E%E6%9D%A5%E4%B8%80%E4%B8%AA%E5%A5%BD%E6%97%B6%E4%BB%A3/"/>
     <id>http://code4cocoa.com/2015/08/29/WebAPP将迎来一个好时代/</id>
     <published>2015-08-29T07:47:07.000Z</published>
-    <updated>2015-12-04T06:44:34.000Z</updated>
+    <updated>2015-12-15T10:55:33.000Z</updated>
     <content type="html"><![CDATA[<p>随着4G网络的普及，以及手机性能、浏览器性能的提升，WebAPP正迎来自己的时代。</p>
 <p>想起2-3年前的时候，就有很多人在说WebAPP将崛起与NativeAPP平分秋色。但事实是WebAPP并没有真正占据一定份额。主要原因莫过于响应速度和体验远逊于NativeAPP，当然也有优化到极端的例子，效果可以说无限接近NativeAPP，但那毕竟是少数。大多数的WebAPP采用「JQueryMobile」、「SenchaTouch」等框架，在具体研发中遇到过的坑那是相当多，尝试过开发商业项目的童鞋应该心有余悸。</p>
 <p>最近一年，4G网络的加紧推广及流量价格的降低，解决了WebAPP很大的一个短板，也让我们看到了WebAPP崛起的希望。其实移动网络的加速，对整个APP开发都是有益的，对于小团队来说，就不用将太多的精力投入到基础通讯的优化上。</p>
@@ -89,9 +89,9 @@
     <link href="http://code4cocoa.com/2015/06/19/%E6%89%8B%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%E7%9A%84/"/>
     <id>http://code4cocoa.com/2015/06/19/手机是如何定位的/</id>
     <published>2015-06-19T14:00:10.000Z</published>
-    <updated>2015-12-07T08:51:41.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>我们目前了解到的手机定位方式，主要有四种：GPS、A-GPS、Wi-Fi、基站定位。</p>
-<h4 id="GPS">GPS</h4><p>即全球定位系统，它是利用GPS定位卫星，在全球范围内实时进行定位、导航的系统。民用定位精度为10米左右，定位精度取决于上方遮盖物，周围环境，当地政策等。所以室内是无法使用GPS进行定位的。在空旷的地方GPS定位精度高于城市中。</p>
+<h4 id="GPS"><a href="#GPS" class="headerlink" title="GPS"></a>GPS</h4><p>即全球定位系统，它是利用GPS定位卫星，在全球范围内实时进行定位、导航的系统。民用定位精度为10米左右，定位精度取决于上方遮盖物，周围环境，当地政策等。所以室内是无法使用GPS进行定位的。在空旷的地方GPS定位精度高于城市中。</p>
 <p><em>优点:精度高、不依赖网络。</em></p>
 <p><em>缺点:定位速度慢，因为GPS的使用需要搜索卫星，并且不同的设备，不同的环境搜索卫星的速度都会不一样。所以当需要快速定位，对位置精度要求不高的场景，GPS不是一个很好的选择。</em></p>
 <pre><code>
@@ -105,23 +105,23 @@ GPS定位的时候是需要通过卫星的位置、用户到卫星的距离来�
 
 </code></pre>
 
-<h4 id="A-GPS(Assisted_GPS)">A-GPS(Assisted GPS)</h4><p>A-GPS（Assisted GPS：辅助全球卫星定位系统）是结合GSM/GPRS与传统卫星定位，利用基地台代送辅助卫星信息，以缩减GPS芯片获取卫星信号的延迟时间，受遮盖的室内也能借基地台讯号弥补，减轻GPS芯片对卫星的依赖度。简而言之，就是有网络辅助的GPS。</p>
+<h4 id="A-GPS_28Assisted_GPS_29"><a href="#A-GPS_28Assisted_GPS_29" class="headerlink" title="A-GPS(Assisted GPS)"></a>A-GPS(Assisted GPS)</h4><p>A-GPS（Assisted GPS：辅助全球卫星定位系统）是结合GSM/GPRS与传统卫星定位，利用基地台代送辅助卫星信息，以缩减GPS芯片获取卫星信号的延迟时间，受遮盖的室内也能借基地台讯号弥补，减轻GPS芯片对卫星的依赖度。简而言之，就是有网络辅助的GPS。</p>
 <p>A-GPS解决方案的优势主要在其定位精度上，在室外等空旷地区，其精度在正常的GPS工作环境下，可达10米左右，堪称目前定位精度最高的一种定位技术。该技术的另一优点为：首次捕获GPS信号的时间一般仅需几秒，不像GPS的首次捕获时间可能要2～3分钟。</p>
 <p><em>优点:定位速度快、精度高。</em></p>
 <p><em>缺点:不支持室内定位、依赖网络。</em></p>
-<h4 id="Wi-Fi定位">Wi-Fi定位</h4><p>Wi-Fi定位的原理并不是很多人想的那样依靠IP地址定位，它实际是利用Wi-Fi信号来定位。当你的手机能收到某个Wi-Fi信号时，手机就会去服务器查找这个Wi-Fi信号的位置，然后再通过Wi-Fi信号强度进行纠正。比如在iOS中，系统就会提示用户，开启Wi-Fi以便获取更精确的位置信息。</p>
+<h4 id="Wi-Fi_u5B9A_u4F4D"><a href="#Wi-Fi_u5B9A_u4F4D" class="headerlink" title="Wi-Fi定位"></a>Wi-Fi定位</h4><p>Wi-Fi定位的原理并不是很多人想的那样依靠IP地址定位，它实际是利用Wi-Fi信号来定位。当你的手机能收到某个Wi-Fi信号时，手机就会去服务器查找这个Wi-Fi信号的位置，然后再通过Wi-Fi信号强度进行纠正。比如在iOS中，系统就会提示用户，开启Wi-Fi以便获取更精确的位置信息。</p>
 <pre><code>
 关于Wi-Fi信息的采集，Apple会使用专门的采集车，沿街道扫描Wi-Fi信号，并将Wi-Fi信号的强度、经纬度等相关信息上传到服务器。同时当我们的手机连接到某个Wi-F时i，手机系统也会记录下该Wi-Fi的相关信息，并尝试获取经纬度(例如通过基站定位)然后将其上传。百度地图、谷歌地图等地图相关的APP，差不多都有这样的采集措施。
 </code></pre>
 
 <p><em>优点:可室内定位，速度较快，定位精度较高、不依赖网络。</em><br><em>缺点:定位精度稳定性不高</em></p>
-<h4 id="基站定位">基站定位</h4><p>基站定位技术一般应用于手机，它是通过电信移动运营商的网络(如GSM网)获取移动终端用户的位置信息的技术。<br>基站定位的大致原理为：移动电话测量不同基站的下行导频信号，得到不同基站下行导频的TOA(Time of Arrival，到达时刻)或TDOA(Time Difference of Arrival，到达时间差)，根据该测量结果并结合基站的坐标，一般采用三角公式估算法，就能够算出移动电话的位置。实际的位置估计算法要考虑多基站(3个或3个以上)定位的情况，一般而言，附近基站数目越多，定位精度越高。</p>
+<h4 id="u57FA_u7AD9_u5B9A_u4F4D"><a href="#u57FA_u7AD9_u5B9A_u4F4D" class="headerlink" title="基站定位"></a>基站定位</h4><p>基站定位技术一般应用于手机，它是通过电信移动运营商的网络(如GSM网)获取移动终端用户的位置信息的技术。<br>基站定位的大致原理为：移动电话测量不同基站的下行导频信号，得到不同基站下行导频的TOA(Time of Arrival，到达时刻)或TDOA(Time Difference of Arrival，到达时间差)，根据该测量结果并结合基站的坐标，一般采用三角公式估算法，就能够算出移动电话的位置。实际的位置估计算法要考虑多基站(3个或3个以上)定位的情况，一般而言，附近基站数目越多，定位精度越高。</p>
 <p><em>优点：可以室内定位，定位速度快、不依赖网络。</em></p>
 <p><em>缺点：定位精度受基站覆盖率影响，定位精度不稳定。</em></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>我们目前了解到的手机定位方式，主要有四种：GPS、A-GPS、Wi-Fi、基站定位。</p>
-<h4 id="GPS">GPS</h4><p>即全球定位系统，它是利用GPS定位卫星，在全球范围内实时进行定位、导航的系统。民用定位精度为10米左右，定位精度取决于上方遮盖物，周]]>
+<h4 id="GPS"><a href="#GPS" class="headerlink" title="GPS"></a>GPS</h4><p>即全球定位系统，它是利用GPS定]]>
     </summary>
     
       <category term="GPS" scheme="http://code4cocoa.com/tags/GPS/"/>
@@ -135,8 +135,8 @@ GPS定位的时候是需要通过卫星的位置、用户到卫星的距离来�
     <link href="http://code4cocoa.com/2015/05/21/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%83/"/>
     <id>http://code4cocoa.com/2015/05/21/Swift学习笔记七/</id>
     <published>2015-05-21T13:32:56.000Z</published>
-    <updated>2015-12-07T09:23:48.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="关于Swfit中的构造器">关于Swfit中的构造器</h4><p><strong>构造器</strong>其实就是我们在其他语言中常说的<strong>构造函数</strong>。</p>
+    <updated>2015-12-15T11:18:15.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="u5173_u4E8ESwfit_u4E2D_u7684_u6784_u9020_u5668"><a href="#u5173_u4E8ESwfit_u4E2D_u7684_u6784_u9020_u5668" class="headerlink" title="关于Swfit中的构造器"></a>关于Swfit中的构造器</h4><p><strong>构造器</strong>其实就是我们在其他语言中常说的<strong>构造函数</strong>。</p>
 <pre>与Objective-C中**构造函数**不同的是，Swfit的**构造器**无需返回值，它们的主要任务是保证新实例在第一次使用前完成正确的初始化(这个初始化过程包括为实例中属性值设置初始值等)。</pre>
 <pre>当你为存储型属性设置默认值或者在构造器中为其赋值时，它们的值是被直接设置的，不会触发任何属性观测器（property observers）。</pre>
 **构造器**的最简形式类似于一个不带任何参数的实例方法，以关键字*init*命名，例如：
@@ -170,8 +170,7 @@ testNum=t
 
 ]]></content>
     <summary type="html">
-    <![CDATA[<h4 id="关于Swfit中的构造器">关于Swfit中的构造器</h4><p><strong>构造器</strong>其实就是我们在其他语言中常说的<strong>构造函数</strong>。</p>
-<pre>与Objective-C中**构造函数**不同的是，Swfit]]>
+    <![CDATA[<h4 id="u5173_u4E8ESwfit_u4E2D_u7684_u6784_u9020_u5668"><a href="#u5173_u4E8ESwfit_u4E2D_u7684_u6784_u9020_u5668" class="headerlink" title="]]>
     </summary>
     
       <category term="Swift" scheme="http://code4cocoa.com/tags/Swift/"/>
@@ -185,7 +184,7 @@ testNum=t
     <link href="http://code4cocoa.com/2015/04/12/%E8%87%AA%E5%AE%9A%E4%B9%89UITableViewCell%EF%BC%8C%E4%BD%BF%E7%94%A8VFL%E5%B8%83%E5%B1%80/"/>
     <id>http://code4cocoa.com/2015/04/12/自定义UITableViewCell，使用VFL布局/</id>
     <published>2015-04-12T12:57:39.000Z</published>
-    <updated>2015-12-07T09:19:36.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，<a href="https://github.com/yuxiangq/UITableViewCell4VFL/commits?author=yuxiangq" target="_blank" rel="external">Demo比较简单</a></p>
 <ul>
 <li><p>首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_2.png" alt="image"></p>
@@ -226,33 +225,32 @@ testNum=t
     <link href="http://code4cocoa.com/2015/02/04/%E6%88%91%E7%9A%842014%E6%80%BB%E7%BB%93/"/>
     <id>http://code4cocoa.com/2015/02/04/我的2014总结/</id>
     <published>2015-02-04T07:25:13.000Z</published>
-    <updated>2015-12-07T09:11:21.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>2014已经结束了，在这元旦假期的最后一天，就让我来总结一下自己去年技术上的收获及见闻。</p>
-<h1 id="iOS">iOS</h1><p>去年我的主要角色是整个团队的iOS工程师及技术总负责人。当然同时还会兼职产品经理，运维等其他角色o(╯□╰)o。</p>
-<h2 id="VFL">VFL</h2><p>首先是学会使用了VFL，真是布局神器，强烈推荐。为此我将产品中大部分的布局都使用VFL进行了重写。这感觉，谁用谁知道。</p>
-<h2 id="ARC">ARC</h2><p>今年初的时候产品不再支持iOS4(我的决定^_^)，于是启用了ARC。这感觉，谁用谁知道</p>
-<h2 id="Github"><a href="https://github.com/yuxiangq" target="_blank" rel="external">Github</a></h2><p>在上面发现了不少优秀的代码，自己也参与了一些。这才是程序员的SNS。</p>
-<h3 id="XHImageViewer"><a href="https://github.com/JackTeam/XHImageViewer" target="_blank" rel="external">XHImageViewer</a></h3><p>一个图片查看控件，支持图片缩放。我为其添加了Block支持。目前正在研究用其查看超大图片。</p>
-<h3 id="AFNetworking">AFNetworking</h3><p>将产品的网络请求全部替换为AFNetworking 2.0，因为前期对网络请求层进行了一次封装，所以替换起来很顺利。</p>
-<h3 id="NumberTextField"><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h3><p>自己写的一个只允许输入数字的控件，在新的一年中还需要将其完善。</p>
-<h3 id="CocoaPods">CocoaPods</h3><p>一个优秀的第三方库管理工具，今年初的时候产品的大部分第三方库已经用其管理。</p>
-<h3 id="Alfred">Alfred</h3><p>Mac下的优秀的快速启动工具，目前我已经是它的重度用户。配合workflow，实在是神器。自己也在用Python为其编写插件。</p>
-<h3 id="Swift">Swift</h3><p>有条不紊的学习中，因为自己对C#的熟悉，所以很多Swift的新特性个人感觉并不是很惊艳。</p>
-<h1 id="-Net">.Net</h1><p>去年写.Net的时间较少，更多的是在技术大方向上的把握。</p>
-<h2 id="WebAPI">WebAPI</h2><p>一直在计划将服务器框架由WCF替换为WebAPI，在年中的时候进行了框架搭建，可惜的是因为产品功能迭代较快，没有时间完成框架替换。</p>
-<h2 id="Nuget">Nuget</h2><p>在新服务器工程中使用的引用管理工具。</p>
-<h2 id="Dapper"><a href="https://github.com/yuxiangq/dapper-dot-net" target="_blank" rel="external">Dapper</a></h2><p>一个轻量级高效率的ORM框架，重要的是针对MySQL的支持同样优秀。相较于EF的繁琐，对于习惯使用ADO.NET的朋友来说，该框架实在是太合适了。</p>
-<h1 id="阅读">阅读</h1><p>14年阅读了挺多经典的书籍，还有部分书没来得及读。除了技术相关书籍还读了部分马伯庸的小说，真的非常好。</p>
-<h2 id="Effective_Objective-C_2-0"><a href="http://book.douban.com/subject/21370593/" target="_blank" rel="external">Effective Objective-C 2.0</a></h2><p>一本很棒的书，讲了很多有关Objective-C的技巧，不过翻译挺烂的。</p>
-<h2 id="文明之光"><a href="http://book.douban.com/subject/25902942/" target="_blank" rel="external">文明之光</a></h2><p>吴军老师的书，作为一名IT工作者，开阔的视野是必不可少的，推荐阅读。</p>
-<h2 id="ASP-NET_Web_API_2框架揭秘"><a href="http://book.douban.com/subject/25923644/" target="_blank" rel="external">ASP.NET Web API 2框架揭秘</a></h2><p>讲解WebAPI的书，目前主要当词典用。</p>
-<h2 id="菊与刀"><a href="http://book.douban.com/subject/1022238/" target="_blank" rel="external">菊与刀</a></h2><p>从美国人的角度来看日本的书。</p>
-<h2 id="死于技术：索尼衰亡启示"><a href="http://book.douban.com/subject/25835910/" target="_blank" rel="external">死于技术：索尼衰亡启示 </a></h2><p>索尼确实已经衰落了，卖掉了经典的VAIO，这本书全面的剖析了索尼衰落的原因。</p>
+<h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><p>去年我的主要角色是整个团队的iOS工程师及技术总负责人。当然同时还会兼职产品经理，运维等其他角色o(╯□╰)o。</p>
+<h2 id="VFL"><a href="#VFL" class="headerlink" title="VFL"></a>VFL</h2><p>首先是学会使用了VFL，真是布局神器，强烈推荐。为此我将产品中大部分的布局都使用VFL进行了重写。这感觉，谁用谁知道。</p>
+<h2 id="ARC"><a href="#ARC" class="headerlink" title="ARC"></a>ARC</h2><p>今年初的时候产品不再支持iOS4(我的决定^_^)，于是启用了ARC。这感觉，谁用谁知道</p>
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a><a href="https://github.com/yuxiangq" target="_blank" rel="external">Github</a></h2><p>在上面发现了不少优秀的代码，自己也参与了一些。这才是程序员的SNS。</p>
+<h3 id="XHImageViewer"><a href="#XHImageViewer" class="headerlink" title="XHImageViewer"></a><a href="https://github.com/JackTeam/XHImageViewer" target="_blank" rel="external">XHImageViewer</a></h3><p>一个图片查看控件，支持图片缩放。我为其添加了Block支持。目前正在研究用其查看超大图片。</p>
+<h3 id="AFNetworking"><a href="#AFNetworking" class="headerlink" title="AFNetworking"></a>AFNetworking</h3><p>将产品的网络请求全部替换为AFNetworking 2.0，因为前期对网络请求层进行了一次封装，所以替换起来很顺利。</p>
+<h3 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h3><p>自己写的一个只允许输入数字的控件，在新的一年中还需要将其完善。</p>
+<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><p>一个优秀的第三方库管理工具，今年初的时候产品的大部分第三方库已经用其管理。</p>
+<h3 id="Alfred"><a href="#Alfred" class="headerlink" title="Alfred"></a>Alfred</h3><p>Mac下的优秀的快速启动工具，目前我已经是它的重度用户。配合workflow，实在是神器。自己也在用Python为其编写插件。</p>
+<h3 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h3><p>有条不紊的学习中，因为自己对C#的熟悉，所以很多Swift的新特性个人感觉并不是很惊艳。</p>
+<h1 id="Net"><a href="#Net" class="headerlink" title=".Net"></a>.Net</h1><p>去年写.Net的时间较少，更多的是在技术大方向上的把握。</p>
+<h2 id="WebAPI"><a href="#WebAPI" class="headerlink" title="WebAPI"></a>WebAPI</h2><p>一直在计划将服务器框架由WCF替换为WebAPI，在年中的时候进行了框架搭建，可惜的是因为产品功能迭代较快，没有时间完成框架替换。</p>
+<h2 id="Nuget"><a href="#Nuget" class="headerlink" title="Nuget"></a>Nuget</h2><p>在新服务器工程中使用的引用管理工具。</p>
+<h2 id="Dapper"><a href="#Dapper" class="headerlink" title="Dapper"></a><a href="https://github.com/yuxiangq/dapper-dot-net" target="_blank" rel="external">Dapper</a></h2><p>一个轻量级高效率的ORM框架，重要的是针对MySQL的支持同样优秀。相较于EF的繁琐，对于习惯使用ADO.NET的朋友来说，该框架实在是太合适了。</p>
+<h1 id="u9605_u8BFB"><a href="#u9605_u8BFB" class="headerlink" title="阅读"></a>阅读</h1><p>14年阅读了挺多经典的书籍，还有部分书没来得及读。除了技术相关书籍还读了部分马伯庸的小说，真的非常好。</p>
+<h2 id="Effective_Objective-C_2-0"><a href="#Effective_Objective-C_2-0" class="headerlink" title="Effective Objective-C 2.0"></a><a href="http://book.douban.com/subject/21370593/" target="_blank" rel="external">Effective Objective-C 2.0</a></h2><p>一本很棒的书，讲了很多有关Objective-C的技巧，不过翻译挺烂的。</p>
+<h2 id="u6587_u660E_u4E4B_u5149"><a href="#u6587_u660E_u4E4B_u5149" class="headerlink" title="文明之光"></a><a href="http://book.douban.com/subject/25902942/" target="_blank" rel="external">文明之光</a></h2><p>吴军老师的书，作为一名IT工作者，开阔的视野是必不可少的，推荐阅读。</p>
+<h2 id="ASP-NET_Web_API_2_u6846_u67B6_u63ED_u79D8"><a href="#ASP-NET_Web_API_2_u6846_u67B6_u63ED_u79D8" class="headerlink" title="ASP.NET Web API 2框架揭秘"></a><a href="http://book.douban.com/subject/25923644/" target="_blank" rel="external">ASP.NET Web API 2框架揭秘</a></h2><p>讲解WebAPI的书，目前主要当词典用。</p>
+<h2 id="u83CA_u4E0E_u5200"><a href="#u83CA_u4E0E_u5200" class="headerlink" title="菊与刀"></a><a href="http://book.douban.com/subject/1022238/" target="_blank" rel="external">菊与刀</a></h2><p>从美国人的角度来看日本的书。</p>
+<h2 id="u6B7B_u4E8E_u6280_u672F_uFF1A_u7D22_u5C3C_u8870_u4EA1_u542F_u793A"><a href="#u6B7B_u4E8E_u6280_u672F_uFF1A_u7D22_u5C3C_u8870_u4EA1_u542F_u793A" class="headerlink" title="死于技术：索尼衰亡启示"></a><a href="http://book.douban.com/subject/25835910/" target="_blank" rel="external">死于技术：索尼衰亡启示 </a></h2><p>索尼确实已经衰落了，卖掉了经典的VAIO，这本书全面的剖析了索尼衰落的原因。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>2014已经结束了，在这元旦假期的最后一天，就让我来总结一下自己去年技术上的收获及见闻。</p>
-<h1 id="iOS">iOS</h1><p>去年我的主要角色是整个团队的iOS工程师及技术总负责人。当然同时还会兼职产品经理，运维等其他角色o(╯□╰)o。</p>
-<h2]]>
+<h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><p>去年我的主要角色是整个团队的]]>
     </summary>
     
       <category term="个人总结" scheme="http://code4cocoa.com/tags/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/"/>
@@ -264,7 +262,7 @@ testNum=t
     <link href="http://code4cocoa.com/2015/02/01/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%AD/"/>
     <id>http://code4cocoa.com/2015/02/01/Swift学习笔记六/</id>
     <published>2015-02-01T14:02:12.000Z</published>
-    <updated>2015-12-07T09:24:38.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>Swift中的枚举拥有很棒的特性，至少以前我是没有接触过的。</p>
 <p>####枚举语法####<br>使用<strong>enum</strong>关键字，并将其整个定义放在大括号内：</p>
 <pre><code>
@@ -327,7 +325,7 @@ enum demo{
     <link href="http://code4cocoa.com/2015/01/25/Pocket%E3%80%81Instapaper%E3%80%81Readability%E7%9A%84%E6%AF%94%E8%BE%83/"/>
     <id>http://code4cocoa.com/2015/01/25/Pocket、Instapaper、Readability的比较/</id>
     <published>2015-01-25T10:47:54.000Z</published>
-    <updated>2015-12-07T09:22:48.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。</p>
 <p>大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫<a href="http://www.udee.cn/" target="_blank" rel="external">uDee云阅读</a>。貌似已经挂了，官网已经变成建站系统了o(╯□╰)o。相关的介绍可以看这里<a href="http://www.36kr.com/p/99352.html" target="_blank" rel="external">36kr关于uDee云阅读的介绍</a>。</p>
 <p>后来我入手了The New iPad，TouchPad就送给老爸看电影了。在iOS上我开始使用<a href="https://getpocket.com/" target="_blank" rel="external">Pocket</a>，那个时候还叫Read it later。用了一段时间后发现Pocket对CocoaChina支持不是很好，只能抓取到标题，查看内容的时候还得跳转到原网页，实在是麻烦，于是开始寻找其他类似产品。</p>
@@ -368,19 +366,19 @@ enum demo{
     <link href="http://code4cocoa.com/2015/01/12/NumberTextField/"/>
     <id>http://code4cocoa.com/2015/01/12/NumberTextField/</id>
     <published>2015-01-12T12:46:26.000Z</published>
-    <updated>2015-12-07T09:21:47.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="NumberTextField"><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h1><p>这是我做的一个只能输入数字的控件。<br>可以限制输入的数字长度及小数点位数。</p>
-<h2 id="使用方法">使用方法</h2><p><script src="https://gist.github.com/yuxiangq/71a2ac1dabac7b4fa556.js"></script></p>
-<h3 id="特性">特性</h3><ul>
+    <updated>2015-12-15T11:18:15.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h1><p>这是我做的一个只能输入数字的控件。<br>可以限制输入的数字长度及小数点位数。</p>
+<h2 id="u4F7F_u7528_u65B9_u6CD5"><a href="#u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="使用方法"></a>使用方法</h2><p><script src="https://gist.github.com/yuxiangq/71a2ac1dabac7b4fa556.js"></script></p>
+<h3 id="u7279_u6027"><a href="#u7279_u6027" class="headerlink" title="特性"></a>特性</h3><ul>
 <li><p>去除数字前多余的0。例如，输入000123，当控件失去焦点，或者通过text获取值的时候，数字会被处理为123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/before.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/after.png" alt="image"></p>
 </li>
 <li><p>小数自动补0。例如，输入.123，当控件失去焦点，或者通过text获取值的时候，数字会处理为0.123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotbefore.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotafter.png" alt="image"></p>
 </li>
 </ul>
-<h3 id="函数">函数</h3><p><pre><code><br>-(NSString*)trimText;<br></code></pre><br>调用该函数可以直接获取经过处理的数字。</p>
+<h3 id="u51FD_u6570"><a href="#u51FD_u6570" class="headerlink" title="函数"></a>函数</h3><p><pre><code><br>-(NSString*)trimText;<br></code></pre><br>调用该函数可以直接获取经过处理的数字。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="NumberTextField"><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h1><p>这是我]]>
+    <![CDATA[<h1 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/Numb]]>
     </summary>
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
@@ -394,8 +392,8 @@ enum demo{
     <link href="http://code4cocoa.com/2015/01/01/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/"/>
     <id>http://code4cocoa.com/2015/01/01/Swift学习笔记五/</id>
     <published>2015-01-01T09:29:59.000Z</published>
-    <updated>2015-12-07T09:06:31.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="函数的定义及调用">函数的定义及调用</h1><p>我们使用func关键字来定义函数:</p>
+    <updated>2015-12-15T11:18:15.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="u51FD_u6570_u7684_u5B9A_u4E49_u53CA_u8C03_u7528"><a href="#u51FD_u6570_u7684_u5B9A_u4E49_u53CA_u8C03_u7528" class="headerlink" title="函数的定义及调用"></a>函数的定义及调用</h1><p>我们使用func关键字来定义函数:</p>
 <pre><code>
 
 func test( / * 这里是函数参数，通常如此定义  parameter:String * / )->String{
@@ -405,14 +403,14 @@ return "test"
 test() //调用函数
 </code></pre>
 
-<h1 id="默认参数值">默认参数值</h1><p>给函数的参数定义默认值的方式和C#是一样的:</p>
+<h1 id="u9ED8_u8BA4_u53C2_u6570_u503C"><a href="#u9ED8_u8BA4_u53C2_u6570_u503C" class="headerlink" title="默认参数值"></a>默认参数值</h1><p>给函数的参数定义默认值的方式和C#是一样的:</p>
 <pre><code>
 func test(s:string= "defaultValue")->String {
 return s;//如果s没有传值，则会返回defaultValue
 }
 </code></pre>
 
-<h1 id="可变参数">可变参数</h1><p>用来输入不确定数量的参数，但是参数的类型必须一致:</p>
+<h1 id="u53EF_u53D8_u53C2_u6570"><a href="#u53EF_u53D8_u53C2_u6570" class="headerlink" title="可变参数"></a>可变参数</h1><p>用来输入不确定数量的参数，但是参数的类型必须一致:</p>
 <pre><code>
 func test(numbers:Double...)->Double {
 var total: Double = 0
@@ -450,17 +448,13 @@ b = temporaryA
 }
 </code></pre>
 
-<h1 id="函数类型">函数类型</h1><p>函数其实就是C#中的委托类型，也就是我们所说的函数指针。当然它相较于函数指针是类型安全的。</p>
+<h1 id="u51FD_u6570_u7C7B_u578B"><a href="#u51FD_u6570_u7C7B_u578B" class="headerlink" title="函数类型"></a>函数类型</h1><p>函数其实就是C#中的委托类型，也就是我们所说的函数指针。当然它相较于函数指针是类型安全的。</p>
 <p><pre><code><br>func addTwoInts(a: Int, b: Int) -&gt; Int {<br>return a + b<br>}</code></pre></p>
 <p>var mathFunction: (Int, Int) -&gt; Int = addTwoInts //mathFunction就是指向addTowInts函数的变量<br><br>如果我们要用一个变量来表示addTowInts这个函数，那么这个变量的类型就是<strong>(Int, Int) -&gt; Int</strong>，可以读作“这个函数类型，它有两个 Int 型的参数并返回一个 Int 型的值。”。<br>函数类型也是可以作为函数参数或函数返回值的。</p>
-<h1 id="嵌套函数">嵌套函数</h1><p>默认情况下，嵌套函数是对外界不可见的，但是可以被他们封闭函数（enclosing function）来调用。一个封闭函数也可以返回它的某一个嵌套函数，使得这个函数可以在其他域中被使用。</p>
+<h1 id="u5D4C_u5957_u51FD_u6570"><a href="#u5D4C_u5957_u51FD_u6570" class="headerlink" title="嵌套函数"></a>嵌套函数</h1><p>默认情况下，嵌套函数是对外界不可见的，但是可以被他们封闭函数（enclosing function）来调用。一个封闭函数也可以返回它的某一个嵌套函数，使得这个函数可以在其他域中被使用。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="函数的定义及调用">函数的定义及调用</h1><p>我们使用func关键字来定义函数:</p>
-<pre><code>
-
-func test( / * 这里是函数参数，通常如此定义  parameter:String * / )->String{
-return "]]>
+    <![CDATA[<h1 id="u51FD_u6570_u7684_u5B9A_u4E49_u53CA_u8C03_u7528"><a href="#u51FD_u6570_u7684_u5B9A_u4E49_u53CA_u8C03_u7528" class="headerlink" title]]>
     </summary>
     
       <category term="Swfit" scheme="http://code4cocoa.com/tags/Swfit/"/>
@@ -474,7 +468,7 @@ return "]]>
     <link href="http://code4cocoa.com/2014/12/19/Lock%EF%BC%8C%E4%B8%80%E6%AC%BE%E6%9C%89%E8%B6%A3%E7%9A%84%E5%BA%94%E7%94%A8/"/>
     <id>http://code4cocoa.com/2014/12/19/Lock，一款有趣的应用/</id>
     <published>2014-12-19T12:36:07.000Z</published>
-    <updated>2015-12-07T09:04:42.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>今天发现了一款有趣的应用，名字叫<a href="http://www.nearlock.me/" target="_blank" rel="external">Near Lock</a>。它有Mac版和iPhone版，二者是配合使用的。</p>
 <p>它能让我们优雅的通过iPhone来解锁Mac。你只需要将iPhone带在身上，当你靠近自己的Mac的时候，它就是解锁状态，当你离开Mac的时候它又会自动锁上。</p>
 <p>Pro版在中国区市场是25块，它能在后台运行。</p>
@@ -494,7 +488,7 @@ return "]]>
     <link href="http://code4cocoa.com/2014/12/14/UICollectionViewController%E7%9A%84%E7%94%A8%E6%B3%95/"/>
     <id>http://code4cocoa.com/2014/12/14/UICollectionViewController的用法/</id>
     <published>2014-12-14T14:16:58.000Z</published>
-    <updated>2015-12-07T09:10:03.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>UICollectionView和UICollectionViewController是iOS6中新增加的控件，主要用于复杂的布局。你可以简单的把它理解为Grid。<br>在最近的版本中，我在做表单界面的时候，放弃了UITableViewController，改用UICollectionViewController来进行布局，个人感觉挺好用的，在这里我简单给大家分享一下UICollectionViewController的用法。</p>
 <p><strong>首先请大家注意的是，记得为UICollectionView的collectionViewLayout属性设置UICollectionViewLayout的子类。否则是会报错的。</strong></p>
 <p>UICollectionView的使用方式与UITableView相比没有什么区别，都是DataSource为View提供数据源，告诉View要显示什么东西以及如何显示他们，Delegate提供一些样式的小细节及用户交互的响应。</p>
@@ -522,7 +516,7 @@ return "]]>
     <link href="http://code4cocoa.com/2014/12/05/%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E8%AF%AD%E8%A8%80/"/>
     <id>http://code4cocoa.com/2014/12/05/关于如何学习一门新语言/</id>
     <published>2014-12-05T14:53:35.000Z</published>
-    <updated>2015-12-07T09:08:39.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>作为一名程序员，我们肯定会在必要的时候学习一门新的编程语言，这个时候好的学习方法会帮助我们节省很多时间，在这里谈谈我的学习方法。</p>
 <p>####快速了解语法####<br>我通常会快速了解该门语言的语法，并将其和已学会的语言进行比较。比如我在学习Objective-C的时候就是将其和C#进行比较，思考两者的差异。<br>C#中的委托，在Objective-C中有什么可以实现？<br>C#中的泛型，Objective-C中有吗？<br>如何实现单例？<br>C#中的拉姆达表达式，Objective-C有吗？<br>等等，等等。</p>
 <p>####写Demo练习####<br>实际的练习也是必不可少的。可以通过很多小项目和算法来练习自己对新语言掌握的程度。比如写一个简单的计算器。</p>
@@ -544,7 +538,7 @@ return "]]>
     <link href="http://code4cocoa.com/2014/12/04/VFL%E5%B8%83%E5%B1%80%E5%AD%A6%E4%B9%A0/"/>
     <id>http://code4cocoa.com/2014/12/04/VFL布局学习/</id>
     <published>2014-12-04T15:17:14.000Z</published>
-    <updated>2015-12-05T07:39:26.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>随着iPhone6及iPhone6+的发布，适配大屏幕也提上了日程。有些童鞋习惯用xib配合iOS6时出现的autolayout进行界面的布局，但是我个人觉得xib实在是有点难用，特别是在macbook的小屏幕上，觉得xib要配一个大屏幕用起来才爽。还有就是用过Visual Studio的可视化编程后，始终觉得xib的易用性不够好。大屏幕又不得不适配，怎么办呢，如果像以前那样算坐标的话倒是也行，但毕竟比较繁琐，又不想用xib，那就只好用<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage/VisualFormatLanguage.html" target="_blank" rel="external">Visual Format Language</a>。</p>
 <p>初看VFL，肯定觉得莫名奇妙，给我的感觉就像第一次看到正则表达式的时候一样(个人以为VFL可比正则表达式简单多了)。不过VFL的符号比较少且简单，用2-3次估计就都记住了，大家可以看看上面官方文档的链接。我在这里简单介绍一下常用的符号表示的意思(我会用<strong>方引号(「」)</strong>将符号括起来)：</p>
 <p><strong>「V:」</strong>或<strong>「H:」</strong>分别表示垂直方向和水平方向。</p>
@@ -578,7 +572,7 @@ return "]]>
     <link href="http://code4cocoa.com/2014/12/04/%E6%A2%AF%E5%AD%90%E6%8E%A8%E8%8D%90/"/>
     <id>http://code4cocoa.com/2014/12/04/梯子推荐/</id>
     <published>2014-12-04T07:10:04.000Z</published>
-    <updated>2015-12-04T07:14:28.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>作为IT从业者，好用的梯子可以说是必备之物。在这里我推荐<a href="http://honx.in/i/U6jd04Ko13KmmIiD" target="_blank" rel="external">红杏</a>。<br>它是一款Chrome、FireFox插件，相较于VPN等，使用简单方便，价格便宜(每月10元)，且不限流量。唯一的缺点是只能在浏览器上使用，当然他们的客服说目前正在开发不依赖浏览器的版本，很值得期待。</p>
 <p>PS:我一般是配合VPN使用的。只是在网上查查资料的话就用红杏足矣。如果涉及本地应用需要梯子，我用的是<a href="https://www.123ssh.net/" target="_blank" rel="external">123SSH</a>，价格比红杏略贵，配合GoAgent可以实现按规则翻墙，就是配置起来还是比较麻烦，不如红杏那么简单易用。</p>
 ]]></content>
@@ -599,7 +593,7 @@ return "]]>
     <link href="http://code4cocoa.com/2014/11/19/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/"/>
     <id>http://code4cocoa.com/2014/11/19/Swift学习笔记四/</id>
     <published>2014-11-19T13:42:23.000Z</published>
-    <updated>2015-12-07T09:02:50.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>Swift中的集合类型，数组和字典与Objective-C中相比，最大的不同就是<strong>类型安全</strong>。例如：如果我们创建了一个Int值类型的数组，我们就不能往其中插入任何不是Int类型的数据。</p>
 <pre><code>
 //我们创建一个人员数组。
@@ -645,7 +639,7 @@ var airports= ["TYO": "Tokyo", "DUB": "Dublin"]
     <link href="http://code4cocoa.com/2014/11/19/%E6%89%8B%E5%8A%BF%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://code4cocoa.com/2014/11/19/手势的使用/</id>
     <published>2014-11-19T10:02:16.000Z</published>
-    <updated>2015-12-07T09:01:50.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>iOS让人着迷的地方之一，就是无与伦比的手势操作。记得大学时第一次看到双指缩放图片时的惊奇，以至于玩图片库可以玩一节课。在这里我收集整理一下手势的用法。</p>
 <p>iOS中，与手势相关的类继承自UIKit中的UIGestureRecognizer类，它是一个<a href="https://en.wikipedia.org/wiki/Abstract_type" target="_blank" rel="external">抽象类</a>，定义了所有手势的基本行为，iOS支持的所有基础手势如下：</p>
 <ul>
@@ -707,7 +701,7 @@ var airports= ["TYO": "Tokyo", "DUB": "Dublin"]
     <link href="http://code4cocoa.com/2014/10/26/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/"/>
     <id>http://code4cocoa.com/2014/10/26/Swift学习笔记三/</id>
     <published>2014-10-26T12:00:06.000Z</published>
-    <updated>2015-12-07T09:00:50.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>这一部分主要了解运算符，因为大部分编程语言的运算符都相似，所以在这里我只记录有Swift特色的运算符。</p>
 <p>###区间运算符###<br>Swift 提供了两个方便表达一个区间的值的运算符</p>
 <p>####闭区间运算符####<br>闭区间运算符（a…b）定义一个包含从a到b(包括a和b)的所有值的区间，b必须大于a。 ‌ 闭区间运算符在迭代一个区间的所有值时是非常有用的，如在for-in循环中</p>
@@ -763,7 +757,7 @@ var colorNameToUse = userDefinedColorName ?? defaultColorName
     <link href="http://code4cocoa.com/2014/10/23/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/"/>
     <id>http://code4cocoa.com/2014/10/23/Swift学习笔记二/</id>
     <published>2014-10-23T15:10:01.000Z</published>
-    <updated>2015-12-07T08:55:37.000Z</updated>
+    <updated>2015-12-15T11:18:15.000Z</updated>
     <content type="html"><![CDATA[<p>Swift是一门类型安全的语言，Swift中包含的基础数据类型有以下7种</p>
 <ul>
 <li>Int 整型，长度与当前平台的原生字长相同。在32位平台上，Int和Int32相同；在64位平台上和Int64相同。</li>
