@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A Programer's Home]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://code4cocoa.com/"/>
-  <updated>2016-01-10T15:21:12.000Z</updated>
+  <updated>2016-01-24T08:42:03.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[襄阳出差]]></title>
+    <link href="http://code4cocoa.com/2016/01/24/%E8%A5%84%E9%98%B3%E5%87%BA%E5%B7%AE/"/>
+    <id>http://code4cocoa.com/2016/01/24/襄阳出差/</id>
+    <published>2016-01-24T08:40:51.000Z</published>
+    <updated>2016-01-24T08:42:03.000Z</updated>
+    <content type="html"><![CDATA[<p>今天襄阳出差，接近13个小时的火车。不得不说这是对我的一大挑战。</p>
+<p>说起坐火车的记忆，我还停留在好几年前，那个时候是坐火车回重庆老家，那个时候还不用实名制买票，还有慢车一说（就是每个车站，无论大小都会停的车），小车站的检票也不是太严格。经常有没买票的人混上车，被发现了的话，就主动打扫车上卫生，列车员倒也乐意。</p>
+<p>接近13小时的硬座，真是让人便秘（我是认真的o(╯□╰)o）。凌晨1点过的时候到了车站，打个车去酒店便呼呼大睡。</p>
+<p>7点起床，吃了个牛肉面，味道和老家相比的话，牛油味儿更重，面更劲道。</p>
+<p>客户那儿的培训，我主要参与答疑工作。不过对于国企的人员冗余，觉得比较蛋疼。一正职，两副职，三助理，真让人无语。客户对于同类软件比较有经验的，一针见血的指出了我们软件的不足，这也是不可辩驳的。</p>
+<p>上午的工作完成后，下午去了趟古隆中。古隆中比较让人失望，没什么好看的。整个景区也挺冷清的，没什么人。走了一下午，小腿痛得不行。</p>
+<p>晚上23点的火车，我们在火车站的德克士等了2个多小时。中间发生了一个小插曲，我一直问服务员有木有鸡米花，服务员说他们这叫魔法鸡块。买完之后我才想起，鸡米花是肯德基的o(╯□╰)o。</p>
+<p>登上火车便是埋头就睡，11半的时候到达成都，结束了这次出差。</p>
+<p>瞎扯吐槽完毕。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天襄阳出差，接近13个小时的火车。不得不说这是对我的一大挑战。</p>
+<p>说起坐火车的记忆，我还停留在好几年前，那个时候是坐火车回重庆老家，那个时候还不用实名制买票，还有慢车一说（就是每个车站，无论大小都会停的车），小车站的检票也不是太严格。经常有没买票的人混上车，被]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[1601随笔]]></title>
@@ -713,62 +738,6 @@ var airports= ["TYO": "Tokyo", "DUB": "Dublin"]
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
       <category term="手势" scheme="http://code4cocoa.com/tags/%E6%89%8B%E5%8A%BF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Swift学习笔记三]]></title>
-    <link href="http://code4cocoa.com/2014/10/26/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/"/>
-    <id>http://code4cocoa.com/2014/10/26/Swift学习笔记三/</id>
-    <published>2014-10-26T12:00:06.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<p>这一部分主要了解运算符，因为大部分编程语言的运算符都相似，所以在这里我只记录有Swift特色的运算符。</p>
-<p>###区间运算符###<br>Swift 提供了两个方便表达一个区间的值的运算符</p>
-<p>####闭区间运算符####<br>闭区间运算符（a…b）定义一个包含从a到b(包括a和b)的所有值的区间，b必须大于a。 ‌ 闭区间运算符在迭代一个区间的所有值时是非常有用的，如在for-in循环中</p>
-<pre><code>
-for index in 1...5  {
-println("\(index) * 5 = \(index * 5)")
-}
-// 1 * 5 = 5
-// 2 * 5 = 10
-// 3 * 5 = 15
-// 4 * 5 = 20
-// 5 * 5 = 25
-</code></pre>
-####半开区间运算符####
-半开区间（a..<b）定义一个从a到b但不包括b的区间。 之所以称为半开区间，是因为该区间包含第一个值而不包括最后的值。="" <pre=""><code>
-for index in 1...< 5  {
-println("\(index) * 5 = \(index * 5)")
-}
-// 1 * 5 = 5
-// 2 * 5 = 10
-// 3 * 5 = 15
-// 4 * 5 = 20
-</code>
-
-<p>###空合运算符###<br>空合运算符(a ?? b)将对可选类型a进行空判断，如果a包含一个值就进行解封，否则就返回一个默认值b.这个运算符有两个条件</p>
-<ul>
-<li>表达式a必须是Optional类型</li>
-<li>默认值b的类型必须要和a存储值的类型保持一致</li>
-</ul>
-<pre><code>
-let defaultColorName = "red"
-var userDefinedColorName:String?   //默认值为nil
-var colorNameToUse = userDefinedColorName ?? defaultColorName
-//userDefinedColorName的值为空 ，所以colorNameToUse的值为red
-</code></pre>
-
-<p>实际上该运算符我在C#中早已接触过，确实是非常好用，配合可空类型，使代码相当优雅。</p>
-</b）定义一个从a到b但不包括b的区间。>]]></content>
-    <summary type="html">
-    <![CDATA[<p>这一部分主要了解运算符，因为大部分编程语言的运算符都相似，所以在这里我只记录有Swift特色的运算符。</p>
-<p>###区间运算符###<br>Swift 提供了两个方便表达一个区间的值的运算符</p>
-<p>####闭区间运算符####<br>闭区间运算符（a…b）定]]>
-    </summary>
-    
-      <category term="Swift" scheme="http://code4cocoa.com/tags/Swift/"/>
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
   </entry>
   
