@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A Programer's Home]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://code4cocoa.com/"/>
-  <updated>2016-01-24T08:42:03.000Z</updated>
+  <updated>2016-02-21T10:27:31.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -13,6 +13,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[串行异步网络请求的简单实现]]></title>
+    <link href="http://code4cocoa.com/2016/02/21/%E4%B8%B2%E8%A1%8C%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://code4cocoa.com/2016/02/21/串行异步网络请求的简单实现/</id>
+    <published>2016-02-21T10:26:14.000Z</published>
+    <updated>2016-02-21T10:27:31.000Z</updated>
+    <content type="html"><![CDATA[<p>最近在项目中遇到这样一个场景 —— 客户端数据需要一条一条的上传给服务器，且上一条上传成功，才开始上传下一条，如果上一条上传失败，则整个上传终止。实质上这就是一个串行异步网络请求的过程(串行执行一个异步任务序列)。</p>
+<p><strong>方案一</strong></p>
+<p>使用递归实现，网络请求部分我这里使用AFNetworking，当然也可以用其他的库。</p>
+<script src="https://gist.github.com/yuxiangq/6bb4cf904a5e22b1187c.js"></script>
+
+<p><strong>方案二</strong></p>
+<p>使用NSOperationQueue，网络请求部分使用NSURLSession，自然也可以使用AFNetworking。</p>
+<script src="https://gist.github.com/yuxiangq/5a6fda885689df3ef4e6.js"></script>
+
+<p><strong>方案三</strong></p>
+<p>使用AFNetworking中，AFURLConnectionOperation的方法</p>
+<p><pre><code></code></pre></p>
+<ul>
+<li>(NSArray <em> )batchOfRequestOperations:(NSArray </em> )operations<br>progressBlock:(void ( ^ )(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock<br>completionBlock:(void ( ^ )(NSArray * operations))completionBlock<br><br>配合NSOperationQueue来进行，可以看做方案二的加强版。这里就不提供示例代码了。</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近在项目中遇到这样一个场景 —— 客户端数据需要一条一条的上传给服务器，且上一条上传成功，才开始上传下一条，如果上一条上传失败，则整个上传终止。实质上这就是一个串行异步网络请求的过程(串行执行一个异步任务序列)。</p>
+<p><strong>方案一</strong></]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
+    
+      <category term="串行请求" scheme="http://code4cocoa.com/tags/%E4%B8%B2%E8%A1%8C%E8%AF%B7%E6%B1%82/"/>
+    
+      <category term="异步" scheme="http://code4cocoa.com/tags/%E5%BC%82%E6%AD%A5/"/>
+    
+      <category term="请求队列" scheme="http://code4cocoa.com/tags/%E8%AF%B7%E6%B1%82%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[襄阳出差]]></title>
@@ -676,68 +713,6 @@ var airports= ["TYO": "Tokyo", "DUB": "Dublin"]
       <category term="Swift" scheme="http://code4cocoa.com/tags/Swift/"/>
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[手势的使用]]></title>
-    <link href="http://code4cocoa.com/2014/11/19/%E6%89%8B%E5%8A%BF%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://code4cocoa.com/2014/11/19/手势的使用/</id>
-    <published>2014-11-19T10:02:16.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<p>iOS让人着迷的地方之一，就是无与伦比的手势操作。记得大学时第一次看到双指缩放图片时的惊奇，以至于玩图片库可以玩一节课。在这里我收集整理一下手势的用法。</p>
-<p>iOS中，与手势相关的类继承自UIKit中的UIGestureRecognizer类，它是一个<a href="https://en.wikipedia.org/wiki/Abstract_type" target="_blank" rel="external">抽象类</a>，定义了所有手势的基本行为，iOS支持的所有基础手势如下：</p>
-<ul>
-<li>UITapGestureRecognizer 拍击，任意次数的拍击。</li>
-<li>UIPinchGestureRecognizer 向里或向外捏，用于缩放。</li>
-<li>UIPanGestureRecognizer 拖拽。</li>
-<li>UISwipeGestureRecognizer 任意方法的擦碰。</li>
-<li>UIRotationGestureRecognizer 旋转，比如旋转照片。</li>
-<li>UILongPressGestureRecognizer 长按。</li>
-</ul>
-<p>####UITapGestureRecognizer####<br>这是我个人用得比较多的一个手势，主要是给没有点击事件的控件添加单击事件。比如给UIImageView添加单击功能。</p>
-<script src="https://gist.github.com/yuxiangq/b56b55a42585a8a18d0f.js"></script>
-
-<p><strong>setNumberOfTapsRequired</strong> 方法设置拍击几次响应。<br><strong>setNumberOfTouchesRequired</strong> 方法设置几个手指拍击。</p>
-<p>####UILongPressGestureRecognizer####<br>长按手势就我个人而言，用得次多的手势。主要用于一些隐藏得，有明确指向目标的逻辑触发。</p>
-<script src="https://gist.github.com/yuxiangq/4dfeebc687b459b629bc.js"></script>
-
-<p>####UISwipeGestureRecognizer和UIPanGestureRecognizer####<br>擦碰手势和拖动手势有很相似的地方，所以有些童鞋弄得不是很清楚，所以放到一起将。<br>擦碰手势，分上下左右四个方向，它只是侦测你手指在屏幕上轻扫的方向，然后进行一些功能。</p>
-<script src="https://gist.github.com/yuxiangq/ad389e9c32eaec44fc78.js"></script>
-
-<p>拖动手势UIPanGestureRecognizer与擦碰手势有个最大的区别是，拖动手势手指始终要在屏幕上。而擦碰手势，手指最后是离开屏幕的。</p>
-<script src="https://gist.github.com/yuxiangq/f166cf725ce21cb78f95.js"></script>
--(CGPoint)translationInView:(UIView *)view 方法返回拖动的距离，传入的view是参照物。
--(CGPoint)velocityInView:(UIView *)view 方法返回拖动的速度，传入的view是参照物。
-
-####UIPinchGestureRecognizer和UIRotationGestureRecognizer####
-这两个手势我都没有使用过o(╯□╰)o
-<script src="https://gist.github.com/yuxiangq/af83a2477e014f5f79b9.js"></script>
-<script src="https://gist.github.com/yuxiangq/de8a69b4873c4b02be32.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>iOS让人着迷的地方之一，就是无与伦比的手势操作。记得大学时第一次看到双指缩放图片时的惊奇，以至于玩图片库可以玩一节课。在这里我收集整理一下手势的用法。</p>
-<p>iOS中，与手势相关的类继承自UIKit中的UIGestureRecognizer类，它是一个<a hre]]>
-    </summary>
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
-      <category term="手势" scheme="http://code4cocoa.com/tags/%E6%89%8B%E5%8A%BF/"/>
     
   </entry>
   

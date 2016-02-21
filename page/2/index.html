@@ -82,6 +82,74 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2014/12/14/UICollectionViewController的用法/" title="UICollectionViewController的用法" itemprop="url">UICollectionViewController的用法</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
+		
+  <p class="article-time">
+    <time datetime="2014-12-14T14:16:58.000Z" itemprop="datePublished"> Published 2014-12-14</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>UICollectionView和UICollectionViewController是iOS6中新增加的控件，主要用于复杂的布局。你可以简单的把它理解为Grid。<br>在最近的版本中，我在做表单界面的时候，放弃了UITableViewController，改用UICollectionViewController来进行布局，个人感觉挺好用的，在这里我简单给大家分享一下UICollectionViewController的用法。</p>
+<p><strong>首先请大家注意的是，记得为UICollectionView的collectionViewLayout属性设置UICollectionViewLayout的子类。否则是会报错的。</strong></p>
+<p>UICollectionView的使用方式与UITableView相比没有什么区别，都是DataSource为View提供数据源，告诉View要显示什么东西以及如何显示他们，Delegate提供一些样式的小细节及用户交互的响应。</p>
+<p><strong>初始化UICollectionView</strong></p>
+<p><script src="https://gist.github.com/yuxiangq/93fdc5d139747b410488.js"></script><br><strong>UICollectionViewDataSource回调方法</strong></p>
+<p><script src="https://gist.github.com/yuxiangq/0c5aa8c4dd9ebc97047a.js"></script><br>以上三个方法都是UICollectionViewDataSource的基本方法，这些方法在UITableViewDataSource中也是有的，所以使用起来难度不大。<br>另外我们需要注意的是控制Cell尺寸的方法并不在UIcollectionViewDelegate的回调中，而是在UICollectionViewDelegateFlowLayout中</p>
+<pre><code>
+- (CGSize)collectionView:(UICollectionView * )collectionView layout:(UICollectionViewLayout* )collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * )indexPath;
+</code></pre>
+
+<p>关于UICollectionView中的Supplementary Views和Decoration Views我还没有用到。目前了解到的是Supplementary Views类似UITableView中的Header和Footer。Decoration Views用作背景展示。<br>因为UICollectionView比UITableView复杂得多，所以它的布局样式并不是通过Style来改变，而是通过UICollectionViewLayout，这也是UICollectionView的精髓所在。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/UICollectionViewController/">UICollectionViewController</a><a href="/tags/iOS/">iOS</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/12/14/UICollectionViewController的用法/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2014/12/05/关于如何学习一门新语言/" title="关于如何学习一门新语言" itemprop="url">关于如何学习一门新语言</a>
   </h1>
   <p class="article-author">By
@@ -1192,7 +1260,7 @@ listBox.Items.Add(txt);
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/iOS/" title="iOS">iOS<sup>16</sup></a></li>
+				<li><a href="/tags/iOS/" title="iOS">iOS<sup>17</sup></a></li>
 			
 		
 			
@@ -1252,23 +1320,23 @@ listBox.Items.Add(txt);
 			
 		
 			
+				<li><a href="/tags/学习/" title="学习">学习<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Mac-APP/" title="Mac APP">Mac APP<sup>1</sup></a></li>
 			
 		
 			
+				<li><a href="/tags/串行请求/" title="串行请求">串行请求<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/请求队列/" title="请求队列">请求队列<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/WebAPP/" title="WebAPP">WebAPP<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/行业发展/" title="行业发展">行业发展<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/自动布局/" title="自动布局">自动布局<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/UITableView/" title="UITableView">UITableView<sup>1</sup></a></li>
 			
 		
 		</ul>
