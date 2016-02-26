@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A Programer's Home]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://code4cocoa.com/"/>
-  <updated>2016-02-21T10:27:31.000Z</updated>
+  <updated>2016-02-26T13:53:40.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[离职季感悟]]></title>
+    <link href="http://code4cocoa.com/2016/02/26/%E7%A6%BB%E8%81%8C%E5%AD%A3%E6%84%9F%E6%82%9F/"/>
+    <id>http://code4cocoa.com/2016/02/26/离职季感悟/</id>
+    <published>2016-02-26T13:49:15.000Z</published>
+    <updated>2016-02-26T13:53:40.000Z</updated>
+    <content type="html"><![CDATA[<p>又到了一年一度的离职旺季，不幸的是我的项目组也有两位主力离职。作为他们的Leader，我虽然感到遗憾，但也挺他们感到高兴。遗憾的是，他们不能再陪着整个团队成长，同时因为他们的离开，我们产品这一两个月的研发进度也会受到影响。高兴的是，他们将去一个更高的平台磨练自己。</p>
+<p>今天有个同事面试回来告诉我，面试官问的很多问题，他都没有料到，都比较底层。就我们的产品开发来说，几乎不会用到。他回顾了一下这两年在团队中的开发情况，自己一手做出来的产品，在技术上真没有什么可以骄傲的地方，大部分时间其实就是处理业务逻辑，可以看出他比较失落。我得承认，我们做得这个产品确实不够高大上，技术上可以说都是很成熟的技术，技术门槛低。回头整理自己的知识体系，我也发现在产品的某个时间点开始，我们更多的时间是在处理业务了，初期开荒阶段，各种技术尝试，封装常用库，架构等等。产品进入平稳期后，更多的业务需求占据了开发日程，留给尝试各种技术的空间慢慢变少，自然会觉得自己的技术好像在某个时间点有了停滞。</p>
+<p>作为一名技术人，都梦想着自己能成为大牛，我也在向这这个方向努力。所以一直在尽量利用业余时间，尝试一些产品中没有使用的东西，或者新的技术。最近这段时间，自己也有迷惘，或许就是进入了瓶颈期。是的，每个IT人都会有瓶颈期，他们面对的方式也不一样。有得人在技术上遇到瓶颈期，于是就会选择转向别的方向，比如管理。有的人会慢慢的被磨掉耐心，怀疑自己的能力，从而变得平庸。有的人则会在某个时候，突破瓶颈，迎来技术的再一次快速提升。我是希望自己能迎来又一波技术的快速提升，从而实现自己做出一款牛B的梦想。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>又到了一年一度的离职旺季，不幸的是我的项目组也有两位主力离职。作为他们的Leader，我虽然感到遗憾，但也挺他们感到高兴。遗憾的是，他们不能再陪着整个团队成长，同时因为他们的离开，我们产品这一两个月的研发进度也会受到影响。高兴的是，他们将去一个更高的平台磨练自己。</p>
+]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[串行异步网络请求的简单实现]]></title>
@@ -667,52 +686,6 @@ b = temporaryA
       <category term="VPN" scheme="http://code4cocoa.com/tags/VPN/"/>
     
       <category term="翻墙" scheme="http://code4cocoa.com/tags/%E7%BF%BB%E5%A2%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Swift学习笔记四]]></title>
-    <link href="http://code4cocoa.com/2014/11/19/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/"/>
-    <id>http://code4cocoa.com/2014/11/19/Swift学习笔记四/</id>
-    <published>2014-11-19T13:42:23.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<p>Swift中的集合类型，数组和字典与Objective-C中相比，最大的不同就是<strong>类型安全</strong>。例如：如果我们创建了一个Int值类型的数组，我们就不能往其中插入任何不是Int类型的数据。</p>
-<pre><code>
-//我们创建一个人员数组。
-var employees : [String] = ["Jack","Mike"]
-</code></pre>
-实际上上面的数组我们利用Swift的推断特性，还可以写成这样
-<pre><code>
-var employees = ["Jack","Mike"]
-</code></pre>
-<pre><code>
-//创建一个空数组
-var array=Array<string>()
-//或者
-var array=[String]
-</string></code></pre>
-
-<p>count属性用于后去数组的Item数量。<br>isEmpty属性可以快速的检测count是否为0。<br>append方法可以用于追加新的数据项。<br>for-in用于遍历数组。<br>我们可以使用+操作符来组合两个相同类型的数组。</p>
-<p>字典在Swift中也是类型安全的，字典使用Dictionary<keytype, valuetype="">定义,其中KeyType是字典中键的数据类型，ValueType是字典中对应于这些键所存储值的数据类型。</keytype,></p>
-<p>KeyType的唯一限制就是可哈希的，这样可以保证它是独一无二的，所有的 Swift 基本类型（例如String，Int， Double和Bool）都是默认可哈希的，并且所有这些类型都可以在字典中当做键使用。</p>
-<pre><code>
-//定义机场的缩写和全称
-var airports: Dictionary<string, string=""> = ["TYO": "Tokyo", "DUB": "Dublin"]
-//或者这样定义
-var airports= ["TYO": "Tokyo", "DUB": "Dublin"]
-</string,></code></pre>
-
-<p><strong>如果集合遍历被定义为var，那么就是可变的。数组中的长度和其中的元素可以被修改，字典的长度和其中的元素也可以被修改。如果被定义为let，则不允许被修改。</strong></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Swift中的集合类型，数组和字典与Objective-C中相比，最大的不同就是<strong>类型安全</strong>。例如：如果我们创建了一个Int值类型的数组，我们就不能往其中插入任何不是Int类型的数据。</p>
-<pre><code>
-//我们创建一个人员数组。]]>
-    </summary>
-    
-      <category term="Swift" scheme="http://code4cocoa.com/tags/Swift/"/>
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
   </entry>
   
