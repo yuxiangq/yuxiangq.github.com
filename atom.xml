@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A Programer's Home]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://code4cocoa.com/"/>
-  <updated>2016-02-26T13:53:40.000Z</updated>
+  <updated>2016-03-04T16:58:43.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -13,6 +13,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[FunnelChartView漏斗控件]]></title>
+    <link href="http://code4cocoa.com/2016/03/05/FunnelChartView%E6%BC%8F%E6%96%97%E6%8E%A7%E4%BB%B6/"/>
+    <id>http://code4cocoa.com/2016/03/05/FunnelChartView漏斗控件/</id>
+    <published>2016-03-04T16:55:32.000Z</published>
+    <updated>2016-03-04T16:58:43.000Z</updated>
+    <content type="html"><![CDATA[<p>FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。</p>
+<p>一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：</p>
+<ul>
+<li>传一个FunnelChartModel列表。</li>
+<li>传一个NSNumber列表，一个UIColor列表。</li>
+</ul>
+<p>个人感觉还是似有不妥，另外控件的整体效果还不够精致，还需要更多的打磨。</p>
+<p>具体效果如果：<br><img src="https://raw.githubusercontent.com/yuxiangq/FunnelChartView/master/ScreenShots/Simulator%20Screen%20Shot%20Mar%203%2C%202016%2C%2022.50.16.png" alt=""></p>
+<p>使用示例：</p>
+<script src="https://gist.github.com/yuxiangq/2ff50e3cfd49c0568844.js"></script>
+
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。</p>
+<p>一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：</p>
+<ul>
+<li>传一个Funnel]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
+    
+      <category term="自定义控件" scheme="http://code4cocoa.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[离职季感悟]]></title>
@@ -665,27 +697,6 @@ b = temporaryA
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
       <category term="自动布局" scheme="http://code4cocoa.com/tags/%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[梯子推荐]]></title>
-    <link href="http://code4cocoa.com/2014/12/04/%E6%A2%AF%E5%AD%90%E6%8E%A8%E8%8D%90/"/>
-    <id>http://code4cocoa.com/2014/12/04/梯子推荐/</id>
-    <published>2014-12-04T07:10:04.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<p>作为IT从业者，好用的梯子可以说是必备之物。在这里我推荐<a href="http://honx.in/i/U6jd04Ko13KmmIiD" target="_blank" rel="external">红杏</a>。<br>它是一款Chrome、FireFox插件，相较于VPN等，使用简单方便，价格便宜(每月10元)，且不限流量。唯一的缺点是只能在浏览器上使用，当然他们的客服说目前正在开发不依赖浏览器的版本，很值得期待。</p>
-<p>PS:我一般是配合VPN使用的。只是在网上查查资料的话就用红杏足矣。如果涉及本地应用需要梯子，我用的是<a href="https://www.123ssh.net/" target="_blank" rel="external">123SSH</a>，价格比红杏略贵，配合GoAgent可以实现按规则翻墙，就是配置起来还是比较麻烦，不如红杏那么简单易用。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>作为IT从业者，好用的梯子可以说是必备之物。在这里我推荐<a href="http://honx.in/i/U6jd04Ko13KmmIiD" target="_blank" rel="external">红杏</a>。<br>它是一款Chrome、FireFox插件，相较]]>
-    </summary>
-    
-      <category term="GFW" scheme="http://code4cocoa.com/tags/GFW/"/>
-    
-      <category term="VPN" scheme="http://code4cocoa.com/tags/VPN/"/>
-    
-      <category term="翻墙" scheme="http://code4cocoa.com/tags/%E7%BF%BB%E5%A2%99/"/>
     
   </entry>
   

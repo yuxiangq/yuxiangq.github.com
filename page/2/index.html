@@ -78,6 +78,122 @@
 
    
     
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/01/01/Swift学习笔记五/" title="Swift学习笔记五" itemprop="url">Swift学习笔记五</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
+		
+  <p class="article-time">
+    <time datetime="2015-01-01T09:29:59.000Z" itemprop="datePublished"> Published 2015-01-01</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="u51FD_u6570_u7684_u5B9A_u4E49_u53CA_u8C03_u7528"><a href="#u51FD_u6570_u7684_u5B9A_u4E49_u53CA_u8C03_u7528" class="headerlink" title="函数的定义及调用"></a>函数的定义及调用</h1><p>我们使用func关键字来定义函数:</p>
+<pre><code>
+
+func test( / * 这里是函数参数，通常如此定义  parameter:String * / )->String{
+return "test"
+}
+
+test() //调用函数
+</code></pre>
+
+<h1 id="u9ED8_u8BA4_u53C2_u6570_u503C"><a href="#u9ED8_u8BA4_u53C2_u6570_u503C" class="headerlink" title="默认参数值"></a>默认参数值</h1><p>给函数的参数定义默认值的方式和C#是一样的:</p>
+<pre><code>
+func test(s:string= "defaultValue")->String {
+return s;//如果s没有传值，则会返回defaultValue
+}
+</code></pre>
+
+<h1 id="u53EF_u53D8_u53C2_u6570"><a href="#u53EF_u53D8_u53C2_u6570" class="headerlink" title="可变参数"></a>可变参数</h1><p>用来输入不确定数量的参数，但是参数的类型必须一致:</p>
+<pre><code>
+func test(numbers:Double...)->Double {
+var total: Double = 0
+for number in numbers {
+total += number
+}
+return total
+}
+</code></pre>
+**注意:一个函数至多能有一个可变参数，而且它必须是参数表中最后的一个。这样做是为了避免函数调用时出现歧义。**
+
+# 常量参数和变量参数
+这是要注意的是，函数中默认的参数为常量参数是不可以被重新赋值的。变量参数则需要显示定义。
+<pre><code>
+func test(s:String)->String{
+s="test" //这里会报错，参数s为常量参数，不能被重新赋值
+return s
+}
+
+func test(/ * 显示定位为变量 * /var s:String)->String{
+s="test" //正常
+return s
+}
+</code></pre>
+**注意： 对变量参数所进行的修改在函数调用结束后便消失了，并且对于函数体外是不可见的。变量参数仅仅存在于函数调用的生命周期中。**
+
+# 输入输出参数
+这个和C#中的**ref,out**是类似的。如果你需要一个参数能在函数体内被修改，并且在函数调用结束后修改仍然存在，就需要使用**inout**关键字来定义参数。
+<pre><code>
+//交换两个变量的值
+func swapTwoInts(inout a: Int, inout b: Int) {
+let temporaryA = a
+a = b
+b = temporaryA
+}
+</code></pre>
+
+<h1 id="u51FD_u6570_u7C7B_u578B"><a href="#u51FD_u6570_u7C7B_u578B" class="headerlink" title="函数类型"></a>函数类型</h1><p>函数其实就是C#中的委托类型，也就是我们所说的函数指针。当然它相较于函数指针是类型安全的。</p>
+<p><pre><code><br>func addTwoInts(a: Int, b: Int) -&gt; Int {<br>return a + b<br>}</code></pre></p>
+<p>var mathFunction: (Int, Int) -&gt; Int = addTwoInts //mathFunction就是指向addTowInts函数的变量<br><br>如果我们要用一个变量来表示addTowInts这个函数，那么这个变量的类型就是<strong>(Int, Int) -&gt; Int</strong>，可以读作“这个函数类型，它有两个 Int 型的参数并返回一个 Int 型的值。”。<br>函数类型也是可以作为函数参数或函数返回值的。</p>
+<h1 id="u5D4C_u5957_u51FD_u6570"><a href="#u5D4C_u5957_u51FD_u6570" class="headerlink" title="嵌套函数"></a>嵌套函数</h1><p>默认情况下，嵌套函数是对外界不可见的，但是可以被他们封闭函数（enclosing function）来调用。一个封闭函数也可以返回它的某一个嵌套函数，使得这个函数可以在其他域中被使用。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Swfit/">Swfit</a><a href="/tags/iOS/">iOS</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/01/01/Swift学习笔记五/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
     <article class="post-expand near" itemprop="articleBody"> 
         <header class="article-info clearfix">
   <h1 itemprop="name">
@@ -1321,7 +1437,7 @@ listBox.Items.Add(txt);
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/iOS/" title="iOS">iOS<sup>17</sup></a></li>
+				<li><a href="/tags/iOS/" title="iOS">iOS<sup>18</sup></a></li>
 			
 		
 			
@@ -1341,7 +1457,7 @@ listBox.Items.Add(txt);
 			
 		
 			
-				<li><a href="/tags/GFW/" title="GFW">GFW<sup>1</sup></a></li>
+				<li><a href="/tags/自定义控件/" title="自定义控件">自定义控件<sup>2</sup></a></li>
 			
 		
 			

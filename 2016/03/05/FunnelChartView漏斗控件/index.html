@@ -4,26 +4,45 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>自学VB时的回忆 | Code4Cocoa</title>
+    <title>FunnelChartView漏斗控件 | Code4Cocoa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="YuxiangQ">
     
 
     
-    <meta name="description" content="前几天在知乎上看到一个问题——如果每天坚持用12个小时学习一门编程语言，一年下来，编程能力会达到什么程度？。其中轮子哥的回答，不禁让自己想起了初中时代学习VB的事情。
-说来惭愧，轮子哥初中时代学习VB，现在已是一方大牛，自己初中时代也买了本VB学习，现在还是一方码农，这就是命啊。家里初一的时候，买了第一台电脑，记得配置是赛扬445，内存128M，自己是爱不释手，各种折腾。慢慢自己折腾会了装系统，使">
+    <meta name="description" content="FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。
+一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：
+
+传一个FunnelChartModel列表。
+传一个NSNumber列表，一个UIColor列表。
+
+个人感觉还是似有不妥，另外控件的整体效果还不够精致，还需要更多的打磨。
+具体效果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自学VB时的回忆">
-<meta property="og:url" content="http://code4cocoa.com/2014/09/27/自学VB时的回忆/index.html">
+<meta property="og:title" content="FunnelChartView漏斗控件">
+<meta property="og:url" content="http://code4cocoa.com/2016/03/05/FunnelChartView漏斗控件/index.html">
 <meta property="og:site_name" content="Code4Cocoa">
-<meta property="og:description" content="前几天在知乎上看到一个问题——如果每天坚持用12个小时学习一门编程语言，一年下来，编程能力会达到什么程度？。其中轮子哥的回答，不禁让自己想起了初中时代学习VB的事情。
-说来惭愧，轮子哥初中时代学习VB，现在已是一方大牛，自己初中时代也买了本VB学习，现在还是一方码农，这就是命啊。家里初一的时候，买了第一台电脑，记得配置是赛扬445，内存128M，自己是爱不释手，各种折腾。慢慢自己折腾会了装系统，使">
-<meta property="og:updated_time" content="2015-12-15T11:18:15.000Z">
+<meta property="og:description" content="FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。
+一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：
+
+传一个FunnelChartModel列表。
+传一个NSNumber列表，一个UIColor列表。
+
+个人感觉还是似有不妥，另外控件的整体效果还不够精致，还需要更多的打磨。
+具体效果">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/FunnelChartView/master/ScreenShots/Simulator%20Screen%20Shot%20Mar%203%2C%202016%2C%2022.50.16.png">
+<meta property="og:updated_time" content="2016-03-04T16:58:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自学VB时的回忆">
-<meta name="twitter:description" content="前几天在知乎上看到一个问题——如果每天坚持用12个小时学习一门编程语言，一年下来，编程能力会达到什么程度？。其中轮子哥的回答，不禁让自己想起了初中时代学习VB的事情。
-说来惭愧，轮子哥初中时代学习VB，现在已是一方大牛，自己初中时代也买了本VB学习，现在还是一方码农，这就是命啊。家里初一的时候，买了第一台电脑，记得配置是赛扬445，内存128M，自己是爱不释手，各种折腾。慢慢自己折腾会了装系统，使">
+<meta name="twitter:title" content="FunnelChartView漏斗控件">
+<meta name="twitter:description" content="FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。
+一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：
+
+传一个FunnelChartModel列表。
+传一个NSNumber列表，一个UIColor列表。
+
+个人感觉还是似有不妥，另外控件的整体效果还不够精致，还需要更多的打磨。
+具体效果">
 <meta name="twitter:creator" content="@yuxiangq">
 
     
@@ -84,14 +103,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/09/27/自学VB时的回忆/" title="自学VB时的回忆" itemprop="url">自学VB时的回忆</a>
+      <a href="/2016/03/05/FunnelChartView漏斗控件/" title="FunnelChartView漏斗控件" itemprop="url">FunnelChartView漏斗控件</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
 		
   <p class="article-time">
-    <time datetime="2014-09-27T10:12:03.000Z" itemprop="datePublished"> Published 2014-09-27</time>
+    <time datetime="2016-03-04T16:55:32.000Z" itemprop="datePublished"> Published 2016-03-05</time>
     
   </p>
 </header>
@@ -104,9 +123,18 @@
 		
 		</div>
 		
-		<p>前几天在知乎上看到一个问题——<a href="http://www.zhihu.com/question/25526940/answer/31006493" target="_blank" rel="external">如果每天坚持用12个小时学习一门编程语言，一年下来，编程能力会达到什么程度？</a>。其中<a href="http://www.zhihu.com/people/vczh-the-wise" target="_blank" rel="external">轮子哥</a>的回答，不禁让自己想起了初中时代学习VB的事情。</p>
-<p>说来惭愧，轮子哥初中时代学习VB，现在已是一方大牛，自己初中时代也买了本VB学习，现在还是一方码农，这就是命啊。<br>家里初一的时候，买了第一台电脑，记得配置是赛扬445，内存128M，自己是爱不释手，各种折腾。慢慢自己折腾会了装系统，使用虚拟光驱，知道了什么是镜像，什么是快捷方式=。=，当然很大一部分时间实在网络上各种闲逛，还有玩经典的单机游戏和模拟器。当时很喜欢买的杂志是《模拟时代》和《模拟XX》(名字忘了。。。反正也是挺出名的)，因为自己是一个很热爱游戏的人，小学的时候就混迹于街机厅和PS游戏室，在电脑上发现了模拟器这个东西的时候真是如获至宝，天天玩得不亦乐乎。当时主要玩GBA模拟器，《火焰纹章 烈火之剑》《恶魔城》三作，我都是在上面通关的，当然还有CPS1&amp;2主板上的经典游戏。后来慢慢的很崇拜模拟器的作者，就很想自己学习编写模拟器，不过当时自己不知道怎么入门，于是在网上找资料，其实自己当时连HTML、C、VB这些的区别都不知道，就看论坛上得人们怎么说，学什么更好入门。后来自己就直接跑到新华书店，去计算机图书区看看有些什么书。先看了一本C语言，看着里面的Helloworld，着实提不起兴趣，和自己想想中的写出模拟器的语言相差很大。正好旁边放着一本Visual Basic 6.0程序设计，于是拿起来翻了翻，真是让我眼前一亮。第一篇的Helloword就是熟悉的窗体，这才是做模拟器的语言哎╮(╯▽╰)╭。于是果断将此书买回家，下了个VB开始弄，第一篇helloword我是将整个实例程序都敲了一遍，包括注释(当时我还不理解什么叫「注释」，以为是程序不可分割的一部分)。但是程序始终跑不起来，原因嘛，我相信初学编程的朋友都遇到过，就是符号全角和半角的问题。当时自己实在是二，还拿着书跑去学校问计算机课老师，结果老师表示也不懂，无奈放弃了。倘若在你初学的时候，身边有个有经验的人能点拨你一下，能取得事倍功半的效果。</p>
-<p>后来，这本书就这样静静得躺在了书柜里，偶尔被翻出来，学习一下，但是一直没能跨过入门那道坎。现在想来，自己那个时候自学的能力真是差劲，倘若能很好的利用网络资源的话，估计我的程序人生会提前一大步，哈哈。<br>考上大学的时候，义无反顾的选择了软件开发专业，虽然挺多人觉得这个专业的人滥大街了，所以很多同学选择了土木、生物等相关朝阳专业，不过对我而言，能做自己喜欢的事情才是最重要的。<br>大学报到的时候将那本书带去了学校，毕业以后又随我留在了工作的城市。不知可否成为一件传家宝，就这么传承下去。</p>
+		<p>FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。</p>
+<p>一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：</p>
+<ul>
+<li>传一个FunnelChartModel列表。</li>
+<li>传一个NSNumber列表，一个UIColor列表。</li>
+</ul>
+<p>个人感觉还是似有不妥，另外控件的整体效果还不够精致，还需要更多的打磨。</p>
+<p>具体效果如果：<br><img src="https://raw.githubusercontent.com/yuxiangq/FunnelChartView/master/ScreenShots/Simulator%20Screen%20Shot%20Mar%203%2C%202016%2C%2022.50.16.png" alt=""></p>
+<p>使用示例：</p>
+<script src="https://gist.github.com/yuxiangq/2ff50e3cfd49c0568844.js"></script>
+
+
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -115,7 +143,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/编程/">编程</a>
+  <span></span> <a href="/tags/iOS/">iOS</a><a href="/tags/自定义控件/">自定义控件</a>
   </div>
 
 </div>
@@ -124,7 +152,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://code4cocoa.com/2014/09/27/自学VB时的回忆/" data-title="自学VB时的回忆 | Code4Cocoa" data-tsina="null" class="share clearfix">
+	  <div data-url="http://code4cocoa.com/2016/03/05/FunnelChartView漏斗控件/" data-title="FunnelChartView漏斗控件 | Code4Cocoa" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -137,19 +165,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/10/12/Swift学习笔记一/" title="Swift学习笔记一">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Swift学习笔记一</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/09/05/关于指针及指针变量/"  title="关于指针及指针变量">
+<a href="/2016/02/26/离职季感悟/"  title="离职季感悟">
  <strong>下一篇：</strong><br/> 
- <span>关于指针及指针变量
+ <span>离职季感悟
 </span>
 </a>
 </div>
