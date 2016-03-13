@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A Programer's Home]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://code4cocoa.com/"/>
-  <updated>2016-03-04T16:58:43.000Z</updated>
+  <updated>2016-03-13T12:23:49.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -13,6 +13,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[蚂蚁金服技术开放日活动小记]]></title>
+    <link href="http://code4cocoa.com/2016/03/13/%E8%9A%82%E8%9A%81%E9%87%91%E6%9C%8D%E6%8A%80%E6%9C%AF%E5%BC%80%E6%94%BE%E6%97%A5%E6%B4%BB%E5%8A%A8%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://code4cocoa.com/2016/03/13/蚂蚁金服技术开放日活动小记/</id>
+    <published>2016-03-13T12:22:19.000Z</published>
+    <updated>2016-03-13T12:23:49.000Z</updated>
+    <content type="html"><![CDATA[<p>今天很开心的参加了蚂蚁金服技术开放日活动，非常感谢技术专家们的分享。这次活动的干货确实挺多的，在这里我简单总结下自己的收获。</p>
+<p><strong>团队拥有统一的技能</strong></p>
+<p>在团队建设方面，我受到的第一个启发就是让团队成员拥有统一的技能，这样能让整个团队变得更加高效。尤其是团队较小的时候，拥有更多的复合型人才，是团队的核心竞争力。这也是我后续团队建设工作中的重点。</p>
+<p><strong>DTP模型</strong> </p>
+<p>这是一个我在参加活动之前没有听过的名词，它表示分布式事务模型。分布式事务简单说来就是，跨越多个资源的保证数据一致性。</p>
+<p>其中，X/Open DTP是X/Open这个组织定义的一套分布式事务的标准，也就是了定义了规范和API接口。</p>
+<pre>
+X/Open DTP 定义了三个组件： AP，TM，RM。
+*AP(Application Programma)：应用程序，可以理解为使用DTP的程序。*
+*RM(Resource Manager)：资源管理器，应用程序通过资源管理器对资源进行控制。*
+*TM(Transaction Manager)：事务管理器，负责协调和管理事务，提供给AP应用程序编程接口以及管理资源管理器。* 
+</pre>
+
+<p><strong>最终一致性</strong></p>
+<p>我们在处理分布式事务的时候，最重要的就是保证数据的一致性。但是有些时候，我们却不得不在一致性上做出妥协。当然，在一致性上进行妥协，并不是完全不管数据的一致性，否则数据是混乱的，所以我们要保证数据的最终一致性。</p>
+<p><strong>蓝绿发布</strong></p>
+<p>这个是我一致想在现有产品中做到的，但是在这之前不知道有这么一个专有名词。蓝绿发布的意义在于，整个发布过程中，用户不会感受到任何宕机或者服务重启。</p>
+<p><strong>灰度发布</strong></p>
+<p>灰度发布是指在黑与白之间，能够平滑过渡的一种发布方式。AB test就是一种灰度发布方式，让一部分用户继续用A，一部分用户开始用B，如果用户对B没有什么反对意见，那么逐步扩大范围，把所有用户都迁移到B上面来。灰度发布可以保证整体系统的稳定，在初始灰度的时候就可以发现、调整问题，以保证其影响度。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天很开心的参加了蚂蚁金服技术开放日活动，非常感谢技术专家们的分享。这次活动的干货确实挺多的，在这里我简单总结下自己的收获。</p>
+<p><strong>团队拥有统一的技能</strong></p>
+<p>在团队建设方面，我受到的第一个启发就是让团队成员拥有统一的技能，这]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[FunnelChartView漏斗控件]]></title>
@@ -663,40 +699,6 @@ b = temporaryA
       <category term="学习" scheme="http://code4cocoa.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="编程" scheme="http://code4cocoa.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[VFL布局学习]]></title>
-    <link href="http://code4cocoa.com/2014/12/04/VFL%E5%B8%83%E5%B1%80%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://code4cocoa.com/2014/12/04/VFL布局学习/</id>
-    <published>2014-12-04T15:17:14.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<p>随着iPhone6及iPhone6+的发布，适配大屏幕也提上了日程。有些童鞋习惯用xib配合iOS6时出现的autolayout进行界面的布局，但是我个人觉得xib实在是有点难用，特别是在macbook的小屏幕上，觉得xib要配一个大屏幕用起来才爽。还有就是用过Visual Studio的可视化编程后，始终觉得xib的易用性不够好。大屏幕又不得不适配，怎么办呢，如果像以前那样算坐标的话倒是也行，但毕竟比较繁琐，又不想用xib，那就只好用<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage/VisualFormatLanguage.html" target="_blank" rel="external">Visual Format Language</a>。</p>
-<p>初看VFL，肯定觉得莫名奇妙，给我的感觉就像第一次看到正则表达式的时候一样(个人以为VFL可比正则表达式简单多了)。不过VFL的符号比较少且简单，用2-3次估计就都记住了，大家可以看看上面官方文档的链接。我在这里简单介绍一下常用的符号表示的意思(我会用<strong>方引号(「」)</strong>将符号括起来)：</p>
-<p><strong>「V:」</strong>或<strong>「H:」</strong>分别表示垂直方向和水平方向。</p>
-<p><strong>「|」</strong>表示父视图。</p>
-<p><strong>「[loginButton]」</strong>表示一个名叫loginButton的视图</p>
-<p><strong>「H:|-10-[loginButton]-10-|」</strong> 表示 <strong>loginButton在水平方向左边距离父视图10，右边距离父视图也是10</strong>。</p>
-<p><strong>「H:|-15-[buttonOne(80)]-5-[buttonTwo(90)]」</strong> 表示<strong>buttonOne在水平方向左边距离父视图是15，本身宽度是80，右边与buttonTwo的距离为5，buttonTwo的宽度为90</strong>。</p>
-<p>以上这些就是常用的符号，掌握着几种最基本的也足够我们进行大部分的界面布局了。<br>接下来我们简单写一个例子。我们假设大家都是有一定iOS编程基础的童鞋，所以怎么创建Single View Application这种事情就不罗嗦了，我们假设大家已经创建好了，接下来的我们将在View上添加一个Button，并用VFL来控制它的位置和大小。</p>
-<p><pre><code><br>//我们在这里创建一个Buton<br>-(void)viewDidLoad<br>{<br>[super viewDidLoad];<br>UIButton* button=[[UIButton alloc] init];</code></pre></p>
-<p>//切记在这里一定要将该属性设置为NO，否则View<br>//会按照以往的autoresizingMask进行计算。<br>button.translatesAutoresizingMaskIntoConstraints=NO;</p>
-<p>[button setTitle:@”测试” forState:UIControlStateNormal];<br>[self.view addSubview:button];<br>//当然，就这么执行程序是没有任何效果的，我们看不到Button出现在View上。</p>
-<p>//用于存储约束<br>NSMutableArray *constraints = [NSMutableArray array];</p>
-<p>//添加按钮的水平约束，意思是该按钮宽度90，距离父控件右边30。<br>[constraints<br>addObjectsFromArray:<br>[NSLayoutConstraint<br>constraintsWithVisualFormat:@”H:[button(90)]-30-|”<br>options:0<br>metrics:nil<br>views:NSDictionaryOfVariableBindings(<br>button)]];</p>
-<p>//添加按钮的垂直约束，意思是该按钮高度40，距离父控件上边100。<br>[constraints<br>addObjectsFromArray:<br>[NSLayoutConstraint<br>constraintsWithVisualFormat:@”V:|-100-[button(40)]”<br>options:0<br>metrics:nil<br>views:NSDictionaryOfVariableBindings(<br>button)]];</p>
-<p>//将约束添加到View中。<br>[self.view addConstraints:constraints];<br>}<br><br>看完例子有木有觉得很简单，很有趣？</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>随着iPhone6及iPhone6+的发布，适配大屏幕也提上了日程。有些童鞋习惯用xib配合iOS6时出现的autolayout进行界面的布局，但是我个人觉得xib实在是有点难用，特别是在macbook的小屏幕上，觉得xib要配一个大屏幕用起来才爽。还有就是用过Visual]]>
-    </summary>
-    
-      <category term="VFL" scheme="http://code4cocoa.com/tags/VFL/"/>
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
-      <category term="自动布局" scheme="http://code4cocoa.com/tags/%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80/"/>
     
   </entry>
   

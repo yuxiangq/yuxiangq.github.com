@@ -82,6 +82,82 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/03/13/蚂蚁金服技术开放日活动小记/" title="蚂蚁金服技术开放日活动小记" itemprop="url">蚂蚁金服技术开放日活动小记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-13T12:22:19.000Z" itemprop="datePublished"> Published 2016-03-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>今天很开心的参加了蚂蚁金服技术开放日活动，非常感谢技术专家们的分享。这次活动的干货确实挺多的，在这里我简单总结下自己的收获。</p>
+<p><strong>团队拥有统一的技能</strong></p>
+<p>在团队建设方面，我受到的第一个启发就是让团队成员拥有统一的技能，这样能让整个团队变得更加高效。尤其是团队较小的时候，拥有更多的复合型人才，是团队的核心竞争力。这也是我后续团队建设工作中的重点。</p>
+<p><strong>DTP模型</strong> </p>
+<p>这是一个我在参加活动之前没有听过的名词，它表示分布式事务模型。分布式事务简单说来就是，跨越多个资源的保证数据一致性。</p>
+<p>其中，X/Open DTP是X/Open这个组织定义的一套分布式事务的标准，也就是了定义了规范和API接口。</p>
+<pre>
+X/Open DTP 定义了三个组件： AP，TM，RM。
+*AP(Application Programma)：应用程序，可以理解为使用DTP的程序。*
+*RM(Resource Manager)：资源管理器，应用程序通过资源管理器对资源进行控制。*
+*TM(Transaction Manager)：事务管理器，负责协调和管理事务，提供给AP应用程序编程接口以及管理资源管理器。* 
+</pre>
+
+<p><strong>最终一致性</strong></p>
+<p>我们在处理分布式事务的时候，最重要的就是保证数据的一致性。但是有些时候，我们却不得不在一致性上做出妥协。当然，在一致性上进行妥协，并不是完全不管数据的一致性，否则数据是混乱的，所以我们要保证数据的最终一致性。</p>
+<p><strong>蓝绿发布</strong></p>
+<p>这个是我一致想在现有产品中做到的，但是在这之前不知道有这么一个专有名词。蓝绿发布的意义在于，整个发布过程中，用户不会感受到任何宕机或者服务重启。</p>
+<p><strong>灰度发布</strong></p>
+<p>灰度发布是指在黑与白之间，能够平滑过渡的一种发布方式。AB test就是一种灰度发布方式，让一部分用户继续用A，一部分用户开始用B，如果用户对B没有什么反对意见，那么逐步扩大范围，把所有用户都迁移到B上面来。灰度发布可以保证整体系统的稳定，在初始灰度的时候就可以发现、调整问题，以保证其影响度。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/随笔/">随笔</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/03/13/蚂蚁金服技术开放日活动小记/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/03/05/FunnelChartView漏斗控件/" title="FunnelChartView漏斗控件" itemprop="url">FunnelChartView漏斗控件</a>
   </h1>
   <p class="article-author">By
@@ -1098,75 +1174,9 @@ directionToHead = .North
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/01/12/NumberTextField/" title="NumberTextField" itemprop="url">NumberTextField</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-12T12:46:26.000Z" itemprop="datePublished"> Published 2015-01-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h1><p>这是我做的一个只能输入数字的控件。<br>可以限制输入的数字长度及小数点位数。</p>
-<h2 id="u4F7F_u7528_u65B9_u6CD5"><a href="#u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="使用方法"></a>使用方法</h2><p><script src="https://gist.github.com/yuxiangq/71a2ac1dabac7b4fa556.js"></script></p>
-<h3 id="u7279_u6027"><a href="#u7279_u6027" class="headerlink" title="特性"></a>特性</h3><ul>
-<li><p>去除数字前多余的0。例如，输入000123，当控件失去焦点，或者通过text获取值的时候，数字会被处理为123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/before.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/after.png" alt="image"></p>
-</li>
-<li><p>小数自动补0。例如，输入.123，当控件失去焦点，或者通过text获取值的时候，数字会处理为0.123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotbefore.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotafter.png" alt="image"></p>
-</li>
-</ul>
-<h3 id="u51FD_u6570"><a href="#u51FD_u6570" class="headerlink" title="函数"></a>函数</h3><p><pre><code><br>-(NSString*)trimText;<br></code></pre><br>调用该函数可以直接获取经过处理的数字。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/iOS/">iOS</a><a href="/tags/自定义控件/">自定义控件</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/01/12/NumberTextField/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
   </nav>
 
 </div>
@@ -1192,7 +1202,7 @@ directionToHead = .North
 			
 		
 			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>3</sup></a></li>
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>4</sup></a></li>
 			
 		
 			

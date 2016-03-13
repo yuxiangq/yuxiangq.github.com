@@ -82,6 +82,72 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/01/12/NumberTextField/" title="NumberTextField" itemprop="url">NumberTextField</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
+		
+  <p class="article-time">
+    <time datetime="2015-01-12T12:46:26.000Z" itemprop="datePublished"> Published 2015-01-12</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h1><p>这是我做的一个只能输入数字的控件。<br>可以限制输入的数字长度及小数点位数。</p>
+<h2 id="u4F7F_u7528_u65B9_u6CD5"><a href="#u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="使用方法"></a>使用方法</h2><p><script src="https://gist.github.com/yuxiangq/71a2ac1dabac7b4fa556.js"></script></p>
+<h3 id="u7279_u6027"><a href="#u7279_u6027" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><p>去除数字前多余的0。例如，输入000123，当控件失去焦点，或者通过text获取值的时候，数字会被处理为123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/before.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/after.png" alt="image"></p>
+</li>
+<li><p>小数自动补0。例如，输入.123，当控件失去焦点，或者通过text获取值的时候，数字会处理为0.123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotbefore.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotafter.png" alt="image"></p>
+</li>
+</ul>
+<h3 id="u51FD_u6570"><a href="#u51FD_u6570" class="headerlink" title="函数"></a>函数</h3><p><pre><code><br>-(NSString*)trimText;<br></code></pre><br>调用该函数可以直接获取经过处理的数字。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/iOS/">iOS</a><a href="/tags/自定义控件/">自定义控件</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/01/12/NumberTextField/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/01/01/Swift学习笔记五/" title="Swift学习笔记五" itemprop="url">Swift学习笔记五</a>
   </h1>
   <p class="article-author">By
@@ -1343,83 +1409,9 @@ CGContextRelease(destContext);
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/16/UITableViewCell的重用方法的区别/" title="UITableViewCell的重用方法的区别" itemprop="url">UITableViewCell的重用方法的区别</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-16T14:43:07.000Z" itemprop="datePublished"> Published 2014-08-16</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><strong>UITableView</strong>想必是iOS开发中最常用的控件。很多Apple自带的APP都使用了它，比如:<em>Phone</em>(该APP为典型得Tab结构,其中<em>Favorites</em>,<em>Recents</em>,<em>Contacts</em>都使用了<strong>UITableView</strong>)、<em>Messages</em>、<em>Mail</em>、<em>Settings</em>等等。</p>
-<p><strong>UITableView</strong>最基础的特性莫过于<strong>UITableVIewCell</strong>的重用。讲到这里不得不提我在实习的时候，负责的一个IM功能模块。当时在做聊天窗口的时候，用了ListView来显示聊天信息(这是基于.net平台的一个项目)，当收到聊天消息的时候我做的操作大致如下:</p>
-<pre><code>
-public void ReceiveMeesage(string text)
-{
-TextBox txt=new TextBox();
-txt.Text=text;
-listBox.Items.Add(txt);
-}
-</code></pre>
-
-<p>或许大家已经看出问题了，随着消息越来越多Item中的控件会越来越多，内存消耗会越来越大，非常影响程序效率。<br>实际上我们并不需要那么多TextBox，假设聊天窗口一次能够展示10条消息，那么实际上我们只需要12个TextBox就能满足展示需要。没错，只需要复用TextBox就行了。在第一个TextBox移除我们视线之后，再将其从后载入，显示新的消息即可。</p>
-<p><strong>UITableView</strong>中实现Cell的重用是非常方便的，关键是DataSource中的两个方法，如下:</p>
-<p><pre><code><br>-(id)dequeuReusableCellWithIdentifier:(NSString<em> )identifier;<br>-(id)dequeueReusableCellWithIdentifier:(NSString</em> )identifier forIndexPath:(NSIndexPath<em> )indexPath NS_AVAILABLE_IOS(6_0);<br></em></code></pre><br>后者为<strong>iOS6</strong>加入的方法，两个方法的区别为:<br><em>*前者有可能从队列中返回nil，尤其是第一次执行的时候，Queue中没有任何Cell，需要我们手动创建，如下</em>:</p>
-<p><pre><code><br>-(UITableViewCell <em> )tableView:(UITableView </em> )tableView cellForRowAtIndexPath:(NSIndexPath <em> )indexPath<br>{<br>static NSString </em> reuseIdentifier=@”cell”;<br>UITableViewCell <em> cell=[tableView dequeueReusableCellWithIdentifier:reuseIdentifier];<br>if(!cell)<br>{<br>//在这里创建UITableViewCell<br>}<br>//设置你的Cell<br>return cell;<br>}<br></em></code></pre><br><em>*后者则不需要我们手动创建Cell，只需要提前注册一个原型Cell即可，假如Queue中没有Cell，程序会用原型Cell帮我们创建好，也就是不会出现返回nil的情况，代码如下:</em></p>
-<p><pre><code><br>-(void)viewDidLoad<br>{<br>//初始化UITableView的时候注册原型Cell<br>UITableView <em> tableView=[[UITableView alloc] init];<br>//调用[tableView registerNib:(UINib </em>) forCellReuseIdentifier:(NSString <em>)];<br>//或tableView registerClass:(__unsafe_unretained Class) forCellReuseIdentifier:(NSString </em>)<br>//注册原型Cell<br>self.view=tableView;<br>}</code></pre></p>
-<p>-(UITableViewCell <em> )tableView:(UITableView </em> )tableView cellForRowAtIndexPath:(NSIndexPath <em> )indexPath<br>{<br>UITableViewCell </em> cell=[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:(NSIndexPath * )indexPath];<br>//设置你的Cell<br>return cell;<br>}<br><br>在这里推荐用第二种方法，特别是当界面中有多种Cell的情况下，第二种方法在逻辑上更清晰。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/UITableVIewCell/">UITableVIewCell</a><a href="/tags/iOS/">iOS</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/16/UITableViewCell的重用方法的区别/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
   </nav>
 
 </div>
@@ -1445,7 +1437,7 @@ listBox.Items.Add(txt);
 			
 		
 			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>3</sup></a></li>
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>4</sup></a></li>
 			
 		
 			

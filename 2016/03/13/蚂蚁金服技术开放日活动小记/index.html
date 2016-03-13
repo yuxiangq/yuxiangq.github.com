@@ -4,26 +4,35 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>UIImageView展示大图学习笔记 | Code4Cocoa</title>
+    <title>蚂蚁金服技术开放日活动小记 | Code4Cocoa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="YuxiangQ">
     
 
     
-    <meta name="description" content="UIImageView展示超大分辨率图片，我们主要通过Apple官方实例Large Image Downsizing来进行学习。
-官方实例中，用于展示的图片large_leaves_70mp.jpg，分辨率达到了惊人的7033 × 10110。要展示这么一张图片，我相信大家都能立即意识到，通过通常方法(imageView.image=image)是无法正常显示的。Apple的文档和实例给我了我们一">
+    <meta name="description" content="今天很开心的参加了蚂蚁金服技术开放日活动，非常感谢技术专家们的分享。这次活动的干货确实挺多的，在这里我简单总结下自己的收获。
+团队拥有统一的技能
+在团队建设方面，我受到的第一个启发就是让团队成员拥有统一的技能，这样能让整个团队变得更加高效。尤其是团队较小的时候，拥有更多的复合型人才，是团队的核心竞争力。这也是我后续团队建设工作中的重点。
+DTP模型 
+这是一个我在参加活动之前没有听过的名词，它表示">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UIImageView展示大图学习笔记">
-<meta property="og:url" content="http://code4cocoa.com/2014/08/30/UIImageView展示大图学习笔记/index.html">
+<meta property="og:title" content="蚂蚁金服技术开放日活动小记">
+<meta property="og:url" content="http://code4cocoa.com/2016/03/13/蚂蚁金服技术开放日活动小记/index.html">
 <meta property="og:site_name" content="Code4Cocoa">
-<meta property="og:description" content="UIImageView展示超大分辨率图片，我们主要通过Apple官方实例Large Image Downsizing来进行学习。
-官方实例中，用于展示的图片large_leaves_70mp.jpg，分辨率达到了惊人的7033 × 10110。要展示这么一张图片，我相信大家都能立即意识到，通过通常方法(imageView.image=image)是无法正常显示的。Apple的文档和实例给我了我们一">
-<meta property="og:updated_time" content="2015-12-15T10:55:33.000Z">
+<meta property="og:description" content="今天很开心的参加了蚂蚁金服技术开放日活动，非常感谢技术专家们的分享。这次活动的干货确实挺多的，在这里我简单总结下自己的收获。
+团队拥有统一的技能
+在团队建设方面，我受到的第一个启发就是让团队成员拥有统一的技能，这样能让整个团队变得更加高效。尤其是团队较小的时候，拥有更多的复合型人才，是团队的核心竞争力。这也是我后续团队建设工作中的重点。
+DTP模型 
+这是一个我在参加活动之前没有听过的名词，它表示">
+<meta property="og:updated_time" content="2016-03-13T12:23:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UIImageView展示大图学习笔记">
-<meta name="twitter:description" content="UIImageView展示超大分辨率图片，我们主要通过Apple官方实例Large Image Downsizing来进行学习。
-官方实例中，用于展示的图片large_leaves_70mp.jpg，分辨率达到了惊人的7033 × 10110。要展示这么一张图片，我相信大家都能立即意识到，通过通常方法(imageView.image=image)是无法正常显示的。Apple的文档和实例给我了我们一">
+<meta name="twitter:title" content="蚂蚁金服技术开放日活动小记">
+<meta name="twitter:description" content="今天很开心的参加了蚂蚁金服技术开放日活动，非常感谢技术专家们的分享。这次活动的干货确实挺多的，在这里我简单总结下自己的收获。
+团队拥有统一的技能
+在团队建设方面，我受到的第一个启发就是让团队成员拥有统一的技能，这样能让整个团队变得更加高效。尤其是团队较小的时候，拥有更多的复合型人才，是团队的核心竞争力。这也是我后续团队建设工作中的重点。
+DTP模型 
+这是一个我在参加活动之前没有听过的名词，它表示">
 <meta name="twitter:creator" content="@yuxiangq">
 
     
@@ -84,14 +93,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/08/30/UIImageView展示大图学习笔记/" title="UIImageView展示大图学习笔记" itemprop="url">UIImageView展示大图学习笔记</a>
+      <a href="/2016/03/13/蚂蚁金服技术开放日活动小记/" title="蚂蚁金服技术开放日活动小记" itemprop="url">蚂蚁金服技术开放日活动小记</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
 		
   <p class="article-time">
-    <time datetime="2014-08-30T14:23:07.000Z" itemprop="datePublished"> Published 2014-08-30</time>
+    <time datetime="2016-03-13T12:22:19.000Z" itemprop="datePublished"> Published 2016-03-13</time>
     
   </p>
 </header>
@@ -104,179 +113,25 @@
 		
 		</div>
 		
-		<p>UIImageView展示超大分辨率图片，我们主要通过Apple官方实例<a href="https://developer.apple.com/library/ios/samplecode/LargeImageDownsizing/Introduction/Intro.html" target="_blank" rel="external"><strong>Large Image Downsizing</strong></a>来进行学习。</p>
-<p>官方实例中，用于展示的图片<em>large_leaves_70mp.jpg</em>，分辨率达到了惊人的7033 × 10110。要展示这么一张图片，我相信大家都能立即意识到，通过通常方法(imageView.image=image)是无法正常显示的。Apple的文档和实例给我了我们一个很好的思路。</p>
-<p>针对这个问题，我们的Android工程师的解决方案是将图片按照屏幕分辨率进行等比裁剪。及针对7033 <em> 10110分辨率的图片为了在1280 </em> 720分辨率的手机上展示成功，至少会把原图裁剪为703 * 1011。这样可以大幅减少显示图片的内存消耗，基本解决了APP显示大图的问题。但是这样总会有不足，假设有款手机分辨率是1080P，但只有512MB ROM(这个例子比较极端)，那么上面那种按照屏幕分辨率的裁剪方式就会有问题，图片依然没法正确显示。Apple Sample中的做法是利用QuartzCore来进行绘制，并且将图片分割成多个Tile进行绘制。</p>
-<p>官方实例中，首先获取了原始图片的高度和宽度</p>
-<pre><code>
-/* 获取原始照片的宽度和高度 */
-sourceResolution.width = CGImageGetWidth(sourceImage.CGImage);
-sourceResolution.height = CGImageGetHeight(sourceImage.CGImage);
-</code></pre>
-[CGImageGetWidth和UIImage.size.width方法返回的结果都是一样的，照片宽有多少像素。前者效率更高。评论中有人提到并不一样，大家可以参考。主要分歧是UIImage.size.width是否受scale的影响](http://stackoverflow.com/questions/12954319/is-difference-between-cgimagegetwidthworkingimage-cgimage-and-workingimage-siz)
+		<p>今天很开心的参加了蚂蚁金服技术开放日活动，非常感谢技术专家们的分享。这次活动的干货确实挺多的，在这里我简单总结下自己的收获。</p>
+<p><strong>团队拥有统一的技能</strong></p>
+<p>在团队建设方面，我受到的第一个启发就是让团队成员拥有统一的技能，这样能让整个团队变得更加高效。尤其是团队较小的时候，拥有更多的复合型人才，是团队的核心竞争力。这也是我后续团队建设工作中的重点。</p>
+<p><strong>DTP模型</strong> </p>
+<p>这是一个我在参加活动之前没有听过的名词，它表示分布式事务模型。分布式事务简单说来就是，跨越多个资源的保证数据一致性。</p>
+<p>其中，X/Open DTP是X/Open这个组织定义的一套分布式事务的标准，也就是了定义了规范和API接口。</p>
+<pre>
+X/Open DTP 定义了三个组件： AP，TM，RM。
+*AP(Application Programma)：应用程序，可以理解为使用DTP的程序。*
+*RM(Resource Manager)：资源管理器，应用程序通过资源管理器对资源进行控制。*
+*TM(Transaction Manager)：事务管理器，负责协调和管理事务，提供给AP应用程序编程接口以及管理资源管理器。* 
+</pre>
 
-计算图片的总像素
-<pre><code>
-sourceTotalPixels = sourceResolution.width * sourceResolution.height;
-</code></pre>
-
-<p>计算未压缩的图片占用多大内存</p>
-<pre><code>
-sourceTotalMB = sourceTotalPixels / pixelsPerMB;
-</code></pre>
-
-<p>计算缩放比例</p>
-<pre><code>
-imageScale = destTotalPixels / sourceTotalPixels;
-</code></pre>
-
-<p>计算缩放后的宽度和高度，公式为 <strong>缩放后高度=原高度 * 缩放比例</strong></p>
-<pre><code>
-destResolution.width = (int)(sourceResolution.width * imageScale);
-destResolution.height = (int)(sourceResolution.height * imageScale);
-</code></pre>
-
-<p>接下来我们进行绘图工作,首先获取当前设备的色彩空间(色彩范围)。</p>
-<pre><code>
-CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-//计算缩放后的图片每一行的字节数。
-int bytesPerRow = bytesPerPixel * destResolution.width;
-</code></pre>
-
-<p>为需要显示的图片分配足够的像素空间。</p>
-<pre><code>
-void *destBitmapData = malloc(bytesPerRow * destResolution.height);
-</code></pre>
-
-<p><a href="http://blog.csdn.net/wangyuchun_799/article/details/7804809" target="_blank" rel="external">CGBitmapContextCreate函数参数详解</a></p>
-<pre><code>
-//创建输出图像的上下文
-destContext = CGBitmapContextCreate(
-destBitmapData/*输出图片需要的像素地址*/
-, destResolution.width/*输出图片的宽度*/
-, destResolution.height/*输出图片的高度*/
-, 8/*内存中像素的每个组件的位数.例如，对于32位像素格式和RGB 颜色空间，你应该将这个值设为8*/
-, bytesPerRow/*输出图片每行字节数*/
-, colorSpace/*当前设备色彩范围*/
-, kCGImageAlphaPremultipliedLast
-);
-</code></pre>
-
-<p>对需要展示的位图进行移动和缩放，是我们能够在屏幕上看清图片全貌。</p>
-<pre><code>
-//移动图片
-CGContextTranslateCTM(destContext, 0.0f, destResolution.height);
-//缩放图片
-CGContextScaleCTM(destContext, 1.0f, -1.0f);
-</code></pre>
-
-<p>虽然我们对超大图片进行了缩放，但是依然较大，特别是在绘制的时候，非常耗性能。所以Sample中的方法是将该图的绘制分成多个Tile来进行，在该Sample中这张图片被分成了14个Tile。sourceTile表示从原图上截取的Tile尺寸，destTile表示最终绘制到界面上的Tile尺寸。</p>
-<pre><code>
-//源Tile的宽度和原图一直
-sourceTile.size.width = sourceResolution.width;
-/ * 源Tile的高度等于 **Tile的总像素/Tile的宽度(因为我们从前面了解到，图片的总像素=高度 * 宽度)** Tile用于从原图中截取图片，经过转换变为目标Tile * /
-sourceTile.size.height = (int)(tileTotalPixels / sourceTile.size.width);
-NSLog(@"source tile size: %f x %f", sourceTile.size.width,
-sourceTile.size.height);
-sourceTile.origin.x = 0.0f;
-//目标Tile的高度和宽度
-destTile.size.width = destResolution.width;
-destTile.size.height = sourceTile.size.height * imageScale;
-destTile.origin.x = 0.0f;
-NSLog(@"dest tile size: %f x %f", destTile.size.width, destTile.size.height);
-// the source seem overlap is proportionate to the destination seem overlap.
-// this is the amount of pixels to overlap each tile as we assemble the ouput
-// image.
-sourceSeemOverlap = (int)((destSeemOverlap / destResolution.height) *
-sourceResolution.height);
-NSLog(@"dest seem overlap: %f, source seem overlap: %f", destSeemOverlap,
-sourceSeemOverlap);
-CGImageRef sourceTileImageRef;
-//获取迭代次数，用于表示需要几次读取绘制能将图片展示完毕。
-int iterations = (int)(sourceResolution.height / sourceTile.size.height);
-//剩余高度
-int remainder = (int)sourceResolution.height % (int)sourceTile.size.height;
-if (remainder)
-iterations++;
-// add seem overlaps to the tiles, but save the original tile height for y
-// coordinate calculations.
-float sourceTileHeightMinusOverlap = sourceTile.size.height;
-sourceTile.size.height += sourceSeemOverlap;
-destTile.size.height += destSeemOverlap;
-NSLog(@"beginning downsize. iterations: %d, tile height: %f, remainder "
-@"height: %d",
-iterations, sourceTile.size.height, remainder);
-//开始读取绘制图片
-for (int y = 0; y < iterations; ++y) {
-// create an autorelease pool to catch calls to -autorelease made within the
-// downsize loop.
-NSAutoreleasePool *pool2 = [[NSAutoreleasePool alloc] init];
-NSLog(@"iteration %d of %d", y + 1, iterations);
-//计算员Tile坐标
-sourceTile.origin.y = y * sourceTileHeightMinusOverlap + sourceSeemOverlap;
-//目标Tile坐标
-destTile.origin.y =
-(destResolution.height) -
-((y + 1) * sourceTileHeightMinusOverlap * imageScale + destSeemOverlap);
-// create a reference to the source image with its context clipped to the
-// argument rect.
-/ * 获取源图片的一部分，生成sourceTileImageRef，不要忘记一开始我们就将原图保存在了sourceImage.CGImage * /
-sourceTileImageRef =
-CGImageCreateWithImageInRect(sourceImage.CGImage, sourceTile);
-
-/ * 判断是否是最后一次迭代，并有剩余高度的图片，不能组成一个Tile * /
-if (y == iterations - 1 && remainder) {
-float dify = destTile.size.height;
-destTile.size.height = CGImageGetHeight(sourceTileImageRef) * imageScale;
-dify -= destTile.size.height;
-destTile.origin.y += dify;
-}
-//将获取到的源Tile按照目标Tile的尺寸绘制到界面上
-CGContextDrawImage(destContext, destTile, sourceTileImageRef);
-/* release the source tile portion pixel data. note,
-releasing the sourceTileImageRef doesn't actually release the tile portion
-pixel
-data that we just drew, but the call afterward does. */
-CGImageRelease(sourceTileImageRef);
-/* while CGImageCreateWithImageInRect lazily loads just the image data
-defined by the argument rect,
-that data is finally decoded from disk to mem when CGContextDrawImage is
-called. sourceTileImageRef
-maintains internally a reference to the original image, and that original
-image both, houses and
-caches that portion of decoded mem. Thus the following call to release the
-source image. */
-[sourceImage release];
-// free all objects that were sent -autorelease within the scope of this
-// loop.
-[pool2 drain];
-// we reallocate the source image after the pool is drained since UIImage
-// -imageNamed
-// returns us an autoreleased object.
-//判断绘制是否结束，如果没有则继续读取原图，进行后续绘制工作。
-if (y < iterations - 1) {
-sourceImage = [[UIImage alloc]
-initWithContentsOfFile:[[NSBundle mainBundle]
-pathForResource:kImageFilename
-ofType:nil]];
-[self performSelectorOnMainThread:@selector(updateScrollView:)
-withObject:nil
-waitUntilDone:YES];
-}
-}
-NSLog(@"downsize complete.");
-//将绘制完毕的图片在ScrollView进行展示
-[self performSelectorOnMainThread:@selector(initializeScrollView:)
-withObject:nil
-waitUntilDone:YES];
-// free the context since its job is done. destImageRef retains the pixel data
-// now.
-CGContextRelease(destContext);
-[pool drain];
-
-</code></pre>
-
-<p>该Sample本人看起来还是颇为吃力，只能边看边学。目前大致只能理解到这种程度。我在项目中展示大图的方式更简单暴力，先将图片下载，然后判断未压缩图片占用内存大小。如果超过预设大小，则直接将图片裁剪到预设大小以下再展示。没有采用Sample中的展示方案。//设置你的Cell<br>return cell;<br>}<br><br>在这里推荐用第二种方法，特别是当界面中有多种Cell的情况下，第二种方法在逻辑上更清晰。</p>
+<p><strong>最终一致性</strong></p>
+<p>我们在处理分布式事务的时候，最重要的就是保证数据的一致性。但是有些时候，我们却不得不在一致性上做出妥协。当然，在一致性上进行妥协，并不是完全不管数据的一致性，否则数据是混乱的，所以我们要保证数据的最终一致性。</p>
+<p><strong>蓝绿发布</strong></p>
+<p>这个是我一致想在现有产品中做到的，但是在这之前不知道有这么一个专有名词。蓝绿发布的意义在于，整个发布过程中，用户不会感受到任何宕机或者服务重启。</p>
+<p><strong>灰度发布</strong></p>
+<p>灰度发布是指在黑与白之间，能够平滑过渡的一种发布方式。AB test就是一种灰度发布方式，让一部分用户继续用A，一部分用户开始用B，如果用户对B没有什么反对意见，那么逐步扩大范围，把所有用户都迁移到B上面来。灰度发布可以保证整体系统的稳定，在初始灰度的时候就可以发现、调整问题，以保证其影响度。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -285,7 +140,7 @@ CGContextRelease(destContext);
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/UIImage/">UIImage</a><a href="/tags/iOS/">iOS</a>
+  <span></span> <a href="/tags/随笔/">随笔</a>
   </div>
 
 </div>
@@ -294,7 +149,7 @@ CGContextRelease(destContext);
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://code4cocoa.com/2014/08/30/UIImageView展示大图学习笔记/" data-title="UIImageView展示大图学习笔记 | Code4Cocoa" data-tsina="null" class="share clearfix">
+	  <div data-url="http://code4cocoa.com/2016/03/13/蚂蚁金服技术开放日活动小记/" data-title="蚂蚁金服技术开放日活动小记 | Code4Cocoa" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -307,19 +162,11 @@ CGContextRelease(destContext);
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/09/05/关于指针及指针变量/" title="关于指针及指针变量">
-  <strong>上一篇：</strong><br/>
-  <span>
-  关于指针及指针变量</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/08/16/UITableViewCell的重用方法的区别/"  title="UITableViewCell的重用方法的区别">
+<a href="/2016/03/05/FunnelChartView漏斗控件/"  title="FunnelChartView漏斗控件">
  <strong>下一篇：</strong><br/> 
- <span>UITableViewCell的重用方法的区别
+ <span>FunnelChartView漏斗控件
 </span>
 </a>
 </div>
