@@ -82,6 +82,103 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/02/01/Swift学习笔记六/" title="Swift学习笔记六" itemprop="url">Swift学习笔记六</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-01T14:02:12.000Z" itemprop="datePublished"> Published 2015-02-01</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>Swift中的枚举拥有很棒的特性，至少以前我是没有接触过的。</p>
+<p>####枚举语法####<br>使用<strong>enum</strong>关键字，并将其整个定义放在大括号内：</p>
+<pre><code>
+enum demo{
+//定义枚举相关类容
+}
+</code></pre>
+假设我们定义指南针的四个方向：
+<pre><code>
+enum CompassPoint {
+case North
+case South
+case East
+case West
+}
+</code></pre>
+一个枚举中被定义的值是枚举的**成员值**(或者**成员**)。
+**case**关键字表明新的一样关键字被定义。
+
+多个成员值也可以出现在同一行上，用逗号隔开：
+<pre><code>
+enum CompassPoint {
+case North,South,East,West
+}
+
+//使用方法
+var directionToHead = CompassPoint.West
+directionToHead = .North
+</code></pre>
+
+<blockquote>
+<p>注意：<br>不像 C 和 Objective-C 一样，Swift 的枚举成员在被创建时不会被赋予一个默认的整数值。在上面的CompassPoints例子中，North，South，East和West不是隐式的等于0，1，2和3。相反的，这些不同的枚举成员在CompassPoint的一种显示定义中拥有各自不同的值。</p>
+</blockquote>
+<p>####相关值####<br>Swift的枚举可以存储任何类型的相关值，如果需要的话每个成员的数据类型是可以不同的。</p>
+<p>比如我们可以定义两种商品条码的枚举：</p>
+<p><pre><code><br>enum Barcode {<br>case UPCA(Int, Int, Int)<br>case QRCode(String)<br>}<br></code></pre><br>然后可以使用任何一种条码类型创建新的条码：</p>
+<p><pre><code><br>var productBarcode = Barcode.UPCA(8, 85909_51226, 3)<br>productBarcode = .QRCode(“ABCDEFGHIJKLMNOP”)<br>//使用Switch-case<br>switch productBarcode {<br>case .UPCA(let numberSystem, let identifier, let check):<br>println(“UPC-A with value of (numberSystem), (identifier), (check).”)<br>case .QRCode(let productCode):<br>println(“QR code with value of (productCode).”)<br>}<br></code></pre></p>
+<p>####原始值####<br>作为相关值的替代，枚举成员可以被默认值（称为原始值）预先填充，其中这些原始值具有相同的类型。</p>
+<p>这是一个枚举成员存储原始ASCII的例子：</p>
+<p><pre><code><br>enum ASCIIControlCharacter: Character {<br>case Tab = “\t”<br>case LineFeed = “\n”<br>case CarriageReturn = “\r”<br>}<br></code></pre><br>原始值可以是字符串，字符，或者任何整型值或浮点型值。每个原始值在它的枚举声明中必须是唯一的。当整型值被用于原始值，如果其他枚举成员没有值时，它们会自动递增。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Swift/">Swift</a><a href="/tags/iOS/">iOS</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/02/01/Swift学习笔记六/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/01/25/Pocket、Instapaper、Readability的比较/" title="Pocket、Instapaper、Readability的比较" itemprop="url">Pocket、Instapaper、Readability的比较</a>
   </h1>
   <p class="article-author">By
@@ -1199,66 +1296,6 @@ let http404Error = (404, "Not Found")
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/09/05/关于指针及指针变量/" title="关于指针及指针变量" itemprop="url">关于指针及指针变量</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
-		
-  <p class="article-time">
-    <time datetime="2014-09-05T14:39:16.000Z" itemprop="datePublished"> Published 2014-09-05</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>我在刚学习C语言的时候，一直不能很好的理解<strong>指针</strong>和<strong>指针变量</strong>(再加上神马函数指针，指针函数，指针的指针，有木有觉得绕晕了？o(╯□╰)o)。后来慢慢的有点感觉了，想到一种巧妙的理解方式。</p>
-<p>大家都用过Windos系统(废话o(╯□╰)o)，Windows桌面上都会有快捷方式(想起小时候还做过蠢事。那个时候初一，家里买了电脑，自己去网吧拷游戏玩。将桌面上所有游戏拷到一个U盘里面，当然全是快捷方式，当时还在纳闷为啥游戏拷得那么快。。。。太糗了)，快捷方式并不是真正的程序，而是指向程序的一个变量(图标)。快捷方式就像指针变量，他保存的是指针(程序在硬盘上的真实地址)，通过它我们能找到硬盘上真正的程序并且运行。</p>
-<p>现在有木有一种豁然开朗的感觉?另外刚学C语言的时候，我们老师说可以将书中出现的<strong>指针</strong>替换为<strong>地址</strong>，这样就能更好的理解，比如<strong>函数指针</strong>等于<strong>函数地址</strong>，<strong>指针函数</strong>等于<strong>地址函数</strong>(感觉比较怪，即该函数的返回值为地址)。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/指针/">指针</a><a href="/tags/指针变量/">指针变量</a><a href="/tags/程序/">程序</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/09/05/关于指针及指针变量/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
@@ -1279,7 +1316,7 @@ let http404Error = (404, "Not Found")
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/iOS/" title="iOS">iOS<sup>19</sup></a></li>
+				<li><a href="/tags/iOS/" title="iOS">iOS<sup>20</sup></a></li>
 			
 		
 			
@@ -1327,6 +1364,10 @@ let http404Error = (404, "Not Found")
 			
 		
 			
+				<li><a href="/tags/Eventkit/" title="Eventkit">Eventkit<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/程序/" title="程序">程序<sup>1</sup></a></li>
 			
 		
@@ -1343,19 +1384,15 @@ let http404Error = (404, "Not Found")
 			
 		
 			
-				<li><a href="/tags/异步/" title="异步">异步<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/Mac-APP/" title="Mac APP">Mac APP<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/请求队列/" title="请求队列">请求队列<sup>1</sup></a></li>
+				<li><a href="/tags/串行请求/" title="串行请求">串行请求<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/WebAPP/" title="WebAPP">WebAPP<sup>1</sup></a></li>
+				<li><a href="/tags/请求队列/" title="请求队列">请求队列<sup>1</sup></a></li>
 			
 		
 		</ul>

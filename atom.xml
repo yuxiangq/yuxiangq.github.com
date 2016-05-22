@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A Programer's Home]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://code4cocoa.com/"/>
-  <updated>2016-04-18T16:26:09.000Z</updated>
+  <updated>2016-05-22T15:34:50.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[如何创建Event]]></title>
+    <link href="http://code4cocoa.com/2016/05/22/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAEvent/"/>
+    <id>http://code4cocoa.com/2016/05/22/如何创建Event/</id>
+    <published>2016-05-22T15:33:07.000Z</published>
+    <updated>2016-05-22T15:34:50.000Z</updated>
+    <content type="html"><![CDATA[<p>因项目中有一个日程功能，个人认为和iOS中日历的事件(还有另一个东西叫提醒)挺相似的，于是决定将其数据和与系统日历事件同步，这样可以利用系统日历事件的提醒功能。</p>
+<pre>
+**日历事件：**主要是时间为线索，将所有事件组织起来，事件或者说是行程安排是有时间先后顺序的。
+**提醒事项：**功能和日历中的添加事件很相似，最大的不同在与条目的组织形式。提醒事项里的条目不再以时间顺序排列，而是可以对条目性质进行分类，如分成生活、工作、学习等等。或者也可以根据项目进行分类，且条目可以设置紧急程度。
+**总结：**日历事件适合安排行程，提醒事项适用于项目的任务管理。</pre>
+
+<ul>
+<li>引入EventKit.framework。</li>
+<li>创建EKEventStore<br><pre>EKEventStore用于从用户的日历数据库中获取、创建、编辑和删除事件。</pre><script src="https://gist.github.com/yuxiangq/0741cd8a55832830e252cf12696699ad.js"></script></li>
+<li>创建CalendarEvent<script src="https://gist.github.com/yuxiangq/f24490a827342d04f12138c9d8e5c22c.js"></script>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>因项目中有一个日程功能，个人认为和iOS中日历的事件(还有另一个东西叫提醒)挺相似的，于是决定将其数据和与系统日历事件同步，这样可以利用系统日历事件的提醒功能。</p>
+<pre>
+**日历事件：**主要是时间为线索，将所有事件组织起来，事件或者说是行程安排是有时间先后顺序]]>
+    </summary>
+    
+      <category term="Eventkit" scheme="http://code4cocoa.com/tags/Eventkit/"/>
+    
+      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[OC中的泛型]]></title>
@@ -672,34 +703,6 @@ b = temporaryA
     </summary>
     
       <category term="Mac APP" scheme="http://code4cocoa.com/tags/Mac-APP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[UICollectionViewController的用法]]></title>
-    <link href="http://code4cocoa.com/2014/12/14/UICollectionViewController%E7%9A%84%E7%94%A8%E6%B3%95/"/>
-    <id>http://code4cocoa.com/2014/12/14/UICollectionViewController的用法/</id>
-    <published>2014-12-14T14:16:58.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<p>UICollectionView和UICollectionViewController是iOS6中新增加的控件，主要用于复杂的布局。你可以简单的把它理解为Grid。<br>在最近的版本中，我在做表单界面的时候，放弃了UITableViewController，改用UICollectionViewController来进行布局，个人感觉挺好用的，在这里我简单给大家分享一下UICollectionViewController的用法。</p>
-<p><strong>首先请大家注意的是，记得为UICollectionView的collectionViewLayout属性设置UICollectionViewLayout的子类。否则是会报错的。</strong></p>
-<p>UICollectionView的使用方式与UITableView相比没有什么区别，都是DataSource为View提供数据源，告诉View要显示什么东西以及如何显示他们，Delegate提供一些样式的小细节及用户交互的响应。</p>
-<p><strong>初始化UICollectionView</strong></p>
-<p><script src="https://gist.github.com/yuxiangq/93fdc5d139747b410488.js"></script><br><strong>UICollectionViewDataSource回调方法</strong></p>
-<p><script src="https://gist.github.com/yuxiangq/0c5aa8c4dd9ebc97047a.js"></script><br>以上三个方法都是UICollectionViewDataSource的基本方法，这些方法在UITableViewDataSource中也是有的，所以使用起来难度不大。<br>另外我们需要注意的是控制Cell尺寸的方法并不在UIcollectionViewDelegate的回调中，而是在UICollectionViewDelegateFlowLayout中</p>
-<pre><code>
-- (CGSize)collectionView:(UICollectionView * )collectionView layout:(UICollectionViewLayout* )collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * )indexPath;
-</code></pre>
-
-<p>关于UICollectionView中的Supplementary Views和Decoration Views我还没有用到。目前了解到的是Supplementary Views类似UITableView中的Header和Footer。Decoration Views用作背景展示。<br>因为UICollectionView比UITableView复杂得多，所以它的布局样式并不是通过Style来改变，而是通过UICollectionViewLayout，这也是UICollectionView的精髓所在。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>UICollectionView和UICollectionViewController是iOS6中新增加的控件，主要用于复杂的布局。你可以简单的把它理解为Grid。<br>在最近的版本中，我在做表单界面的时候，放弃了UITableViewController，改用UICol]]>
-    </summary>
-    
-      <category term="UICollectionViewController" scheme="http://code4cocoa.com/tags/UICollectionViewController/"/>
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
   </entry>
   
