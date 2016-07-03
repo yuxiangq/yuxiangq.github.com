@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A Programer's Home]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://code4cocoa.com/"/>
-  <updated>2016-05-22T15:34:50.000Z</updated>
+  <updated>2016-07-03T15:43:29.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[一大早被DDoS。。。。。]]></title>
+    <link href="http://code4cocoa.com/2016/07/03/%E4%B8%80%E5%A4%A7%E6%97%A9%E8%A2%ABDDoS%E3%80%82%E3%80%82%E3%80%82%E3%80%82%E3%80%82/"/>
+    <id>http://code4cocoa.com/2016/07/03/一大早被DDoS。。。。。/</id>
+    <published>2016-07-03T15:41:46.000Z</published>
+    <updated>2016-07-03T15:43:29.000Z</updated>
+    <content type="html"><![CDATA[<p>今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。</p>
+<p>这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？同时立马摸出电脑，远程登录服务器，查看服务——正常，查看数据库服务——正常，查看系统日志——无异常。o(╯□╰)o，立马重启服务，再试，没有效果。这时心中突然有了不好的预感，难道被DDoS了？查看阿里云控制台，果然不出所料，DDoS攻击触发了流量清洗(流量清洗指过滤掉异常流量，保证服务器的正常运行。当然阿里云的流量清洗估计因为算法问题，将我们的正常访问也清洗掉了)，APP的请求都被阿里云重定向了。</p>
+<p>当下联系阿里云客服，客服告知目前的情况有两个选择，1.购买阿里云高防服务。2.等攻击结束，自行恢复。<br>看了下阿里云的高防服务价格，WTF？，最最便宜8800每月。。。。。。</p>
+<p>攻击30分钟后结束，流量清洗关闭，服务器也恢复了正常。不得不说因为DDoS攻击的成本低，效果显著，现在已经成为普遍的攻击手段。在DDoS的防范上，成本确实很高，在遭受攻击的时候，完全不知道能做什么。而实际上确实我们什么也做不了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。</p>
+<p>这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？]]>
+    </summary>
+    
+      <category term="DDoS" scheme="http://code4cocoa.com/tags/DDoS/"/>
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[如何创建Event]]></title>
@@ -683,26 +705,6 @@ b = temporaryA
       <category term="Swfit" scheme="http://code4cocoa.com/tags/Swfit/"/>
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Lock，一款有趣的应用]]></title>
-    <link href="http://code4cocoa.com/2014/12/19/Lock%EF%BC%8C%E4%B8%80%E6%AC%BE%E6%9C%89%E8%B6%A3%E7%9A%84%E5%BA%94%E7%94%A8/"/>
-    <id>http://code4cocoa.com/2014/12/19/Lock，一款有趣的应用/</id>
-    <published>2014-12-19T12:36:07.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<p>今天发现了一款有趣的应用，名字叫<a href="http://www.nearlock.me/" target="_blank" rel="external">Near Lock</a>。它有Mac版和iPhone版，二者是配合使用的。</p>
-<p>它能让我们优雅的通过iPhone来解锁Mac。你只需要将iPhone带在身上，当你靠近自己的Mac的时候，它就是解锁状态，当你离开Mac的时候它又会自动锁上。</p>
-<p>Pro版在中国区市场是25块，它能在后台运行。</p>
-<p>经过我的体验，距离设置在2米左右比较合适。如果使用默认的1米，当手机刚连接上的时候，蓝牙测距不是很稳定，会在1米 ~ 2米直接跳动，导致一会儿锁屏，一会儿解锁。另外如果离开电脑时间较长再回来的话，蓝牙连接有很大的几率连接不上，希望以后的版本会有所改进。总的来说还是一款很不错的软件。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>今天发现了一款有趣的应用，名字叫<a href="http://www.nearlock.me/" target="_blank" rel="external">Near Lock</a>。它有Mac版和iPhone版，二者是配合使用的。</p>
-<p>它能让我们优雅的通过]]>
-    </summary>
-    
-      <category term="Mac APP" scheme="http://code4cocoa.com/tags/Mac-APP/"/>
     
   </entry>
   

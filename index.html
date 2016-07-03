@@ -78,6 +78,67 @@
 
    
     
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/07/03/一大早被DDoS。。。。。/" title="一大早被DDoS。。。。。" itemprop="url">一大早被DDoS。。。。。</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
+		
+  <p class="article-time">
+    <time datetime="2016-07-03T15:41:46.000Z" itemprop="datePublished"> Published 2016-07-03</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。</p>
+<p>这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？同时立马摸出电脑，远程登录服务器，查看服务——正常，查看数据库服务——正常，查看系统日志——无异常。o(╯□╰)o，立马重启服务，再试，没有效果。这时心中突然有了不好的预感，难道被DDoS了？查看阿里云控制台，果然不出所料，DDoS攻击触发了流量清洗(流量清洗指过滤掉异常流量，保证服务器的正常运行。当然阿里云的流量清洗估计因为算法问题，将我们的正常访问也清洗掉了)，APP的请求都被阿里云重定向了。</p>
+<p>当下联系阿里云客服，客服告知目前的情况有两个选择，1.购买阿里云高防服务。2.等攻击结束，自行恢复。<br>看了下阿里云的高防服务价格，WTF？，最最便宜8800每月。。。。。。</p>
+<p>攻击30分钟后结束，流量清洗关闭，服务器也恢复了正常。不得不说因为DDoS攻击的成本低，效果显著，现在已经成为普遍的攻击手段。在DDoS的防范上，成本确实很高，在遭受攻击的时候，完全不知道能做什么。而实际上确实我们什么也做不了。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/DDoS/">DDoS</a><a href="/tags/随笔/">随笔</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/07/03/一大早被DDoS。。。。。/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
     <article class="post-expand eventkit" itemprop="articleBody"> 
         <header class="article-info clearfix">
   <h1 itemprop="name">
@@ -1051,84 +1112,6 @@ testNum=t
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/04/我的2014总结/" title="我的2014总结" itemprop="url">我的2014总结</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-04T07:25:13.000Z" itemprop="datePublished"> Published 2015-02-04</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>2014已经结束了，在这元旦假期的最后一天，就让我来总结一下自己去年技术上的收获及见闻。</p>
-<h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><p>去年我的主要角色是整个团队的iOS工程师及技术总负责人。当然同时还会兼职产品经理，运维等其他角色o(╯□╰)o。</p>
-<h2 id="VFL"><a href="#VFL" class="headerlink" title="VFL"></a>VFL</h2><p>首先是学会使用了VFL，真是布局神器，强烈推荐。为此我将产品中大部分的布局都使用VFL进行了重写。这感觉，谁用谁知道。</p>
-<h2 id="ARC"><a href="#ARC" class="headerlink" title="ARC"></a>ARC</h2><p>今年初的时候产品不再支持iOS4(我的决定^_^)，于是启用了ARC。这感觉，谁用谁知道</p>
-<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a><a href="https://github.com/yuxiangq" target="_blank" rel="external">Github</a></h2><p>在上面发现了不少优秀的代码，自己也参与了一些。这才是程序员的SNS。</p>
-<h3 id="XHImageViewer"><a href="#XHImageViewer" class="headerlink" title="XHImageViewer"></a><a href="https://github.com/JackTeam/XHImageViewer" target="_blank" rel="external">XHImageViewer</a></h3><p>一个图片查看控件，支持图片缩放。我为其添加了Block支持。目前正在研究用其查看超大图片。</p>
-<h3 id="AFNetworking"><a href="#AFNetworking" class="headerlink" title="AFNetworking"></a>AFNetworking</h3><p>将产品的网络请求全部替换为AFNetworking 2.0，因为前期对网络请求层进行了一次封装，所以替换起来很顺利。</p>
-<h3 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h3><p>自己写的一个只允许输入数字的控件，在新的一年中还需要将其完善。</p>
-<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><p>一个优秀的第三方库管理工具，今年初的时候产品的大部分第三方库已经用其管理。</p>
-<h3 id="Alfred"><a href="#Alfred" class="headerlink" title="Alfred"></a>Alfred</h3><p>Mac下的优秀的快速启动工具，目前我已经是它的重度用户。配合workflow，实在是神器。自己也在用Python为其编写插件。</p>
-<h3 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h3><p>有条不紊的学习中，因为自己对C#的熟悉，所以很多Swift的新特性个人感觉并不是很惊艳。</p>
-<h1 id="Net"><a href="#Net" class="headerlink" title=".Net"></a>.Net</h1><p>去年写.Net的时间较少，更多的是在技术大方向上的把握。</p>
-<h2 id="WebAPI"><a href="#WebAPI" class="headerlink" title="WebAPI"></a>WebAPI</h2><p>一直在计划将服务器框架由WCF替换为WebAPI，在年中的时候进行了框架搭建，可惜的是因为产品功能迭代较快，没有时间完成框架替换。</p>
-<h2 id="Nuget"><a href="#Nuget" class="headerlink" title="Nuget"></a>Nuget</h2><p>在新服务器工程中使用的引用管理工具。</p>
-<h2 id="Dapper"><a href="#Dapper" class="headerlink" title="Dapper"></a><a href="https://github.com/yuxiangq/dapper-dot-net" target="_blank" rel="external">Dapper</a></h2><p>一个轻量级高效率的ORM框架，重要的是针对MySQL的支持同样优秀。相较于EF的繁琐，对于习惯使用ADO.NET的朋友来说，该框架实在是太合适了。</p>
-<h1 id="u9605_u8BFB"><a href="#u9605_u8BFB" class="headerlink" title="阅读"></a>阅读</h1><p>14年阅读了挺多经典的书籍，还有部分书没来得及读。除了技术相关书籍还读了部分马伯庸的小说，真的非常好。</p>
-<h2 id="Effective_Objective-C_2-0"><a href="#Effective_Objective-C_2-0" class="headerlink" title="Effective Objective-C 2.0"></a><a href="http://book.douban.com/subject/21370593/" target="_blank" rel="external">Effective Objective-C 2.0</a></h2><p>一本很棒的书，讲了很多有关Objective-C的技巧，不过翻译挺烂的。</p>
-<h2 id="u6587_u660E_u4E4B_u5149"><a href="#u6587_u660E_u4E4B_u5149" class="headerlink" title="文明之光"></a><a href="http://book.douban.com/subject/25902942/" target="_blank" rel="external">文明之光</a></h2><p>吴军老师的书，作为一名IT工作者，开阔的视野是必不可少的，推荐阅读。</p>
-<h2 id="ASP-NET_Web_API_2_u6846_u67B6_u63ED_u79D8"><a href="#ASP-NET_Web_API_2_u6846_u67B6_u63ED_u79D8" class="headerlink" title="ASP.NET Web API 2框架揭秘"></a><a href="http://book.douban.com/subject/25923644/" target="_blank" rel="external">ASP.NET Web API 2框架揭秘</a></h2><p>讲解WebAPI的书，目前主要当词典用。</p>
-<h2 id="u83CA_u4E0E_u5200"><a href="#u83CA_u4E0E_u5200" class="headerlink" title="菊与刀"></a><a href="http://book.douban.com/subject/1022238/" target="_blank" rel="external">菊与刀</a></h2><p>从美国人的角度来看日本的书。</p>
-<h2 id="u6B7B_u4E8E_u6280_u672F_uFF1A_u7D22_u5C3C_u8870_u4EA1_u542F_u793A"><a href="#u6B7B_u4E8E_u6280_u672F_uFF1A_u7D22_u5C3C_u8870_u4EA1_u542F_u793A" class="headerlink" title="死于技术：索尼衰亡启示"></a><a href="http://book.douban.com/subject/25835910/" target="_blank" rel="external">死于技术：索尼衰亡启示 </a></h2><p>索尼确实已经衰落了，卖掉了经典的VAIO，这本书全面的剖析了索尼衰落的原因。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/个人总结/">个人总结</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/04/我的2014总结/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -1157,7 +1140,7 @@ testNum=t
 			
 		
 			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>4</sup></a></li>
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>5</sup></a></li>
 			
 		
 			
@@ -1217,11 +1200,11 @@ testNum=t
 			
 		
 			
-				<li><a href="/tags/Mac-APP/" title="Mac APP">Mac APP<sup>1</sup></a></li>
+				<li><a href="/tags/异步/" title="异步">异步<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/串行请求/" title="串行请求">串行请求<sup>1</sup></a></li>
+				<li><a href="/tags/Mac-APP/" title="Mac APP">Mac APP<sup>1</sup></a></li>
 			
 		
 			
