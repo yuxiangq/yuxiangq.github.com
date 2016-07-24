@@ -82,6 +82,67 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/07/24/Paw/" title="Paw" itemprop="url">Paw</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
+		
+  <p class="article-time">
+    <time datetime="2016-07-24T13:39:59.000Z" itemprop="datePublished"> Published 2016-07-24</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>因为个人在产品研发中，既要负责服务端API的研发工作，同时也要负责iOS端的研发工作，所以有时候写完服务端API，马上就用iOS对接，同时判断API有没有问题。</p>
+<p>不过随着团队人员的扩张，新来的客户端同事，不懂服务器端的相关技术，导致服务端API在写完后，需要进行简单的测试，保证服务器端能够顺利调用(服务端API总是会在客户端调用之前完成，并且可能客户端要过较久一段时间才会调用，为了能让负责服务端的同事自测API的状况，我曾考虑服务端的逻辑部分使用单元测试来进行处理)，我找到了Paw这款软件，它号称是Mac最先进的HTTP客户端。</p>
+<p><a href="https://luckymarmot.com/zh-hans/paw" target="_blank" rel="external">Paw</a>除了友好，易操作的界面之外。还有个强大的功能就是可以生成客户端请求代码，支持C#、Python、Swift、Objective-C(AFNetworking，NSURLSession)等等。更支持请求动态值，从之前的响应中获取数据，例如身份验证令牌、计算后的哈希值、签名、测试用的随机数，做一些数学运算，或者任何您想做的。</p>
+<p>官网官网价格为49.99刀，不过在这里我推荐<a href="https://item.taobao.com/item.htm?spm=a1z10.4-c.w4004-11449138832.26.3syAj4&amp;id=45684786090" target="_blank" rel="external">数码荔枝</a>，99 RMB即可入手，实在是超级划算。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/HTTP/">HTTP</a><a href="/tags/Mac/">Mac</a><a href="/tags/小工具/">小工具</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/07/24/Paw/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/07/03/一大早被DDoS。。。。。/" title="一大早被DDoS。。。。。" itemprop="url">一大早被DDoS。。。。。</a>
   </h1>
   <p class="article-author">By
@@ -1033,85 +1094,6 @@ testNum=t
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/12/自定义UITableViewCell，使用VFL布局/" title="自定义UITableViewCell，使用VFL布局" itemprop="url">自定义UITableViewCell，使用VFL布局</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-12T12:57:39.000Z" itemprop="datePublished"> Published 2015-04-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，<a href="https://github.com/yuxiangq/UITableViewCell4VFL/commits?author=yuxiangq" target="_blank" rel="external">Demo比较简单</a></p>
-<ul>
-<li><p>首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_2.png" alt="image"></p>
-</li>
-<li><p>让我们的ViewController继承UITableViewController。继承UITableViewController能帮我们省不少事情。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/viewcontroller_uitableviewcontroller.png" alt="image"></p>
-</li>
-<li><p>新建CustomCell，我们在其中新建一个UILabel，叫contentLabel，用于展示文本数据并允许换行。</p>
-<script src="https://gist.github.com/yuxiangq/96c5ffeb2ab9d718a33e.js"></script>
-</li>
-<li><p>为contentLabel设置约束，这里我们的约束可以看做Margin(5,5,5,5)。</p>
-<script src="https://gist.github.com/yuxiangq/dc9faab124f1eedf82a8.js"></script>
-</li>
-<li><p>在ViewController中添加一个原型cell，动态计算高度的时候使用。</p>
-<script src="https://gist.github.com/yuxiangq/6c282d9899fe28fe59e4.js"></script>
-
-</li>
-</ul>
-<pre>
-涉及换行的UILabel，请一定要注意**preferredMaxLayoutWidth**属性的设置，否则换行会出问题。
-</pre>
-
-
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/UITableViewCell/">UITableViewCell</a><a href="/tags/VFL/">VFL</a><a href="/tags/iOS/">iOS</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/12/自定义UITableViewCell，使用VFL布局/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -1204,11 +1186,11 @@ testNum=t
 			
 		
 			
-				<li><a href="/tags/Mac-APP/" title="Mac APP">Mac APP<sup>1</sup></a></li>
+				<li><a href="/tags/串行请求/" title="串行请求">串行请求<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/请求队列/" title="请求队列">请求队列<sup>1</sup></a></li>
+				<li><a href="/tags/Mac-APP/" title="Mac APP">Mac APP<sup>1</sup></a></li>
 			
 		
 		</ul>
