@@ -1,17 +1,21 @@
-
- <!DOCTYPE HTML>
+<!DOCTYPE html>
 <html >
 <head>
-  <meta charset="UTF-8">
-  
-    <title>Pocket、Instapaper、Readability的比较 | Code4Cocoa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="YuxiangQ">
-    
 
-    
-    <meta name="description" content="在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="YuxiangQ" />
+
+
+
+<meta name="description" content="在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。
 大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫uDee云阅读。貌似已经挂了，官网已经变成建站系统了o(╯">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pocket、Instapaper、Readability的比较">
@@ -34,87 +38,282 @@
 <meta name="twitter:title" content="Pocket、Instapaper、Readability的比较">
 <meta name="twitter:description" content="在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。
 大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫uDee云阅读。貌似已经挂了，官网已经变成建站系统了o(╯">
-<meta name="twitter:creator" content="@yuxiangq">
 
-    
-    <link rel="alternative" href="/atom.xml" title="Code4Cocoa" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Code4Cocoa" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Pocket、Instapaper、Readability的比较 | Code4Cocoa</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
 </head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">YuxiangQ</a></h1>
+        </hgroup>
 
-  <body>
-    <header>
-      
-<div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="Code4Cocoa" title="Code4Cocoa"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Code4Cocoa">Code4Cocoa</a></h1>
-				<h2 class="blog-motto">A Programer&#39;s Home</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/about">About</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:code4cocoa.com">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
+        
+        <p class="header-subtitle">A Programer&#39;s Home</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        <li>友情鏈接</li>
+                        
+                        
+                        <li>關於我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="/#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/App比较/">App比较</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DDoS/">DDoS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eventkit/">Eventkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPS/">GPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-APP/">Mac APP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swfit/">Swfit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UICollectionViewController/">UICollectionViewController</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIImage/">UIImage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableVIewCell/">UITableVIewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableViewCell/">UITableViewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VFL/">VFL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebAPP/">WebAPP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/下拉刷新/">下拉刷新</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人总结/">个人总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串行请求/">串行请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小工具/">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手势/">手势</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针变量/">指针变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序/">程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/稍后读/">稍后读</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻墙/">翻墙</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动布局/">自动布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自定义控件/">自定义控件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行业发展/">行业发展</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/请求队列/">请求队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
 </div>
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">YuxiangQ</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">YuxiangQ</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">A Programer&#39;s Home</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="/#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Pocket、Instapaper、Readability的比较" class="article article-type-post" itemscope itemprop="blogPost">
   
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
+    <div class="article-meta">
+      <a href="/2015/01/25/Pocket、Instapaper、Readability的比较/" class="article-date">
+      <time datetime="2015-01-25T10:47:54.000Z" itemprop="datePublished">2015-01-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      <a href="/2015/01/25/Pocket、Instapaper、Readability的比较/" title="Pocket、Instapaper、Readability的比较" itemprop="url">Pocket、Instapaper、Readability的比较</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="YuxiangQ" target="_blank" itemprop="author">YuxiangQ</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-25T10:47:54.000Z" itemprop="datePublished"> Published 2015-01-25</time>
+      <input type="hidden" class="isFancy" />
     
-  </p>
-</header>
-	<div class="article-content">
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
-		
-			
-		
-		</div>
-		
-		<p>在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。</p>
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Pocket、Instapaper、Readability的比较
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App比较/">App比较</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/稍后读/">稍后读</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。</p>
 <p>大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫<a href="http://www.udee.cn/" target="_blank" rel="external">uDee云阅读</a>。貌似已经挂了，官网已经变成建站系统了o(╯□╰)o。相关的介绍可以看这里<a href="http://www.36kr.com/p/99352.html" target="_blank" rel="external">36kr关于uDee云阅读的介绍</a>。</p>
 <p>后来我入手了The New iPad，TouchPad就送给老爸看电影了。在iOS上我开始使用<a href="https://getpocket.com/" target="_blank" rel="external">Pocket</a>，那个时候还叫Read it later。用了一段时间后发现Pocket对CocoaChina支持不是很好，只能抓取到标题，查看内容的时候还得跳转到原网页，实在是麻烦，于是开始寻找其他类似产品。</p>
 <p>某天在朋友手机上看到<a href="https://www.instapaper.com/" target="_blank" rel="external">Instapaper</a>，于是果断收了它(当时还是收费的)，完美支持CocoaChina，而且Instapaper的图标也比Pocket好看，所以开始同时使用二者，Pocket主力，Instapaper辅助。</p>
@@ -137,438 +336,217 @@
 <p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/readability%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>同样是抽屉式侧拉菜单o(╯□╰)o，非常简洁，另外我不是很喜欢那种全红的背景。</p>
 <p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20Web.png" alt="image"><br>整体布局和APP类似，可惜的是没有了搜索功能。</p>
 <p><strong>PS:以上就是我使用了三款APP后的一些浅薄看法。其实说起来它们对于我来说，都有一个很致命的缺点。就是对于代码块的处理都不尽如人意。本来文章中排版很舒服的代码，经过它们处理后就和普通文本混杂在一起，实在是一件很头痛的事情，希望能有一款稍后读类的APP能针对程序员定制。</strong></p>
-  
-	</div>
-		<footer class="article-footer clearfix">
-<div class="article-catetags">
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/App比较/">App比较</a><a href="/tags/稍后读/">稍后读</a>
-  </div>
-
-</div>
-
-
-
-	<div class="article-share" id="share">
-	
-	  <div data-url="http://code4cocoa.com/2015/01/25/Pocket、Instapaper、Readability的比较/" data-title="Pocket、Instapaper、Readability的比较 | Code4Cocoa" data-tsina="null" class="share clearfix">
-	  </div>
-	
-	</div>
-
-
-</footer>
-
-   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2015/02/01/Swift学习笔记六/" title="Swift学习笔记六">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Swift学习笔记六</span>
-</a>
-</div>
-
-
-<div class="next">
-<a href="/2015/01/12/NumberTextField/"  title="NumberTextField">
- <strong>下一篇：</strong><br/> 
- <span>NumberTextField
-</span>
-</a>
-</div>
-
-</nav>
-
-	
-
-<section id="comments" class="comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
- 
- 
- 
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
-
-  
-
-  
-<div class="tagslist">
-	<p class="asidetitle">Tags</p>
-		<ul class="clearfix">
-		
-			
-				<li><a href="/tags/iOS/" title="iOS">iOS<sup>20</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Swift/" title="Swift">Swift<sup>6</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>5</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/VFL/" title="VFL">VFL<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/编程/" title="编程">编程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/自定义控件/" title="自定义控件">自定义控件<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/翻墙/" title="翻墙">翻墙<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/VPN/" title="VPN">VPN<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/GPS/" title="GPS">GPS<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/定位/" title="定位">定位<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/手势/" title="手势">手势<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/个人总结/" title="个人总结">个人总结<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Eventkit/" title="Eventkit">Eventkit<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/程序/" title="程序">程序<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/指针/" title="指针">指针<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/指针变量/" title="指针变量">指针变量<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/学习/" title="学习">学习<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/异步/" title="异步">异步<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/串行请求/" title="串行请求">串行请求<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Mac-APP/" title="Mac APP">Mac APP<sup>1</sup></a></li>
-			
-		
-		</ul>
-</div>
-
-
-  <div class="linkslist">
-  <p class="asidetitle">Links</p>
-    <ul>
-        
-          <li>
-            
-            	<a href="http://www.keyito.com/" target="_blank" title="藤可的博客">藤可的博客</a>
-            
-          </li>
-        
-    </ul>
-</div>
-
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
-</div>
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello,I&#39;m a Program <br/>
-			This is my blog,code4cocoa.</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		
-		<a href="https://github.com/yuxiangq" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		
-		<a href="https://twitter.com/yuxiangq" target="_blank" class="icon-twitter" title="twitter"></a>
-		
-		
-		<a href="https://www.facebook.com/yuxiang.qin" target="_blank" class="icon-facebook" title="facebook"></a>
-		
-		
-		
-		
-		
-		
-		<a href="mailto:yuxiang.q@hotmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
-			
-		
-
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
-		
-		<a href="/about" target="_blank" title="YuxiangQ">YuxiangQ</a>
-		
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-  
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
       
-      $('#toc.toc-aside').css('display', 'none');
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文標題:</span><a href="/2015/01/25/Pocket、Instapaper、Readability的比较/">Pocket、Instapaper、Readability的比较</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主頁">YuxiangQ</a></p>
+        <p><span>發布時間:</span>2015-01-25, 18:47:54</p>
+        <p><span>最後更新:</span>2015-12-15, 19:18:15</p>
+        <p>
+            <span>原始鏈接:</span><a class="post-url" href="/2015/01/25/Pocket、Instapaper、Readability的比较/" title="Pocket、Instapaper、Readability的比较">http://code4cocoa.com/2015/01/25/Pocket、Instapaper、Readability的比较/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://code4cocoa.com/2015/01/25/Pocket、Instapaper、Readability的比较/　　作者: YuxiangQ" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>許可協議:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"姓名標示-非商業性-相同方式分享 4.0 國際"</a> 轉載請保留原文鏈接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
         
-    }
-  });
-});
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2015/02/01/Swift学习笔记六/">
+                    Swift学习笔记六
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/01/12/NumberTextField/">
+                    NumberTextField
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目錄</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隱藏目錄"  title="點擊按鈕隱藏或者顯示文章目錄">
+
+    <script>
+        yiliaConfig.toc = ["隱藏目錄", "顯示目錄", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Pocket、Instapaper、Readability的比较　| Code4Cocoa　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/02/01/Swift学习笔记六/" title="上一篇: Swift学习笔记六">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/01/12/NumberTextField/" title="下一篇: NumberTextField">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/Paw/">Paw</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/03/一大早被DDoS。。。。。/">一大早被DDoS。。。。。</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/22/如何创建Event/">如何创建Event</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/19/OC中的泛型/">OC中的泛型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/蚂蚁金服技术开放日活动小记/">蚂蚁金服技术开放日活动小记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/05/FunnelChartView漏斗控件/">FunnelChartView漏斗控件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/26/离职季感悟/">离职季感悟</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/串行异步网络请求的简单实现/">串行异步网络请求的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/襄阳出差/">襄阳出差</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/1601随笔/">1601随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/iOS实现判断程序关闭、关机的思路/">iOS实现判断程序关闭、关机的思路</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/13/UITableView实现下拉刷新/">UITableView实现下拉刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/29/WebAPP将迎来一个好时代/">WebAPP将迎来一个好时代</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/19/手机是如何定位的/">手机是如何定位的</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/21/Swift学习笔记七/">Swift学习笔记七</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/12/自定义UITableViewCell，使用VFL布局/">自定义UITableViewCell，使用VFL布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/04/我的2014总结/">我的2014总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/01/Swift学习笔记六/">Swift学习笔记六</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/25/Pocket、Instapaper、Readability的比较/">Pocket、Instapaper、Readability的比较</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/12/NumberTextField/">NumberTextField</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/01/Swift学习笔记五/">Swift学习笔记五</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/19/Lock，一款有趣的应用/">Lock，一款有趣的应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/14/UICollectionViewController的用法/">UICollectionViewController的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/05/关于如何学习一门新语言/">关于如何学习一门新语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/04/VFL布局学习/">VFL布局学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/04/梯子推荐/">梯子推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/11/19/Swift学习笔记四/">Swift学习笔记四</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/11/19/手势的使用/">手势的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/10/26/Swift学习笔记三/">Swift学习笔记三</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/10/23/Swift学习笔记二/">Swift学习笔记二</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/10/12/Swift学习笔记一/">Swift学习笔记一</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/09/27/自学VB时的回忆/">自学VB时的回忆</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/09/05/关于指针及指针变量/">关于指针及指针变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/30/UIImageView展示大图学习笔记/">UIImageView展示大图学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/16/UITableViewCell的重用方法的区别/">UITableViewCell的重用方法的区别</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 YuxiangQ
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、簡單且強大的網誌框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="簡而不減 Hexo 雙欄網誌主題  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
 </script>
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  c.click(function(){
-    ta.css('display', 'block').addClass('fadeIn');
-  });
-  o.click(function(){
-    ta.css('display', 'none');
-  });
-  $(window).scroll(function(){
-    ta.css("top",Math.max(140,320-$(this).scrollTop()));
-  });
-});
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina'),
-      description = $this.attr('description');
-  var html = [
-  '<div class="hoverqrcode clearfix"></div>',
-  '<a class="overlay" id="qrcode"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
-  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-
-  $('.hoverqrcode').hide();
-
-  var myWidth = 0;
-  function updatehoverqrcode(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-    var qrsize = myWidth > 1024 ? 200:100;
-    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
-    var p = $('.article-share-qrcode').position();
-    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
-                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
-                          .qrcode(options);
-  };
-  $(window).resize(function(){
-    $('.hoverqrcode').hide();
-  });
-  $('.article-share-qrcode').click(function(){
-    updatehoverqrcode();
-    $('.hoverqrcode').toggle();
-  });
-  $('.article-share-qrcode').hover(function(){}, function(){
-      $('.hoverqrcode').hide();
-  });
-});   
-</script>
-
-
-
-
-<script type="text/javascript">
-
-var disqus_shortname = 'code4cocoa';
-
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
-
-
-
-<!-- Analytics Begin -->
-
-
-
-
-
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
-
-
-<!-- MathJax End -->
-
-<!-- Tiny_search Begin -->
-
-<!-- Tiny_search End -->
-
-  </body>
+  </div>
+</body>
 </html>
