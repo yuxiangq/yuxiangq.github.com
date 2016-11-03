@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A Programer's Home]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://code4cocoa.com/"/>
-  <updated>2016-07-24T13:41:15.000Z</updated>
+  <updated>2016-11-03T11:56:24.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[韩国旅游]]></title>
+    <link href="http://code4cocoa.com/2016/11/03/%E9%9F%A9%E5%9B%BD%E6%97%85%E6%B8%B8/"/>
+    <id>http://code4cocoa.com/2016/11/03/韩国旅游/</id>
+    <published>2016-11-03T11:55:15.000Z</published>
+    <updated>2016-11-03T11:56:24.000Z</updated>
+    <content type="html"><![CDATA[<p>前段时间去韩国首尔和济州岛转了转，个人对于韩国没什么感觉，了解也仅限于三星，LG等等。对于韩剧什么滴完全木有兴趣，不过老婆倒是挺激动地o(╯□╰)o。</p>
+<p>大概3个小时左右的飞机，我们到了仁川机场。下了飞机还要坐地铁才能从航站楼到出关的地方o(╯□╰)o，把我吓到了，这机场是有多大。出了机场大概1个小时的车程就到了首尔，然后参观了青瓦台和景福宫。青瓦台周围的警察大哥确实挺帅的，而且都有擦粉。路上的汽车基本都是韩国产的，现代、起亚、双龙、三星等等。晚上8点左右飞济州岛。</p>
+<p>第二天在济州岛，天气实在是不好，一直在刮风下雨。不过没有影响的女士们的热情，参观了好几个韩剧中出现了的景点（反正我是不知道到底是什么景点）。冷得实在不行，在某个景点喝了杯咖啡，味道感觉还是不错的。另外每一顿饭都有辣白菜，墙面一两顿还好，后面实在是不想吃了。</p>
+<p>第三天上午在济州岛逛了逛果园，买了些特产。下午回到首尔，晚上貌似吃了顿韩国烤肉（其实在去韩国前一天，我们在成都也去吃了顿韩国烤肉。。。。。），味道个人觉得属于不难吃。</p>
+<p>第四天去了首尔塔，感觉还不错，那里卖的冰淇淋挺好吃的。下午去了明洞那边，还去了两个免税店，买了很多化妆品。晚上在乐天世界玩，可惜的是因为很多有趣的项目都要排队，而且要排1个多小时，所以也没有玩到项目。估计也是因为中秋节，韩国放假，很多本地人也来到乐天世界玩。</p>
+<p>个人总的感觉就是，去了解一下韩国文化什么的还可以，男生的话过去估计都会觉得很无聊。女生过去就是买买买。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>前段时间去韩国首尔和济州岛转了转，个人对于韩国没什么感觉，了解也仅限于三星，LG等等。对于韩剧什么滴完全木有兴趣，不过老婆倒是挺激动地o(╯□╰)o。</p>
+<p>大概3个小时左右的飞机，我们到了仁川机场。下了飞机还要坐地铁才能从航站楼到出关的地方o(╯□╰)o，把我吓到]]>
+    </summary>
+    
+      <category term="杂记" scheme="http://code4cocoa.com/tags/%E6%9D%82%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Paw]]></title>
@@ -627,32 +649,6 @@ enum demo{
       <category term="App比较" scheme="http://code4cocoa.com/tags/App%E6%AF%94%E8%BE%83/"/>
     
       <category term="稍后读" scheme="http://code4cocoa.com/tags/%E7%A8%8D%E5%90%8E%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[NumberTextField]]></title>
-    <link href="http://code4cocoa.com/2015/01/12/NumberTextField/"/>
-    <id>http://code4cocoa.com/2015/01/12/NumberTextField/</id>
-    <published>2015-01-12T12:46:26.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="external">NumberTextField</a></h1><p>这是我做的一个只能输入数字的控件。<br>可以限制输入的数字长度及小数点位数。</p>
-<h2 id="u4F7F_u7528_u65B9_u6CD5"><a href="#u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="使用方法"></a>使用方法</h2><p><script src="https://gist.github.com/yuxiangq/71a2ac1dabac7b4fa556.js"></script></p>
-<h3 id="u7279_u6027"><a href="#u7279_u6027" class="headerlink" title="特性"></a>特性</h3><ul>
-<li><p>去除数字前多余的0。例如，输入000123，当控件失去焦点，或者通过text获取值的时候，数字会被处理为123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/before.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/after.png" alt="image"></p>
-</li>
-<li><p>小数自动补0。例如，输入.123，当控件失去焦点，或者通过text获取值的时候，数字会处理为0.123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotbefore.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotafter.png" alt="image"></p>
-</li>
-</ul>
-<h3 id="u51FD_u6570"><a href="#u51FD_u6570" class="headerlink" title="函数"></a>函数</h3><p><pre><code><br>-(NSString*)trimText;<br></code></pre><br>调用该函数可以直接获取经过处理的数字。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/Numb]]>
-    </summary>
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
-      <category term="自定义控件" scheme="http://code4cocoa.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/"/>
     
   </entry>
   
