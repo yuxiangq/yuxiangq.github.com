@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A Programer's Home]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://code4cocoa.com/"/>
-  <updated>2016-11-03T11:56:24.000Z</updated>
+  <updated>2016-12-25T14:33:20.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -13,6 +13,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[项目中AOP的使用]]></title>
+    <link href="http://code4cocoa.com/2016/12/25/%E9%A1%B9%E7%9B%AE%E4%B8%ADAOP%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://code4cocoa.com/2016/12/25/项目中AOP的使用/</id>
+    <published>2016-12-25T14:32:20.000Z</published>
+    <updated>2016-12-25T14:33:20.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h1><p>Aspect Oriented Programming 面向切面(切片)编程的缩写。</p>
+<h2 id="u4EC0_u4E48_u662FAOP"><a href="#u4EC0_u4E48_u662FAOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h2><p><strong>在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。</strong>这句话清晰简洁的给AOP做了定义。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">面向方面编程（AOP）是施乐公司帕洛阿尔托研究中心（Xerox PARC）在上世纪<span class="number">90</span>年代发明的一种编程范式，但真正的发展却兴起于近几年对软件设计方兴未艾的研究。</span><br><span class="line"></span><br><span class="line">由于软件系统越来越复杂，大型的企业级应用越来越需要人们将核心业务与公共业务分离。AOP技术正是通过编写横切关注点的代码，即“方面”，分离出通用的服务以形成统一的功能架构。它能够将应用程序中的商业逻辑同对其提供支持的通用服务进行分离，使得开发人员从重复解决通用服务的劳动中解脱出来，而仅专注于企业的核心商业逻辑。</span><br><span class="line"></span><br><span class="line">因此，AOP技术也就受到越来越多的关注，而应用于各种平台下的AOP技术也应运而生。但由于AOP技术相对于成熟的OOP技术而言，在性能、稳定性、适用性等方面还有待完善，同时AOP技术也没有形成一个统一的标准，这使得AOP技术的研究更具有前沿性的探索价值。</span><br></pre></td></tr></table></figure>
+<h2 id="u80FD_u505A_u4EC0_u4E48"><a href="#u80FD_u505A_u4EC0_u4E48" class="headerlink" title="能做什么"></a>能做什么</h2><p>AOP能将事务处理、日志管理、权限控制、异常处理等封装起来，以便于减少系统的重复代码，降低模块间的耦合，使业务代码更纯粹易读，且有利于未来的可操作性和可维护性。</p>
+<h2 id="u5904_u7406_u7E41_u7410_u7684_u83DC_u5355_26amp_3B_u64CD_u4F5C_u6743_u9650"><a href="#u5904_u7406_u7E41_u7410_u7684_u83DC_u5355_26amp_3B_u64CD_u4F5C_u6743_u9650" class="headerlink" title="处理繁琐的菜单&amp;操作权限"></a>处理繁琐的菜单&amp;操作权限</h2><p>在XXX管理系统中，菜单权限是必不可少的。并且随着企业管理的精细化，菜单的各种操作权限判断也是越来越多，所以简洁统一的处理方式是很有必要的。</p>
+<p>在我们的项目中，每一个菜单权限都可能涉及到操作权限，它们包括：查看、新增、编辑、删除、审批、分配、重置、轨迹、下载、转移、退回、转为客户等11个。随着产品功能的不断完善，操作权限也将会越来越多。如果我们在每个ViewController的ViewDidLoad方法中去判断控制的话，工作量会非常的大。而且如果以后操作权限有变动的话，我们还得每个ViewController都去修改，很容易漏改。那么有简单的处理方式吗？</p>
+<p>当然利用AOP思想和Objective-C runtime的特性，我们可以像下面这样处理：</p>
+<ol>
+<li>利用分类或继承，为每个ViewController都添加权限相关的属性。</li>
+<li>利用runtime的特性，植入权限验证代码(通常替换ViewDidLoad方法)。</li>
+<li>创建权限相关的控件时提供固定的Tag值(比如EditButton的Tag值为1000，NewButton的Tag值为2000)。</li>
+<li>在新的ViewDidLoad方法中利用第一步中的权限属性，对权限相关控件(利用Tag来获取相关控件)进行统一操作，这样就实现了在所有ViewController中统一判断权限。</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">还有另一种不替换ViewDidLoad的方法。</span><br><span class="line"></span><br><span class="line">即利用分类，在ViewController的分类中新添加一个类方法，比如叫VerifyPermission。在该方法中判断相关权限。这样只需要在所有ViewDidLoad中手动调用一次VerifyPermission即可。</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h1><p>Aspect Oriented Programming 面向切面(切片)编程的缩写。</p>
+<h2 id="u4EC0_u4E48]]>
+    </summary>
+    
+      <category term="AOP" scheme="http://code4cocoa.com/tags/AOP/"/>
+    
+      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[韩国旅游]]></title>
@@ -608,47 +640,6 @@ enum demo{
       <category term="Swift" scheme="http://code4cocoa.com/tags/Swift/"/>
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Pocket、Instapaper、Readability的比较]]></title>
-    <link href="http://code4cocoa.com/2015/01/25/Pocket%E3%80%81Instapaper%E3%80%81Readability%E7%9A%84%E6%AF%94%E8%BE%83/"/>
-    <id>http://code4cocoa.com/2015/01/25/Pocket、Instapaper、Readability的比较/</id>
-    <published>2015-01-25T10:47:54.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<p>在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。</p>
-<p>大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫<a href="http://www.udee.cn/" target="_blank" rel="external">uDee云阅读</a>。貌似已经挂了，官网已经变成建站系统了o(╯□╰)o。相关的介绍可以看这里<a href="http://www.36kr.com/p/99352.html" target="_blank" rel="external">36kr关于uDee云阅读的介绍</a>。</p>
-<p>后来我入手了The New iPad，TouchPad就送给老爸看电影了。在iOS上我开始使用<a href="https://getpocket.com/" target="_blank" rel="external">Pocket</a>，那个时候还叫Read it later。用了一段时间后发现Pocket对CocoaChina支持不是很好，只能抓取到标题，查看内容的时候还得跳转到原网页，实在是麻烦，于是开始寻找其他类似产品。</p>
-<p>某天在朋友手机上看到<a href="https://www.instapaper.com/" target="_blank" rel="external">Instapaper</a>，于是果断收了它(当时还是收费的)，完美支持CocoaChina，而且Instapaper的图标也比Pocket好看，所以开始同时使用二者，Pocket主力，Instapaper辅助。</p>
-<p>不久入了Reeder，配合着两大神器，让我阅读了不少好文。但是Reeder也无法完整显示CocoaChina的内容，每次阅读的时候我都要先保存到Instapaper，实在是麻烦。后来无意中点了一下内容上方的小板凳图标，发现竟然将内容完整的显示出来了。后来知道了那是<a href="https://www.readability.com/" target="_blank" rel="external">Readability</a>，果断入手。</p>
-<p>于是三大稍后读神器都被我凑齐了。用了一段时间后有些感悟，想和大家一起分享。</p>
-<p><strong>Pocket</strong></p>
-<p>我用得最久的稍后读类APP。 支持Chrome插件，通过插件保存网页。</p>
-<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>文章列表界面清爽简洁，是我喜欢的风格。在列表界面提供搜索栏，很方便。</p>
-<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>软件的层级架构采用抽屉式结构，给了内容更多的展示空间。同时设置里面提供深色主题，方便夜晚阅读。唯一的遗憾是主题颜色不支持自动切换。</p>
-<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E7%BD%91%E9%A1%B5.png" alt="image"><br>Web端配色和APP保持一致，简洁不失优雅。并且Web端提供平铺和列表两种展示方式。</p>
-<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20Mac.png" alt="image"><br>Pocket也是三款软件中唯一有Mac客户端的。</p>
-<p><strong>Instapaper</strong></p>
-<p>个人认为是最精致的稍后读类APP。利用JS脚本保存内容，不支持浏览器插件。需要占用一个标签栏位置，这是让我很不爽的地方。</p>
-<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>文章列表简洁，整个界面更偏平，可惜的是不支持搜索。</p>
-<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>菜单仍然是抽屉式结构，搜索功能隐藏在了这里。其他东西和Pocket大同小异。同时支持深色主题(目前包含四款主题)，更令人欣喜的是，Instapaper可以根据您的位置(需要用到GPS)和日落时间，自动调整主题的颜色。这真的是非常棒的功能。</p>
-<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20Web.png" alt="image"><br>Web端的整体布局和APP差异不大，唯一的变化是将搜索栏放到了列表上。</p>
-<p><strong>Readability</strong></p>
-<p>我的感觉是抓取能力最强的了，但是界面不讨个人喜欢。支持Chrome插件。</p>
-<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>支持搜索及分类，较Instapaper和Pocket都更强大，可以说是结合了二者的有点。</p>
-<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/readability%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>同样是抽屉式侧拉菜单o(╯□╰)o，非常简洁，另外我不是很喜欢那种全红的背景。</p>
-<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20Web.png" alt="image"><br>整体布局和APP类似，可惜的是没有了搜索功能。</p>
-<p><strong>PS:以上就是我使用了三款APP后的一些浅薄看法。其实说起来它们对于我来说，都有一个很致命的缺点。就是对于代码块的处理都不尽如人意。本来文章中排版很舒服的代码，经过它们处理后就和普通文本混杂在一起，实在是一件很头痛的事情，希望能有一款稍后读类的APP能针对程序员定制。</strong></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。</p>
-<p>大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司]]>
-    </summary>
-    
-      <category term="App比较" scheme="http://code4cocoa.com/tags/App%E6%AF%94%E8%BE%83/"/>
-    
-      <category term="稍后读" scheme="http://code4cocoa.com/tags/%E7%A8%8D%E5%90%8E%E8%AF%BB/"/>
     
   </entry>
   
