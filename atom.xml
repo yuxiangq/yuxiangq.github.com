@@ -1,30 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Code4Cocoa]]></title>
-  <subtitle><![CDATA[A Programer's Home]]></subtitle>
+  <title>Code4Cocoa</title>
+  <subtitle>A Programer&#39;s Home</subtitle>
   <link href="/atom.xml" rel="self"/>
+  
   <link href="http://code4cocoa.com/"/>
-  <updated>2016-12-25T14:33:20.000Z</updated>
+  <updated>2017-01-15T07:18:17.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
-    <name><![CDATA[YuxiangQ]]></name>
+    <name>YuxiangQ</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[项目中AOP的使用]]></title>
+    <title>2016总结</title>
+    <link href="http://code4cocoa.com/2017/01/15/2016%E6%80%BB%E7%BB%93/"/>
+    <id>http://code4cocoa.com/2017/01/15/2016总结/</id>
+    <published>2017-01-15T07:17:09.000Z</published>
+    <updated>2017-01-15T07:18:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天是2017年的第一天，白天一直在外面逛商场什么的挺累的。晚上在家，这个点很适合静静的整理一下思绪，将2016年的经历做一个简单的总结。</p>
+<h1 id="个人"><a href="#个人" class="headerlink" title="个人"></a>个人</h1><p>去年对我个人来说是挺重要的一年，因为这是我毕业的第五年。以前我看过一篇文章，说是一个毕业生的前两年是成长最快的时候，同时也是确立职业目标的时候。你需要在这两年中，快速的找到适合自己的岗位，为将来的发展打好基础。对于我而言，我很庆幸的是我在很早的时候就确立了我的职业目标，我选择的职业也是我最爱的。所以我在我的岗位上没有过迷茫，只想着快点成长起来。在工作前两年的时候，就是疯狂的学习技术，花大量时间去看书，尝试新技术，参加各种技术交流会，看着大牛们在技术交流会上侃侃而谈，我梦想着自己有一天能像他们一样。</p>
+<p>前两年的快速成长之后，第三、第四年是一个成熟期。这个时候经历了快速成长的年轻人，现在应该是公司的业务骨干，技术上趋于成熟，这个时候需要追求一定的技术深度，同时在处理问题上，不止能解决好技术本身上的问题，还是有意识的能协调非技术上的问题。</p>
+<p>第五年则是对自己的检视，这个时候可能已经带过小团队，在公司或许是中低层管理者，或许面对技术或管理的转型，这个时候通常离自己的职业规划，已经有比较清晰的升迁路径。这个时候更需要针对性的提升自己，补足自己的短板。</p>
+<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p>iOS端持续的进行着重构工作。重新封装了网络请求，将AFN替换为NSURLSession，并针对业务进行了封装。同时对整个APP的架构进行了改造，引入ViewModel层，让ViewController变得更干净。引入ReactiveCocoa，尝试函数式编程，目前用得还挺浅的，主要停留在处理事件响应阶段。整个APP的重构是一个持续的工程，同时我们也在不停的修正一些架构上的错误。</p>
+<p>年中的时候，服务器时不时的抽风，这段时间学习了大量运维方面的知识，也因为到处问问题，遭过不少白眼。但我觉得挺值得的，正是这样使我对运维工作有了新的认识，同时学到了不少知识。</p>
+<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><p>入手了一直想要的游戏机，作为一个很小就在街机厅玩的人，拥有一台自己的游戏机一直是我的一个小梦想，今年终于实现了，入手了PS4和3DS，目前努力攻略FFX和火纹IF。</p>
+<p>9月份的时候陪老婆去了趟韩国，感觉只能算凑合吧，毕竟自己对那些电视剧中的景点无爱，我也不爱韩剧。不过我对韩国这个国家还是心存敬畏的，毕竟能在短短几十年间成为发达国家的一员，一定有其可取之处。</p>
+<p>11月的时候开始健身和游泳，主要为了控制日渐增长的体重。经过折腾顺利学会了蛙泳，目前游一个来回问题不大。器械训练上，感觉自己的力量不是很足，现在也有这方面的锻炼。</p>
+<h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>2017年对于产品来说是关键的一年，也是技术团队走向成熟提升的一年。我在个人能力上也将着手进行新的提升。打磨自己的管理能力并形成自己的管理风格。对于技术团队的管理，有三个要点<em>团队共享、划分纬度、循环执行</em>，今年我的努力方向就是做好这三点。</p>
+<h1 id="团队"><a href="#团队" class="headerlink" title="团队"></a>团队</h1><p>2016年初的时候，研发团队经历了较大的人员变动，所以大半年的时间都在进行磨合，随着人员磨合的到位，2017年的研发效率将稳步提升。还有一些先进工具的引入，也是新的一年里的重要工作，比如GitLab、Fastlane、Jenkins实现持续集成，让做包测试的流程很高效。</p>
+<p>随着业务量的增长，对于我们的程序架构也会有新的要求，比如一直计划将WCF换为更易用的WebAPI，因为时间的原因一直没有处理，目前比较紧迫的事情为解决基础框架(方法)无法满足新业务的问题。</p>
+<h2 id="技术-1"><a href="#技术-1" class="headerlink" title="技术"></a>技术</h2><p>2016年年初的时候进行了数据库分表和数据库迁移，年末的时候对照片进行了迁移，并做了负载均衡。还有很多报表的优化，总得来说16年团队技术上的提升还是挺大的，特别是随着用户越来越多，数据量越来越大，对整个后台服务都将是是考验。</p>
+<h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><p>2016年在团队的管理上还是比较粗放的管理，主要是基于版本任务完成情况的管理方式。该方式在人员相对较少的时候，是一种高效的管理方式。但随着人员的增多，单纯基于任务完成度的管理，无法多元化的去评价一名技术人员的贡献。还有团队能力的提升，也是不能单纯依靠任务完成度来进行管理的。</p>
+<h2 id="规划-1"><a href="#规划-1" class="headerlink" title="规划"></a>规划</h2><p>在2017年，研发团队将关注三个要点：</p>
+<ul>
+<li>团队共享 —— 目标制定上下通透，目标制定的过程不仅仅是自上而下或自下而上的过程，而是两者交替进行，最终实现目标与整个团队的深度整合。</li>
+<li>划分维度 —— 业务、技术需要整体考虑，平衡发展。</li>
+<li>循环执行 —— 目标拆解成具体行动，形成习惯，持续反馈。</li>
+</ul>
+<p>技术上，争取引入更多高效的技术手段，能解决困扰我们的轨迹、监控等问题。</p>
+<p>PS:拖拖拉拉两周多才写完，突然觉得自己的写文确实不如初中、高中时那么顺畅。现在写起来结结巴巴的，有时还不通顺，看来还得多练了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天是2017年的第一天，白天一直在外面逛商场什么的挺累的。晚上在家，这个点很适合静静的整理一下思绪，将2016年的经历做一个简单的总结。&lt;/p&gt;
+&lt;h1 id=&quot;个人&quot;&gt;&lt;a href=&quot;#个人&quot; class=&quot;headerlink&quot; title=&quot;个人&quot;&gt;&lt;/a&gt;个人&lt;
+    
+    </summary>
+    
+    
+      <category term="总结" scheme="http://code4cocoa.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>项目中AOP的使用</title>
     <link href="http://code4cocoa.com/2016/12/25/%E9%A1%B9%E7%9B%AE%E4%B8%ADAOP%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://code4cocoa.com/2016/12/25/项目中AOP的使用/</id>
     <published>2016-12-25T14:32:20.000Z</published>
     <updated>2016-12-25T14:33:20.000Z</updated>
+    
     <content type="html"><![CDATA[<h1 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h1><p>Aspect Oriented Programming 面向切面(切片)编程的缩写。</p>
-<h2 id="u4EC0_u4E48_u662FAOP"><a href="#u4EC0_u4E48_u662FAOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h2><p><strong>在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。</strong>这句话清晰简洁的给AOP做了定义。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">面向方面编程（AOP）是施乐公司帕洛阿尔托研究中心（Xerox PARC）在上世纪<span class="number">90</span>年代发明的一种编程范式，但真正的发展却兴起于近几年对软件设计方兴未艾的研究。</span><br><span class="line"></span><br><span class="line">由于软件系统越来越复杂，大型的企业级应用越来越需要人们将核心业务与公共业务分离。AOP技术正是通过编写横切关注点的代码，即“方面”，分离出通用的服务以形成统一的功能架构。它能够将应用程序中的商业逻辑同对其提供支持的通用服务进行分离，使得开发人员从重复解决通用服务的劳动中解脱出来，而仅专注于企业的核心商业逻辑。</span><br><span class="line"></span><br><span class="line">因此，AOP技术也就受到越来越多的关注，而应用于各种平台下的AOP技术也应运而生。但由于AOP技术相对于成熟的OOP技术而言，在性能、稳定性、适用性等方面还有待完善，同时AOP技术也没有形成一个统一的标准，这使得AOP技术的研究更具有前沿性的探索价值。</span><br></pre></td></tr></table></figure>
-<h2 id="u80FD_u505A_u4EC0_u4E48"><a href="#u80FD_u505A_u4EC0_u4E48" class="headerlink" title="能做什么"></a>能做什么</h2><p>AOP能将事务处理、日志管理、权限控制、异常处理等封装起来，以便于减少系统的重复代码，降低模块间的耦合，使业务代码更纯粹易读，且有利于未来的可操作性和可维护性。</p>
-<h2 id="u5904_u7406_u7E41_u7410_u7684_u83DC_u5355_26amp_3B_u64CD_u4F5C_u6743_u9650"><a href="#u5904_u7406_u7E41_u7410_u7684_u83DC_u5355_26amp_3B_u64CD_u4F5C_u6743_u9650" class="headerlink" title="处理繁琐的菜单&amp;操作权限"></a>处理繁琐的菜单&amp;操作权限</h2><p>在XXX管理系统中，菜单权限是必不可少的。并且随着企业管理的精细化，菜单的各种操作权限判断也是越来越多，所以简洁统一的处理方式是很有必要的。</p>
+<h2 id="什么是AOP"><a href="#什么是AOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h2><p><strong>在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。</strong>这句话清晰简洁的给AOP做了定义。</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">面向方面编程（AOP）是施乐公司帕洛阿尔托研究中心（Xerox PARC）在上世纪<span class="number">90</span>年代发明的一种编程范式，但真正的发展却兴起于近几年对软件设计方兴未艾的研究。</div><div class="line"></div><div class="line">由于软件系统越来越复杂，大型的企业级应用越来越需要人们将核心业务与公共业务分离。AOP技术正是通过编写横切关注点的代码，即“方面”，分离出通用的服务以形成统一的功能架构。它能够将应用程序中的商业逻辑同对其提供支持的通用服务进行分离，使得开发人员从重复解决通用服务的劳动中解脱出来，而仅专注于企业的核心商业逻辑。</div><div class="line"></div><div class="line">因此，AOP技术也就受到越来越多的关注，而应用于各种平台下的AOP技术也应运而生。但由于AOP技术相对于成熟的OOP技术而言，在性能、稳定性、适用性等方面还有待完善，同时AOP技术也没有形成一个统一的标准，这使得AOP技术的研究更具有前沿性的探索价值。</div></pre></td></tr></table></figure>
+<h2 id="能做什么"><a href="#能做什么" class="headerlink" title="能做什么"></a>能做什么</h2><p>AOP能将事务处理、日志管理、权限控制、异常处理等封装起来，以便于减少系统的重复代码，降低模块间的耦合，使业务代码更纯粹易读，且有利于未来的可操作性和可维护性。</p>
+<h2 id="处理繁琐的菜单-amp-操作权限"><a href="#处理繁琐的菜单-amp-操作权限" class="headerlink" title="处理繁琐的菜单&amp;操作权限"></a>处理繁琐的菜单&amp;操作权限</h2><p>在XXX管理系统中，菜单权限是必不可少的。并且随着企业管理的精细化，菜单的各种操作权限判断也是越来越多，所以简洁统一的处理方式是很有必要的。</p>
 <p>在我们的项目中，每一个菜单权限都可能涉及到操作权限，它们包括：查看、新增、编辑、删除、审批、分配、重置、轨迹、下载、转移、退回、转为客户等11个。随着产品功能的不断完善，操作权限也将会越来越多。如果我们在每个ViewController的ViewDidLoad方法中去判断控制的话，工作量会非常的大。而且如果以后操作权限有变动的话，我们还得每个ViewController都去修改，很容易漏改。那么有简单的处理方式吗？</p>
 <p>当然利用AOP思想和Objective-C runtime的特性，我们可以像下面这样处理：</p>
 <ol>
@@ -33,12 +78,16 @@
 <li>创建权限相关的控件时提供固定的Tag值(比如EditButton的Tag值为1000，NewButton的Tag值为2000)。</li>
 <li>在新的ViewDidLoad方法中利用第一步中的权限属性，对权限相关控件(利用Tag来获取相关控件)进行统一操作，这样就实现了在所有ViewController中统一判断权限。</li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">还有另一种不替换ViewDidLoad的方法。</span><br><span class="line"></span><br><span class="line">即利用分类，在ViewController的分类中新添加一个类方法，比如叫VerifyPermission。在该方法中判断相关权限。这样只需要在所有ViewDidLoad中手动调用一次VerifyPermission即可。</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">还有另一种不替换ViewDidLoad的方法。</div><div class="line"></div><div class="line">即利用分类，在ViewController的分类中新添加一个类方法，比如叫VerifyPermission。在该方法中判断相关权限。这样只需要在所有ViewDidLoad中手动调用一次VerifyPermission即可。</div></pre></td></tr></table></figure>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h1 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h1><p>Aspect Oriented Programming 面向切面(切片)编程的缩写。</p>
-<h2 id="u4EC0_u4E48]]>
+    
+      &lt;h1 id=&quot;AOP&quot;&gt;&lt;a href=&quot;#AOP&quot; class=&quot;headerlink&quot; title=&quot;AOP&quot;&gt;&lt;/a&gt;AOP&lt;/h1&gt;&lt;p&gt;Aspect Oriented Programming 面向切面(切片)编程的缩写。&lt;/p&gt;
+&lt;h2 id=&quot;什么是AOP&quot;&gt;&lt;a 
+    
     </summary>
+    
     
       <category term="AOP" scheme="http://code4cocoa.com/tags/AOP/"/>
     
@@ -47,11 +96,12 @@
   </entry>
   
   <entry>
-    <title><![CDATA[韩国旅游]]></title>
+    <title>韩国旅游</title>
     <link href="http://code4cocoa.com/2016/11/03/%E9%9F%A9%E5%9B%BD%E6%97%85%E6%B8%B8/"/>
     <id>http://code4cocoa.com/2016/11/03/韩国旅游/</id>
     <published>2016-11-03T11:55:15.000Z</published>
     <updated>2016-11-03T11:56:24.000Z</updated>
+    
     <content type="html"><![CDATA[<p>前段时间去韩国首尔和济州岛转了转，个人对于韩国没什么感觉，了解也仅限于三星，LG等等。对于韩剧什么滴完全木有兴趣，不过老婆倒是挺激动地o(╯□╰)o。</p>
 <p>大概3个小时左右的飞机，我们到了仁川机场。下了飞机还要坐地铁才能从航站楼到出关的地方o(╯□╰)o，把我吓到了，这机场是有多大。出了机场大概1个小时的车程就到了首尔，然后参观了青瓦台和景福宫。青瓦台周围的警察大哥确实挺帅的，而且都有擦粉。路上的汽车基本都是韩国产的，现代、起亚、双龙、三星等等。晚上8点左右飞济州岛。</p>
 <p>第二天在济州岛，天气实在是不好，一直在刮风下雨。不过没有影响的女士们的热情，参观了好几个韩剧中出现了的景点（反正我是不知道到底是什么景点）。冷得实在不行，在某个景点喝了杯咖啡，味道感觉还是不错的。另外每一顿饭都有辣白菜，墙面一两顿还好，后面实在是不想吃了。</p>
@@ -59,67 +109,82 @@
 <p>第四天去了首尔塔，感觉还不错，那里卖的冰淇淋挺好吃的。下午去了明洞那边，还去了两个免税店，买了很多化妆品。晚上在乐天世界玩，可惜的是因为很多有趣的项目都要排队，而且要排1个多小时，所以也没有玩到项目。估计也是因为中秋节，韩国放假，很多本地人也来到乐天世界玩。</p>
 <p>个人总的感觉就是，去了解一下韩国文化什么的还可以，男生的话过去估计都会觉得很无聊。女生过去就是买买买。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>前段时间去韩国首尔和济州岛转了转，个人对于韩国没什么感觉，了解也仅限于三星，LG等等。对于韩剧什么滴完全木有兴趣，不过老婆倒是挺激动地o(╯□╰)o。</p>
-<p>大概3个小时左右的飞机，我们到了仁川机场。下了飞机还要坐地铁才能从航站楼到出关的地方o(╯□╰)o，把我吓到]]>
+    
+      &lt;p&gt;前段时间去韩国首尔和济州岛转了转，个人对于韩国没什么感觉，了解也仅限于三星，LG等等。对于韩剧什么滴完全木有兴趣，不过老婆倒是挺激动地o(╯□╰)o。&lt;/p&gt;
+&lt;p&gt;大概3个小时左右的飞机，我们到了仁川机场。下了飞机还要坐地铁才能从航站楼到出关的地方o(╯□╰)o，把我吓到
+    
     </summary>
+    
     
       <category term="杂记" scheme="http://code4cocoa.com/tags/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Paw]]></title>
+    <title>Paw</title>
     <link href="http://code4cocoa.com/2016/07/24/Paw/"/>
     <id>http://code4cocoa.com/2016/07/24/Paw/</id>
     <published>2016-07-24T13:39:59.000Z</published>
     <updated>2016-07-24T13:41:15.000Z</updated>
+    
     <content type="html"><![CDATA[<p>因为个人在产品研发中，既要负责服务端API的研发工作，同时也要负责iOS端的研发工作，所以有时候写完服务端API，马上就用iOS对接，同时判断API有没有问题。</p>
 <p>不过随着团队人员的扩张，新来的客户端同事，不懂服务器端的相关技术，导致服务端API在写完后，需要进行简单的测试，保证服务器端能够顺利调用(服务端API总是会在客户端调用之前完成，并且可能客户端要过较久一段时间才会调用，为了能让负责服务端的同事自测API的状况，我曾考虑服务端的逻辑部分使用单元测试来进行处理)，我找到了Paw这款软件，它号称是Mac最先进的HTTP客户端。</p>
 <p><a href="https://luckymarmot.com/zh-hans/paw" target="_blank" rel="external">Paw</a>除了友好，易操作的界面之外。还有个强大的功能就是可以生成客户端请求代码，支持C#、Python、Swift、Objective-C(AFNetworking，NSURLSession)等等。更支持请求动态值，从之前的响应中获取数据，例如身份验证令牌、计算后的哈希值、签名、测试用的随机数，做一些数学运算，或者任何您想做的。</p>
 <p>官网官网价格为49.99刀，不过在这里我推荐<a href="https://item.taobao.com/item.htm?spm=a1z10.4-c.w4004-11449138832.26.3syAj4&amp;id=45684786090" target="_blank" rel="external">数码荔枝</a>，99 RMB即可入手，实在是超级划算。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>因为个人在产品研发中，既要负责服务端API的研发工作，同时也要负责iOS端的研发工作，所以有时候写完服务端API，马上就用iOS对接，同时判断API有没有问题。</p>
-<p>不过随着团队人员的扩张，新来的客户端同事，不懂服务器端的相关技术，导致服务端API在写完后，需要进]]>
+    
+      &lt;p&gt;因为个人在产品研发中，既要负责服务端API的研发工作，同时也要负责iOS端的研发工作，所以有时候写完服务端API，马上就用iOS对接，同时判断API有没有问题。&lt;/p&gt;
+&lt;p&gt;不过随着团队人员的扩张，新来的客户端同事，不懂服务器端的相关技术，导致服务端API在写完后，需要进
+    
     </summary>
     
-      <category term="HTTP" scheme="http://code4cocoa.com/tags/HTTP/"/>
     
       <category term="Mac" scheme="http://code4cocoa.com/tags/Mac/"/>
     
       <category term="小工具" scheme="http://code4cocoa.com/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/"/>
     
+      <category term="HTTP" scheme="http://code4cocoa.com/tags/HTTP/"/>
+    
   </entry>
   
   <entry>
-    <title><![CDATA[一大早被DDoS。。。。。]]></title>
+    <title>一大早被DDoS。。。。。</title>
     <link href="http://code4cocoa.com/2016/07/03/%E4%B8%80%E5%A4%A7%E6%97%A9%E8%A2%ABDDoS%E3%80%82%E3%80%82%E3%80%82%E3%80%82%E3%80%82/"/>
     <id>http://code4cocoa.com/2016/07/03/一大早被DDoS。。。。。/</id>
     <published>2016-07-03T15:41:46.000Z</published>
     <updated>2016-07-03T15:43:29.000Z</updated>
+    
     <content type="html"><![CDATA[<p>今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。</p>
 <p>这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？同时立马摸出电脑，远程登录服务器，查看服务——正常，查看数据库服务——正常，查看系统日志——无异常。o(╯□╰)o，立马重启服务，再试，没有效果。这时心中突然有了不好的预感，难道被DDoS了？查看阿里云控制台，果然不出所料，DDoS攻击触发了流量清洗(流量清洗指过滤掉异常流量，保证服务器的正常运行。当然阿里云的流量清洗估计因为算法问题，将我们的正常访问也清洗掉了)，APP的请求都被阿里云重定向了。</p>
 <p>当下联系阿里云客服，客服告知目前的情况有两个选择，1.购买阿里云高防服务。2.等攻击结束，自行恢复。<br>看了下阿里云的高防服务价格，WTF？，最最便宜8800每月。。。。。。</p>
 <p>攻击30分钟后结束，流量清洗关闭，服务器也恢复了正常。不得不说因为DDoS攻击的成本低，效果显著，现在已经成为普遍的攻击手段。在DDoS的防范上，成本确实很高，在遭受攻击的时候，完全不知道能做什么。而实际上确实我们什么也做不了。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。</p>
-<p>这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？]]>
+    
+      &lt;p&gt;今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。&lt;/p&gt;
+&lt;p&gt;这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？
+    
     </summary>
     
-      <category term="DDoS" scheme="http://code4cocoa.com/tags/DDoS/"/>
     
       <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="DDoS" scheme="http://code4cocoa.com/tags/DDoS/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[如何创建Event]]></title>
+    <title>如何创建Event</title>
     <link href="http://code4cocoa.com/2016/05/22/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAEvent/"/>
     <id>http://code4cocoa.com/2016/05/22/如何创建Event/</id>
     <published>2016-05-22T15:33:07.000Z</published>
     <updated>2016-05-22T15:34:50.000Z</updated>
+    
     <content type="html"><![CDATA[<p>因项目中有一个日程功能，个人认为和iOS中日历的事件(还有另一个东西叫提醒)挺相似的，于是决定将其数据和与系统日历事件同步，这样可以利用系统日历事件的提醒功能。</p>
 <pre>
 **日历事件：**主要是时间为线索，将所有事件组织起来，事件或者说是行程安排是有时间先后顺序的。
@@ -133,24 +198,29 @@
 </li>
 </ul>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>因项目中有一个日程功能，个人认为和iOS中日历的事件(还有另一个东西叫提醒)挺相似的，于是决定将其数据和与系统日历事件同步，这样可以利用系统日历事件的提醒功能。</p>
-<pre>
-**日历事件：**主要是时间为线索，将所有事件组织起来，事件或者说是行程安排是有时间先后顺序]]>
+    
+      &lt;p&gt;因项目中有一个日程功能，个人认为和iOS中日历的事件(还有另一个东西叫提醒)挺相似的，于是决定将其数据和与系统日历事件同步，这样可以利用系统日历事件的提醒功能。&lt;/p&gt;
+&lt;pre&gt;
+**日历事件：**主要是时间为线索，将所有事件组织起来，事件或者说是行程安排是有时间先后顺序
+    
     </summary>
     
-      <category term="Eventkit" scheme="http://code4cocoa.com/tags/Eventkit/"/>
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
+    
+      <category term="Eventkit" scheme="http://code4cocoa.com/tags/Eventkit/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[OC中的泛型]]></title>
+    <title>OC中的泛型</title>
     <link href="http://code4cocoa.com/2016/04/19/OC%E4%B8%AD%E7%9A%84%E6%B3%9B%E5%9E%8B/"/>
     <id>http://code4cocoa.com/2016/04/19/OC中的泛型/</id>
     <published>2016-04-18T16:22:06.000Z</published>
     <updated>2016-04-18T16:26:09.000Z</updated>
+    
     <content type="html"><![CDATA[<p>最近在重构项目，决定将去年WWDC中讲到的OC新特性，泛型支持应用到项目中来。其实这是我一直很期待的一个特性，毕竟在做.Net的时候，泛型可是嚎嚎的好用。但是在此之前OC是不支持泛型的，那个时候使用NSArray等集合数据结构进行数据传递时，必须对业务有一定熟悉，或者变量命名相对规范些，不然很容易搞不清楚里面存储的是什么数据(Model)。</p>
 <p>泛型示例如下：</p>
 <script src="https://gist.github.com/yuxiangq/60e1e8d8d8c32734e5b2aa31d2166873.js"></script>
@@ -158,22 +228,27 @@
 
 <p>这里要注意的是，编译器只会产生警告，不会报错，并且程序也是可编译通过运行的。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>最近在重构项目，决定将去年WWDC中讲到的OC新特性，泛型支持应用到项目中来。其实这是我一直很期待的一个特性，毕竟在做.Net的时候，泛型可是嚎嚎的好用。但是在此之前OC是不支持泛型的，那个时候使用NSArray等集合数据结构进行数据传递时，必须对业务有一定熟悉，或者变量命]]>
+    
+      &lt;p&gt;最近在重构项目，决定将去年WWDC中讲到的OC新特性，泛型支持应用到项目中来。其实这是我一直很期待的一个特性，毕竟在做.Net的时候，泛型可是嚎嚎的好用。但是在此之前OC是不支持泛型的，那个时候使用NSArray等集合数据结构进行数据传递时，必须对业务有一定熟悉，或者变量命
+    
     </summary>
     
-      <category term="Objective-C" scheme="http://code4cocoa.com/tags/Objective-C/"/>
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
+    
+      <category term="Objective-C" scheme="http://code4cocoa.com/tags/Objective-C/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[蚂蚁金服技术开放日活动小记]]></title>
+    <title>蚂蚁金服技术开放日活动小记</title>
     <link href="http://code4cocoa.com/2016/03/13/%E8%9A%82%E8%9A%81%E9%87%91%E6%9C%8D%E6%8A%80%E6%9C%AF%E5%BC%80%E6%94%BE%E6%97%A5%E6%B4%BB%E5%8A%A8%E5%B0%8F%E8%AE%B0/"/>
     <id>http://code4cocoa.com/2016/03/13/蚂蚁金服技术开放日活动小记/</id>
     <published>2016-03-13T12:22:19.000Z</published>
     <updated>2016-03-13T12:23:49.000Z</updated>
+    
     <content type="html"><![CDATA[<p>今天很开心的参加了蚂蚁金服技术开放日活动，非常感谢技术专家们的分享。这次活动的干货确实挺多的，在这里我简单总结下自己的收获。</p>
 <p><strong>团队拥有统一的技能</strong></p>
 <p>在团队建设方面，我受到的第一个启发就是让团队成员拥有统一的技能，这样能让整个团队变得更加高效。尤其是团队较小的时候，拥有更多的复合型人才，是团队的核心竞争力。这也是我后续团队建设工作中的重点。</p>
@@ -194,22 +269,27 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
 <p><strong>灰度发布</strong></p>
 <p>灰度发布是指在黑与白之间，能够平滑过渡的一种发布方式。AB test就是一种灰度发布方式，让一部分用户继续用A，一部分用户开始用B，如果用户对B没有什么反对意见，那么逐步扩大范围，把所有用户都迁移到B上面来。灰度发布可以保证整体系统的稳定，在初始灰度的时候就可以发现、调整问题，以保证其影响度。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>今天很开心的参加了蚂蚁金服技术开放日活动，非常感谢技术专家们的分享。这次活动的干货确实挺多的，在这里我简单总结下自己的收获。</p>
-<p><strong>团队拥有统一的技能</strong></p>
-<p>在团队建设方面，我受到的第一个启发就是让团队成员拥有统一的技能，这]]>
+    
+      &lt;p&gt;今天很开心的参加了蚂蚁金服技术开放日活动，非常感谢技术专家们的分享。这次活动的干货确实挺多的，在这里我简单总结下自己的收获。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;团队拥有统一的技能&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在团队建设方面，我受到的第一个启发就是让团队成员拥有统一的技能，这
+    
     </summary>
+    
     
       <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[FunnelChartView漏斗控件]]></title>
+    <title>FunnelChartView漏斗控件</title>
     <link href="http://code4cocoa.com/2016/03/05/FunnelChartView%E6%BC%8F%E6%96%97%E6%8E%A7%E4%BB%B6/"/>
     <id>http://code4cocoa.com/2016/03/05/FunnelChartView漏斗控件/</id>
     <published>2016-03-04T16:55:32.000Z</published>
     <updated>2016-03-04T16:58:43.000Z</updated>
+    
     <content type="html"><![CDATA[<p>FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。</p>
 <p>一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：</p>
 <ul>
@@ -223,12 +303,16 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
 
 
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。</p>
-<p>一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：</p>
-<ul>
-<li>传一个Funnel]]>
+    
+      &lt;p&gt;FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。&lt;/p&gt;
+&lt;p&gt;一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;传一个Funnel
+    
     </summary>
+    
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
@@ -237,30 +321,36 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
   </entry>
   
   <entry>
-    <title><![CDATA[离职季感悟]]></title>
+    <title>离职季感悟</title>
     <link href="http://code4cocoa.com/2016/02/26/%E7%A6%BB%E8%81%8C%E5%AD%A3%E6%84%9F%E6%82%9F/"/>
     <id>http://code4cocoa.com/2016/02/26/离职季感悟/</id>
     <published>2016-02-26T13:49:15.000Z</published>
     <updated>2016-02-26T13:53:40.000Z</updated>
+    
     <content type="html"><![CDATA[<p>又到了一年一度的离职旺季，不幸的是我的项目组也有两位主力离职。作为他们的Leader，我虽然感到遗憾，但也挺他们感到高兴。遗憾的是，他们不能再陪着整个团队成长，同时因为他们的离开，我们产品这一两个月的研发进度也会受到影响。高兴的是，他们将去一个更高的平台磨练自己。</p>
 <p>今天有个同事面试回来告诉我，面试官问的很多问题，他都没有料到，都比较底层。就我们的产品开发来说，几乎不会用到。他回顾了一下这两年在团队中的开发情况，自己一手做出来的产品，在技术上真没有什么可以骄傲的地方，大部分时间其实就是处理业务逻辑，可以看出他比较失落。我得承认，我们做得这个产品确实不够高大上，技术上可以说都是很成熟的技术，技术门槛低。回头整理自己的知识体系，我也发现在产品的某个时间点开始，我们更多的时间是在处理业务了，初期开荒阶段，各种技术尝试，封装常用库，架构等等。产品进入平稳期后，更多的业务需求占据了开发日程，留给尝试各种技术的空间慢慢变少，自然会觉得自己的技术好像在某个时间点有了停滞。</p>
 <p>作为一名技术人，都梦想着自己能成为大牛，我也在向这这个方向努力。所以一直在尽量利用业余时间，尝试一些产品中没有使用的东西，或者新的技术。最近这段时间，自己也有迷惘，或许就是进入了瓶颈期。是的，每个IT人都会有瓶颈期，他们面对的方式也不一样。有得人在技术上遇到瓶颈期，于是就会选择转向别的方向，比如管理。有的人会慢慢的被磨掉耐心，怀疑自己的能力，从而变得平庸。有的人则会在某个时候，突破瓶颈，迎来技术的再一次快速提升。我是希望自己能迎来又一波技术的快速提升，从而实现自己做出一款牛B的梦想。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>又到了一年一度的离职旺季，不幸的是我的项目组也有两位主力离职。作为他们的Leader，我虽然感到遗憾，但也挺他们感到高兴。遗憾的是，他们不能再陪着整个团队成长，同时因为他们的离开，我们产品这一两个月的研发进度也会受到影响。高兴的是，他们将去一个更高的平台磨练自己。</p>
-]]>
+    
+      &lt;p&gt;又到了一年一度的离职旺季，不幸的是我的项目组也有两位主力离职。作为他们的Leader，我虽然感到遗憾，但也挺他们感到高兴。遗憾的是，他们不能再陪着整个团队成长，同时因为他们的离开，我们产品这一两个月的研发进度也会受到影响。高兴的是，他们将去一个更高的平台磨练自己。&lt;/p&gt;
+
+    
     </summary>
+    
     
       <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[串行异步网络请求的简单实现]]></title>
+    <title>串行异步网络请求的简单实现</title>
     <link href="http://code4cocoa.com/2016/02/21/%E4%B8%B2%E8%A1%8C%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
     <id>http://code4cocoa.com/2016/02/21/串行异步网络请求的简单实现/</id>
     <published>2016-02-21T10:26:14.000Z</published>
     <updated>2016-02-21T10:27:31.000Z</updated>
+    
     <content type="html"><![CDATA[<p>最近在项目中遇到这样一个场景 —— 客户端数据需要一条一条的上传给服务器，且上一条上传成功，才开始上传下一条，如果上一条上传失败，则整个上传终止。实质上这就是一个串行异步网络请求的过程(串行执行一个异步任务序列)。</p>
 <p><strong>方案一</strong></p>
 <p>使用递归实现，网络请求部分我这里使用AFNetworking，当然也可以用其他的库。</p>
@@ -277,27 +367,32 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
 <li>(NSArray <em> )batchOfRequestOperations:(NSArray </em> )operations<br>progressBlock:(void ( ^ )(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock<br>completionBlock:(void ( ^ )(NSArray * operations))completionBlock<br><br>配合NSOperationQueue来进行，可以看做方案二的加强版。这里就不提供示例代码了。</li>
 </ul>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>最近在项目中遇到这样一个场景 —— 客户端数据需要一条一条的上传给服务器，且上一条上传成功，才开始上传下一条，如果上一条上传失败，则整个上传终止。实质上这就是一个串行异步网络请求的过程(串行执行一个异步任务序列)。</p>
-<p><strong>方案一</strong></]]>
+    
+      &lt;p&gt;最近在项目中遇到这样一个场景 —— 客户端数据需要一条一条的上传给服务器，且上一条上传成功，才开始上传下一条，如果上一条上传失败，则整个上传终止。实质上这就是一个串行异步网络请求的过程(串行执行一个异步任务序列)。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方案一&lt;/strong&gt;&lt;/
+    
     </summary>
+    
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
-      <category term="串行请求" scheme="http://code4cocoa.com/tags/%E4%B8%B2%E8%A1%8C%E8%AF%B7%E6%B1%82/"/>
-    
       <category term="异步" scheme="http://code4cocoa.com/tags/%E5%BC%82%E6%AD%A5/"/>
+    
+      <category term="串行请求" scheme="http://code4cocoa.com/tags/%E4%B8%B2%E8%A1%8C%E8%AF%B7%E6%B1%82/"/>
     
       <category term="请求队列" scheme="http://code4cocoa.com/tags/%E8%AF%B7%E6%B1%82%E9%98%9F%E5%88%97/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[襄阳出差]]></title>
+    <title>襄阳出差</title>
     <link href="http://code4cocoa.com/2016/01/24/%E8%A5%84%E9%98%B3%E5%87%BA%E5%B7%AE/"/>
     <id>http://code4cocoa.com/2016/01/24/襄阳出差/</id>
     <published>2016-01-24T08:40:51.000Z</published>
     <updated>2016-01-24T08:42:03.000Z</updated>
+    
     <content type="html"><![CDATA[<p>今天襄阳出差，接近13个小时的火车。不得不说这是对我的一大挑战。</p>
 <p>说起坐火车的记忆，我还停留在好几年前，那个时候是坐火车回重庆老家，那个时候还不用实名制买票，还有慢车一说（就是每个车站，无论大小都会停的车），小车站的检票也不是太严格。经常有没买票的人混上车，被发现了的话，就主动打扫车上卫生，列车员倒也乐意。</p>
 <p>接近13小时的硬座，真是让人便秘（我是认真的o(╯□╰)o）。凌晨1点过的时候到了车站，打个车去酒店便呼呼大睡。</p>
@@ -308,41 +403,51 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
 <p>登上火车便是埋头就睡，11半的时候到达成都，结束了这次出差。</p>
 <p>瞎扯吐槽完毕。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>今天襄阳出差，接近13个小时的火车。不得不说这是对我的一大挑战。</p>
-<p>说起坐火车的记忆，我还停留在好几年前，那个时候是坐火车回重庆老家，那个时候还不用实名制买票，还有慢车一说（就是每个车站，无论大小都会停的车），小车站的检票也不是太严格。经常有没买票的人混上车，被]]>
+    
+      &lt;p&gt;今天襄阳出差，接近13个小时的火车。不得不说这是对我的一大挑战。&lt;/p&gt;
+&lt;p&gt;说起坐火车的记忆，我还停留在好几年前，那个时候是坐火车回重庆老家，那个时候还不用实名制买票，还有慢车一说（就是每个车站，无论大小都会停的车），小车站的检票也不是太严格。经常有没买票的人混上车，被
+    
     </summary>
+    
     
       <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[1601随笔]]></title>
+    <title>1601随笔</title>
     <link href="http://code4cocoa.com/2016/01/10/1601%E9%9A%8F%E7%AC%94/"/>
     <id>http://code4cocoa.com/2016/01/10/1601随笔/</id>
     <published>2016-01-10T11:04:03.000Z</published>
     <updated>2016-01-10T15:21:12.000Z</updated>
+    
     <content type="html"><![CDATA[<p>将个人博客用hexo部署到github后还没写过东西，这里就简单整理下最近手上处理的事情。</p>
 <p>工作上最近因为赶着发版，所以加班比较多，周一到周四都要加班到21点。新版本的进度不算乐观，原计划能在奔月20号发版，现在看来比较勉强。下周做完功能的话，实际上留给测试的时间不多，需要更慎重一点。新版的功能我个人还是挺期待的，虽然功能的完善程度不及竞争对手，但是我相信随着两到三个版本的迭代，我们将会走出一条更有特色的道路。</p>
 <p>平时自己折腾的东西有点多，Sketch、Hexo、PMP、CRM理论都是最近在涉猎的。上周和前同事聊天，他目前已转iOS开发，他提到ReactiveCocoa和Masonry两个开源库。这两个库我较早以前就在技术博客上有所了解，不过一直没在生产环境中使用过。这次听朋友说这两个库非常好用，正巧最近在VFL上遇到不少坑，于是果断用Masonry布局，果然很爽，现在已经离不开它了。ReactiveCocoa我用在了自己的个人项目中，也非常不错，确定在公司项目中也是用它。</p>
 <p>最近自己在折腾一个个人小项目，用来尝试一些新奇的想法，就写不说是什么了，等我写的差不多的时候再公布。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>将个人博客用hexo部署到github后还没写过东西，这里就简单整理下最近手上处理的事情。</p>
-<p>工作上最近因为赶着发版，所以加班比较多，周一到周四都要加班到21点。新版本的进度不算乐观，原计划能在奔月20号发版，现在看来比较勉强。下周做完功能的话，实际上留给测试的]]>
+    
+      &lt;p&gt;将个人博客用hexo部署到github后还没写过东西，这里就简单整理下最近手上处理的事情。&lt;/p&gt;
+&lt;p&gt;工作上最近因为赶着发版，所以加班比较多，周一到周四都要加班到21点。新版本的进度不算乐观，原计划能在奔月20号发版，现在看来比较勉强。下周做完功能的话，实际上留给测试的
+    
     </summary>
+    
     
       <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[iOS实现判断程序关闭、关机的思路]]></title>
+    <title>iOS实现判断程序关闭、关机的思路</title>
     <link href="http://code4cocoa.com/2015/10/25/iOS%E5%AE%9E%E7%8E%B0%E5%88%A4%E6%96%AD%E7%A8%8B%E5%BA%8F%E5%85%B3%E9%97%AD%E3%80%81%E5%85%B3%E6%9C%BA%E7%9A%84%E6%80%9D%E8%B7%AF/"/>
     <id>http://code4cocoa.com/2015/10/25/iOS实现判断程序关闭、关机的思路/</id>
     <published>2015-10-25T02:46:52.000Z</published>
     <updated>2015-12-15T11:18:15.000Z</updated>
+    
     <content type="html"><![CDATA[<p>最近在研究竞品的时候，发现其实现了检测APP是否关闭，用户是否关机的功能。当然我们知道以iOS的情况来说，是没有API能直接做到的。不过简单想了想，觉得利用多种方式配合，或许我们还是可以「判断」关机和APP关闭的。</p>
 <ol>
 <li>APP使用心跳机制和服务器保持通信。</li>
@@ -352,54 +457,68 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
 <p><strong>判断</strong></p>
 <p>服务器发现客户端心跳不正常，判断是否有网络异常状态，如果有网络异常状态则判断为「网络异常」。<br>如果没有网络异常状态，则向APP发送Slient Remote Notifications，如果APP没响应，则判断为「关机」。<br>如果有响应，则判断为「APP关闭」</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>最近在研究竞品的时候，发现其实现了检测APP是否关闭，用户是否关机的功能。当然我们知道以iOS的情况来说，是没有API能直接做到的。不过简单想了想，觉得利用多种方式配合，或许我们还是可以「判断」关机和APP关闭的。</p>
-<ol>
-<li>APP使用心跳机制和服务器保持通]]>
+    
+      &lt;p&gt;最近在研究竞品的时候，发现其实现了检测APP是否关闭，用户是否关机的功能。当然我们知道以iOS的情况来说，是没有API能直接做到的。不过简单想了想，觉得利用多种方式配合，或许我们还是可以「判断」关机和APP关闭的。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;APP使用心跳机制和服务器保持通
+    
     </summary>
+    
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[UITableView实现下拉刷新]]></title>
+    <title>UITableView实现下拉刷新</title>
     <link href="http://code4cocoa.com/2015/09/13/UITableView%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0/"/>
     <id>http://code4cocoa.com/2015/09/13/UITableView实现下拉刷新/</id>
     <published>2015-09-13T10:45:45.000Z</published>
     <updated>2015-12-15T11:18:15.000Z</updated>
+    
     <content type="html"><![CDATA[<p><strong>下拉刷新</strong>实在是很了不起得创意。目前几乎所有APP只要涉及刷新的功能，都会采用这种方式，这已经是刷新交互的标配。</p>
 <p>在Github上有大量的开源组件能实现<strong>下拉刷新</strong>和<strong>上拉加载</strong>，在这里我推荐<strong><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">MJRefresh</a></strong>，它能帮我们很优雅的实现以上两种功能。</p>
 <p>下拉刷新的原理，大家很容易理解，就是利用UITableView偏移到一定程度，然后调用刷新方法即可。但是有些童鞋可能发现了一个问题，就是UITableViewDelegate中并没有拖动相关的方法，这是怎么回事呢？其实那是因为UITableView本身继承自UIScrollView，所以我们只需要实现UIScrollViewDelegete中的- (void)scrollViewDidScroll:(UIScrollView * )scrollView方法即可。</p>
 <p><pre><code><br>//只提供关键方法<br>-(void)p_InitUITableView<br>{<br>if(self.tableView==nil)<br>{<br>self.tableView=[UITableView alloc] init];<br>self.tableView.delegate=self;<br>self.tableView.datasource=self;<br>}<br>}<br>//拉动UITableView的时候会调用该方法<br>-(void)scrollViewDidScroll:(UIScrollView * )scrollView<br>{<br>//判断是否处于刷新状态<br>if(self.isLoading)<br>{<br>//获取实际内容的高度,及UITableViewCell集合的高度，包括超出屏幕部分。<br>float contentHeight=scrollView.contentSize.height;<br>//获取TableView的高度<br>float tableViewHeight=self.tableView.frame.size.height;<br>//获取展示内容的高度,如果内容高度大于UITableView高度，就以UITableView高度为准；<br>//如果内容高度小于UITableView高度，就以内容高度为准。<br>float displayHeight=contentHeight&gt;tableViewHeight?tableViewHeight:contentHeight;<br>//接下来我们需要计算，我们拉动UITableView的时候，我们的展示内容displayHeight偏移了多少。<br>//假设相对于displayHeight往上或往下偏移20%的距离及算触发刷新。<br>if ((displayHeight - scrollView.contentSize.height + scrollView.contentOffset.y) / displayHeight &gt; 0.2)<br>{<br>// 调用上拉加载方法，在这里可以处理一些刷新动画<br>}<br>//scrollView.contentOffset.y表示整个内容在y轴上的偏移量，下拉的时候内容是向y轴负方向移动<br>//所以计算的时候要取反<br>if (- scrollView.contentOffset.y / self.tableView.frame.size.height &gt; 0.2)<br>{<br>// 调用下拉刷新方法，在这里可以处理一些刷新动画<br>}<br>}<br></code></pre><br>另外我们在添加下拉刷新的箭头的时候，Header不要添加在TableViewHeader上，要添加在UITableView的subView中。否则Header会一直在顶端，不会被覆盖。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p><strong>下拉刷新</strong>实在是很了不起得创意。目前几乎所有APP只要涉及刷新的功能，都会采用这种方式，这已经是刷新交互的标配。</p>
-<p>在Github上有大量的开源组件能实现<strong>下拉刷新</strong>和<strong>上拉加载</st]]>
+    
+      &lt;p&gt;&lt;strong&gt;下拉刷新&lt;/strong&gt;实在是很了不起得创意。目前几乎所有APP只要涉及刷新的功能，都会采用这种方式，这已经是刷新交互的标配。&lt;/p&gt;
+&lt;p&gt;在Github上有大量的开源组件能实现&lt;strong&gt;下拉刷新&lt;/strong&gt;和&lt;strong&gt;上拉加载&lt;/st
+    
     </summary>
     
-      <category term="UITableView" scheme="http://code4cocoa.com/tags/UITableView/"/>
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
+    
+      <category term="UITableView" scheme="http://code4cocoa.com/tags/UITableView/"/>
     
       <category term="下拉刷新" scheme="http://code4cocoa.com/tags/%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[WebAPP将迎来一个好时代]]></title>
+    <title>WebAPP将迎来一个好时代</title>
     <link href="http://code4cocoa.com/2015/08/29/WebAPP%E5%B0%86%E8%BF%8E%E6%9D%A5%E4%B8%80%E4%B8%AA%E5%A5%BD%E6%97%B6%E4%BB%A3/"/>
     <id>http://code4cocoa.com/2015/08/29/WebAPP将迎来一个好时代/</id>
     <published>2015-08-29T07:47:07.000Z</published>
     <updated>2015-12-15T10:55:33.000Z</updated>
+    
     <content type="html"><![CDATA[<p>随着4G网络的普及，以及手机性能、浏览器性能的提升，WebAPP正迎来自己的时代。</p>
 <p>想起2-3年前的时候，就有很多人在说WebAPP将崛起与NativeAPP平分秋色。但事实是WebAPP并没有真正占据一定份额。主要原因莫过于响应速度和体验远逊于NativeAPP，当然也有优化到极端的例子，效果可以说无限接近NativeAPP，但那毕竟是少数。大多数的WebAPP采用「JQueryMobile」、「SenchaTouch」等框架，在具体研发中遇到过的坑那是相当多，尝试过开发商业项目的童鞋应该心有余悸。</p>
 <p>最近一年，4G网络的加紧推广及流量价格的降低，解决了WebAPP很大的一个短板，也让我们看到了WebAPP崛起的希望。其实移动网络的加速，对整个APP开发都是有益的，对于小团队来说，就不用将太多的精力投入到基础通讯的优化上。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>随着4G网络的普及，以及手机性能、浏览器性能的提升，WebAPP正迎来自己的时代。</p>
-<p>想起2-3年前的时候，就有很多人在说WebAPP将崛起与NativeAPP平分秋色。但事实是WebAPP并没有真正占据一定份额。主要原因莫过于响应速度和体验远逊于NativeA]]>
+    
+      &lt;p&gt;随着4G网络的普及，以及手机性能、浏览器性能的提升，WebAPP正迎来自己的时代。&lt;/p&gt;
+&lt;p&gt;想起2-3年前的时候，就有很多人在说WebAPP将崛起与NativeAPP平分秋色。但事实是WebAPP并没有真正占据一定份额。主要原因莫过于响应速度和体验远逊于NativeA
+    
     </summary>
+    
     
       <category term="WebAPP" scheme="http://code4cocoa.com/tags/WebAPP/"/>
     
@@ -408,11 +527,12 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
   </entry>
   
   <entry>
-    <title><![CDATA[手机是如何定位的]]></title>
+    <title>手机是如何定位的</title>
     <link href="http://code4cocoa.com/2015/06/19/%E6%89%8B%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%E7%9A%84/"/>
     <id>http://code4cocoa.com/2015/06/19/手机是如何定位的/</id>
     <published>2015-06-19T14:00:10.000Z</published>
     <updated>2015-12-15T11:18:15.000Z</updated>
+    
     <content type="html"><![CDATA[<p>我们目前了解到的手机定位方式，主要有四种：GPS、A-GPS、Wi-Fi、基站定位。</p>
 <h4 id="GPS"><a href="#GPS" class="headerlink" title="GPS"></a>GPS</h4><p>即全球定位系统，它是利用GPS定位卫星，在全球范围内实时进行定位、导航的系统。民用定位精度为10米左右，定位精度取决于上方遮盖物，周围环境，当地政策等。所以室内是无法使用GPS进行定位的。在空旷的地方GPS定位精度高于城市中。</p>
 <p><em>优点:精度高、不依赖网络。</em></p>
@@ -428,24 +548,28 @@ GPS定位的时候是需要通过卫星的位置、用户到卫星的距离来�
 
 </code></pre>
 
-<h4 id="A-GPS_28Assisted_GPS_29"><a href="#A-GPS_28Assisted_GPS_29" class="headerlink" title="A-GPS(Assisted GPS)"></a>A-GPS(Assisted GPS)</h4><p>A-GPS（Assisted GPS：辅助全球卫星定位系统）是结合GSM/GPRS与传统卫星定位，利用基地台代送辅助卫星信息，以缩减GPS芯片获取卫星信号的延迟时间，受遮盖的室内也能借基地台讯号弥补，减轻GPS芯片对卫星的依赖度。简而言之，就是有网络辅助的GPS。</p>
+<h4 id="A-GPS-Assisted-GPS"><a href="#A-GPS-Assisted-GPS" class="headerlink" title="A-GPS(Assisted GPS)"></a>A-GPS(Assisted GPS)</h4><p>A-GPS（Assisted GPS：辅助全球卫星定位系统）是结合GSM/GPRS与传统卫星定位，利用基地台代送辅助卫星信息，以缩减GPS芯片获取卫星信号的延迟时间，受遮盖的室内也能借基地台讯号弥补，减轻GPS芯片对卫星的依赖度。简而言之，就是有网络辅助的GPS。</p>
 <p>A-GPS解决方案的优势主要在其定位精度上，在室外等空旷地区，其精度在正常的GPS工作环境下，可达10米左右，堪称目前定位精度最高的一种定位技术。该技术的另一优点为：首次捕获GPS信号的时间一般仅需几秒，不像GPS的首次捕获时间可能要2～3分钟。</p>
 <p><em>优点:定位速度快、精度高。</em></p>
 <p><em>缺点:不支持室内定位、依赖网络。</em></p>
-<h4 id="Wi-Fi_u5B9A_u4F4D"><a href="#Wi-Fi_u5B9A_u4F4D" class="headerlink" title="Wi-Fi定位"></a>Wi-Fi定位</h4><p>Wi-Fi定位的原理并不是很多人想的那样依靠IP地址定位，它实际是利用Wi-Fi信号来定位。当你的手机能收到某个Wi-Fi信号时，手机就会去服务器查找这个Wi-Fi信号的位置，然后再通过Wi-Fi信号强度进行纠正。比如在iOS中，系统就会提示用户，开启Wi-Fi以便获取更精确的位置信息。</p>
+<h4 id="Wi-Fi定位"><a href="#Wi-Fi定位" class="headerlink" title="Wi-Fi定位"></a>Wi-Fi定位</h4><p>Wi-Fi定位的原理并不是很多人想的那样依靠IP地址定位，它实际是利用Wi-Fi信号来定位。当你的手机能收到某个Wi-Fi信号时，手机就会去服务器查找这个Wi-Fi信号的位置，然后再通过Wi-Fi信号强度进行纠正。比如在iOS中，系统就会提示用户，开启Wi-Fi以便获取更精确的位置信息。</p>
 <pre><code>
 关于Wi-Fi信息的采集，Apple会使用专门的采集车，沿街道扫描Wi-Fi信号，并将Wi-Fi信号的强度、经纬度等相关信息上传到服务器。同时当我们的手机连接到某个Wi-F时i，手机系统也会记录下该Wi-Fi的相关信息，并尝试获取经纬度(例如通过基站定位)然后将其上传。百度地图、谷歌地图等地图相关的APP，差不多都有这样的采集措施。
 </code></pre>
 
 <p><em>优点:可室内定位，速度较快，定位精度较高、不依赖网络。</em><br><em>缺点:定位精度稳定性不高</em></p>
-<h4 id="u57FA_u7AD9_u5B9A_u4F4D"><a href="#u57FA_u7AD9_u5B9A_u4F4D" class="headerlink" title="基站定位"></a>基站定位</h4><p>基站定位技术一般应用于手机，它是通过电信移动运营商的网络(如GSM网)获取移动终端用户的位置信息的技术。<br>基站定位的大致原理为：移动电话测量不同基站的下行导频信号，得到不同基站下行导频的TOA(Time of Arrival，到达时刻)或TDOA(Time Difference of Arrival，到达时间差)，根据该测量结果并结合基站的坐标，一般采用三角公式估算法，就能够算出移动电话的位置。实际的位置估计算法要考虑多基站(3个或3个以上)定位的情况，一般而言，附近基站数目越多，定位精度越高。</p>
+<h4 id="基站定位"><a href="#基站定位" class="headerlink" title="基站定位"></a>基站定位</h4><p>基站定位技术一般应用于手机，它是通过电信移动运营商的网络(如GSM网)获取移动终端用户的位置信息的技术。<br>基站定位的大致原理为：移动电话测量不同基站的下行导频信号，得到不同基站下行导频的TOA(Time of Arrival，到达时刻)或TDOA(Time Difference of Arrival，到达时间差)，根据该测量结果并结合基站的坐标，一般采用三角公式估算法，就能够算出移动电话的位置。实际的位置估计算法要考虑多基站(3个或3个以上)定位的情况，一般而言，附近基站数目越多，定位精度越高。</p>
 <p><em>优点：可以室内定位，定位速度快、不依赖网络。</em></p>
 <p><em>缺点：定位精度受基站覆盖率影响，定位精度不稳定。</em></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>我们目前了解到的手机定位方式，主要有四种：GPS、A-GPS、Wi-Fi、基站定位。</p>
-<h4 id="GPS"><a href="#GPS" class="headerlink" title="GPS"></a>GPS</h4><p>即全球定位系统，它是利用GPS定]]>
+    
+      &lt;p&gt;我们目前了解到的手机定位方式，主要有四种：GPS、A-GPS、Wi-Fi、基站定位。&lt;/p&gt;
+&lt;h4 id=&quot;GPS&quot;&gt;&lt;a href=&quot;#GPS&quot; class=&quot;headerlink&quot; title=&quot;GPS&quot;&gt;&lt;/a&gt;GPS&lt;/h4&gt;&lt;p&gt;即全球定位系统，它是利用GPS定
+    
     </summary>
+    
     
       <category term="GPS" scheme="http://code4cocoa.com/tags/GPS/"/>
     
@@ -454,12 +578,13 @@ GPS定位的时候是需要通过卫星的位置、用户到卫星的距离来�
   </entry>
   
   <entry>
-    <title><![CDATA[Swift学习笔记七]]></title>
+    <title>Swift学习笔记七</title>
     <link href="http://code4cocoa.com/2015/05/21/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%83/"/>
     <id>http://code4cocoa.com/2015/05/21/Swift学习笔记七/</id>
     <published>2015-05-21T13:32:56.000Z</published>
     <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="u5173_u4E8ESwfit_u4E2D_u7684_u6784_u9020_u5668"><a href="#u5173_u4E8ESwfit_u4E2D_u7684_u6784_u9020_u5668" class="headerlink" title="关于Swfit中的构造器"></a>关于Swfit中的构造器</h4><p><strong>构造器</strong>其实就是我们在其他语言中常说的<strong>构造函数</strong>。</p>
+    
+    <content type="html"><![CDATA[<h4 id="关于Swfit中的构造器"><a href="#关于Swfit中的构造器" class="headerlink" title="关于Swfit中的构造器"></a>关于Swfit中的构造器</h4><p><strong>构造器</strong>其实就是我们在其他语言中常说的<strong>构造函数</strong>。</p>
 <pre>与Objective-C中**构造函数**不同的是，Swfit的**构造器**无需返回值，它们的主要任务是保证新实例在第一次使用前完成正确的初始化(这个初始化过程包括为实例中属性值设置初始值等)。</pre>
 <pre>当你为存储型属性设置默认值或者在构造器中为其赋值时，它们的值是被直接设置的，不会触发任何属性观测器（property observers）。</pre>
 **构造器**的最简形式类似于一个不带任何参数的实例方法，以关键字*init*命名，例如：
@@ -492,22 +617,27 @@ testNum=t
 
 
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h4 id="u5173_u4E8ESwfit_u4E2D_u7684_u6784_u9020_u5668"><a href="#u5173_u4E8ESwfit_u4E2D_u7684_u6784_u9020_u5668" class="headerlink" title="]]>
+    
+      &lt;h4 id=&quot;关于Swfit中的构造器&quot;&gt;&lt;a href=&quot;#关于Swfit中的构造器&quot; class=&quot;headerlink&quot; title=&quot;关于Swfit中的构造器&quot;&gt;&lt;/a&gt;关于Swfit中的构造器&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;构造器&lt;/strong&gt;其实就是我们在其他语
+    
     </summary>
     
-      <category term="Swift" scheme="http://code4cocoa.com/tags/Swift/"/>
     
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
+    
+      <category term="Swift" scheme="http://code4cocoa.com/tags/Swift/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[自定义UITableViewCell，使用VFL布局]]></title>
+    <title>自定义UITableViewCell，使用VFL布局</title>
     <link href="http://code4cocoa.com/2015/04/12/%E8%87%AA%E5%AE%9A%E4%B9%89UITableViewCell%EF%BC%8C%E4%BD%BF%E7%94%A8VFL%E5%B8%83%E5%B1%80/"/>
     <id>http://code4cocoa.com/2015/04/12/自定义UITableViewCell，使用VFL布局/</id>
     <published>2015-04-12T12:57:39.000Z</published>
     <updated>2015-12-15T11:18:15.000Z</updated>
+    
     <content type="html"><![CDATA[<p>自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，<a href="https://github.com/yuxiangq/UITableViewCell4VFL/commits?author=yuxiangq" target="_blank" rel="external">Demo比较简单</a></p>
 <ul>
 <li><p>首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_2.png" alt="image"></p>
@@ -531,24 +661,29 @@ testNum=t
 
 
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，<a href="https://github.com/]]>
+    
+      &lt;p&gt;自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，&lt;a href=&quot;https://github.com/
+    
     </summary>
+    
+    
+      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
       <category term="UITableViewCell" scheme="http://code4cocoa.com/tags/UITableViewCell/"/>
     
       <category term="VFL" scheme="http://code4cocoa.com/tags/VFL/"/>
     
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[我的2014总结]]></title>
+    <title>我的2014总结</title>
     <link href="http://code4cocoa.com/2015/02/04/%E6%88%91%E7%9A%842014%E6%80%BB%E7%BB%93/"/>
     <id>http://code4cocoa.com/2015/02/04/我的2014总结/</id>
     <published>2015-02-04T07:25:13.000Z</published>
     <updated>2015-12-15T11:18:15.000Z</updated>
+    
     <content type="html"><![CDATA[<p>2014已经结束了，在这元旦假期的最后一天，就让我来总结一下自己去年技术上的收获及见闻。</p>
 <h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><p>去年我的主要角色是整个团队的iOS工程师及技术总负责人。当然同时还会兼职产品经理，运维等其他角色o(╯□╰)o。</p>
 <h2 id="VFL"><a href="#VFL" class="headerlink" title="VFL"></a>VFL</h2><p>首先是学会使用了VFL，真是布局神器，强烈推荐。为此我将产品中大部分的布局都使用VFL进行了重写。这感觉，谁用谁知道。</p>
@@ -564,82 +699,23 @@ testNum=t
 <h2 id="WebAPI"><a href="#WebAPI" class="headerlink" title="WebAPI"></a>WebAPI</h2><p>一直在计划将服务器框架由WCF替换为WebAPI，在年中的时候进行了框架搭建，可惜的是因为产品功能迭代较快，没有时间完成框架替换。</p>
 <h2 id="Nuget"><a href="#Nuget" class="headerlink" title="Nuget"></a>Nuget</h2><p>在新服务器工程中使用的引用管理工具。</p>
 <h2 id="Dapper"><a href="#Dapper" class="headerlink" title="Dapper"></a><a href="https://github.com/yuxiangq/dapper-dot-net" target="_blank" rel="external">Dapper</a></h2><p>一个轻量级高效率的ORM框架，重要的是针对MySQL的支持同样优秀。相较于EF的繁琐，对于习惯使用ADO.NET的朋友来说，该框架实在是太合适了。</p>
-<h1 id="u9605_u8BFB"><a href="#u9605_u8BFB" class="headerlink" title="阅读"></a>阅读</h1><p>14年阅读了挺多经典的书籍，还有部分书没来得及读。除了技术相关书籍还读了部分马伯庸的小说，真的非常好。</p>
-<h2 id="Effective_Objective-C_2-0"><a href="#Effective_Objective-C_2-0" class="headerlink" title="Effective Objective-C 2.0"></a><a href="http://book.douban.com/subject/21370593/" target="_blank" rel="external">Effective Objective-C 2.0</a></h2><p>一本很棒的书，讲了很多有关Objective-C的技巧，不过翻译挺烂的。</p>
-<h2 id="u6587_u660E_u4E4B_u5149"><a href="#u6587_u660E_u4E4B_u5149" class="headerlink" title="文明之光"></a><a href="http://book.douban.com/subject/25902942/" target="_blank" rel="external">文明之光</a></h2><p>吴军老师的书，作为一名IT工作者，开阔的视野是必不可少的，推荐阅读。</p>
-<h2 id="ASP-NET_Web_API_2_u6846_u67B6_u63ED_u79D8"><a href="#ASP-NET_Web_API_2_u6846_u67B6_u63ED_u79D8" class="headerlink" title="ASP.NET Web API 2框架揭秘"></a><a href="http://book.douban.com/subject/25923644/" target="_blank" rel="external">ASP.NET Web API 2框架揭秘</a></h2><p>讲解WebAPI的书，目前主要当词典用。</p>
-<h2 id="u83CA_u4E0E_u5200"><a href="#u83CA_u4E0E_u5200" class="headerlink" title="菊与刀"></a><a href="http://book.douban.com/subject/1022238/" target="_blank" rel="external">菊与刀</a></h2><p>从美国人的角度来看日本的书。</p>
-<h2 id="u6B7B_u4E8E_u6280_u672F_uFF1A_u7D22_u5C3C_u8870_u4EA1_u542F_u793A"><a href="#u6B7B_u4E8E_u6280_u672F_uFF1A_u7D22_u5C3C_u8870_u4EA1_u542F_u793A" class="headerlink" title="死于技术：索尼衰亡启示"></a><a href="http://book.douban.com/subject/25835910/" target="_blank" rel="external">死于技术：索尼衰亡启示 </a></h2><p>索尼确实已经衰落了，卖掉了经典的VAIO，这本书全面的剖析了索尼衰落的原因。</p>
+<h1 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h1><p>14年阅读了挺多经典的书籍，还有部分书没来得及读。除了技术相关书籍还读了部分马伯庸的小说，真的非常好。</p>
+<h2 id="Effective-Objective-C-2-0"><a href="#Effective-Objective-C-2-0" class="headerlink" title="Effective Objective-C 2.0"></a><a href="http://book.douban.com/subject/21370593/" target="_blank" rel="external">Effective Objective-C 2.0</a></h2><p>一本很棒的书，讲了很多有关Objective-C的技巧，不过翻译挺烂的。</p>
+<h2 id="文明之光"><a href="#文明之光" class="headerlink" title="文明之光"></a><a href="http://book.douban.com/subject/25902942/" target="_blank" rel="external">文明之光</a></h2><p>吴军老师的书，作为一名IT工作者，开阔的视野是必不可少的，推荐阅读。</p>
+<h2 id="ASP-NET-Web-API-2框架揭秘"><a href="#ASP-NET-Web-API-2框架揭秘" class="headerlink" title="ASP.NET Web API 2框架揭秘"></a><a href="http://book.douban.com/subject/25923644/" target="_blank" rel="external">ASP.NET Web API 2框架揭秘</a></h2><p>讲解WebAPI的书，目前主要当词典用。</p>
+<h2 id="菊与刀"><a href="#菊与刀" class="headerlink" title="菊与刀"></a><a href="http://book.douban.com/subject/1022238/" target="_blank" rel="external">菊与刀</a></h2><p>从美国人的角度来看日本的书。</p>
+<h2 id="死于技术：索尼衰亡启示"><a href="#死于技术：索尼衰亡启示" class="headerlink" title="死于技术：索尼衰亡启示 "></a><a href="http://book.douban.com/subject/25835910/" target="_blank" rel="external">死于技术：索尼衰亡启示 </a></h2><p>索尼确实已经衰落了，卖掉了经典的VAIO，这本书全面的剖析了索尼衰落的原因。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>2014已经结束了，在这元旦假期的最后一天，就让我来总结一下自己去年技术上的收获及见闻。</p>
-<h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><p>去年我的主要角色是整个团队的]]>
+    
+      &lt;p&gt;2014已经结束了，在这元旦假期的最后一天，就让我来总结一下自己去年技术上的收获及见闻。&lt;/p&gt;
+&lt;h1 id=&quot;iOS&quot;&gt;&lt;a href=&quot;#iOS&quot; class=&quot;headerlink&quot; title=&quot;iOS&quot;&gt;&lt;/a&gt;iOS&lt;/h1&gt;&lt;p&gt;去年我的主要角色是整个团队的
+    
     </summary>
+    
     
       <category term="个人总结" scheme="http://code4cocoa.com/tags/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Swift学习笔记六]]></title>
-    <link href="http://code4cocoa.com/2015/02/01/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%AD/"/>
-    <id>http://code4cocoa.com/2015/02/01/Swift学习笔记六/</id>
-    <published>2015-02-01T14:02:12.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    <content type="html"><![CDATA[<p>Swift中的枚举拥有很棒的特性，至少以前我是没有接触过的。</p>
-<p>####枚举语法####<br>使用<strong>enum</strong>关键字，并将其整个定义放在大括号内：</p>
-<pre><code>
-enum demo{
-//定义枚举相关类容
-}
-</code></pre>
-假设我们定义指南针的四个方向：
-<pre><code>
-enum CompassPoint {
-case North
-case South
-case East
-case West
-}
-</code></pre>
-一个枚举中被定义的值是枚举的**成员值**(或者**成员**)。
-**case**关键字表明新的一样关键字被定义。
-
-多个成员值也可以出现在同一行上，用逗号隔开：
-<pre><code>
-enum CompassPoint {
-case North,South,East,West
-}
-
-//使用方法
-var directionToHead = CompassPoint.West
-directionToHead = .North
-</code></pre>
-
-<blockquote>
-<p>注意：<br>不像 C 和 Objective-C 一样，Swift 的枚举成员在被创建时不会被赋予一个默认的整数值。在上面的CompassPoints例子中，North，South，East和West不是隐式的等于0，1，2和3。相反的，这些不同的枚举成员在CompassPoint的一种显示定义中拥有各自不同的值。</p>
-</blockquote>
-<p>####相关值####<br>Swift的枚举可以存储任何类型的相关值，如果需要的话每个成员的数据类型是可以不同的。</p>
-<p>比如我们可以定义两种商品条码的枚举：</p>
-<p><pre><code><br>enum Barcode {<br>case UPCA(Int, Int, Int)<br>case QRCode(String)<br>}<br></code></pre><br>然后可以使用任何一种条码类型创建新的条码：</p>
-<p><pre><code><br>var productBarcode = Barcode.UPCA(8, 85909_51226, 3)<br>productBarcode = .QRCode(“ABCDEFGHIJKLMNOP”)<br>//使用Switch-case<br>switch productBarcode {<br>case .UPCA(let numberSystem, let identifier, let check):<br>println(“UPC-A with value of (numberSystem), (identifier), (check).”)<br>case .QRCode(let productCode):<br>println(“QR code with value of (productCode).”)<br>}<br></code></pre></p>
-<p>####原始值####<br>作为相关值的替代，枚举成员可以被默认值（称为原始值）预先填充，其中这些原始值具有相同的类型。</p>
-<p>这是一个枚举成员存储原始ASCII的例子：</p>
-<p><pre><code><br>enum ASCIIControlCharacter: Character {<br>case Tab = “\t”<br>case LineFeed = “\n”<br>case CarriageReturn = “\r”<br>}<br></code></pre><br>原始值可以是字符串，字符，或者任何整型值或浮点型值。每个原始值在它的枚举声明中必须是唯一的。当整型值被用于原始值，如果其他枚举成员没有值时，它们会自动递增。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Swift中的枚举拥有很棒的特性，至少以前我是没有接触过的。</p>
-<p>####枚举语法####<br>使用<strong>enum</strong>关键字，并将其整个定义放在大括号内：</p>
-<pre><code>
-enum demo{
-//定义枚举相关类容
-}
-<]]>
-    </summary>
-    
-      <category term="Swift" scheme="http://code4cocoa.com/tags/Swift/"/>
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
   </entry>
   
