@@ -263,6 +263,70 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-关于《读库》" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/18/关于《读库》/" class="article-date">
+      <time datetime="2017-02-18T14:23:50.000Z" itemprop="datePublished">2017-02-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/18/关于《读库》/">关于《读库》</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>《读库》这本『杂志』我是很早就听说过的，记忆中是在池建强老师的文章中看到的，同时池建强老师也将其推荐了一番。正好年前在杂志铺翻杂志的时候想了起来，就索性去天猫订了一年。假期回来，第一时间就拿到了1700和1701，很欣喜那么快就拿到书了，于是迫不及待的拆开了快递包装。</p>
+<p>刚拆开包装的时候，两本蛮厚的书出现在眼前。那在手上，那分量感觉又有点不对，谁能想到那样有『厚重感』的外形，拿在手里却又是那样的轻呢。将近400页的书，比那些200页的书都轻了不少。尤其是对于我这种看惯了大部头的技术男来说，更是觉得有点匪夷所思。后来在网上了解到，《读库》为了保证阅读的舒适，特地选择了更轻的纸来印刷。</p>
+<p>读库的封面很简洁，没有多余的文字和色彩。我很难用合适的词汇来描述它的这种简洁，或许是看惯了大大的LOGO，花花绿绿的封面。面对这种简洁的封面，有一种莫名的好感。</p>
+<p>摸着书的封面，有一种磨砂的感觉。内页的纸摸起来也很舒服，感觉很软，韧性很好，并不会因为薄和轻而变得易碎。</p>
+<p>内容上，1700更多的是一种总结回顾，不过里面记录的事情还是挺有趣的。1701还没有细细品味，这里就不多说了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2016总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1208,69 +1272,6 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-UITableView实现下拉刷新" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/13/UITableView实现下拉刷新/" class="article-date">
-      <time datetime="2015-09-13T10:45:45.000Z" itemprop="datePublished">2015-09-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/13/UITableView实现下拉刷新/">UITableView实现下拉刷新</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><strong>下拉刷新</strong>实在是很了不起得创意。目前几乎所有APP只要涉及刷新的功能，都会采用这种方式，这已经是刷新交互的标配。</p>
-<p>在Github上有大量的开源组件能实现<strong>下拉刷新</strong>和<strong>上拉加载</strong>，在这里我推荐<strong><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">MJRefresh</a></strong>，它能帮我们很优雅的实现以上两种功能。</p>
-<p>下拉刷新的原理，大家很容易理解，就是利用UITableView偏移到一定程度，然后调用刷新方法即可。但是有些童鞋可能发现了一个问题，就是UITableViewDelegate中并没有拖动相关的方法，这是怎么回事呢？其实那是因为UITableView本身继承自UIScrollView，所以我们只需要实现UIScrollViewDelegete中的- (void)scrollViewDidScroll:(UIScrollView * )scrollView方法即可。</p>
-<p><pre><code><br>//只提供关键方法<br>-(void)p_InitUITableView<br>{<br>if(self.tableView==nil)<br>{<br>self.tableView=[UITableView alloc] init];<br>self.tableView.delegate=self;<br>self.tableView.datasource=self;<br>}<br>}<br>//拉动UITableView的时候会调用该方法<br>-(void)scrollViewDidScroll:(UIScrollView * )scrollView<br>{<br>//判断是否处于刷新状态<br>if(self.isLoading)<br>{<br>//获取实际内容的高度,及UITableViewCell集合的高度，包括超出屏幕部分。<br>float contentHeight=scrollView.contentSize.height;<br>//获取TableView的高度<br>float tableViewHeight=self.tableView.frame.size.height;<br>//获取展示内容的高度,如果内容高度大于UITableView高度，就以UITableView高度为准；<br>//如果内容高度小于UITableView高度，就以内容高度为准。<br>float displayHeight=contentHeight&gt;tableViewHeight?tableViewHeight:contentHeight;<br>//接下来我们需要计算，我们拉动UITableView的时候，我们的展示内容displayHeight偏移了多少。<br>//假设相对于displayHeight往上或往下偏移20%的距离及算触发刷新。<br>if ((displayHeight - scrollView.contentSize.height + scrollView.contentOffset.y) / displayHeight &gt; 0.2)<br>{<br>// 调用上拉加载方法，在这里可以处理一些刷新动画<br>}<br>//scrollView.contentOffset.y表示整个内容在y轴上的偏移量，下拉的时候内容是向y轴负方向移动<br>//所以计算的时候要取反<br>if (- scrollView.contentOffset.y / self.tableView.frame.size.height &gt; 0.2)<br>{<br>// 调用下拉刷新方法，在这里可以处理一些刷新动画<br>}<br>}<br></code></pre><br>另外我们在添加下拉刷新的箭头的时候，Header不要添加在TableViewHeader上，要添加在UITableView的subView中。否则Header会一直在顶端，不会被覆盖。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/下拉刷新/">下拉刷新</a></li></ul>
     </div>
 
       
