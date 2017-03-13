@@ -15,32 +15,12 @@
 
 
 
-<meta name="description" content="自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，Demo比较简单
-
-首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：
-
-让我们的ViewController继承UITableViewContro">
-<meta property="og:type" content="article">
-<meta property="og:title" content="自定义UITableViewCell，使用VFL布局">
-<meta property="og:url" content="http://code4cocoa.com/2015/04/12/自定义UITableViewCell，使用VFL布局/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Code4Cocoa">
+<meta property="og:url" content="http://code4cocoa.com/archives/2017/03/index.html">
 <meta property="og:site_name" content="Code4Cocoa">
-<meta property="og:description" content="自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，Demo比较简单
-
-首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：
-
-让我们的ViewController继承UITableViewContro">
-<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/viewcontroller_uitableviewcontroller.png">
-<meta property="og:updated_time" content="2015-12-15T11:18:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自定义UITableViewCell，使用VFL布局">
-<meta name="twitter:description" content="自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，Demo比较简单
-
-首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：
-
-让我们的ViewController继承UITableViewContro">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png">
+<meta name="twitter:title" content="Code4Cocoa">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -72,7 +52,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>自定义UITableViewCell，使用VFL布局 | Code4Cocoa</title>
+<title>Archives: 2017/3 | Code4Cocoa</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -82,8 +62,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
-        isArchive: false,
+        isPost: false,
+        isArchive: true,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -276,193 +256,56 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-自定义UITableViewCell，使用VFL布局" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2015/04/12/自定义UITableViewCell，使用VFL布局/" class="article-date">
-      <time datetime="2015-04-12T12:57:39.000Z" itemprop="datePublished">2015-04-12</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/03/12/170312/" class="archive-article-date">
+      <time datetime="2017-03-12T13:43:17.000Z" itemprop="datePublished">03-12</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      自定义UITableViewCell，使用VFL布局
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/03/12/170312/">170312</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UITableViewCell/">UITableViewCell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VFL/">VFL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，<a href="https://github.com/yuxiangq/UITableViewCell4VFL/commits?author=yuxiangq" target="_blank" rel="external">Demo比较简单</a></p>
-<ul>
-<li><p>首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_2.png" alt="image"></p>
-</li>
-<li><p>让我们的ViewController继承UITableViewController。继承UITableViewController能帮我们省不少事情。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/viewcontroller_uitableviewcontroller.png" alt="image"></p>
-</li>
-<li><p>新建CustomCell，我们在其中新建一个UILabel，叫contentLabel，用于展示文本数据并允许换行。</p>
-<script src="https://gist.github.com/yuxiangq/96c5ffeb2ab9d718a33e.js"></script>
-</li>
-<li><p>为contentLabel设置约束，这里我们的约束可以看做Margin(5,5,5,5)。</p>
-<script src="https://gist.github.com/yuxiangq/dc9faab124f1eedf82a8.js"></script>
-</li>
-<li><p>在ViewController中添加一个原型cell，动态计算高度的时候使用。</p>
-<script src="https://gist.github.com/yuxiangq/6c282d9899fe28fe59e4.js"></script>
 
-</li>
-</ul>
-<pre>
-涉及换行的UILabel，请一定要注意**preferredMaxLayoutWidth**属性的设置，否则换行会出问题。
-</pre>
-
-
-
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/04/12/自定义UITableViewCell，使用VFL布局/">自定义UITableViewCell，使用VFL布局</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">YuxiangQ</a></p>
-        <p><span>发布时间:</span>2015-04-12, 20:57:39</p>
-        <p><span>最后更新:</span>2015-12-15, 19:18:15</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/04/12/自定义UITableViewCell，使用VFL布局/" title="自定义UITableViewCell，使用VFL布局">http://code4cocoa.com/2015/04/12/自定义UITableViewCell，使用VFL布局/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://code4cocoa.com/2015/04/12/自定义UITableViewCell，使用VFL布局/　　作者: YuxiangQ" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
     </div>
 
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/05/21/Swift学习笔记七/">
-                    Swift学习笔记七
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/02/04/我的2014总结/">
-                    我的2014总结
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"自定义UITableViewCell，使用VFL布局　| Code4Cocoa　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
-
-
-
-
-
-
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2015/05/21/Swift学习笔记七/" title="上一篇: Swift学习笔记七">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2015/02/04/我的2014总结/" title="下一篇: 我的2014总结">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/170312/">170312</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/18/关于《读库》/">关于《读库》</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/15/2016总结/">2016总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/项目中AOP的使用/">项目中AOP的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/03/韩国旅游/">韩国旅游</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/Paw/">Paw</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/03/一大早被DDoS。。。。。/">一大早被DDoS。。。。。</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/22/如何创建Event/">如何创建Event</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/19/OC中的泛型/">OC中的泛型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/蚂蚁金服技术开放日活动小记/">蚂蚁金服技术开放日活动小记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/05/FunnelChartView漏斗控件/">FunnelChartView漏斗控件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/26/离职季感悟/">离职季感悟</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/串行异步网络请求的简单实现/">串行异步网络请求的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/襄阳出差/">襄阳出差</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/1601随笔/">1601随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/iOS实现判断程序关闭、关机的思路/">iOS实现判断程序关闭、关机的思路</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/13/UITableView实现下拉刷新/">UITableView实现下拉刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/29/WebAPP将迎来一个好时代/">WebAPP将迎来一个好时代</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/19/手机是如何定位的/">手机是如何定位的</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/21/Swift学习笔记七/">Swift学习笔记七</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/12/自定义UITableViewCell，使用VFL布局/">自定义UITableViewCell，使用VFL布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/04/我的2014总结/">我的2014总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/01/Swift学习笔记六/">Swift学习笔记六</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/25/Pocket、Instapaper、Readability的比较/">Pocket、Instapaper、Readability的比较</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/12/NumberTextField/">NumberTextField</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/01/Swift学习笔记五/">Swift学习笔记五</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/19/Lock，一款有趣的应用/">Lock，一款有趣的应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/14/UICollectionViewController的用法/">UICollectionViewController的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/05/关于如何学习一门新语言/">关于如何学习一门新语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/04/VFL布局学习/">VFL布局学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/04/梯子推荐/">梯子推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/11/19/Swift学习笔记四/">Swift学习笔记四</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/11/19/手势的使用/">手势的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/10/26/Swift学习笔记三/">Swift学习笔记三</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/10/23/Swift学习笔记二/">Swift学习笔记二</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/10/12/Swift学习笔记一/">Swift学习笔记一</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/09/27/自学VB时的回忆/">自学VB时的回忆</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/09/05/关于指针及指针变量/">关于指针及指针变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/30/UIImageView展示大图学习笔记/">UIImageView展示大图学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/16/UITableViewCell的重用方法的区别/">UITableViewCell的重用方法的区别</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">

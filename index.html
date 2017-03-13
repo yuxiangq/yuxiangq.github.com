@@ -263,6 +263,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-170312" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/12/170312/" class="article-date">
+      <time datetime="2017-03-12T13:43:17.000Z" itemprop="datePublished">2017-03-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/170312/">170312</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>今年计划中的三个重大版本的第一个，已经在上周发布了。整个流程没有出什么大问题，不过大家还是一起折腾到了第二天的凌晨3点。我简单算了一下，我们从20:30分开始更新数据库，21点的时候更新完毕开始测试。两个人测试新版本，两个人测试老版本。老版本只测常用功能，新版本则照例将所有功能跑一遍。在这6个小时中，修改BUG的时间其实不到一个小时，研发同事很长一段时间都是在等待测试结果，所以目前发版的瓶颈在测试效率上，考虑到整个产品的功能只会多不会少，所以我需要好好思考一下如何优化测试流程，能引入什么工具来提升测试效率。</p>
+<p>最近利用Jenkins和阿里云Code进行了自动构建的测试，决定下个版本使用起来。关于自动构建，以前在上一个团队的时候简单了解过，那个时候用的是FinalBuilder，貌似是很古老的持续集成工具（我也不是很了解FinalBuilder，当时是另一个同事在做这个事情。上周有其他项目组的同事过来跟我讨论自动构建的问题，提到FinalBuilder，说是不想用那个古老的东西）。Jenkins + 阿里云Code + 蒲公英，看起来是一套很棒的组合。</p>
+<p>整个服务器的架构一直是我想要进行调整的，目前手机端服务使用WCF搭建，Web端则是自己单独的一套，所以每次做新功能的时候经常是服务端的同事写一套，Web端的同事还要再写一遍，大大降低了研发的效率。目前我的想法是废弃掉WCF，采用WebAPI提供服务。Web端和手机端都通过WebAPI与数据库进行数据交互，这样就将Web端和手机端的数据源整合统一起来，并且有利于提升研发效率。现在我在思考WebAPI端的架构，是完全按照Restful风格呢（完全按照Restful风格来设计接口也挺难的），还是根据业务形成一套自己的风格。</p>
+<p>入手了一本讲克苏鲁神话的书，第一次知道克苏鲁神话是玩血源诅咒的时候，看攻略了解到的。影响最深的是克苏鲁神话的中心思想是『知道得越多，死得越快』，o(╯□╰)o。</p>
+<p>读库1702到了，简单翻了翻目录，发现里面有篇马伯庸的文章，应该是我喜欢的类型，决定先看。同时寄来的还有一本讲植物智能的书，书的封皮很棒，是织物的那种感觉，是一本很精致的书。同事提到以后买实体书，要先看封面好不好看，○|￣|_。</p>
+<p>手中的iPhone 6 Plus越来越不争气，尾插充电也越来越不好使，考虑到今年iPhone有重大更新，于是不打算换iPhone 7 Plus，先拿备用机红米Note3顶半年再说。这几天使用红米还算凑合，双卡双待确实挺爽的，很喜欢iPhone未来也支持这个功能，这样我能在电信4G网络不好的时候，切换到移动4G。</p>
+<p>入手了QCY的Q29蓝牙耳机，类似于苹果AirPods那种，不过外观倒是没有山寨。相对于AirPods 1000+的价格，Q29目前199的价格实在是实惠。已经用了两天了，感觉还不错，主要因为我是木耳，也听不出好坏。唯一的问题是，耳机放充电盒子充电的时候不是很紧，稍微动一下耳机和充电头就会接触不良，充不了电。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-关于《读库》" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -292,7 +358,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>《读库》这本『杂志』我是很早就听说过的，记忆中是在池建强老师的文章中看到的，同时池建强老师也将其推荐了一番。正好年前在杂志铺翻杂志的时候想了起来，就索性去天猫订了一年。假期回来，第一时间就拿到了1700和1701，很欣喜那么快就拿到书了，于是迫不及待的拆开了快递包装。</p>
+        <p>《读库》这本『杂志』我是很早就听说过的，记忆中是在池建强老师的文章中看到的，同时池建强老师也推荐了一番。正好年前在杂志铺翻杂志的时候想了起来，就索性去天猫订了一年。年后假期回来，第一时间就拿到了1700和1701，很欣喜那么快就拿到书了，于是迫不及待的拆开了快递包装。</p>
 <p>刚拆开包装的时候，两本蛮厚的书出现在眼前。那在手上，那分量感觉又有点不对，谁能想到那样有『厚重感』的外形，拿在手里却又是那样的轻呢。将近400页的书，比那些200页的书都轻了不少。尤其是对于我这种看惯了大部头的技术男来说，更是觉得有点匪夷所思。后来在网上了解到，《读库》为了保证阅读的舒适，特地选择了更轻的纸来印刷。</p>
 <p>读库的封面很简洁，没有多余的文字和色彩。我很难用合适的词汇来描述它的这种简洁，或许是看惯了大大的LOGO，花花绿绿的封面。面对这种简洁的封面，有一种莫名的好感。</p>
 <p>摸着书的封面，有一种磨砂的感觉。内页的纸摸起来也很舒服，感觉很软，韧性很好，并不会因为薄和轻而变得易碎。</p>
@@ -1205,73 +1271,6 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-iOS实现判断程序关闭、关机的思路" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/25/iOS实现判断程序关闭、关机的思路/" class="article-date">
-      <time datetime="2015-10-25T02:46:52.000Z" itemprop="datePublished">2015-10-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/25/iOS实现判断程序关闭、关机的思路/">iOS实现判断程序关闭、关机的思路</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>最近在研究竞品的时候，发现其实现了检测APP是否关闭，用户是否关机的功能。当然我们知道以iOS的情况来说，是没有API能直接做到的。不过简单想了想，觉得利用多种方式配合，或许我们还是可以「判断」关机和APP关闭的。</p>
-<ol>
-<li>APP使用心跳机制和服务器保持通信。</li>
-<li>APP监听手机的网络状态变化，并将数据上传给服务器。</li>
-<li>服务器定时利用Slient Remote Notifications判断APP是否有反应。</li>
-</ol>
-<p><strong>判断</strong></p>
-<p>服务器发现客户端心跳不正常，判断是否有网络异常状态，如果有网络异常状态则判断为「网络异常」。<br>如果没有网络异常状态，则向APP发送Slient Remote Notifications，如果APP没响应，则判断为「关机」。<br>如果有响应，则判断为「APP关闭」</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
     </div>
 
       

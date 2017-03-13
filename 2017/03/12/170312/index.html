@@ -15,32 +15,16 @@
 
 
 
-<meta name="description" content="自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，Demo比较简单
-
-首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：
-
-让我们的ViewController继承UITableViewContro">
+<meta name="description" content="今年计划中的三个重大版本的第一个，已经在上周发布了。整个流程没有出什么大问题，不过大家还是一起折腾到了第二天的凌晨3点。我简单算了一下，我们从20:30分开始更新数据库，21点的时候更新完毕开始测试。两个人测试新版本，两个人测试老版本。老版本只测常用功能，新版本则照例将所有功能跑一遍。在这6个小时中，修改BUG的时间其实不到一个小时，研发同事很长一段时间都是在等待测试结果，所以目前发版的瓶颈在测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自定义UITableViewCell，使用VFL布局">
-<meta property="og:url" content="http://code4cocoa.com/2015/04/12/自定义UITableViewCell，使用VFL布局/index.html">
+<meta property="og:title" content="170312">
+<meta property="og:url" content="http://code4cocoa.com/2017/03/12/170312/index.html">
 <meta property="og:site_name" content="Code4Cocoa">
-<meta property="og:description" content="自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，Demo比较简单
-
-首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：
-
-让我们的ViewController继承UITableViewContro">
-<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/viewcontroller_uitableviewcontroller.png">
-<meta property="og:updated_time" content="2015-12-15T11:18:15.000Z">
+<meta property="og:description" content="今年计划中的三个重大版本的第一个，已经在上周发布了。整个流程没有出什么大问题，不过大家还是一起折腾到了第二天的凌晨3点。我简单算了一下，我们从20:30分开始更新数据库，21点的时候更新完毕开始测试。两个人测试新版本，两个人测试老版本。老版本只测常用功能，新版本则照例将所有功能跑一遍。在这6个小时中，修改BUG的时间其实不到一个小时，研发同事很长一段时间都是在等待测试结果，所以目前发版的瓶颈在测试">
+<meta property="og:updated_time" content="2017-03-13T14:58:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自定义UITableViewCell，使用VFL布局">
-<meta name="twitter:description" content="自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，Demo比较简单
-
-首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：
-
-让我们的ViewController继承UITableViewContro">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png">
+<meta name="twitter:title" content="170312">
+<meta name="twitter:description" content="今年计划中的三个重大版本的第一个，已经在上周发布了。整个流程没有出什么大问题，不过大家还是一起折腾到了第二天的凌晨3点。我简单算了一下，我们从20:30分开始更新数据库，21点的时候更新完毕开始测试。两个人测试新版本，两个人测试老版本。老版本只测常用功能，新版本则照例将所有功能跑一遍。在这6个小时中，修改BUG的时间其实不到一个小时，研发同事很长一段时间都是在等待测试结果，所以目前发版的瓶颈在测试">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -72,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>自定义UITableViewCell，使用VFL布局 | Code4Cocoa</title>
+<title>170312 | Code4Cocoa</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -276,11 +260,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-自定义UITableViewCell，使用VFL布局" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-170312" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/12/自定义UITableViewCell，使用VFL布局/" class="article-date">
-      <time datetime="2015-04-12T12:57:39.000Z" itemprop="datePublished">2015-04-12</time>
+      <a href="/2017/03/12/170312/" class="article-date">
+      <time datetime="2017-03-12T13:43:17.000Z" itemprop="datePublished">2017-03-12</time>
 </a>
 
 
@@ -295,7 +279,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      自定义UITableViewCell，使用VFL布局
+      170312
     </h1>
   
 
@@ -306,7 +290,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UITableViewCell/">UITableViewCell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VFL/">VFL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -316,28 +300,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，<a href="https://github.com/yuxiangq/UITableViewCell4VFL/commits?author=yuxiangq" target="_blank" rel="external">Demo比较简单</a></p>
-<ul>
-<li><p>首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_2.png" alt="image"></p>
-</li>
-<li><p>让我们的ViewController继承UITableViewController。继承UITableViewController能帮我们省不少事情。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/viewcontroller_uitableviewcontroller.png" alt="image"></p>
-</li>
-<li><p>新建CustomCell，我们在其中新建一个UILabel，叫contentLabel，用于展示文本数据并允许换行。</p>
-<script src="https://gist.github.com/yuxiangq/96c5ffeb2ab9d718a33e.js"></script>
-</li>
-<li><p>为contentLabel设置约束，这里我们的约束可以看做Margin(5,5,5,5)。</p>
-<script src="https://gist.github.com/yuxiangq/dc9faab124f1eedf82a8.js"></script>
-</li>
-<li><p>在ViewController中添加一个原型cell，动态计算高度的时候使用。</p>
-<script src="https://gist.github.com/yuxiangq/6c282d9899fe28fe59e4.js"></script>
-
-</li>
-</ul>
-<pre>
-涉及换行的UILabel，请一定要注意**preferredMaxLayoutWidth**属性的设置，否则换行会出问题。
-</pre>
-
-
+        <p>今年计划中的三个重大版本的第一个，已经在上周发布了。整个流程没有出什么大问题，不过大家还是一起折腾到了第二天的凌晨3点。我简单算了一下，我们从20:30分开始更新数据库，21点的时候更新完毕开始测试。两个人测试新版本，两个人测试老版本。老版本只测常用功能，新版本则照例将所有功能跑一遍。在这6个小时中，修改BUG的时间其实不到一个小时，研发同事很长一段时间都是在等待测试结果，所以目前发版的瓶颈在测试效率上，考虑到整个产品的功能只会多不会少，所以我需要好好思考一下如何优化测试流程，能引入什么工具来提升测试效率。</p>
+<p>最近利用Jenkins和阿里云Code进行了自动构建的测试，决定下个版本使用起来。关于自动构建，以前在上一个团队的时候简单了解过，那个时候用的是FinalBuilder，貌似是很古老的持续集成工具（我也不是很了解FinalBuilder，当时是另一个同事在做这个事情。上周有其他项目组的同事过来跟我讨论自动构建的问题，提到FinalBuilder，说是不想用那个古老的东西）。Jenkins + 阿里云Code + 蒲公英，看起来是一套很棒的组合。</p>
+<p>整个服务器的架构一直是我想要进行调整的，目前手机端服务使用WCF搭建，Web端则是自己单独的一套，所以每次做新功能的时候经常是服务端的同事写一套，Web端的同事还要再写一遍，大大降低了研发的效率。目前我的想法是废弃掉WCF，采用WebAPI提供服务。Web端和手机端都通过WebAPI与数据库进行数据交互，这样就将Web端和手机端的数据源整合统一起来，并且有利于提升研发效率。现在我在思考WebAPI端的架构，是完全按照Restful风格呢（完全按照Restful风格来设计接口也挺难的），还是根据业务形成一套自己的风格。</p>
+<p>入手了一本讲克苏鲁神话的书，第一次知道克苏鲁神话是玩血源诅咒的时候，看攻略了解到的。影响最深的是克苏鲁神话的中心思想是『知道得越多，死得越快』，o(╯□╰)o。</p>
+<p>读库1702到了，简单翻了翻目录，发现里面有篇马伯庸的文章，应该是我喜欢的类型，决定先看。同时寄来的还有一本讲植物智能的书，书的封皮很棒，是织物的那种感觉，是一本很精致的书。同事提到以后买实体书，要先看封面好不好看，○|￣|_。</p>
+<p>手中的iPhone 6 Plus越来越不争气，尾插充电也越来越不好使，考虑到今年iPhone有重大更新，于是不打算换iPhone 7 Plus，先拿备用机红米Note3顶半年再说。这几天使用红米还算凑合，双卡双待确实挺爽的，很喜欢iPhone未来也支持这个功能，这样我能在电信4G网络不好的时候，切换到移动4G。</p>
+<p>入手了QCY的Q29蓝牙耳机，类似于苹果AirPods那种，不过外观倒是没有山寨。相对于AirPods 1000+的价格，Q29目前199的价格实在是实惠。已经用了两天了，感觉还不错，主要因为我是木耳，也听不出好坏。唯一的问题是，耳机放充电盒子充电的时候不是很紧，稍微动一下耳机和充电头就会接触不良，充不了电。</p>
 
       
     </div>
@@ -346,13 +315,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/04/12/自定义UITableViewCell，使用VFL布局/">自定义UITableViewCell，使用VFL布局</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/12/170312/">170312</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">YuxiangQ</a></p>
-        <p><span>发布时间:</span>2015-04-12, 20:57:39</p>
-        <p><span>最后更新:</span>2015-12-15, 19:18:15</p>
+        <p><span>发布时间:</span>2017-03-12, 21:43:17</p>
+        <p><span>最后更新:</span>2017-03-13, 22:58:55</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/04/12/自定义UITableViewCell，使用VFL布局/" title="自定义UITableViewCell，使用VFL布局">http://code4cocoa.com/2015/04/12/自定义UITableViewCell，使用VFL布局/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://code4cocoa.com/2015/04/12/自定义UITableViewCell，使用VFL布局/　　作者: YuxiangQ" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/12/170312/" title="170312">http://code4cocoa.com/2017/03/12/170312/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://code4cocoa.com/2017/03/12/170312/　　作者: YuxiangQ" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -364,16 +333,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/05/21/Swift学习笔记七/">
-                    Swift学习笔记七
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/02/04/我的2014总结/">
-                    我的2014总结
+                <a href="/2017/02/18/关于《读库》/">
+                    关于《读库》
                 </a>
             </div>
         
@@ -421,7 +384,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"自定义UITableViewCell，使用VFL布局　| Code4Cocoa　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"170312　| Code4Cocoa　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -441,15 +404,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/05/21/Swift学习笔记七/" title="上一篇: Swift学习笔记七">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/02/04/我的2014总结/" title="下一篇: 我的2014总结">
+            <a href="/2017/02/18/关于《读库》/" title="下一篇: 关于《读库》">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -263,6 +263,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-iOS实现判断程序关闭、关机的思路" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/25/iOS实现判断程序关闭、关机的思路/" class="article-date">
+      <time datetime="2015-10-25T02:46:52.000Z" itemprop="datePublished">2015-10-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/25/iOS实现判断程序关闭、关机的思路/">iOS实现判断程序关闭、关机的思路</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>最近在研究竞品的时候，发现其实现了检测APP是否关闭，用户是否关机的功能。当然我们知道以iOS的情况来说，是没有API能直接做到的。不过简单想了想，觉得利用多种方式配合，或许我们还是可以「判断」关机和APP关闭的。</p>
+<ol>
+<li>APP使用心跳机制和服务器保持通信。</li>
+<li>APP监听手机的网络状态变化，并将数据上传给服务器。</li>
+<li>服务器定时利用Slient Remote Notifications判断APP是否有反应。</li>
+</ol>
+<p><strong>判断</strong></p>
+<p>服务器发现客户端心跳不正常，判断是否有网络异常状态，如果有网络异常状态则判断为「网络异常」。<br>如果没有网络异常状态，则向APP发送Slient Remote Notifications，如果APP没响应，则判断为「关机」。<br>如果有响应，则判断为「APP关闭」</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-UITableView实现下拉刷新" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1345,67 +1412,6 @@ b = temporaryA
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VFL/">VFL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动布局/">自动布局</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-梯子推荐" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/12/04/梯子推荐/" class="article-date">
-      <time datetime="2014-12-04T07:10:04.000Z" itemprop="datePublished">2014-12-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/04/梯子推荐/">梯子推荐</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>作为IT从业者，好用的梯子可以说是必备之物。在这里我推荐<a href="http://honx.in/i/U6jd04Ko13KmmIiD" target="_blank" rel="external">红杏</a>。<br>它是一款Chrome、FireFox插件，相较于VPN等，使用简单方便，价格便宜(每月10元)，且不限流量。唯一的缺点是只能在浏览器上使用，当然他们的客服说目前正在开发不依赖浏览器的版本，很值得期待。</p>
-<p>PS:我一般是配合VPN使用的。只是在网上查查资料的话就用红杏足矣。如果涉及本地应用需要梯子，我用的是<a href="https://www.123ssh.net/" target="_blank" rel="external">123SSH</a>，价格比红杏略贵，配合GoAgent可以实现按规则翻墙，就是配置起来还是比较麻烦，不如红杏那么简单易用。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GFW/">GFW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPN/">VPN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻墙/">翻墙</a></li></ul>
     </div>
 
       
