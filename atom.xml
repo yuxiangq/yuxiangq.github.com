@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2017-03-13T14:58:55.000Z</updated>
+  <updated>2017-05-21T12:46:02.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>行为驱动开发</title>
+    <link href="http://code4cocoa.com/2017/05/21/%E8%A1%8C%E4%B8%BA%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    <id>http://code4cocoa.com/2017/05/21/行为驱动开发/</id>
+    <published>2017-05-21T12:32:32.000Z</published>
+    <updated>2017-05-21T12:46:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>流行的「敏捷软件开发」技术中的TDD，想必大家都听过，但是还有一种BDD(Behavior-driven development)行为驱动开发知道的人恐怕就很少了。我也是在去年参加蚂蚁金服技术开发日的时候了解到了，我在这里简单整理一下。</p>
+<p>BDD鼓励软件项目中的开发者、QA和非技术人员或商业参与者之间的协作。</p>
+<p>BDD的做法包括:</p>
+<blockquote>
+<ul>
+<li>确立不同利益相关者要实现的远景目标。</li>
+<li>使用特性注入方法绘制出达到这些目标所需要的特性。</li>
+<li>通过由外及内的软件开发方法，把涉及到的利益相关者融入到实现的过程中</li>
+<li>使用例子来描述应用程序的行为或代码的每个单元。</li>
+<li>通过自动运行这些例子，提供快速反馈，进行回归测试。</li>
+<li>使用“应当(should)”来描述软件的行为，以帮助阐明代码的职责，以及回答对该软件的功能性的质疑。</li>
+<li>使用“确保(ensure)”来描述软件的职责，以把代码本身的效用与其他单元(element)代码带来的边际效用中区分出来。</li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;流行的「敏捷软件开发」技术中的TDD，想必大家都听过，但是还有一种BDD(Behavior-driven development)行为驱动开发知道的人恐怕就很少了。我也是在去年参加蚂蚁金服技术开发日的时候了解到了，我在这里简单整理一下。&lt;/p&gt;
+&lt;p&gt;BDD鼓励软件项目中的
+    
+    </summary>
+    
+    
+      <category term="开发模式" scheme="http://code4cocoa.com/tags/%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="BDD" scheme="http://code4cocoa.com/tags/BDD/"/>
+    
+  </entry>
   
   <entry>
     <title>170312</title>
@@ -626,60 +663,6 @@ GPS定位的时候是需要通过卫星的位置、用户到卫星的距离来�
       <category term="GPS" scheme="http://code4cocoa.com/tags/GPS/"/>
     
       <category term="定位" scheme="http://code4cocoa.com/tags/%E5%AE%9A%E4%BD%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Swift学习笔记七</title>
-    <link href="http://code4cocoa.com/2015/05/21/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%83/"/>
-    <id>http://code4cocoa.com/2015/05/21/Swift学习笔记七/</id>
-    <published>2015-05-21T13:32:56.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="关于Swfit中的构造器"><a href="#关于Swfit中的构造器" class="headerlink" title="关于Swfit中的构造器"></a>关于Swfit中的构造器</h4><p><strong>构造器</strong>其实就是我们在其他语言中常说的<strong>构造函数</strong>。</p>
-<pre>与Objective-C中**构造函数**不同的是，Swfit的**构造器**无需返回值，它们的主要任务是保证新实例在第一次使用前完成正确的初始化(这个初始化过程包括为实例中属性值设置初始值等)。</pre>
-<pre>当你为存储型属性设置默认值或者在构造器中为其赋值时，它们的值是被直接设置的，不会触发任何属性观测器（property observers）。</pre>
-**构造器**的最简形式类似于一个不带任何参数的实例方法，以关键字*init*命名，例如：
-<pre><code>
-//在这里我们定义一个结构体
-struct test{
-var testNum:Double
-init(){
-testNum=1.1
-}
-}
-//该结构体定义了一个不带参数的构造器，并且将属性testNum的值设置为1.1。
-</code></pre>
-你也可以在定义构造器时提供构造参数，为其提供定制化构造所需值的类型和名字。构造器参数的功能和语法跟函数和方法参数相同，例如：
-<pre><code>
-struct test{
-var testNum:Double
-init(fromTestNum t:Double){
-testNum=t
-}
-}
-</code></pre>
-<pre>
-跟函数和方法参数相同，构造参数也存在一个在构造器内部使用的参数名字和一个在调用构造器时使用的外部参数名字。然而，构造器并不像函数和方法那样在括号前有一个可辨别的名字。所以在调用构造器时，主要通过构造器中的参数名和类型来确定需要调用的构造器。正因为参数如此重要，如果你在定义构造器时没有提供参数的外部名字，Swift 会为每个构造器的参数自动生成一个跟内部名字相同的外部名，就相当于在每个构造参数之前加了一个哈希符号。
-</pre>
-
-
-
-
-
-
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;关于Swfit中的构造器&quot;&gt;&lt;a href=&quot;#关于Swfit中的构造器&quot; class=&quot;headerlink&quot; title=&quot;关于Swfit中的构造器&quot;&gt;&lt;/a&gt;关于Swfit中的构造器&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;构造器&lt;/strong&gt;其实就是我们在其他语
-    
-    </summary>
-    
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
-      <category term="Swift" scheme="http://code4cocoa.com/tags/Swift/"/>
     
   </entry>
   
