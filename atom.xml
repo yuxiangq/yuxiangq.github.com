@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2017-06-11T09:27:34.000Z</updated>
+  <updated>2017-06-11T09:29:24.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -20,18 +20,18 @@
     <link href="http://code4cocoa.com/2017/06/11/MySqlParameter%E7%9A%84%E5%9D%91/"/>
     <id>http://code4cocoa.com/2017/06/11/MySqlParameter的坑/</id>
     <published>2017-06-11T09:01:47.000Z</published>
-    <updated>2017-06-11T09:27:34.000Z</updated>
+    <updated>2017-06-11T09:29:24.000Z</updated>
     
-    <content type="html"><![CDATA[<p>最近遇到一个MySQL相关的坑，这里简单记录一下。<br>在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：<br><figure class="highlight plain"><figcaption><span>parms = new MySqlParameter[]</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    new MySqlParameter(&quot;?Type&quot;,(int)StatusType.Normal)</div><div class="line">&#125;</div><div class="line">string sql = @&quot;SELECT * FROM TABLE T WHERE T.Type = ?Type;&quot;;</div></pre></td></tr></table></figure></p>
-<p>结果是死活查不出数据，但是将SQL直接拿到服务器上运行，确能正常查出数据，实在是让人费解。随着不断调试，发现MySqlParameter的Value值不知为什么一直为null，后来试着改写了语句，用一个临时变量存储枚举值。<br><figure class="highlight plain"><figcaption><span>type = (int)StatusType.Normal</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var parms = new MySqlParameter[]</div><div class="line">&#123;</div><div class="line">    new MySqlParameter(&quot;?Type&quot;,type)</div><div class="line">&#125;</div><div class="line">string sql = @&quot;SELECT * FROM TABLE T WHERE T.Type = ?Type;&quot;;</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<p>最近遇到一个MySQL相关的坑，这里简单记录一下。<br>在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> parms = <span class="keyword">new</span> MySqlParameter[]</div><div class="line">&#123;</div><div class="line">    <span class="keyword">new</span> MySqlParameter(<span class="string">"?Type"</span>,(<span class="keyword">int</span>)StatusType.Normal)</div><div class="line">&#125;</div><div class="line"><span class="keyword">string</span> sql = <span class="string">@"SELECT * FROM TABLE T WHERE T.Type = ?Type;"</span>;</div></pre></td></tr></table></figure></p>
+<p>结果是死活查不出数据，但是将SQL直接拿到服务器上运行，确能正常查出数据，实在是让人费解。随着不断调试，发现MySqlParameter的Value值不知为什么一直为null，后来试着改写了语句，用一个临时变量存储枚举值。<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> <span class="keyword">type</span> = (<span class="keyword">int</span>)StatusType.Normal</div><div class="line"><span class="keyword">var</span> parms = <span class="built_in">new</span> MySqlParameter[]</div><div class="line">&#123;</div><div class="line">    <span class="built_in">new</span> MySqlParameter(<span class="string">"?Type"</span>,<span class="keyword">type</span>)</div><div class="line">&#125;</div><div class="line"><span class="keyword">string</span> sql = @<span class="string">"SELECT * FROM TABLE T WHERE T.Type = ?Type;"</span>;</div></pre></td></tr></table></figure></p>
 <p>查询就正常了。</p>
-<p>原来问题出在MySqlParameter的构造函数上，有两个关键的构造函数如下：<br><figure class="highlight plain"><figcaption><span>MySqlParameter(string name, object value) &#123; </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    // ...... </div><div class="line">&#125; </div><div class="line">public MySqlParameter(string name, MySqlDbType type) &#123; </div><div class="line">    // ...... </div><div class="line">    // MySqlDbType是个枚举类型 </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>原来问题出在MySqlParameter的构造函数上，有两个关键的构造函数如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySqlParameter</span>(<span class="params"><span class="keyword">string</span> name, <span class="keyword">object</span> <span class="keyword">value</span></span>) </span>&#123; </div><div class="line">    <span class="comment">// ...... </span></div><div class="line">&#125; </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySqlParameter</span>(<span class="params"><span class="keyword">string</span> name, MySqlDbType type</span>) </span>&#123; </div><div class="line">    <span class="comment">// ...... </span></div><div class="line">    <span class="comment">// MySqlDbType是个枚举类型 </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>我们第一次调用的时候，因为枚举为0，所以被当做第二个构造函数调用了。但是经测试当枚举不为0的时候，使用第一种调用方式，还是会使用第一种构造函数，确实令人看不懂。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;最近遇到一个MySQL相关的坑，这里简单记录一下。&lt;br&gt;在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;figca
+      &lt;p&gt;最近遇到一个MySQL相关的坑，这里简单记录一下。&lt;br&gt;在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：&lt;br&gt;&lt;figure class=&quot;highlight cs&quot;&gt;&lt;table&gt;&lt;t
     
     </summary>
     

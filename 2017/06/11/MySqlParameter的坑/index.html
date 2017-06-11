@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="最近遇到一个MySQL相关的坑，这里简单记录一下。在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：parms = new MySqlParameter[]1234&amp;#123;    new MySqlParameter(&amp;quot;?Type&amp;quot;,(int)StatusType.Normal)&amp;#125;s">
+<meta name="description" content="最近遇到一个MySQL相关的坑，这里简单记录一下。在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：12345var parms = new MySqlParameter[]&amp;#123;    new MySqlParameter(&quot;?Type&quot;,(int)StatusType.Normal)&amp;#125;string">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySqlParameter的坑">
 <meta property="og:url" content="http://code4cocoa.com/2017/06/11/MySqlParameter的坑/index.html">
 <meta property="og:site_name" content="Code4Cocoa">
-<meta property="og:description" content="最近遇到一个MySQL相关的坑，这里简单记录一下。在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：parms = new MySqlParameter[]1234&amp;#123;    new MySqlParameter(&amp;quot;?Type&amp;quot;,(int)StatusType.Normal)&amp;#125;s">
-<meta property="og:updated_time" content="2017-06-11T09:27:34.000Z">
+<meta property="og:description" content="最近遇到一个MySQL相关的坑，这里简单记录一下。在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：12345var parms = new MySqlParameter[]&amp;#123;    new MySqlParameter(&quot;?Type&quot;,(int)StatusType.Normal)&amp;#125;string">
+<meta property="og:updated_time" content="2017-06-11T09:29:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySqlParameter的坑">
-<meta name="twitter:description" content="最近遇到一个MySQL相关的坑，这里简单记录一下。在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：parms = new MySqlParameter[]1234&amp;#123;    new MySqlParameter(&amp;quot;?Type&amp;quot;,(int)StatusType.Normal)&amp;#125;s">
+<meta name="twitter:description" content="最近遇到一个MySQL相关的坑，这里简单记录一下。在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：12345var parms = new MySqlParameter[]&amp;#123;    new MySqlParameter(&quot;?Type&quot;,(int)StatusType.Normal)&amp;#125;string">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -300,10 +300,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>最近遇到一个MySQL相关的坑，这里简单记录一下。<br>在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：<br><figure class="highlight plain"><figcaption><span>parms = new MySqlParameter[]</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    new MySqlParameter(&quot;?Type&quot;,(int)StatusType.Normal)</div><div class="line">&#125;</div><div class="line">string sql = @&quot;SELECT * FROM TABLE T WHERE T.Type = ?Type;&quot;;</div></pre></td></tr></table></figure></p>
-<p>结果是死活查不出数据，但是将SQL直接拿到服务器上运行，确能正常查出数据，实在是让人费解。随着不断调试，发现MySqlParameter的Value值不知为什么一直为null，后来试着改写了语句，用一个临时变量存储枚举值。<br><figure class="highlight plain"><figcaption><span>type = (int)StatusType.Normal</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var parms = new MySqlParameter[]</div><div class="line">&#123;</div><div class="line">    new MySqlParameter(&quot;?Type&quot;,type)</div><div class="line">&#125;</div><div class="line">string sql = @&quot;SELECT * FROM TABLE T WHERE T.Type = ?Type;&quot;;</div></pre></td></tr></table></figure></p>
+        <p>最近遇到一个MySQL相关的坑，这里简单记录一下。<br>在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> parms = <span class="keyword">new</span> MySqlParameter[]</div><div class="line">&#123;</div><div class="line">    <span class="keyword">new</span> MySqlParameter(<span class="string">"?Type"</span>,(<span class="keyword">int</span>)StatusType.Normal)</div><div class="line">&#125;</div><div class="line"><span class="keyword">string</span> sql = <span class="string">@"SELECT * FROM TABLE T WHERE T.Type = ?Type;"</span>;</div></pre></td></tr></table></figure></p>
+<p>结果是死活查不出数据，但是将SQL直接拿到服务器上运行，确能正常查出数据，实在是让人费解。随着不断调试，发现MySqlParameter的Value值不知为什么一直为null，后来试着改写了语句，用一个临时变量存储枚举值。<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> <span class="keyword">type</span> = (<span class="keyword">int</span>)StatusType.Normal</div><div class="line"><span class="keyword">var</span> parms = <span class="built_in">new</span> MySqlParameter[]</div><div class="line">&#123;</div><div class="line">    <span class="built_in">new</span> MySqlParameter(<span class="string">"?Type"</span>,<span class="keyword">type</span>)</div><div class="line">&#125;</div><div class="line"><span class="keyword">string</span> sql = @<span class="string">"SELECT * FROM TABLE T WHERE T.Type = ?Type;"</span>;</div></pre></td></tr></table></figure></p>
 <p>查询就正常了。</p>
-<p>原来问题出在MySqlParameter的构造函数上，有两个关键的构造函数如下：<br><figure class="highlight plain"><figcaption><span>MySqlParameter(string name, object value) &#123; </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    // ...... </div><div class="line">&#125; </div><div class="line">public MySqlParameter(string name, MySqlDbType type) &#123; </div><div class="line">    // ...... </div><div class="line">    // MySqlDbType是个枚举类型 </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>原来问题出在MySqlParameter的构造函数上，有两个关键的构造函数如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySqlParameter</span>(<span class="params"><span class="keyword">string</span> name, <span class="keyword">object</span> <span class="keyword">value</span></span>) </span>&#123; </div><div class="line">    <span class="comment">// ...... </span></div><div class="line">&#125; </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySqlParameter</span>(<span class="params"><span class="keyword">string</span> name, MySqlDbType type</span>) </span>&#123; </div><div class="line">    <span class="comment">// ...... </span></div><div class="line">    <span class="comment">// MySqlDbType是个枚举类型 </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>我们第一次调用的时候，因为枚举为0，所以被当做第二个构造函数调用了。但是经测试当枚举不为0的时候，使用第一种调用方式，还是会使用第一种构造函数，确实令人看不懂。</p>
 
       
@@ -316,7 +316,7 @@
         <p><span>本文标题:</span><a href="/2017/06/11/MySqlParameter的坑/">MySqlParameter的坑</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">YuxiangQ</a></p>
         <p><span>发布时间:</span>2017-06-11, 17:01:47</p>
-        <p><span>最后更新:</span>2017-06-11, 17:27:34</p>
+        <p><span>最后更新:</span>2017-06-11, 17:29:24</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/06/11/MySqlParameter的坑/" title="MySqlParameter的坑">http://code4cocoa.com/2017/06/11/MySqlParameter的坑/</a>
             <span class="copy-path" data-clipboard-text="原文: http://code4cocoa.com/2017/06/11/MySqlParameter的坑/　　作者: YuxiangQ" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
