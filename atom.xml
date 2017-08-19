@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2017-06-11T09:29:24.000Z</updated>
+  <updated>2017-08-19T13:12:20.000Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>罗伯特议事规则</title>
+    <link href="http://code4cocoa.com/2017/07/30/%E7%BD%97%E4%BC%AF%E7%89%B9%E8%AE%AE%E4%BA%8B%E8%A7%84%E5%88%99/"/>
+    <id>http://code4cocoa.com/2017/07/30/罗伯特议事规则/</id>
+    <published>2017-07-30T13:54:48.000Z</published>
+    <updated>2017-08-19T13:12:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>如何在没有权威的情况下平等自治、达成共识、重建秩序。</strong></p>
+<ul>
+<li>动议可行原则 <em>什么样的问题可以拿来讨论?</em></li>
+<li>主持中立原则 <em>总是『领导说了算』如何应对</em></li>
+<li>弃权无效原则 <em>有人不表态想当『老好人』怎么办</em></li>
+</ul>
+<p>周末的时候看完《可操作的民主》一书，对于<strong>罗伯特议事规则</strong>产生了浓厚兴趣。同时觉得该书作为一本『纪实书籍』(不知道是不是有这种分类方式)，语言诙谐，在叙述已发生的事情时，将<strong>罗伯特议事规则</strong>娓娓道来，让读者不觉得枯燥，实在是很难得的。</p>
+<p>我在工作中，也有各种各样的会议。有些乱哄哄的，有些开半天不明所以，有些主持人就是个『暖场』的角色，尤其是那种需要『作出确定』的会议，大部分的时候都没有结果，最终领导决定，大家才『服气』。了解到『罗伯特议事规则』后，我有种豁然开朗的感觉，缜密的规则，保证了会议能得出结果，保障每个人的权利。往后将在团队会议中引入，让会议有序高效。</p>
+<p>『是领导不民主，还是我们自己已习惯依赖领导？追求自由，我们是否明白边界的含义，是否理解规则的价值？追求民主，我们能否接纳平等带来的折磨，包容多元引致的碰撞？到底是文化决定规则，还是规则塑造文化？』这是本书封面的一句话，尤其最后一句『文化』和『规则』的关系，让我有了一些在团队建设方面的思考。</p>
+<p>本书的两位作者<em>寇延丁、袁天鹏</em>也是著名的民间公益行动者，其中<em>袁天鹏</em>本身也是议事规则专家，同时也是中文版《罗伯特议事规则》的译者，是《罗伯特议事规则》在中国的布道人。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;如何在没有权威的情况下平等自治、达成共识、重建秩序。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;动议可行原则 &lt;em&gt;什么样的问题可以拿来讨论?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;主持中立原则 &lt;em&gt;总是『领导说了算』如何应对&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;弃权
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="读书笔记" scheme="http://code4cocoa.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>MySqlParameter的坑</title>
@@ -611,32 +647,6 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
       <category term="UITableView" scheme="http://code4cocoa.com/tags/UITableView/"/>
     
       <category term="下拉刷新" scheme="http://code4cocoa.com/tags/%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WebAPP将迎来一个好时代</title>
-    <link href="http://code4cocoa.com/2015/08/29/WebAPP%E5%B0%86%E8%BF%8E%E6%9D%A5%E4%B8%80%E4%B8%AA%E5%A5%BD%E6%97%B6%E4%BB%A3/"/>
-    <id>http://code4cocoa.com/2015/08/29/WebAPP将迎来一个好时代/</id>
-    <published>2015-08-29T07:47:07.000Z</published>
-    <updated>2015-12-15T10:55:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>随着4G网络的普及，以及手机性能、浏览器性能的提升，WebAPP正迎来自己的时代。</p>
-<p>想起2-3年前的时候，就有很多人在说WebAPP将崛起与NativeAPP平分秋色。但事实是WebAPP并没有真正占据一定份额。主要原因莫过于响应速度和体验远逊于NativeAPP，当然也有优化到极端的例子，效果可以说无限接近NativeAPP，但那毕竟是少数。大多数的WebAPP采用「JQueryMobile」、「SenchaTouch」等框架，在具体研发中遇到过的坑那是相当多，尝试过开发商业项目的童鞋应该心有余悸。</p>
-<p>最近一年，4G网络的加紧推广及流量价格的降低，解决了WebAPP很大的一个短板，也让我们看到了WebAPP崛起的希望。其实移动网络的加速，对整个APP开发都是有益的，对于小团队来说，就不用将太多的精力投入到基础通讯的优化上。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;随着4G网络的普及，以及手机性能、浏览器性能的提升，WebAPP正迎来自己的时代。&lt;/p&gt;
-&lt;p&gt;想起2-3年前的时候，就有很多人在说WebAPP将崛起与NativeAPP平分秋色。但事实是WebAPP并没有真正占据一定份额。主要原因莫过于响应速度和体验远逊于NativeA
-    
-    </summary>
-    
-    
-      <category term="WebAPP" scheme="http://code4cocoa.com/tags/WebAPP/"/>
-    
-      <category term="行业发展" scheme="http://code4cocoa.com/tags/%E8%A1%8C%E4%B8%9A%E5%8F%91%E5%B1%95/"/>
     
   </entry>
   
