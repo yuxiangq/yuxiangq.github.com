@@ -263,6 +263,74 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-关于PMP的一些事" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/17/关于PMP的一些事/" class="article-date">
+      <time datetime="2017-09-17T10:05:58.000Z" itemprop="datePublished">2017-09-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/17/关于PMP的一些事/">关于PMP的一些事</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>知道PMP应该是在13年的时候，当时一群人在天台闲聊，一个同事提到自己的规划是在后面两年要拿下PMP证书。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PMP指的是项目管理专业人士资格认证。它是由美国项目管理协会（<span class="keyword">Project</span> Management Institute(PMI)发起的，严格评估项目管理人员知识技能是否具有高品质的资格认证考试。</div></pre></td></tr></table></figure>
+<p>后来随着工作的繁忙，渐渐将这事儿忘了。但随着项目的扩大，自己的管理职能越来越多，慢慢感觉需要一套理论来找找感觉，于是又想起了这事儿。</p>
+<p>原计划16年就去系统学习一下，但因为团队刚扩大，还有很多更重要的事情，便耽搁了。今年随着团队的稳定，在管理『方法论』上，我也希望有新的『突破』，于是确定报考PMP。</p>
+<p>上周风风火火的去报了培训，开始利用业余时间啃PMBOK，还是颇有感受的（谈不上收获，只是结合自己目前的管理方式，再看看书上的理论，觉得有值得借鉴的地方）。</p>
+<p>比如项目管理的五大过程：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">* </span>启动</div><div class="line"><span class="bullet">* </span>规划</div><div class="line"><span class="bullet">* </span>执行</div><div class="line"><span class="bullet">* </span>监控</div><div class="line"><span class="bullet">* </span>收尾</div></pre></td></tr></table></figure>
+<p>就很容易对应软件工程中的『瀑布开发模型』。</p>
+<p>这套理论更多的是对我们的一种方向指导，最终还是要结合团队及项目实际情况变通处理。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-罗伯特议事规则" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -361,10 +429,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>最近遇到一个MySQL相关的坑，这里简单记录一下。<br>在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> parms = <span class="keyword">new</span> MySqlParameter[]</div><div class="line">&#123;</div><div class="line">    <span class="keyword">new</span> MySqlParameter(<span class="string">"?Type"</span>,(<span class="keyword">int</span>)StatusType.Normal)</div><div class="line">&#125;</div><div class="line"><span class="keyword">string</span> sql = <span class="string">@"SELECT * FROM TABLE T WHERE T.Type = ?Type;"</span>;</div></pre></td></tr></table></figure></p>
-<p>结果是死活查不出数据，但是将SQL直接拿到服务器上运行，确能正常查出数据，实在是让人费解。随着不断调试，发现MySqlParameter的Value值不知为什么一直为null，后来试着改写了语句，用一个临时变量存储枚举值。<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> <span class="keyword">type</span> = (<span class="keyword">int</span>)StatusType.Normal</div><div class="line"><span class="keyword">var</span> parms = <span class="built_in">new</span> MySqlParameter[]</div><div class="line">&#123;</div><div class="line">    <span class="built_in">new</span> MySqlParameter(<span class="string">"?Type"</span>,<span class="keyword">type</span>)</div><div class="line">&#125;</div><div class="line"><span class="keyword">string</span> sql = @<span class="string">"SELECT * FROM TABLE T WHERE T.Type = ?Type;"</span>;</div></pre></td></tr></table></figure></p>
+        <p>最近遇到一个MySQL相关的坑，这里简单记录一下。<br>在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var parms = new MySqlParameter[]</div><div class="line">&#123;</div><div class="line">new MySqlParameter(&quot;?Type&quot;,(int)StatusType.Normal)</div><div class="line">&#125;</div><div class="line">string sql = @&quot;SELECT * FROM TABLE T WHERE T.Type = ?Type;&quot;;</div></pre></td></tr></table></figure></p>
+<p>结果是死活查不出数据，但是将SQL直接拿到服务器上运行，确能正常查出数据，实在是让人费解。随着不断调试，发现MySqlParameter的Value值不知为什么一直为null，后来试着改写了语句，用一个临时变量存储枚举值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int type = (int)StatusType.Normal</div><div class="line">var parms = new MySqlParameter[]</div><div class="line">&#123;</div><div class="line">    new MySqlParameter(&quot;?Type&quot;,type)</div><div class="line">&#125;</div><div class="line">string sql = @&quot;SELECT * FROM TABLE T WHERE T.Type = ?Type;&quot;;</div></pre></td></tr></table></figure></p>
 <p>查询就正常了。</p>
-<p>原来问题出在MySqlParameter的构造函数上，有两个关键的构造函数如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySqlParameter</span>(<span class="params"><span class="keyword">string</span> name, <span class="keyword">object</span> <span class="keyword">value</span></span>) </span>&#123; </div><div class="line">    <span class="comment">// ...... </span></div><div class="line">&#125; </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySqlParameter</span>(<span class="params"><span class="keyword">string</span> name, MySqlDbType type</span>) </span>&#123; </div><div class="line">    <span class="comment">// ...... </span></div><div class="line">    <span class="comment">// MySqlDbType是个枚举类型 </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>原来问题出在MySqlParameter的构造函数上，有两个关键的构造函数如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public MySqlParameter(string name, object value) &#123; </div><div class="line">    // ...... </div><div class="line">&#125; </div><div class="line">public MySqlParameter(string name, MySqlDbType type) &#123; </div><div class="line">    // ...... </div><div class="line">    // MySqlDbType是个枚举类型 </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>我们第一次调用的时候，因为枚举为0，所以被当做第二个构造函数调用了。但是经测试当枚举不为0的时候，使用第一种调用方式，还是会使用第一种构造函数，确实令人看不懂。</p>
 
       
@@ -1210,68 +1278,6 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义控件/">自定义控件</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-离职季感悟" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/26/离职季感悟/" class="article-date">
-      <time datetime="2016-02-26T13:49:15.000Z" itemprop="datePublished">2016-02-26</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/26/离职季感悟/">离职季感悟</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>又到了一年一度的离职旺季，不幸的是我的项目组也有两位主力离职。作为他们的Leader，我虽然感到遗憾，但也挺他们感到高兴。遗憾的是，他们不能再陪着整个团队成长，同时因为他们的离开，我们产品这一两个月的研发进度也会受到影响。高兴的是，他们将去一个更高的平台磨练自己。</p>
-<p>今天有个同事面试回来告诉我，面试官问的很多问题，他都没有料到，都比较底层。就我们的产品开发来说，几乎不会用到。他回顾了一下这两年在团队中的开发情况，自己一手做出来的产品，在技术上真没有什么可以骄傲的地方，大部分时间其实就是处理业务逻辑，可以看出他比较失落。我得承认，我们做得这个产品确实不够高大上，技术上可以说都是很成熟的技术，技术门槛低。回头整理自己的知识体系，我也发现在产品的某个时间点开始，我们更多的时间是在处理业务了，初期开荒阶段，各种技术尝试，封装常用库，架构等等。产品进入平稳期后，更多的业务需求占据了开发日程，留给尝试各种技术的空间慢慢变少，自然会觉得自己的技术好像在某个时间点有了停滞。</p>
-<p>作为一名技术人，都梦想着自己能成为大牛，我也在向这这个方向努力。所以一直在尽量利用业余时间，尝试一些产品中没有使用的东西，或者新的技术。最近这段时间，自己也有迷惘，或许就是进入了瓶颈期。是的，每个IT人都会有瓶颈期，他们面对的方式也不一样。有得人在技术上遇到瓶颈期，于是就会选择转向别的方向，比如管理。有的人会慢慢的被磨掉耐心，怀疑自己的能力，从而变得平庸。有的人则会在某个时候，突破瓶颈，迎来技术的再一次快速提升。我是希望自己能迎来又一波技术的快速提升，从而实现自己做出一款牛B的梦想。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
     </div>
 
       
