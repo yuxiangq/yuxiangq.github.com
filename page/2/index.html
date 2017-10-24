@@ -263,6 +263,77 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-FunnelChartView漏斗控件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/05/FunnelChartView漏斗控件/" class="article-date">
+      <time datetime="2016-03-04T16:55:32.000Z" itemprop="datePublished">2016-03-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/05/FunnelChartView漏斗控件/">FunnelChartView漏斗控件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。</p>
+<p>一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：</p>
+<ul>
+<li>传一个FunnelChartModel列表。</li>
+<li>传一个NSNumber列表，一个UIColor列表。</li>
+</ul>
+<p>个人感觉还是似有不妥，另外控件的整体效果还不够精致，还需要更多的打磨。</p>
+<p>具体效果如果：<br><img src="https://raw.githubusercontent.com/yuxiangq/FunnelChartView/master/ScreenShots/Simulator%20Screen%20Shot%20Mar%203%2C%202016%2C%2022.50.16.png" alt=""></p>
+<p>使用示例：</p>
+<script src="https://gist.github.com/yuxiangq/2ff50e3cfd49c0568844.js"></script>
+
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义控件/">自定义控件</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-离职季感悟" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1291,124 +1362,6 @@ directionToHead = .North
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义控件/">自定义控件</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Swift学习笔记五" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/01/01/Swift学习笔记五/" class="article-date">
-      <time datetime="2015-01-01T09:29:59.000Z" itemprop="datePublished">2015-01-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/01/Swift学习笔记五/">Swift学习笔记五</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="函数的定义及调用"><a href="#函数的定义及调用" class="headerlink" title="函数的定义及调用"></a>函数的定义及调用</h1><p>我们使用func关键字来定义函数:</p>
-<pre><code>
-
-func test( / * 这里是函数参数，通常如此定义  parameter:String * / )->String{
-return "test"
-}
-
-test() //调用函数
-</code></pre>
-
-<h1 id="默认参数值"><a href="#默认参数值" class="headerlink" title="默认参数值"></a>默认参数值</h1><p>给函数的参数定义默认值的方式和C#是一样的:</p>
-<pre><code>
-func test(s:string= "defaultValue")->String {
-return s;//如果s没有传值，则会返回defaultValue
-}
-</code></pre>
-
-<h1 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h1><p>用来输入不确定数量的参数，但是参数的类型必须一致:</p>
-<pre><code>
-func test(numbers:Double...)->Double {
-var total: Double = 0
-for number in numbers {
-total += number
-}
-return total
-}
-</code></pre>
-**注意:一个函数至多能有一个可变参数，而且它必须是参数表中最后的一个。这样做是为了避免函数调用时出现歧义。**
-
-# 常量参数和变量参数
-这是要注意的是，函数中默认的参数为常量参数是不可以被重新赋值的。变量参数则需要显示定义。
-<pre><code>
-func test(s:String)->String{
-s="test" //这里会报错，参数s为常量参数，不能被重新赋值
-return s
-}
-
-func test(/ * 显示定位为变量 * /var s:String)->String{
-s="test" //正常
-return s
-}
-</code></pre>
-**注意： 对变量参数所进行的修改在函数调用结束后便消失了，并且对于函数体外是不可见的。变量参数仅仅存在于函数调用的生命周期中。**
-
-# 输入输出参数
-这个和C#中的**ref,out**是类似的。如果你需要一个参数能在函数体内被修改，并且在函数调用结束后修改仍然存在，就需要使用**inout**关键字来定义参数。
-<pre><code>
-//交换两个变量的值
-func swapTwoInts(inout a: Int, inout b: Int) {
-let temporaryA = a
-a = b
-b = temporaryA
-}
-</code></pre>
-
-<h1 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h1><p>函数其实就是C#中的委托类型，也就是我们所说的函数指针。当然它相较于函数指针是类型安全的。</p>
-<p><pre><code><br>func addTwoInts(a: Int, b: Int) -&gt; Int {<br>return a + b<br>}</code></pre></p>
-<p>var mathFunction: (Int, Int) -&gt; Int = addTwoInts //mathFunction就是指向addTowInts函数的变量<br><br>如果我们要用一个变量来表示addTowInts这个函数，那么这个变量的类型就是<strong>(Int, Int) -&gt; Int</strong>，可以读作“这个函数类型，它有两个 Int 型的参数并返回一个 Int 型的值。”。<br>函数类型也是可以作为函数参数或函数返回值的。</p>
-<h1 id="嵌套函数"><a href="#嵌套函数" class="headerlink" title="嵌套函数"></a>嵌套函数</h1><p>默认情况下，嵌套函数是对外界不可见的，但是可以被他们封闭函数（enclosing function）来调用。一个封闭函数也可以返回它的某一个嵌套函数，使得这个函数可以在其他域中被使用。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swfit/">Swfit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
     </div>
 
       

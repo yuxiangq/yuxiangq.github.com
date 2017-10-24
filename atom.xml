@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2017-09-17T12:32:09.000Z</updated>
+  <updated>2017-10-24T13:06:18.830Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -16,11 +16,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>PMP第一周培训</title>
+    <link href="http://code4cocoa.com/2017/10/20/PMP%E7%AC%AC%E4%B8%80%E5%91%A8%E5%9F%B9%E8%AE%AD/"/>
+    <id>http://code4cocoa.com/2017/10/20/PMP第一周培训/</id>
+    <published>2017-10-20T13:26:41.000Z</published>
+    <updated>2017-10-24T13:06:18.830Z</updated>
+    
+    <content type="html"><![CDATA[<p>上个周末的两天，参加了PMP的第一周培训。总的来说感觉还不错，老师讲得挺有趣的，且结合自身经验给我们讲授了项目管理的一些知识。</p>
+<p>《PMBOK》我在国庆假期之前看了一遍，假期中又看了一遍。记住的不多，但是对PMI项目管理的整体脉络还是有了一定映像。五大过程组，十大知识领域已经基本可以记住，但过程中的ITTO还是记不住的，感觉特别多而杂，需要在学习中再好好总结一下，一定要在考试钱记住。</p>
+<p>两天的学习中，给我映像比较深的有『三点估算』，用来估算项目进度，感觉特别适用。<br>以前自己在估算项目进度的时候，更多的依赖经验，并没有利用『公式』来估算，了解到『三点估算』之后，将可以用更科学的方法来估算项目进度了。</p>
+<p>『项目进度网络图』也是很好的东西，能帮助我们快速的了解项目进度结构，分析出哪些任务是关键节点，对于项目进度的影响最大。同时我也现学现用的在产品下个版本的进度规划中使用了起来。</p>
+<p>学习回来之后，我尝试使用OmniPlan对接下来的版本计划进行管理，发现OmniPlan的设计完美契合了PMI的理论，使用起来很顺手。虽然Omni这套软件我收入囊中已经很久，而且该软件大名在外。只是以前使用的时候，觉得怪怪的，通过学习之后，发现了其中的精髓，使用起来自然顺手了很多（同时也在使用OmniOutliner整理PMBOK的读书笔记，也是比较好用的）。</p>
+<p>这周末没有课，周日参加学习小组的聚会。感觉自己做错的题还是蛮多的，和小组其他同学比起来还差一下，有必要回来恶补一下了。很期待下周的课程。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上个周末的两天，参加了PMP的第一周培训。总的来说感觉还不错，老师讲得挺有趣的，且结合自身经验给我们讲授了项目管理的一些知识。&lt;/p&gt;
+&lt;p&gt;《PMBOK》我在国庆假期之前看了一遍，假期中又看了一遍。记住的不多，但是对PMI项目管理的整体脉络还是有了一定映像。五大过程组，十
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于PMP的一些事</title>
     <link href="http://code4cocoa.com/2017/09/17/%E5%85%B3%E4%BA%8EPMP%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B/"/>
     <id>http://code4cocoa.com/2017/09/17/关于PMP的一些事/</id>
     <published>2017-09-17T10:05:58.000Z</published>
-    <updated>2017-09-17T12:32:09.000Z</updated>
+    <updated>2017-09-17T12:35:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>知道PMP应该是在13年的时候，当时一群人在天台闲聊，一个同事提到自己的规划是在后面两年要拿下PMP证书。</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PMP指的是项目管理专业人士资格认证。它是由美国项目管理协会（<span class="keyword">Project</span> Management Institute(PMI)发起的，严格评估项目管理人员知识技能是否具有高品质的资格认证考试。</div></pre></td></tr></table></figure>
@@ -618,36 +645,6 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
     
     
       <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS实现判断程序关闭、关机的思路</title>
-    <link href="http://code4cocoa.com/2015/10/25/iOS%E5%AE%9E%E7%8E%B0%E5%88%A4%E6%96%AD%E7%A8%8B%E5%BA%8F%E5%85%B3%E9%97%AD%E3%80%81%E5%85%B3%E6%9C%BA%E7%9A%84%E6%80%9D%E8%B7%AF/"/>
-    <id>http://code4cocoa.com/2015/10/25/iOS实现判断程序关闭、关机的思路/</id>
-    <published>2015-10-25T02:46:52.000Z</published>
-    <updated>2015-12-15T11:18:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近在研究竞品的时候，发现其实现了检测APP是否关闭，用户是否关机的功能。当然我们知道以iOS的情况来说，是没有API能直接做到的。不过简单想了想，觉得利用多种方式配合，或许我们还是可以「判断」关机和APP关闭的。</p>
-<ol>
-<li>APP使用心跳机制和服务器保持通信。</li>
-<li>APP监听手机的网络状态变化，并将数据上传给服务器。</li>
-<li>服务器定时利用Slient Remote Notifications判断APP是否有反应。</li>
-</ol>
-<p><strong>判断</strong></p>
-<p>服务器发现客户端心跳不正常，判断是否有网络异常状态，如果有网络异常状态则判断为「网络异常」。<br>如果没有网络异常状态，则向APP发送Slient Remote Notifications，如果APP没响应，则判断为「关机」。<br>如果有响应，则判断为「APP关闭」</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近在研究竞品的时候，发现其实现了检测APP是否关闭，用户是否关机的功能。当然我们知道以iOS的情况来说，是没有API能直接做到的。不过简单想了想，觉得利用多种方式配合，或许我们还是可以「判断」关机和APP关闭的。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;APP使用心跳机制和服务器保持通
-    
-    </summary>
-    
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
   </entry>
   
