@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2017-10-24T13:06:18.830Z</updated>
+  <updated>2017-11-04T14:58:36.042Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PMP第二周培训</title>
+    <link href="http://code4cocoa.com/2017/10/29/PMP%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%9F%B9%E8%AE%AD/"/>
+    <id>http://code4cocoa.com/2017/10/29/PMP第二周培训/</id>
+    <published>2017-10-29T11:15:14.000Z</published>
+    <updated>2017-11-04T14:58:36.042Z</updated>
+    
+    <content type="html"><![CDATA[<p>这周的培训强度有点大，两天都晕晕乎乎，特别是涉及复杂的计算题。到课程最后就是机械的记录了，脑袋已经不动了。(发现馥芮白的咖啡含量果然比拿铁高，第一天下午为了不打瞌睡，喝了个大杯馥芮白，结果心脏跳得很厉害，课后回家觉得很乏，但就是睡不着。第二天喝的拿铁，就没有心跳加速那种感觉)</p>
+<p>这周重点讲了以下方面：</p>
+<ul>
+<li>项目成本管理</li>
+<li>项目质量管理</li>
+<li>项目人力资源管理</li>
+<li>项目沟通管理</li>
+<li>项目风险管理</li>
+<li>项目干系人管理</li>
+</ul>
+<p>其中<strong>项目成本管理</strong>中的<strong>挣值管理（EVM）</strong>作为有大量计算题的一个知识点，确实给大家带来了不小的困扰。</p>
+<p>第一个难点在于有好几个需要记住的缩写，比如：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">EV，挣值</div><div class="line">PV，计划价值</div><div class="line">AC，实际成本</div><div class="line">SV，进度偏差</div><div class="line">CV，成本偏差</div><div class="line"><span class="built_in">SPI</span>，进度绩效指数</div><div class="line">CPI，成本绩效指数</div><div class="line">BAC，完工预算</div><div class="line">EAC，完工估算</div><div class="line">ETC，完工尚需估算</div><div class="line">TCPI，完工尚需绩效指数</div><div class="line">VAC，完工偏差</div></pre></td></tr></table></figure>
+<p>以上缩写和名词可能看单个的时候还是挺容易理解的，但是当糅杂在一起的时候，就很容易记混了。<br>再配上它们之间复杂的公式，比如：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="attr">SV</span> = EV - PV</div><div class="line"><span class="attr">SPI</span> = EV / PV</div><div class="line"><span class="attr">CV</span> = EV - AC</div><div class="line"><span class="attr">CPI</span> = EV / AC</div><div class="line"><span class="attr">ETC</span> = (BAC - EV) / CPI</div><div class="line"><span class="attr">ETC</span> = BAC - EV</div><div class="line"><span class="attr">ETC</span> = (BAC - EV) / (CPI * SPI)</div><div class="line"><span class="attr">EAC</span> = AC + ETC</div></pre></td></tr></table></figure>
+<p>脑袋已晕😓😓😓。</p>
+<p><strong>质量管理</strong>和<strong>风险管理</strong>的考点也蛮多了，<strong>控制质量</strong>中的七种工具等知识也是需要牢牢记住的。</p>
+<p>课堂上也公布了上周测试题的答案，30到题错了9道，勉强及格。其中有2，3道题属于自己疏忽了，被题干欺骗，看来还没有熟悉考题套路，希望随着做题的增多，自己能对题目套路更熟悉。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这周的培训强度有点大，两天都晕晕乎乎，特别是涉及复杂的计算题。到课程最后就是机械的记录了，脑袋已经不动了。(发现馥芮白的咖啡含量果然比拿铁高，第一天下午为了不打瞌睡，喝了个大杯馥芮白，结果心脏跳得很厉害，课后回家觉得很乏，但就是睡不着。第二天喝的拿铁，就没有心跳加速那种感觉
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>PMP第一周培训</title>
@@ -615,31 +653,6 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
     
       &lt;p&gt;今天襄阳出差，接近13个小时的火车。不得不说这是对我的一大挑战。&lt;/p&gt;
 &lt;p&gt;说起坐火车的记忆，我还停留在好几年前，那个时候是坐火车回重庆老家，那个时候还不用实名制买票，还有慢车一说（就是每个车站，无论大小都会停的车），小车站的检票也不是太严格。经常有没买票的人混上车，被
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1601随笔</title>
-    <link href="http://code4cocoa.com/2016/01/10/1601%E9%9A%8F%E7%AC%94/"/>
-    <id>http://code4cocoa.com/2016/01/10/1601随笔/</id>
-    <published>2016-01-10T11:04:03.000Z</published>
-    <updated>2016-01-10T15:21:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>将个人博客用hexo部署到github后还没写过东西，这里就简单整理下最近手上处理的事情。</p>
-<p>工作上最近因为赶着发版，所以加班比较多，周一到周四都要加班到21点。新版本的进度不算乐观，原计划能在奔月20号发版，现在看来比较勉强。下周做完功能的话，实际上留给测试的时间不多，需要更慎重一点。新版的功能我个人还是挺期待的，虽然功能的完善程度不及竞争对手，但是我相信随着两到三个版本的迭代，我们将会走出一条更有特色的道路。</p>
-<p>平时自己折腾的东西有点多，Sketch、Hexo、PMP、CRM理论都是最近在涉猎的。上周和前同事聊天，他目前已转iOS开发，他提到ReactiveCocoa和Masonry两个开源库。这两个库我较早以前就在技术博客上有所了解，不过一直没在生产环境中使用过。这次听朋友说这两个库非常好用，正巧最近在VFL上遇到不少坑，于是果断用Masonry布局，果然很爽，现在已经离不开它了。ReactiveCocoa我用在了自己的个人项目中，也非常不错，确定在公司项目中也是用它。</p>
-<p>最近自己在折腾一个个人小项目，用来尝试一些新奇的想法，就写不说是什么了，等我写的差不多的时候再公布。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;将个人博客用hexo部署到github后还没写过东西，这里就简单整理下最近手上处理的事情。&lt;/p&gt;
-&lt;p&gt;工作上最近因为赶着发版，所以加班比较多，周一到周四都要加班到21点。新版本的进度不算乐观，原计划能在奔月20号发版，现在看来比较勉强。下周做完功能的话，实际上留给测试的
     
     </summary>
     
