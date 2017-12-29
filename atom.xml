@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2017-11-04T14:58:36.042Z</updated>
+  <updated>2017-12-29T03:28:33.847Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PMP备考感悟</title>
+    <link href="http://code4cocoa.com/2017/12/28/PMP%E5%A4%87%E8%80%83%E6%84%9F%E6%82%9F/"/>
+    <id>http://code4cocoa.com/2017/12/28/PMP备考感悟/</id>
+    <published>2017-12-28T07:06:55.000Z</published>
+    <updated>2017-12-29T03:28:33.847Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/media/default.jpeg" alt="default"><br>今天知道了PMP的考试成绩，我很幸运的拿了5A，这也是对我三个多月来的备考付出最好的回报。</p>
+<p>其实刚开始拿到PMBOK的时候，确实心里『咯噔』了那么一下。那么厚的一本书，看起来很吃力啊。不过随着学习的深入和余老师的引导，慢慢的我对整个PMBOK的知识结构有了一定的认识，书也就不那么厚了。</p>
+<p>我的备考经验简单总结起来就是做好三件事：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">一、课前预习，在上课之前认真看几遍书真的是很重要的，至于具体几遍，我认为可以根据个人阅读习惯和掌握情况调整。课前的预习能让我们对书中的『术语』『概念』有大致的印象，有助于老师在讲课的时候，我们能跟上老师的思路，加深影响。同时也可以关联自己平时的工作场景，强化记忆。课前预习阶段看书PMBOK就好，不建议预习完就去刷题，或是看之外的参考书，这样容易误导我们的思想，毕竟PMBOK才是根本。</div><div class="line"></div><div class="line">二、课中认真听讲，仔细在书上做好笔记。课堂上的强度还是蛮大的，尤其是下午，人困马乏之际，更是要打起精神，听清楚老师讲的每一个『考点』。课上没听懂的，在书上做好标记，课间的时候可以向老师请教。一定要尽量在课堂上搞懂，不然后期刷题的时候会让自己很慌张。</div><div class="line"></div><div class="line">三、课后认真做题，积极参加小组讨论。课后测试题是一定要认真做的，它能帮助我们尽快熟悉PMP考试的套路。个人建议是单独准备『答题卡』做题，不要直接在测试题上标注，这样冲刺阶段的时候还能将测试题拿出来重做。学习小组也是非常重要的，大家一定要积极参加自己所在小组的活动。毕竟PMP考试并没有『标准答案』，而是相对『合适的答案』，所以大家针对答案的讨论真的非常重要，可以了解到更多的解题思路。清晖QQ群里面发的每日一题，也是要认真对待的，可以记下来冲刺阶段再看看。</div></pre></td></tr></table></figure>
+<p>做好以上三点，我相信通过考试是没有问题的。另外在最后的冲刺阶段，以清晖发的试题为准就行了，不用去网上找题库什么的，那没有什么意义的。题在于精而不在于多，深刻理解每道题的考点才是关键。也不要钻牛角尖，纠结于对错，毕竟外国人的思维方式、处事风格和我们还是有一定差异的。</p>
+<p>在此感谢清晖余老师、谭老师三个月的陪伴，祝往后的学弟、学妹们都能取得好成绩。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/media/default.jpeg&quot; alt=&quot;default&quot;&gt;&lt;br&gt;今天知道了PMP的考试成绩，我很幸运的拿了5A，这也是对我三个多月来的备考付出最好的回报。&lt;/p&gt;
+&lt;p&gt;其实刚开始拿到PMBOK的时候，确实心里『咯噔』了那么一下。那么厚的一
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>PMP第二周培训</title>
@@ -628,36 +655,6 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
       <category term="串行请求" scheme="http://code4cocoa.com/tags/%E4%B8%B2%E8%A1%8C%E8%AF%B7%E6%B1%82/"/>
     
       <category term="请求队列" scheme="http://code4cocoa.com/tags/%E8%AF%B7%E6%B1%82%E9%98%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>襄阳出差</title>
-    <link href="http://code4cocoa.com/2016/01/24/%E8%A5%84%E9%98%B3%E5%87%BA%E5%B7%AE/"/>
-    <id>http://code4cocoa.com/2016/01/24/襄阳出差/</id>
-    <published>2016-01-24T08:40:51.000Z</published>
-    <updated>2016-01-24T08:42:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天襄阳出差，接近13个小时的火车。不得不说这是对我的一大挑战。</p>
-<p>说起坐火车的记忆，我还停留在好几年前，那个时候是坐火车回重庆老家，那个时候还不用实名制买票，还有慢车一说（就是每个车站，无论大小都会停的车），小车站的检票也不是太严格。经常有没买票的人混上车，被发现了的话，就主动打扫车上卫生，列车员倒也乐意。</p>
-<p>接近13小时的硬座，真是让人便秘（我是认真的o(╯□╰)o）。凌晨1点过的时候到了车站，打个车去酒店便呼呼大睡。</p>
-<p>7点起床，吃了个牛肉面，味道和老家相比的话，牛油味儿更重，面更劲道。</p>
-<p>客户那儿的培训，我主要参与答疑工作。不过对于国企的人员冗余，觉得比较蛋疼。一正职，两副职，三助理，真让人无语。客户对于同类软件比较有经验的，一针见血的指出了我们软件的不足，这也是不可辩驳的。</p>
-<p>上午的工作完成后，下午去了趟古隆中。古隆中比较让人失望，没什么好看的。整个景区也挺冷清的，没什么人。走了一下午，小腿痛得不行。</p>
-<p>晚上23点的火车，我们在火车站的德克士等了2个多小时。中间发生了一个小插曲，我一直问服务员有木有鸡米花，服务员说他们这叫魔法鸡块。买完之后我才想起，鸡米花是肯德基的o(╯□╰)o。</p>
-<p>登上火车便是埋头就睡，11半的时候到达成都，结束了这次出差。</p>
-<p>瞎扯吐槽完毕。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天襄阳出差，接近13个小时的火车。不得不说这是对我的一大挑战。&lt;/p&gt;
-&lt;p&gt;说起坐火车的记忆，我还停留在好几年前，那个时候是坐火车回重庆老家，那个时候还不用实名制买票，还有慢车一说（就是每个车站，无论大小都会停的车），小车站的检票也不是太严格。经常有没买票的人混上车，被
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
