@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2017-12-29T03:28:33.847Z</updated>
+  <updated>2018-03-28T14:34:48.829Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>未完的4.0</title>
+    <link href="http://code4cocoa.com/2018/03/28/%E6%9C%AA%E5%AE%8C%E7%9A%844-0/"/>
+    <id>http://code4cocoa.com/2018/03/28/未完的4-0/</id>
+    <published>2018-03-28T14:33:59.000Z</published>
+    <updated>2018-03-28T14:34:48.829Z</updated>
+    
+    <content type="html"><![CDATA[<p>想说些什么，却又不知从何说起。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;想说些什么，却又不知从何说起。&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>PMP备考感悟</title>
@@ -613,48 +635,6 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
     
     
       <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>串行异步网络请求的简单实现</title>
-    <link href="http://code4cocoa.com/2016/02/21/%E4%B8%B2%E8%A1%8C%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://code4cocoa.com/2016/02/21/串行异步网络请求的简单实现/</id>
-    <published>2016-02-21T10:26:14.000Z</published>
-    <updated>2016-02-21T10:27:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近在项目中遇到这样一个场景 —— 客户端数据需要一条一条的上传给服务器，且上一条上传成功，才开始上传下一条，如果上一条上传失败，则整个上传终止。实质上这就是一个串行异步网络请求的过程(串行执行一个异步任务序列)。</p>
-<p><strong>方案一</strong></p>
-<p>使用递归实现，网络请求部分我这里使用AFNetworking，当然也可以用其他的库。</p>
-<script src="https://gist.github.com/yuxiangq/6bb4cf904a5e22b1187c.js"></script>
-
-<p><strong>方案二</strong></p>
-<p>使用NSOperationQueue，网络请求部分使用NSURLSession，自然也可以使用AFNetworking。</p>
-<script src="https://gist.github.com/yuxiangq/5a6fda885689df3ef4e6.js"></script>
-
-<p><strong>方案三</strong></p>
-<p>使用AFNetworking中，AFURLConnectionOperation的方法</p>
-<p><pre><code></code></pre></p>
-<ul>
-<li>(NSArray <em> )batchOfRequestOperations:(NSArray </em> )operations<br>progressBlock:(void ( ^ )(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock<br>completionBlock:(void ( ^ )(NSArray * operations))completionBlock<br><br>配合NSOperationQueue来进行，可以看做方案二的加强版。这里就不提供示例代码了。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近在项目中遇到这样一个场景 —— 客户端数据需要一条一条的上传给服务器，且上一条上传成功，才开始上传下一条，如果上一条上传失败，则整个上传终止。实质上这就是一个串行异步网络请求的过程(串行执行一个异步任务序列)。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方案一&lt;/strong&gt;&lt;/
-    
-    </summary>
-    
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
-      <category term="异步" scheme="http://code4cocoa.com/tags/%E5%BC%82%E6%AD%A5/"/>
-    
-      <category term="串行请求" scheme="http://code4cocoa.com/tags/%E4%B8%B2%E8%A1%8C%E8%AF%B7%E6%B1%82/"/>
-    
-      <category term="请求队列" scheme="http://code4cocoa.com/tags/%E8%AF%B7%E6%B1%82%E9%98%9F%E5%88%97/"/>
     
   </entry>
   

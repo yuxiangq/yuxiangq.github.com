@@ -139,13 +139,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -259,9 +259,80 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="eventkit-如何创建Event" class="article article-type-eventkit" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/22/如何创建Event/" class="article-date">
+      <time datetime="2016-05-22T15:33:07.000Z" itemprop="datePublished">2016-05-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/22/如何创建Event/">如何创建Event</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>因项目中有一个日程功能，个人认为和iOS中日历的事件(还有另一个东西叫提醒)挺相似的，于是决定将其数据和与系统日历事件同步，这样可以利用系统日历事件的提醒功能。</p>
+<pre>
+**日历事件：**主要是时间为线索，将所有事件组织起来，事件或者说是行程安排是有时间先后顺序的。
+**提醒事项：**功能和日历中的添加事件很相似，最大的不同在与条目的组织形式。提醒事项里的条目不再以时间顺序排列，而是可以对条目性质进行分类，如分成生活、工作、学习等等。或者也可以根据项目进行分类，且条目可以设置紧急程度。
+**总结：**日历事件适合安排行程，提醒事项适用于项目的任务管理。</pre>
+
+<ul>
+<li>引入EventKit.framework。</li>
+<li>创建EKEventStore<br><pre>EKEventStore用于从用户的日历数据库中获取、创建、编辑和删除事件。</pre><script src="https://gist.github.com/yuxiangq/0741cd8a55832830e252cf12696699ad.js"></script></li>
+<li>创建CalendarEvent<script src="https://gist.github.com/yuxiangq/f24490a827342d04f12138c9d8e5c22c.js"></script>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Eventkit/">Eventkit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-OC中的泛型" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1275,105 +1346,6 @@ testNum=t
 
 
   
-    <article id="post-Swift学习笔记六" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/02/01/Swift学习笔记六/" class="article-date">
-      <time datetime="2015-02-01T14:02:12.000Z" itemprop="datePublished">2015-02-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/01/Swift学习笔记六/">Swift学习笔记六</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Swift中的枚举拥有很棒的特性，至少以前我是没有接触过的。</p>
-<p>####枚举语法####<br>使用<strong>enum</strong>关键字，并将其整个定义放在大括号内：</p>
-<pre><code>
-enum demo{
-//定义枚举相关类容
-}
-</code></pre>
-假设我们定义指南针的四个方向：
-<pre><code>
-enum CompassPoint {
-case North
-case South
-case East
-case West
-}
-</code></pre>
-一个枚举中被定义的值是枚举的**成员值**(或者**成员**)。
-**case**关键字表明新的一样关键字被定义。
-
-多个成员值也可以出现在同一行上，用逗号隔开：
-<pre><code>
-enum CompassPoint {
-case North,South,East,West
-}
-
-//使用方法
-var directionToHead = CompassPoint.West
-directionToHead = .North
-</code></pre>
-
-<blockquote>
-<p>注意：<br>不像 C 和 Objective-C 一样，Swift 的枚举成员在被创建时不会被赋予一个默认的整数值。在上面的CompassPoints例子中，North，South，East和West不是隐式的等于0，1，2和3。相反的，这些不同的枚举成员在CompassPoint的一种显示定义中拥有各自不同的值。</p>
-</blockquote>
-<p>####相关值####<br>Swift的枚举可以存储任何类型的相关值，如果需要的话每个成员的数据类型是可以不同的。</p>
-<p>比如我们可以定义两种商品条码的枚举：</p>
-<p><pre><code><br>enum Barcode {<br>case UPCA(Int, Int, Int)<br>case QRCode(String)<br>}<br></code></pre><br>然后可以使用任何一种条码类型创建新的条码：</p>
-<p><pre><code><br>var productBarcode = Barcode.UPCA(8, 85909_51226, 3)<br>productBarcode = .QRCode(“ABCDEFGHIJKLMNOP”)<br>//使用Switch-case<br>switch productBarcode {<br>case .UPCA(let numberSystem, let identifier, let check):<br>println(“UPC-A with value of (numberSystem), (identifier), (check).”)<br>case .QRCode(let productCode):<br>println(“QR code with value of (productCode).”)<br>}<br></code></pre></p>
-<p>####原始值####<br>作为相关值的替代，枚举成员可以被默认值（称为原始值）预先填充，其中这些原始值具有相同的类型。</p>
-<p>这是一个枚举成员存储原始ASCII的例子：</p>
-<p><pre><code><br>enum ASCIIControlCharacter: Character {<br>case Tab = “\t”<br>case LineFeed = “\n”<br>case CarriageReturn = “\r”<br>}<br></code></pre><br>原始值可以是字符串，字符，或者任何整型值或浮点型值。每个原始值在它的枚举声明中必须是唯一的。当整型值被用于原始值，如果其他枚举成员没有值时，它们会自动递增。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1385,17 +1357,17 @@ directionToHead = .North
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2017 YuxiangQ
+                2016-2018 YuxiangQ
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -1404,7 +1376,7 @@ directionToHead = .North
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -1437,9 +1409,9 @@ directionToHead = .North
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
