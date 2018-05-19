@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2018-03-28T14:34:48.829Z</updated>
+  <updated>2018-05-19T14:57:22.101Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>风险、问题、依赖项和假设管理介绍</title>
+    <link href="http://code4cocoa.com/2018/05/12/%E9%A3%8E%E9%99%A9%E3%80%81%E9%97%AE%E9%A2%98%E3%80%81%E4%BE%9D%E8%B5%96%E9%A1%B9%E5%92%8C%E5%81%87%E8%AE%BE%E7%AE%A1%E7%90%86%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://code4cocoa.com/2018/05/12/风险、问题、依赖项和假设管理介绍/</id>
+    <published>2018-05-12T13:53:03.000Z</published>
+    <updated>2018-05-19T14:57:22.101Z</updated>
+    
+    <content type="html"><![CDATA[<p>所有的项目，无论大小都会有风险，问题，依赖项和假设。管理它们是项目经理工作中最耗时间的事，但是我们能将它们管理好的话，我们将减少延误和成本超支，将更好的和干系人沟通，我们的项目交付将更好。和项目管理领域的所有事情一样，这些事情越早明确越有益。</p>
+<p>正确使用RAID管理将帮助你：</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby"> 在潜在问题发生之前将其处理</span></div><div class="line">-<span class="ruby"> 清楚何时需要向更高层级请求帮助</span></div><div class="line">-<span class="ruby"> 确保每一个人都明白自己的职责</span></div><div class="line">-<span class="ruby"> 将项目计划、交付依赖和你为项目做的假设，通知所有干系人</span></div></pre></td></tr></table></figure>
+<p>#风险和问题#<br>风险是可能会发生，但尚未发生的问题。尽早的关注这些问题，能大大降低他们发生的可能性，并且影响你的交付能力。当问题已经发生，那么风险和问题的类型包括：</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby"> 资源可用性：在项目中你是否有足够的各个类型的资源？</span></div><div class="line">-<span class="ruby"> 资源连续性：能否在项目周期中使用同一资源？这是很重要的，因为替换资源很花时间。</span></div><div class="line">-<span class="ruby"> 质量问题：你是否有承诺交付项目的质量？你是否做出了可能影响质量的妥协？</span></div><div class="line">-<span class="ruby"> 市场风险：市场的变化可能使你的项目处于风险中。假如，你所在市场的产品创新非常快，那么延期的风险会对项目成功交付造成影响。</span></div><div class="line">-<span class="ruby"> 技术风险：你的项目是否包含新技术，他是否影响许多系统组件。</span></div><div class="line">-<span class="ruby"> 流动性：你是在一个流动性很强的组织工作，还是在一个人们经常改变主意的地方工作？你的产品进入了一个快速变化的市场吗？</span></div><div class="line">-<span class="ruby"> 监督管理：监管需求是否为你的项目带来了风险，或者您的项目是否会因为违反法规而无法交付？</span></div><div class="line">-<span class="ruby"> 治理：你是否有靠谱的投资方和领导，还有指导委员会的人员。这些风险通常都是高度政治性的，因此很难公开，但你必须意识到它们，并且愿意『离线』处理它们。</span></div><div class="line">-<span class="ruby"> 变更影响：如果你的项目将改变人们的工作方式，那么它不被接受的风险将提高，这是需要解决的。</span></div><div class="line">-<span class="ruby"> 供应商风险：了解你的供应商，做好调查将帮助你了解你的供应商的风险等级。他们是唯一可用的供应商吗？如果是这样的话，项目的风险变得更高了。他们产品在质量上的名声怎么样？他们已经创立了多久？</span></div><div class="line">-<span class="ruby"> 物流风险：如果你的项目涉及到团队迁移，那么你的物流风险将比你为销售团队提升CRM系统的风险要高得多。如果你的团队分布在广泛的地理范围内，那么你的风险就会比你整个团队坐在同一层楼的风险要高。如果项目/开发团队远离业务用户和赞助商，风险也会变高。</span></div></pre></td></tr></table></figure>
+<p>#依赖#<br>依赖关系有两种：（1）对外依赖，你的项目完成依赖另一个项目组任务的完成。（2）内部依赖，其他团队在完成交付之前依赖于你先交付。列如，你修改一个表单之前需要法务部门的审查，这是一个外部依赖。</p>
+<p>了解依赖关系意味着能够尽早的发现问题，跟进问题找到解决方案。依赖的例子包括：</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby"> 在你开始测试之前另一个系统必须完成编码。</span></div><div class="line">-<span class="ruby"> 在你打印新版本合同邮寄给客户之前需要法律部门先审核。</span></div><div class="line">-<span class="ruby"> 在你开始建造之前规划部门要先批准。</span></div><div class="line">-<span class="ruby"> 在你正式开始项目之前组织的另一些人需要先批准费用。</span></div><div class="line">-<span class="ruby"> 为了完成业务需求文档，需要和进行五次需求沟通。</span></div></pre></td></tr></table></figure>
+<p>依赖必须得到各方的同意 —— 你不能依赖于别人团队代码交付来确定交付日期，举个例子，没有团队同意这个交付日期。同样的，如果你再没开始就没同意交付日期，你也不用为别的团队的交付日期负责。</p>
+<p>#假设#<br>当我们在做规划项目时，尤其是在完成详细的业务和技术分析之前，我们都会做许多假设。我们通常不认为能把计划做得多详细。记录下这些假设，意味着项目每一个人对都有相同的理解。假设的例子包括:</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby"> 关于供应商的活动，例如，你假设供应商在将任何新代码交给您之前，将进行完整的单元测试。</span></div><div class="line">-<span class="ruby"> 你目前使用的模型适用于此项目。</span></div><div class="line">-<span class="ruby"> 新网线的安装将作为另一个项目交付的一部分，所以不会包含在你的项目中。</span></div></pre></td></tr></table></figure>
+<p>零散的翻译完了这篇文章，浓浓的机翻即视感。英文还要继续修炼啊。</p>
+<p><em>原文地址：<a href="http://thetruemanager.com/risk-issue-dependency-assumption-raid-management-introduction/" target="_blank" rel="external">http://thetruemanager.com/risk-issue-dependency-assumption-raid-management-introduction/</a></em></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;所有的项目，无论大小都会有风险，问题，依赖项和假设。管理它们是项目经理工作中最耗时间的事，但是我们能将它们管理好的话，我们将减少延误和成本超支，将更好的和干系人沟通，我们的项目交付将更好。和项目管理领域的所有事情一样，这些事情越早明确越有益。&lt;/p&gt;
+&lt;p&gt;正确使用RAID
+    
+    </summary>
+    
+    
+      <category term="项目管理" scheme="http://code4cocoa.com/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="翻译" scheme="http://code4cocoa.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
   
   <entry>
     <title>未完的4.0</title>
@@ -611,30 +647,6 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
       <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
     
       <category term="自定义控件" scheme="http://code4cocoa.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>离职季感悟</title>
-    <link href="http://code4cocoa.com/2016/02/26/%E7%A6%BB%E8%81%8C%E5%AD%A3%E6%84%9F%E6%82%9F/"/>
-    <id>http://code4cocoa.com/2016/02/26/离职季感悟/</id>
-    <published>2016-02-26T13:49:15.000Z</published>
-    <updated>2016-02-26T13:53:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>又到了一年一度的离职旺季，不幸的是我的项目组也有两位主力离职。作为他们的Leader，我虽然感到遗憾，但也挺他们感到高兴。遗憾的是，他们不能再陪着整个团队成长，同时因为他们的离开，我们产品这一两个月的研发进度也会受到影响。高兴的是，他们将去一个更高的平台磨练自己。</p>
-<p>今天有个同事面试回来告诉我，面试官问的很多问题，他都没有料到，都比较底层。就我们的产品开发来说，几乎不会用到。他回顾了一下这两年在团队中的开发情况，自己一手做出来的产品，在技术上真没有什么可以骄傲的地方，大部分时间其实就是处理业务逻辑，可以看出他比较失落。我得承认，我们做得这个产品确实不够高大上，技术上可以说都是很成熟的技术，技术门槛低。回头整理自己的知识体系，我也发现在产品的某个时间点开始，我们更多的时间是在处理业务了，初期开荒阶段，各种技术尝试，封装常用库，架构等等。产品进入平稳期后，更多的业务需求占据了开发日程，留给尝试各种技术的空间慢慢变少，自然会觉得自己的技术好像在某个时间点有了停滞。</p>
-<p>作为一名技术人，都梦想着自己能成为大牛，我也在向这这个方向努力。所以一直在尽量利用业余时间，尝试一些产品中没有使用的东西，或者新的技术。最近这段时间，自己也有迷惘，或许就是进入了瓶颈期。是的，每个IT人都会有瓶颈期，他们面对的方式也不一样。有得人在技术上遇到瓶颈期，于是就会选择转向别的方向，比如管理。有的人会慢慢的被磨掉耐心，怀疑自己的能力，从而变得平庸。有的人则会在某个时候，突破瓶颈，迎来技术的再一次快速提升。我是希望自己能迎来又一波技术的快速提升，从而实现自己做出一款牛B的梦想。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;又到了一年一度的离职旺季，不幸的是我的项目组也有两位主力离职。作为他们的Leader，我虽然感到遗憾，但也挺他们感到高兴。遗憾的是，他们不能再陪着整个团队成长，同时因为他们的离开，我们产品这一两个月的研发进度也会受到影响。高兴的是，他们将去一个更高的平台磨练自己。&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
