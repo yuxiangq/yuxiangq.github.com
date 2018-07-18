@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2018-05-19T14:57:22.101Z</updated>
+  <updated>2018-07-18T14:17:31.976Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>读《Scrum敏捷软件开发》有感</title>
+    <link href="http://code4cocoa.com/2018/05/26/%E8%AF%BB%E3%80%8AScrum%E6%95%8F%E6%8D%B7%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E3%80%8B%E6%9C%89%E6%84%9F/"/>
+    <id>http://code4cocoa.com/2018/05/26/读《Scrum敏捷软件开发》有感/</id>
+    <published>2018-05-26T14:25:25.000Z</published>
+    <updated>2018-07-18T14:17:31.976Z</updated>
+    
+    <content type="html"><![CDATA[<p>本书是敏捷联盟及Scrum联盟创始人之一、敏捷估算及计划的鼻祖Mike Cohn三大经典著作中影响最为深厚的扛鼎制作，也是全球敏捷社区中获得广泛肯定的企业敏捷转型权威参考。</p>
+<h3 id="敏捷软件开发宣言"><a href="#敏捷软件开发宣言" class="headerlink" title="敏捷软件开发宣言"></a>敏捷软件开发宣言</h3><p>我们一直在实践中探寻更好的软件开发方法，身体力行的同时也帮助他人。由此我们建立了如下价值观：</p>
+<p><strong>工作和互动</strong> 高于 流程和工具<br><strong>工作的软件</strong> 高于 详尽的文档<br><strong>客户合作</strong> 高于 合同谈判<br><strong>响应变化</strong> 高于 遵循计划</p>
+<p>也就是说，尽管右项有其价值，我们更重视左项的价值</p>
+<h3 id="什么是Scrum？"><a href="#什么是Scrum？" class="headerlink" title="什么是Scrum？"></a>什么是Scrum？</h3><p>Scrum是一个用于开发和维护复杂产品的框架，是一个增量的、迭代的开发过程。整个开发过程由若干个短迭代周期构成，一个短迭代周期称为Sprint，每个Sprint的建议长度为2到4周。使用Backlog来管理产品需求，Backlog是一个按照商业价值排序的需求列表，列表条目的体现形式通常为用户故事。</p>
+<p>简而言之这是一套流程规范，我们参照这套规范进行软件研发就能应对不断变化的需求。</p>
+<p>软件研发中最痛苦的就是需求变更，尤其是对于研发工程师来说，每一次的变更都意味着『对上一次的否定』,是非常打击士气的。尤其是以半年为周期发布一个版本的大项目，在传统瀑布研发模式下，首先产品经理需要规划大量的需求，是非常可怕的事情。尤其是当产品复杂度增大的时候，人的思维严谨度是有限的，就很难保证<strong>需求文档</strong>的质量。在开发过程中发现需求和设计层面缺陷的可能性就会大大增加，导致项目越到后期，变动越频繁，进而影响团队氛围。</p>
+<p>Scrum则将大迭代调整为小迭代，在一定程度降低了需求设计的工作难度。同时也能尽快的将可用的产品交付给用户，得到反馈，以便在下个迭代进行调整。这样通过多次迭代反馈，最终交付给用户满意的产品。</p>
+<p>那么我们如何理解『拥抱变化』呢，是否意味着我们采用敏捷开发之后，就可以肆无忌惮的改需求了呢？我们先来看看中国特色的敏捷：</p>
+<p><strong>极限编程</strong><br>每天只工作8小时，工作量不饱和，没到『极限』。</p>
+<p><strong>拥抱变化</strong><br>『我的需求很简单，这里改一下，那里的审批流程不要了……』产品经理上午说好的需求，下午就变。</p>
+<p><strong>迭代式开发</strong><br>做完了发版，有BUG下个版本修。</p>
+<p><strong>Sprint冲刺</strong><br>版本要上线，今晚大家通宵努力一把。</p>
+<p><em>不少公司的管理层其实并不真正关注敏捷，他们并不想改变自己。他们被广告打动了，『用敏捷吧，交付更快，质量更高。』于是敏捷成为了他们的新玩具。敏捷好啊，简单易懂，成本低廉，记得更快交付哟。</em></p>
+<h3 id="迭代期内无变更"><a href="#迭代期内无变更" class="headerlink" title="迭代期内无变更"></a>迭代期内无变更</h3><p>首先我们要理解一下什么是<strong>变更</strong>。<br>我们通常意义上说的变更，就是频繁改需求。以前常听测试说的一句话是『都要发版了，还在改需求』，这种临近发版，功能细节的调整，风险是很大的。但这种情况在软件研发的过程中却经常发生。对于一个大功能模块来说，一个影响业务流程的改变对于产品经理来说可能是一句话，对于研发和测试来说可能就是前面几天的努力都白费了，还得再来一次，但时间可没那么多了，于是项目延期，出现质量问题的风险大增。</p>
+<p>上面说到的是<strong>功能细节的频繁变更</strong>，还有一种是<strong>迭代开发已经开始，还没明确要开发什么功能</strong>。我觉得这种问题至少我是没有遇到过的，如果一个团队出现这个问题，那我认为是项目经理的重大失职。每个产品的版本迭代都是企业的一步棋：<strong>在某个时间，推出某些功能，满足某些需求，获取某些客户，打败某些对手，取代某些产品。</strong>若认同了这一点，则早在产品版本规划的时候，就应该确认此版本中应该大致包含哪些功能，而非到迭代计划会议或迭代中才会确认，更不会在迭代中间发生变化。</p>
+<p>通过一番思考，我的理解是<strong>在迭代周期内不要进行影响业务流程的需求变更。</strong>倘若不得不这么做（该变更不能放到下次迭代调整），我们需要反思为何产生这种变更，是在做需求分析出现了偏差，还是客户的需求发生了本质上的变化。2-4周的短迭代本身就是对用户需求的<strong>渐进明细</strong>的过程，但<strong>渐进明细</strong>是要保证对用户需求的理解在大方向上是没有问题的，这样通过<strong>多次迭代</strong>，使产品越来越接近更满足用户需求的样子。而不能是<strong>每次迭代</strong>对用户需求的理解都是<strong>南辕北辙</strong>的。<em>举例，用户想要一个能让他从A地快速移动到B地的工具。按照渐进明细的敏捷研发方式，我们第一个迭代做了一个滑板，第二个迭代做了一辆自行车，第三个迭代做了一辆汽车。在这三次迭代中，我们对客户需求的理解，在大方向上是没有问题的，并在每一次迭代都交付给了客户比上一次更接近需求标准的产品。假如我们第一次迭代做了一个扳手，第二次迭代做了一把螺丝刀，第三次迭代计划是做电钻，但在研发一周后产品经理突然领悟到做一个滑板更接近需求，于是要求改做滑板。那么以上三次迭代就是刚才说的南辕北辙式敏捷研发。</em></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本书是敏捷联盟及Scrum联盟创始人之一、敏捷估算及计划的鼻祖Mike Cohn三大经典著作中影响最为深厚的扛鼎制作，也是全球敏捷社区中获得广泛肯定的企业敏捷转型权威参考。&lt;/p&gt;
+&lt;h3 id=&quot;敏捷软件开发宣言&quot;&gt;&lt;a href=&quot;#敏捷软件开发宣言&quot; class=&quot;h
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="读书笔记" scheme="http://code4cocoa.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>风险、问题、依赖项和假设管理介绍</title>
@@ -610,43 +650,6 @@ X/Open DTP 定义了三个组件： AP，TM，RM。
     
     
       <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FunnelChartView漏斗控件</title>
-    <link href="http://code4cocoa.com/2016/03/05/FunnelChartView%E6%BC%8F%E6%96%97%E6%8E%A7%E4%BB%B6/"/>
-    <id>http://code4cocoa.com/2016/03/05/FunnelChartView漏斗控件/</id>
-    <published>2016-03-04T16:55:32.000Z</published>
-    <updated>2017-02-17T15:53:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。</p>
-<p>一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：</p>
-<ul>
-<li>传一个FunnelChartModel列表。</li>
-<li>传一个NSNumber列表，一个UIColor列表。</li>
-</ul>
-<p>个人感觉还是似有不妥，另外控件的整体效果还不够精致，还需要更多的打磨。</p>
-<p>具体效果如果：<br><img src="https://raw.githubusercontent.com/yuxiangq/FunnelChartView/master/ScreenShots/Simulator%20Screen%20Shot%20Mar%203%2C%202016%2C%2022.50.16.png" alt=""></p>
-<p>使用示例：</p>
-<script src="https://gist.github.com/yuxiangq/2ff50e3cfd49c0568844.js"></script>
-
-
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;FunnelChartView是我为满足产品需求编写的一个简单的漏斗图表控件，主要用来展示销售漏斗，使用CoreGraphics绘制而成。&lt;/p&gt;
-&lt;p&gt;一直在纠结，这个控件的数据应当采用什么结构传才好。于是做了两个初始化接口：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;传一个Funnel
-    
-    </summary>
-    
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
-      <category term="自定义控件" scheme="http://code4cocoa.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/"/>
     
   </entry>
   

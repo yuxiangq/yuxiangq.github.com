@@ -139,13 +139,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜單</li>
-                        <li>標籤</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>友情鏈接</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>關於我</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -259,9 +259,72 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Paw" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/24/Paw/" class="article-date">
+      <time datetime="2016-07-24T13:39:59.000Z" itemprop="datePublished">2016-07-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/24/Paw/">Paw</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>因为个人在产品研发中，既要负责服务端API的研发工作，同时也要负责iOS端的研发工作，所以有时候写完服务端API，马上就用iOS对接，同时判断API有没有问题。</p>
+<p>不过随着团队人员的扩张，新来的客户端同事，不懂服务器端的相关技术，导致服务端API在写完后，需要进行简单的测试，保证服务器端能够顺利调用(服务端API总是会在客户端调用之前完成，并且可能客户端要过较久一段时间才会调用，为了能让负责服务端的同事自测API的状况，我曾考虑服务端的逻辑部分使用单元测试来进行处理)，我找到了Paw这款软件，它号称是Mac最先进的HTTP客户端。</p>
+<p><a href="https://luckymarmot.com/zh-hans/paw" target="_blank" rel="external">Paw</a>除了友好，易操作的界面之外。还有个强大的功能就是可以生成客户端请求代码，支持C#、Python、Swift、Objective-C(AFNetworking，NSURLSession)等等。更支持请求动态值，从之前的响应中获取数据，例如身份验证令牌、计算后的哈希值、签名、测试用的随机数，做一些数学运算，或者任何您想做的。</p>
+<p>官网官网价格为49.99刀，不过在这里我推荐<a href="https://item.taobao.com/item.htm?spm=a1z10.4-c.w4004-11449138832.26.3syAj4&amp;id=45684786090" target="_blank" rel="external">数码荔枝</a>，99 RMB即可入手，实在是超级划算。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小工具/">小工具</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-一大早被DDoS。。。。。" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1248,87 +1311,6 @@ testNum=t
 
 
   
-    <article id="post-自定义UITableViewCell，使用VFL布局" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/04/12/自定义UITableViewCell，使用VFL布局/" class="article-date">
-      <time datetime="2015-04-12T12:57:39.000Z" itemprop="datePublished">2015-04-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/12/自定义UITableViewCell，使用VFL布局/">自定义UITableViewCell，使用VFL布局</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，<a href="https://github.com/yuxiangq/UITableViewCell4VFL/commits?author=yuxiangq" target="_blank" rel="external">Demo比较简单</a></p>
-<ul>
-<li><p>首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_2.png" alt="image"></p>
-</li>
-<li><p>让我们的ViewController继承UITableViewController。继承UITableViewController能帮我们省不少事情。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/viewcontroller_uitableviewcontroller.png" alt="image"></p>
-</li>
-<li><p>新建CustomCell，我们在其中新建一个UILabel，叫contentLabel，用于展示文本数据并允许换行。</p>
-<script src="https://gist.github.com/yuxiangq/96c5ffeb2ab9d718a33e.js"></script>
-</li>
-<li><p>为contentLabel设置约束，这里我们的约束可以看做Margin(5,5,5,5)。</p>
-<script src="https://gist.github.com/yuxiangq/dc9faab124f1eedf82a8.js"></script>
-</li>
-<li><p>在ViewController中添加一个原型cell，动态计算高度的时候使用。</p>
-<script src="https://gist.github.com/yuxiangq/6c282d9899fe28fe59e4.js"></script>
-
-</li>
-</ul>
-<pre>
-涉及换行的UILabel，请一定要注意**preferredMaxLayoutWidth**属性的设置，否则换行会出问题。
-</pre>
-
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UITableViewCell/">UITableViewCell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VFL/">VFL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1343,14 +1325,14 @@ testNum=t
                 2016-2018 YuxiangQ
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、簡潔且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="簡而不減 Hexo 雙欄博客主題  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -1359,7 +1341,7 @@ testNum=t
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -1392,9 +1374,9 @@ testNum=t
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
