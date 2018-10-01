@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="YuxiangQ" />
+
+
+
+<meta name="description" content="在阅读朱赟的书《跃迁 - 从技术到管理的硅谷路径》时，其中一张有这么一道思考题『API的签名是设计语言无关的，那在设计中引入更多的语言还是更少的语言去实现不同的API呢？优点和缺点各是什么？』在这里谈谈我的思考。
+先说优缺点，优点是能根据API的业务不同，去选择特定的语言来优化业务，缺点则是管理成本和风险的增加。
+对于小团队来说，我认为使用更少的语言来实现API是最有利的选择。尽量少的编程语言，能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="思考：应该引入更多的语言还是更少的语言去设计API呢？">
+<meta property="og:url" content="http://code4cocoa.com/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/index.html">
+<meta property="og:site_name" content="Code4Cocoa">
+<meta property="og:description" content="在阅读朱赟的书《跃迁 - 从技术到管理的硅谷路径》时，其中一张有这么一道思考题『API的签名是设计语言无关的，那在设计中引入更多的语言还是更少的语言去实现不同的API呢？优点和缺点各是什么？』在这里谈谈我的思考。
+先说优缺点，优点是能根据API的业务不同，去选择特定的语言来优化业务，缺点则是管理成本和风险的增加。
+对于小团队来说，我认为使用更少的语言来实现API是最有利的选择。尽量少的编程语言，能">
+<meta property="og:updated_time" content="2018-10-01T09:38:30.935Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="思考：应该引入更多的语言还是更少的语言去设计API呢？">
+<meta name="twitter:description" content="在阅读朱赟的书《跃迁 - 从技术到管理的硅谷路径》时，其中一张有这么一道思考题『API的签名是设计语言无关的，那在设计中引入更多的语言还是更少的语言去实现不同的API呢？优点和缺点各是什么？』在这里谈谈我的思考。
+先说优缺点，优点是能根据API的业务不同，去选择特定的语言来优化业务，缺点则是管理成本和风险的增加。
+对于小团队来说，我认为使用更少的语言来实现API是最有利的选择。尽量少的编程语言，能">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Code4Cocoa" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>思考：应该引入更多的语言还是更少的语言去设计API呢？ | Code4Cocoa</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">YuxiangQ</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">A Programer&#39;s Home</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/yuxiang.q@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/yuxiangq" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App比较/">App比较</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BDD/">BDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DDoS/">DDoS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eventkit/">Eventkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPS/">GPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-APP/">Mac APP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swfit/">Swfit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UICollectionViewController/">UICollectionViewController</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIImage/">UIImage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableVIewCell/">UITableVIewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableViewCell/">UITableViewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VFL/">VFL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebAPP/">WebAPP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/下拉刷新/">下拉刷新</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人总结/">个人总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串行请求/">串行请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小工具/">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发模式/">开发模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手势/">手势</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针变量/">指针变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序/">程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/稍后读/">稍后读</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻墙/">翻墙</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动布局/">自动布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自定义控件/">自定义控件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行业发展/">行业发展</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/请求队列/">请求队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目管理/">项目管理</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">YuxiangQ</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">YuxiangQ</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">A Programer&#39;s Home</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/yuxiang.q@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/yuxiangq" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-思考：应该引入更多的语言还是更少的语言去设计API呢？" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/" class="article-date">
+      <time datetime="2018-09-24T13:36:12.000Z" itemprop="datePublished">2018-09-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      思考：应该引入更多的语言还是更少的语言去设计API呢？
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>在阅读朱赟的书《跃迁 - 从技术到管理的硅谷路径》时，其中一张有这么一道思考题『API的签名是设计语言无关的，那在设计中引入更多的语言还是更少的语言去实现不同的API呢？优点和缺点各是什么？』在这里谈谈我的思考。</p>
+<p>先说优缺点，优点是能根据API的业务不同，去选择特定的语言来优化业务，缺点则是管理成本和风险的增加。</p>
+<p>对于小团队来说，我认为使用更少的语言来实现API是最有利的选择。尽量少的编程语言，能使团队的资源更集中，而且这个时候，较单一的技术栈更方便管理。比如我在刚开始做目前的产品的时候，包括我整个项目就三个研发，我负责iOS和API接口的研发（使用WCF），A负责Android研发，B负责Web研发（ASP.NET MVC）。从主要编程语言来说团队有三种语言C#、Java、Objective-C（暂不算JavaScript吧😆）。这样合作半年后，A也开始负责部分API接口的研发，B也能处理Android的BUG，团队每个人除了自己的主力语言外，同时也掌握了另一门语言，在人员配置上形成了一定的补充。倘若在三人小团队中，不加限制的疯狂引入编程语言，譬如Go、Python、Erlang、C++等等，造成的最终结果是项目难以维护，毕竟能同时掌握这么多语言，并能在项目中不留坑的人实在少见。</p>
+<p>对于大团队，更多的思考应该在合适的技术（语言）用在合适的业务上。同时团队也有足够的人力来维护、扩展项目。所以在技术（语言）的选择上可以相对的大胆一些。并且多技术栈的发展，能有效规避技术栈没落的风险。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/">思考：应该引入更多的语言还是更少的语言去设计API呢？</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">YuxiangQ</a></p>
+        <p><span>Created:</span>2018-09-24, 21:36:12</p>
+        <p><span>Updated:</span>2018-10-01, 17:38:30</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/" title="思考：应该引入更多的语言还是更少的语言去设计API呢？">http://code4cocoa.com/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/</a>
+            <span class="copy-path" data-clipboard-text="From http://code4cocoa.com/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/　　By YuxiangQ" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/31/如何培养自学能力/">
+                    如何培养自学能力
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"思考：应该引入更多的语言还是更少的语言去设计API呢？　| Code4Cocoa　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/31/如何培养自学能力/" title="Next: 如何培养自学能力">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/">思考：应该引入更多的语言还是更少的语言去设计API呢？</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/31/如何培养自学能力/">如何培养自学能力</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/26/读《Scrum敏捷软件开发》有感/">读《Scrum敏捷软件开发》有感</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/12/风险、问题、依赖项和假设管理介绍/">风险、问题、依赖项和假设管理介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/28/未完的4-0/">未完的4.0</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/28/PMP备考感悟/">PMP备考感悟</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/29/PMP第二周培训/">PMP第二周培训</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/20/PMP第一周培训/">PMP第一周培训</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/17/关于PMP的一些事/">关于PMP的一些事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/30/罗伯特议事规则/">罗伯特议事规则</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/11/MySqlParameter的坑/">MySqlParameter的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/21/行为驱动开发/">行为驱动开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/170312/">170312</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/18/关于《读库》/">关于《读库》</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/15/2016总结/">2016总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/项目中AOP的使用/">项目中AOP的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/03/韩国旅游/">韩国旅游</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/Paw/">Paw</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/03/一大早被DDoS。。。。。/">一大早被DDoS。。。。。</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/22/如何创建Event/">如何创建Event</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/19/OC中的泛型/">OC中的泛型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/蚂蚁金服技术开放日活动小记/">蚂蚁金服技术开放日活动小记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/05/FunnelChartView漏斗控件/">FunnelChartView漏斗控件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/26/离职季感悟/">离职季感悟</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/串行异步网络请求的简单实现/">串行异步网络请求的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/襄阳出差/">襄阳出差</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/1601随笔/">1601随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/iOS实现判断程序关闭、关机的思路/">iOS实现判断程序关闭、关机的思路</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/13/UITableView实现下拉刷新/">UITableView实现下拉刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/29/WebAPP将迎来一个好时代/">WebAPP将迎来一个好时代</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/19/手机是如何定位的/">手机是如何定位的</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/21/Swift学习笔记七/">Swift学习笔记七</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/12/自定义UITableViewCell，使用VFL布局/">自定义UITableViewCell，使用VFL布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/04/我的2014总结/">我的2014总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/01/Swift学习笔记六/">Swift学习笔记六</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/25/Pocket、Instapaper、Readability的比较/">Pocket、Instapaper、Readability的比较</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/12/NumberTextField/">NumberTextField</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/01/Swift学习笔记五/">Swift学习笔记五</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/19/Lock，一款有趣的应用/">Lock，一款有趣的应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/14/UICollectionViewController的用法/">UICollectionViewController的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/05/关于如何学习一门新语言/">关于如何学习一门新语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/04/VFL布局学习/">VFL布局学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/04/梯子推荐/">梯子推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/11/19/Swift学习笔记四/">Swift学习笔记四</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/11/19/手势的使用/">手势的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/10/26/Swift学习笔记三/">Swift学习笔记三</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/10/23/Swift学习笔记二/">Swift学习笔记二</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/10/12/Swift学习笔记一/">Swift学习笔记一</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/09/27/自学VB时的回忆/">自学VB时的回忆</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/09/05/关于指针及指针变量/">关于指针及指针变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/30/UIImageView展示大图学习笔记/">UIImageView展示大图学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/08/16/UITableViewCell的重用方法的区别/">UITableViewCell的重用方法的区别</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 YuxiangQ
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
