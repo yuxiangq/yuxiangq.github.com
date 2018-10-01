@@ -139,13 +139,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -259,9 +259,72 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-思考：应该引入更多的语言还是更少的语言去设计API呢？" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/" class="article-date">
+      <time datetime="2018-09-24T13:36:12.000Z" itemprop="datePublished">2018-09-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/">思考：应该引入更多的语言还是更少的语言去设计API呢？</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>在阅读朱赟的书《跃迁 - 从技术到管理的硅谷路径》时，其中一张有这么一道思考题『API的签名是设计语言无关的，那在设计中引入更多的语言还是更少的语言去实现不同的API呢？优点和缺点各是什么？』在这里谈谈我的思考。</p>
+<p>先说优缺点，优点是能根据API的业务不同，去选择特定的语言来优化业务，缺点则是管理成本和风险的增加。</p>
+<p>对于小团队来说，我认为使用更少的语言来实现API是最有利的选择。尽量少的编程语言，能使团队的资源更集中，而且这个时候，较单一的技术栈更方便管理。比如我在刚开始做目前的产品的时候，包括我整个项目就三个研发，我负责iOS和API接口的研发（使用WCF），A负责Android研发，B负责Web研发（ASP.NET MVC）。从主要编程语言来说团队有三种语言C#、Java、Objective-C（暂不算JavaScript吧😆）。这样合作半年后，A也开始负责部分API接口的研发，B也能处理Android的BUG，团队每个人除了自己的主力语言外，同时也掌握了另一门语言，在人员配置上形成了一定的补充。倘若在三人小团队中，不加限制的疯狂引入编程语言，譬如Go、Python、Erlang、C++等等，造成的最终结果是项目难以维护，毕竟能同时掌握这么多语言，并能在项目中不留坑的人实在少见。</p>
+<p>对于大团队，更多的思考应该在合适的技术（语言）用在合适的业务上。同时团队也有足够的人力来维护、扩展项目。所以在技术（语言）的选择上可以相对的大胆一些。并且多技术栈的发展，能有效规避技术栈没落的风险。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-如何培养自学能力" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1237,79 +1300,6 @@
 
 
   
-    <article id="post-项目中AOP的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/12/25/项目中AOP的使用/" class="article-date">
-      <time datetime="2016-12-25T14:32:20.000Z" itemprop="datePublished">2016-12-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/25/项目中AOP的使用/">项目中AOP的使用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h1><p>Aspect Oriented Programming 面向切面(切片)编程的缩写。</p>
-<h2 id="什么是AOP"><a href="#什么是AOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h2><p><strong>在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。</strong>这句话清晰简洁的给AOP做了定义。</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">面向方面编程（AOP）是施乐公司帕洛阿尔托研究中心（Xerox PARC）在上世纪<span class="number">90</span>年代发明的一种编程范式，但真正的发展却兴起于近几年对软件设计方兴未艾的研究。</div><div class="line"></div><div class="line">由于软件系统越来越复杂，大型的企业级应用越来越需要人们将核心业务与公共业务分离。AOP技术正是通过编写横切关注点的代码，即“方面”，分离出通用的服务以形成统一的功能架构。它能够将应用程序中的商业逻辑同对其提供支持的通用服务进行分离，使得开发人员从重复解决通用服务的劳动中解脱出来，而仅专注于企业的核心商业逻辑。</div><div class="line"></div><div class="line">因此，AOP技术也就受到越来越多的关注，而应用于各种平台下的AOP技术也应运而生。但由于AOP技术相对于成熟的OOP技术而言，在性能、稳定性、适用性等方面还有待完善，同时AOP技术也没有形成一个统一的标准，这使得AOP技术的研究更具有前沿性的探索价值。</div></pre></td></tr></table></figure>
-<h2 id="能做什么"><a href="#能做什么" class="headerlink" title="能做什么"></a>能做什么</h2><p>AOP能将事务处理、日志管理、权限控制、异常处理等封装起来，以便于减少系统的重复代码，降低模块间的耦合，使业务代码更纯粹易读，且有利于未来的可操作性和可维护性。</p>
-<h2 id="处理繁琐的菜单-amp-操作权限"><a href="#处理繁琐的菜单-amp-操作权限" class="headerlink" title="处理繁琐的菜单&amp;操作权限"></a>处理繁琐的菜单&amp;操作权限</h2><p>在XXX管理系统中，菜单权限是必不可少的。并且随着企业管理的精细化，菜单的各种操作权限判断也是越来越多，所以简洁统一的处理方式是很有必要的。</p>
-<p>在我们的项目中，每一个菜单权限都可能涉及到操作权限，它们包括：查看、新增、编辑、删除、审批、分配、重置、轨迹、下载、转移、退回、转为客户等11个。随着产品功能的不断完善，操作权限也将会越来越多。如果我们在每个ViewController的ViewDidLoad方法中去判断控制的话，工作量会非常的大。而且如果以后操作权限有变动的话，我们还得每个ViewController都去修改，很容易漏改。那么有简单的处理方式吗？</p>
-<p>当然利用AOP思想和Objective-C runtime的特性，我们可以像下面这样处理：</p>
-<ol>
-<li>利用分类或继承，为每个ViewController都添加权限相关的属性。</li>
-<li>利用runtime的特性，植入权限验证代码(通常替换ViewDidLoad方法)。</li>
-<li>创建权限相关的控件时提供固定的Tag值(比如EditButton的Tag值为1000，NewButton的Tag值为2000)。</li>
-<li>在新的ViewDidLoad方法中利用第一步中的权限属性，对权限相关控件(利用Tag来获取相关控件)进行统一操作，这样就实现了在所有ViewController中统一判断权限。</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">还有另一种不替换ViewDidLoad的方法。</div><div class="line"></div><div class="line">即利用分类，在ViewController的分类中新添加一个类方法，比如叫VerifyPermission。在该方法中判断相关权限。这样只需要在所有ViewDidLoad中手动调用一次VerifyPermission即可。</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AOP/">AOP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1324,14 +1314,14 @@
                 2016-2018 YuxiangQ
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -1340,7 +1330,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -1373,9 +1363,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
