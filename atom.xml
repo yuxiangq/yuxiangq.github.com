@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2018-10-01T09:38:30.935Z</updated>
+  <updated>2018-10-28T03:30:59.645Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单机软件和SaaS的反向对接</title>
+    <link href="http://code4cocoa.com/2018/10/27/%E5%8D%95%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%92%8CSaaS%E7%9A%84%E5%8F%8D%E5%90%91%E5%AF%B9%E6%8E%A5/"/>
+    <id>http://code4cocoa.com/2018/10/27/单机软件和SaaS的反向对接/</id>
+    <published>2018-10-27T12:56:30.000Z</published>
+    <updated>2018-10-28T03:30:59.645Z</updated>
+    
+    <content type="html"><![CDATA[<p>看标题可能比较懵逼，这篇文章到底要说什么。那么我介绍一下项目背景。</p>
+<h1 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h1><p>目前在做的产品是一款SaaS产品，年初的时候因为产品方向变化，需要和公司其他产品进行数据对接，需要对接的产品为公司的PC版产品（这里统一简称H）。</p>
+<p>按照正常设想的数据对接方式，为了实现数据的对接，作为SaaS模式产品，我们需要提供Open API供H使用，由H产品发起数据相关的请求。但公司战略上不允许H产品进行这方面的改动，并且通过沟通也不允许H产品提供Open API。那么这次数据的对接只能完全由我们项目组自己负责处理。</p>
+<h1 id="对接方案"><a href="#对接方案" class="headerlink" title="对接方案"></a>对接方案</h1><p>在团队讨论对接方案的时候，讨论出了两种方案：</p>
+<h2 id="中间件对接"><a href="#中间件对接" class="headerlink" title="中间件对接"></a>中间件对接</h2><p>在PC端安装一个中间件程序，负责向SaaS服务提供数据接口。客户在安装完中间件后，需要将中间件地址（使用内网穿透工具）和SaaS产品的账号绑定，以便我们能找到对应的地址。</p>
+<p>在中间件的设计上我们设想了两种，重中间件和轻中间件。重中间件即中间件直接提供业务接口，并需要判断H产品的版本（H产品活跃的版本非常之多，客户没有升级习惯），保证业务接口能被正常调用。轻中间件则提供数据查询接口，业务处理由服务器端进行，中间件相当于远程的SqlHelper，参数传递为了方便简单处理，都统一为字典。</p>
+<p>重中间件模式首先Pass掉了，因为采用重中间件模式，后期迭代新功能的时候，中间件也需要升级。H产品的客户升级欲望低，再加上前期产品迭代较快，会导致升级平凡，体验不好。所以我们选择了轻中间件模式。但在第一版研发中，还是发现一些问题，并且不能很好的适配云部署的H产品（即将多个客户使用的H产品部署到一台阿阿里云服务器上），所以我们在后续版本使用了数据库直连方式，并使用至今。</p>
+<h2 id="数据库直连"><a href="#数据库直连" class="headerlink" title="数据库直连"></a>数据库直连</h2><p>通过将H产品的数据库直接映射到外网，然后在SaaS产品的Web端和账号进行绑定。这样我们就能访问到客户的H产品数据库，并获取数据。</p>
+<p>这种方式在研发效率上非常高，并且将业务逻辑放在SaaS服务器，避免了产品升级而导致需要升级中间件等问题。但同时也会面临安全问题，大部分客户的数据库密码为弱密码，甚至为空，所以在映射的时候，通常会修改数据库端口号，并修改数据库密码为强密码。</p>
+<p>该方式虽然不用安装中间件，但也需要用花生壳等内网穿透软件将数据库映射到外网。H产品大部分客户使用的数据库为SQL Server 2000精简版，无法通过网络访问。就算是完整版的SQL Server 2000也需要安装SP4补丁才行。整个操作流程还是相当复杂，而且内网穿透软件也是需要付费的，免费版本不稳定。对客户来说使用成本又增加了，那么有没有一种方案能不使用内网穿透软件呢？</p>
+<h2 id="基于中间件的免内网穿透模式"><a href="#基于中间件的免内网穿透模式" class="headerlink" title="基于中间件的免内网穿透模式"></a>基于中间件的免内网穿透模式</h2><p>这个思路基于轻中间件模式，在此基础上让中间件启动之后即和SaaS服务保持长连接，这样服务器端就可以随时向中间件请求数据，并且不用使用内网穿透工具，极大降低了安装操作难度。本质上是需要实现一个双工的RPC。目前成熟的RPC框架还是挺多的，比如Facebook的Thrift，Google的gRPC，网上也有不少基于它们的双向通信方案值得借鉴。大致思路如下图：<br><img src="/media/%E5%AF%B9%E6%8E%A5%E5%85%8D%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%A8%A1%E5%BC%8F.png" alt="对接免内网穿透模式"><br>同时需要对业务服务和Socket服务进行一个拆分，保证他们职责的清晰。Socket服务和中间价本身应是业务无关的，应该保持SqlHelper的角色。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;看标题可能比较懵逼，这篇文章到底要说什么。那么我介绍一下项目背景。&lt;/p&gt;
+&lt;h1 id=&quot;项目背景&quot;&gt;&lt;a href=&quot;#项目背景&quot; class=&quot;headerlink&quot; title=&quot;项目背景&quot;&gt;&lt;/a&gt;项目背景&lt;/h1&gt;&lt;p&gt;目前在做的产品是一款SaaS产品，年初的时
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="架构" scheme="http://code4cocoa.com/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://code4cocoa.com/2018/10/25/Readme/"/>
+    <id>http://code4cocoa.com/2018/10/25/Readme/</id>
+    <published>2018-10-25T14:15:00.643Z</published>
+    <updated>2018-10-26T12:00:34.626Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="作者信息"><a href="#作者信息" class="headerlink" title="作者信息"></a>作者信息</h1><p><a href="http://code4cocoa.com">覃雨翔（Eric Qin）Blog</a>，热爱编程，爱学习，爱折腾，关注敏捷研发及项目管理。</p>
+<h1 id="开发编译环境"><a href="#开发编译环境" class="headerlink" title="开发编译环境"></a>开发编译环境</h1><ul>
+<li>Windows 10</li>
+<li>Visual Studio 2017</li>
+<li>.Net Framework 4.6.2</li>
+</ul>
+<h1 id="工程目录结构"><a href="#工程目录结构" class="headerlink" title="工程目录结构"></a>工程目录结构</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">ThoughtWorksHomeWork</div><div class="line">    Extension</div><div class="line">    ThoughtWorksHomeWork</div><div class="line">    Trains</div><div class="line">        Exceptions</div><div class="line">        Models</div><div class="line">        Resources</div><div class="line">            Cities<span class="selector-class">.json</span></div><div class="line">            CitiesDistance<span class="selector-class">.json</span></div><div class="line">            InputData<span class="selector-class">.json</span></div><div class="line">        Utilities</div><div class="line">        TrainsProcess<span class="selector-class">.cs</span></div><div class="line">    TrainsUnitTest</div></pre></td></tr></table></figure>
+<h2 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h2><p>该类库放置公共的扩展方法。</p>
+<h2 id="ThoughtWorksHomeWork"><a href="#ThoughtWorksHomeWork" class="headerlink" title="ThoughtWorksHomeWork"></a>ThoughtWorksHomeWork</h2><p>控制台应用程序</p>
+<h2 id="Trains"><a href="#Trains" class="headerlink" title="Trains"></a>Trains</h2><p>该类库放置解决Trains问题需要使用的相关类及资源。</p>
+<h3 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h3><p>该文件夹放置Trains业务中使用的异常类。</p>
+<h3 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h3><p>该文件夹放置Trains业务中使用的模型。</p>
+<h3 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h3><p>该文件夹放置Trains业务中使用的资源、数据模板。</p>
+<h4 id="Cities-json（预置数据）"><a href="#Cities-json（预置数据）" class="headerlink" title="Cities.json（预置数据）"></a>Cities.json（预置数据）</h4><p>城市列表预置数据。</p>
+<h4 id="CitiesDistance-json（预置数据）"><a href="#CitiesDistance-json（预置数据）" class="headerlink" title="CitiesDistance.json（预置数据）"></a>CitiesDistance.json（预置数据）</h4><p>城市间距离预置数据。</p>
+<h4 id="InputData-json（预置数据）"><a href="#InputData-json（预置数据）" class="headerlink" title="InputData.json（预置数据）"></a>InputData.json（预置数据）</h4><p>业务参数。</p>
+<h3 id="Utilities"><a href="#Utilities" class="headerlink" title="Utilities"></a>Utilities</h3><p>该文件夹放置Trains业务中使用的工具类。</p>
+<h3 id="TrainsProcess-cs"><a href="#TrainsProcess-cs" class="headerlink" title="TrainsProcess.cs"></a>TrainsProcess.cs</h3><p>该静态类包含实现Trains业务的主要方法。</p>
+<h2 id="TrainsUnitTest"><a href="#TrainsUnitTest" class="headerlink" title="TrainsUnitTest"></a>TrainsUnitTest</h2><p>Trains业务的单元测试。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;作者信息&quot;&gt;&lt;a href=&quot;#作者信息&quot; class=&quot;headerlink&quot; title=&quot;作者信息&quot;&gt;&lt;/a&gt;作者信息&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://code4cocoa.com&quot;&gt;覃雨翔（Eric Qin）Blog&lt;/a&gt;，热爱编程，爱学习
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>思考：应该引入更多的语言还是更少的语言去设计API呢？</title>
@@ -579,69 +650,6 @@
       <category term="小工具" scheme="http://code4cocoa.com/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/"/>
     
       <category term="HTTP" scheme="http://code4cocoa.com/tags/HTTP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一大早被DDoS。。。。。</title>
-    <link href="http://code4cocoa.com/2016/07/03/%E4%B8%80%E5%A4%A7%E6%97%A9%E8%A2%ABDDoS%E3%80%82%E3%80%82%E3%80%82%E3%80%82%E3%80%82/"/>
-    <id>http://code4cocoa.com/2016/07/03/一大早被DDoS。。。。。/</id>
-    <published>2016-07-03T15:41:46.000Z</published>
-    <updated>2016-07-03T15:43:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。</p>
-<p>这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？同时立马摸出电脑，远程登录服务器，查看服务——正常，查看数据库服务——正常，查看系统日志——无异常。o(╯□╰)o，立马重启服务，再试，没有效果。这时心中突然有了不好的预感，难道被DDoS了？查看阿里云控制台，果然不出所料，DDoS攻击触发了流量清洗(流量清洗指过滤掉异常流量，保证服务器的正常运行。当然阿里云的流量清洗估计因为算法问题，将我们的正常访问也清洗掉了)，APP的请求都被阿里云重定向了。</p>
-<p>当下联系阿里云客服，客服告知目前的情况有两个选择，1.购买阿里云高防服务。2.等攻击结束，自行恢复。<br>看了下阿里云的高防服务价格，WTF？，最最便宜8800每月。。。。。。</p>
-<p>攻击30分钟后结束，流量清洗关闭，服务器也恢复了正常。不得不说因为DDoS攻击的成本低，效果显著，现在已经成为普遍的攻击手段。在DDoS的防范上，成本确实很高，在遭受攻击的时候，完全不知道能做什么。而实际上确实我们什么也做不了。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。&lt;/p&gt;
-&lt;p&gt;这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="DDoS" scheme="http://code4cocoa.com/tags/DDoS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何创建Event</title>
-    <link href="http://code4cocoa.com/2016/05/22/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAEvent/"/>
-    <id>http://code4cocoa.com/2016/05/22/如何创建Event/</id>
-    <published>2016-05-22T15:33:07.000Z</published>
-    <updated>2016-05-22T15:34:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>因项目中有一个日程功能，个人认为和iOS中日历的事件(还有另一个东西叫提醒)挺相似的，于是决定将其数据和与系统日历事件同步，这样可以利用系统日历事件的提醒功能。</p>
-<pre>
-**日历事件：**主要是时间为线索，将所有事件组织起来，事件或者说是行程安排是有时间先后顺序的。
-**提醒事项：**功能和日历中的添加事件很相似，最大的不同在与条目的组织形式。提醒事项里的条目不再以时间顺序排列，而是可以对条目性质进行分类，如分成生活、工作、学习等等。或者也可以根据项目进行分类，且条目可以设置紧急程度。
-**总结：**日历事件适合安排行程，提醒事项适用于项目的任务管理。</pre>
-
-<ul>
-<li>引入EventKit.framework。</li>
-<li>创建EKEventStore<br><pre>EKEventStore用于从用户的日历数据库中获取、创建、编辑和删除事件。</pre><script src="https://gist.github.com/yuxiangq/0741cd8a55832830e252cf12696699ad.js"></script></li>
-<li>创建CalendarEvent<script src="https://gist.github.com/yuxiangq/f24490a827342d04f12138c9d8e5c22c.js"></script>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;因项目中有一个日程功能，个人认为和iOS中日历的事件(还有另一个东西叫提醒)挺相似的，于是决定将其数据和与系统日历事件同步，这样可以利用系统日历事件的提醒功能。&lt;/p&gt;
-&lt;pre&gt;
-**日历事件：**主要是时间为线索，将所有事件组织起来，事件或者说是行程安排是有时间先后顺序
-    
-    </summary>
-    
-    
-      <category term="iOS" scheme="http://code4cocoa.com/tags/iOS/"/>
-    
-      <category term="Eventkit" scheme="http://code4cocoa.com/tags/Eventkit/"/>
     
   </entry>
   
