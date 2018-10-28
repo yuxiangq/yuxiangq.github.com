@@ -50,43 +50,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://code4cocoa.com/2018/10/25/Readme/"/>
-    <id>http://code4cocoa.com/2018/10/25/Readme/</id>
-    <published>2018-10-25T14:15:00.643Z</published>
-    <updated>2018-10-26T12:00:34.626Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="作者信息"><a href="#作者信息" class="headerlink" title="作者信息"></a>作者信息</h1><p><a href="http://code4cocoa.com">覃雨翔（Eric Qin）Blog</a>，热爱编程，爱学习，爱折腾，关注敏捷研发及项目管理。</p>
-<h1 id="开发编译环境"><a href="#开发编译环境" class="headerlink" title="开发编译环境"></a>开发编译环境</h1><ul>
-<li>Windows 10</li>
-<li>Visual Studio 2017</li>
-<li>.Net Framework 4.6.2</li>
-</ul>
-<h1 id="工程目录结构"><a href="#工程目录结构" class="headerlink" title="工程目录结构"></a>工程目录结构</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">ThoughtWorksHomeWork</div><div class="line">    Extension</div><div class="line">    ThoughtWorksHomeWork</div><div class="line">    Trains</div><div class="line">        Exceptions</div><div class="line">        Models</div><div class="line">        Resources</div><div class="line">            Cities<span class="selector-class">.json</span></div><div class="line">            CitiesDistance<span class="selector-class">.json</span></div><div class="line">            InputData<span class="selector-class">.json</span></div><div class="line">        Utilities</div><div class="line">        TrainsProcess<span class="selector-class">.cs</span></div><div class="line">    TrainsUnitTest</div></pre></td></tr></table></figure>
-<h2 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h2><p>该类库放置公共的扩展方法。</p>
-<h2 id="ThoughtWorksHomeWork"><a href="#ThoughtWorksHomeWork" class="headerlink" title="ThoughtWorksHomeWork"></a>ThoughtWorksHomeWork</h2><p>控制台应用程序</p>
-<h2 id="Trains"><a href="#Trains" class="headerlink" title="Trains"></a>Trains</h2><p>该类库放置解决Trains问题需要使用的相关类及资源。</p>
-<h3 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h3><p>该文件夹放置Trains业务中使用的异常类。</p>
-<h3 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h3><p>该文件夹放置Trains业务中使用的模型。</p>
-<h3 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h3><p>该文件夹放置Trains业务中使用的资源、数据模板。</p>
-<h4 id="Cities-json（预置数据）"><a href="#Cities-json（预置数据）" class="headerlink" title="Cities.json（预置数据）"></a>Cities.json（预置数据）</h4><p>城市列表预置数据。</p>
-<h4 id="CitiesDistance-json（预置数据）"><a href="#CitiesDistance-json（预置数据）" class="headerlink" title="CitiesDistance.json（预置数据）"></a>CitiesDistance.json（预置数据）</h4><p>城市间距离预置数据。</p>
-<h4 id="InputData-json（预置数据）"><a href="#InputData-json（预置数据）" class="headerlink" title="InputData.json（预置数据）"></a>InputData.json（预置数据）</h4><p>业务参数。</p>
-<h3 id="Utilities"><a href="#Utilities" class="headerlink" title="Utilities"></a>Utilities</h3><p>该文件夹放置Trains业务中使用的工具类。</p>
-<h3 id="TrainsProcess-cs"><a href="#TrainsProcess-cs" class="headerlink" title="TrainsProcess.cs"></a>TrainsProcess.cs</h3><p>该静态类包含实现Trains业务的主要方法。</p>
-<h2 id="TrainsUnitTest"><a href="#TrainsUnitTest" class="headerlink" title="TrainsUnitTest"></a>TrainsUnitTest</h2><p>Trains业务的单元测试。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;作者信息&quot;&gt;&lt;a href=&quot;#作者信息&quot; class=&quot;headerlink&quot; title=&quot;作者信息&quot;&gt;&lt;/a&gt;作者信息&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://code4cocoa.com&quot;&gt;覃雨翔（Eric Qin）Blog&lt;/a&gt;，热爱编程，爱学习
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>思考：应该引入更多的语言还是更少的语言去设计API呢？</title>
     <link href="http://code4cocoa.com/2018/09/24/%E6%80%9D%E8%80%83%EF%BC%9A%E5%BA%94%E8%AF%A5%E5%BC%95%E5%85%A5%E6%9B%B4%E5%A4%9A%E7%9A%84%E8%AF%AD%E8%A8%80%E8%BF%98%E6%98%AF%E6%9B%B4%E5%B0%91%E7%9A%84%E8%AF%AD%E8%A8%80%E5%8E%BB%E8%AE%BE%E8%AE%A1API%E5%91%A2%EF%BC%9F/"/>
     <id>http://code4cocoa.com/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/</id>
@@ -650,6 +613,33 @@
       <category term="小工具" scheme="http://code4cocoa.com/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/"/>
     
       <category term="HTTP" scheme="http://code4cocoa.com/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一大早被DDoS。。。。。</title>
+    <link href="http://code4cocoa.com/2016/07/03/%E4%B8%80%E5%A4%A7%E6%97%A9%E8%A2%ABDDoS%E3%80%82%E3%80%82%E3%80%82%E3%80%82%E3%80%82/"/>
+    <id>http://code4cocoa.com/2016/07/03/一大早被DDoS。。。。。/</id>
+    <published>2016-07-03T15:41:46.000Z</published>
+    <updated>2016-07-03T15:43:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。</p>
+<p>这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？同时立马摸出电脑，远程登录服务器，查看服务——正常，查看数据库服务——正常，查看系统日志——无异常。o(╯□╰)o，立马重启服务，再试，没有效果。这时心中突然有了不好的预感，难道被DDoS了？查看阿里云控制台，果然不出所料，DDoS攻击触发了流量清洗(流量清洗指过滤掉异常流量，保证服务器的正常运行。当然阿里云的流量清洗估计因为算法问题，将我们的正常访问也清洗掉了)，APP的请求都被阿里云重定向了。</p>
+<p>当下联系阿里云客服，客服告知目前的情况有两个选择，1.购买阿里云高防服务。2.等攻击结束，自行恢复。<br>看了下阿里云的高防服务价格，WTF？，最最便宜8800每月。。。。。。</p>
+<p>攻击30分钟后结束，流量清洗关闭，服务器也恢复了正常。不得不说因为DDoS攻击的成本低，效果显著，现在已经成为普遍的攻击手段。在DDoS的防范上，成本确实很高，在遭受攻击的时候，完全不知道能做什么。而实际上确实我们什么也做不了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。&lt;/p&gt;
+&lt;p&gt;这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="DDoS" scheme="http://code4cocoa.com/tags/DDoS/"/>
     
   </entry>
   
