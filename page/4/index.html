@@ -263,6 +263,92 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Swift学习笔记四" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/11/19/Swift学习笔记四/" class="article-date">
+      <time datetime="2014-11-19T13:42:23.000Z" itemprop="datePublished">2014-11-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/19/Swift学习笔记四/">Swift学习笔记四</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Swift中的集合类型，数组和字典与Objective-C中相比，最大的不同就是<strong>类型安全</strong>。例如：如果我们创建了一个Int值类型的数组，我们就不能往其中插入任何不是Int类型的数据。</p>
+<pre><code>
+//我们创建一个人员数组。
+var employees : [String] = ["Jack","Mike"]
+</code></pre>
+实际上上面的数组我们利用Swift的推断特性，还可以写成这样
+<pre><code>
+var employees = ["Jack","Mike"]
+</code></pre>
+<pre><code>
+//创建一个空数组
+var array=Array<string>()
+//或者
+var array=[String]
+</string></code></pre>
+
+<p>count属性用于后去数组的Item数量。<br>isEmpty属性可以快速的检测count是否为0。<br>append方法可以用于追加新的数据项。<br>for-in用于遍历数组。<br>我们可以使用+操作符来组合两个相同类型的数组。</p>
+<p>字典在Swift中也是类型安全的，字典使用Dictionary<keytype, valuetype="">定义,其中KeyType是字典中键的数据类型，ValueType是字典中对应于这些键所存储值的数据类型。</keytype,></p>
+<p>KeyType的唯一限制就是可哈希的，这样可以保证它是独一无二的，所有的 Swift 基本类型（例如String，Int， Double和Bool）都是默认可哈希的，并且所有这些类型都可以在字典中当做键使用。</p>
+<pre><code>
+//定义机场的缩写和全称
+var airports: Dictionary<string, string=""> = ["TYO": "Tokyo", "DUB": "Dublin"]
+//或者这样定义
+var airports= ["TYO": "Tokyo", "DUB": "Dublin"]
+</string,></code></pre>
+
+<p><strong>如果集合遍历被定义为var，那么就是可变的。数组中的长度和其中的元素可以被修改，字典的长度和其中的元素也可以被修改。如果被定义为let，则不允许被修改。</strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-手势的使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

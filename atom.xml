@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://code4cocoa.com/"/>
-  <updated>2018-10-28T03:30:59.645Z</updated>
+  <updated>2018-11-11T14:12:06.733Z</updated>
   <id>http://code4cocoa.com/</id>
   
   <author>
@@ -16,11 +16,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>常用的15个架构原则</title>
+    <link href="http://code4cocoa.com/2018/11/11/%E5%B8%B8%E7%94%A8%E7%9A%8415%E4%B8%AA%E6%9E%B6%E6%9E%84%E5%8E%9F%E5%88%99/"/>
+    <id>http://code4cocoa.com/2018/11/11/常用的15个架构原则/</id>
+    <published>2018-11-11T14:04:15.000Z</published>
+    <updated>2018-11-11T14:12:06.733Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>N+1设计。永远不少于两个，通常为三个。</li>
+<li>回滚设计。确保系统可以回滚到以前发布过的任何版本。</li>
+<li>禁用设计。能够关闭任何发布的功能。</li>
+<li>监控设计。在设计阶段就必须考虑监控，而不是在实施完之后补充。</li>
+<li>设计多活数据中心。不要被一个数据中心的解决方案把自己限制住。</li>
+<li>使用成熟的技术。只用确实好用的技术。</li>
+<li>异步设计。只有在绝对必要的时候才进行同步调用。</li>
+<li>无状态系统。只有当业务确实需要的时候，才使用状态。</li>
+<li>水平扩展非垂直升级。永远不要依赖更大、更快的系统。</li>
+<li>设计至少要有两个步骤的前瞻性。在扩展性问题发生前考虑下一步的行动计划。</li>
+<li>非核心则购买。如果不是你擅长的，也提供不了差异化的竞争优势则直接购买。</li>
+<li>使用商品化硬件。在大多数情况下，便宜的是最好的。</li>
+<li>小构建，小发布，快试错。全部研发要小构建，不断迭代，让系统不断成长。</li>
+<li>隔离故障。实现故障隔离设计，通过断路保护避免故障传播和交叉影响。</li>
+<li>自动化。设计和构建自动化的过程。如果机器可以做，就不要依赖于人。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;N+1设计。永远不少于两个，通常为三个。&lt;/li&gt;
+&lt;li&gt;回滚设计。确保系统可以回滚到以前发布过的任何版本。&lt;/li&gt;
+&lt;li&gt;禁用设计。能够关闭任何发布的功能。&lt;/li&gt;
+&lt;li&gt;监控设计。在设计阶段就必须考虑监控，而不是在实施完之后补充。&lt;/li&gt;
+&lt;li
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="架构" scheme="http://code4cocoa.com/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>单机软件和SaaS的反向对接</title>
     <link href="http://code4cocoa.com/2018/10/27/%E5%8D%95%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%92%8CSaaS%E7%9A%84%E5%8F%8D%E5%90%91%E5%AF%B9%E6%8E%A5/"/>
     <id>http://code4cocoa.com/2018/10/27/单机软件和SaaS的反向对接/</id>
     <published>2018-10-27T12:56:30.000Z</published>
-    <updated>2018-10-28T03:30:59.645Z</updated>
+    <updated>2018-10-28T03:34:07.457Z</updated>
     
     <content type="html"><![CDATA[<p>看标题可能比较懵逼，这篇文章到底要说什么。那么我介绍一下项目背景。</p>
 <h1 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h1><p>目前在做的产品是一款SaaS产品，年初的时候因为产品方向变化，需要和公司其他产品进行数据对接，需要对接的产品为公司的PC版产品（这里统一简称H）。</p>
@@ -613,33 +657,6 @@
       <category term="小工具" scheme="http://code4cocoa.com/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/"/>
     
       <category term="HTTP" scheme="http://code4cocoa.com/tags/HTTP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一大早被DDoS。。。。。</title>
-    <link href="http://code4cocoa.com/2016/07/03/%E4%B8%80%E5%A4%A7%E6%97%A9%E8%A2%ABDDoS%E3%80%82%E3%80%82%E3%80%82%E3%80%82%E3%80%82/"/>
-    <id>http://code4cocoa.com/2016/07/03/一大早被DDoS。。。。。/</id>
-    <published>2016-07-03T15:41:46.000Z</published>
-    <updated>2016-07-03T15:43:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。</p>
-<p>这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？同时立马摸出电脑，远程登录服务器，查看服务——正常，查看数据库服务——正常，查看系统日志——无异常。o(╯□╰)o，立马重启服务，再试，没有效果。这时心中突然有了不好的预感，难道被DDoS了？查看阿里云控制台，果然不出所料，DDoS攻击触发了流量清洗(流量清洗指过滤掉异常流量，保证服务器的正常运行。当然阿里云的流量清洗估计因为算法问题，将我们的正常访问也清洗掉了)，APP的请求都被阿里云重定向了。</p>
-<p>当下联系阿里云客服，客服告知目前的情况有两个选择，1.购买阿里云高防服务。2.等攻击结束，自行恢复。<br>看了下阿里云的高防服务价格，WTF？，最最便宜8800每月。。。。。。</p>
-<p>攻击30分钟后结束，流量清洗关闭，服务器也恢复了正常。不得不说因为DDoS攻击的成本低，效果显著，现在已经成为普遍的攻击手段。在DDoS的防范上，成本确实很高，在遭受攻击的时候，完全不知道能做什么。而实际上确实我们什么也做不了。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天早晨正在睡梦中，一阵手机震动将我摇醒。迷迷糊糊的看了下发现是产品经理打来的电话，心想这么早，莫非服务器出问题了？不出所料，产品经理告知目前我们服务器访问不了了，最大的客户正在投诉。&lt;/p&gt;
-&lt;p&gt;这时我脑袋已清醒，正在飞速的思考——服务器突然访问不了，难道服务进程挂了？
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://code4cocoa.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="DDoS" scheme="http://code4cocoa.com/tags/DDoS/"/>
     
   </entry>
   

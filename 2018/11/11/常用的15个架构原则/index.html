@@ -15,16 +15,40 @@
 
 
 
-<meta name="description" content="最近遇到一个MySQL相关的坑，这里简单记录一下。在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：12345var parms = new MySqlParameter[]&amp;#123;new MySqlParameter(&amp;quot;?Type&amp;quot;,(int)StatusType.Normal)&amp;#125;">
+<meta name="description" content="N+1设计。永远不少于两个，通常为三个。
+回滚设计。确保系统可以回滚到以前发布过的任何版本。
+禁用设计。能够关闭任何发布的功能。
+监控设计。在设计阶段就必须考虑监控，而不是在实施完之后补充。
+设计多活数据中心。不要被一个数据中心的解决方案把自己限制住。
+使用成熟的技术。只用确实好用的技术。
+异步设计。只有在绝对必要的时候才进行同步调用。
+无状态系统。只有当业务确实需要的时候，才使用状态。
+水平扩">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySqlParameter的坑">
-<meta property="og:url" content="http://code4cocoa.com/2017/06/11/MySqlParameter的坑/index.html">
+<meta property="og:title" content="常用的15个架构原则">
+<meta property="og:url" content="http://code4cocoa.com/2018/11/11/常用的15个架构原则/index.html">
 <meta property="og:site_name" content="Code4Cocoa">
-<meta property="og:description" content="最近遇到一个MySQL相关的坑，这里简单记录一下。在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：12345var parms = new MySqlParameter[]&amp;#123;new MySqlParameter(&amp;quot;?Type&amp;quot;,(int)StatusType.Normal)&amp;#125;">
-<meta property="og:updated_time" content="2017-09-03T14:49:04.000Z">
+<meta property="og:description" content="N+1设计。永远不少于两个，通常为三个。
+回滚设计。确保系统可以回滚到以前发布过的任何版本。
+禁用设计。能够关闭任何发布的功能。
+监控设计。在设计阶段就必须考虑监控，而不是在实施完之后补充。
+设计多活数据中心。不要被一个数据中心的解决方案把自己限制住。
+使用成熟的技术。只用确实好用的技术。
+异步设计。只有在绝对必要的时候才进行同步调用。
+无状态系统。只有当业务确实需要的时候，才使用状态。
+水平扩">
+<meta property="og:updated_time" content="2018-11-11T14:12:06.733Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySqlParameter的坑">
-<meta name="twitter:description" content="最近遇到一个MySQL相关的坑，这里简单记录一下。在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：12345var parms = new MySqlParameter[]&amp;#123;new MySqlParameter(&amp;quot;?Type&amp;quot;,(int)StatusType.Normal)&amp;#125;">
+<meta name="twitter:title" content="常用的15个架构原则">
+<meta name="twitter:description" content="N+1设计。永远不少于两个，通常为三个。
+回滚设计。确保系统可以回滚到以前发布过的任何版本。
+禁用设计。能够关闭任何发布的功能。
+监控设计。在设计阶段就必须考虑监控，而不是在实施完之后补充。
+设计多活数据中心。不要被一个数据中心的解决方案把自己限制住。
+使用成熟的技术。只用确实好用的技术。
+异步设计。只有在绝对必要的时候才进行同步调用。
+无状态系统。只有当业务确实需要的时候，才使用状态。
+水平扩">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +80,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>MySqlParameter的坑 | Code4Cocoa</title>
+<title>常用的15个架构原则 | Code4Cocoa</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -260,11 +284,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-MySqlParameter的坑" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-常用的15个架构原则" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/06/11/MySqlParameter的坑/" class="article-date">
-      <time datetime="2017-06-11T09:01:47.000Z" itemprop="datePublished">2017-06-11</time>
+      <a href="/2018/11/11/常用的15个架构原则/" class="article-date">
+      <time datetime="2018-11-11T14:04:15.000Z" itemprop="datePublished">2018-11-11</time>
 </a>
 
 
@@ -279,7 +303,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      MySqlParameter的坑
+      常用的15个架构原则
     </h1>
   
 
@@ -290,7 +314,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -300,11 +324,23 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>最近遇到一个MySQL相关的坑，这里简单记录一下。<br>在.Net中执行MySQL语句传参的时候我们一般使用MySqlParameter对象。于是在某个Dao层的方法中，我写了如下的语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var parms = new MySqlParameter[]</div><div class="line">&#123;</div><div class="line">new MySqlParameter(&quot;?Type&quot;,(int)StatusType.Normal)</div><div class="line">&#125;</div><div class="line">string sql = @&quot;SELECT * FROM TABLE T WHERE T.Type = ?Type;&quot;;</div></pre></td></tr></table></figure></p>
-<p>结果是死活查不出数据，但是将SQL直接拿到服务器上运行，确能正常查出数据，实在是让人费解。随着不断调试，发现MySqlParameter的Value值不知为什么一直为null，后来试着改写了语句，用一个临时变量存储枚举值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int type = (int)StatusType.Normal</div><div class="line">var parms = new MySqlParameter[]</div><div class="line">&#123;</div><div class="line">    new MySqlParameter(&quot;?Type&quot;,type)</div><div class="line">&#125;</div><div class="line">string sql = @&quot;SELECT * FROM TABLE T WHERE T.Type = ?Type;&quot;;</div></pre></td></tr></table></figure></p>
-<p>查询就正常了。</p>
-<p>原来问题出在MySqlParameter的构造函数上，有两个关键的构造函数如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public MySqlParameter(string name, object value) &#123; </div><div class="line">    // ...... </div><div class="line">&#125; </div><div class="line">public MySqlParameter(string name, MySqlDbType type) &#123; </div><div class="line">    // ...... </div><div class="line">    // MySqlDbType是个枚举类型 </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们第一次调用的时候，因为枚举为0，所以被当做第二个构造函数调用了。但是经测试当枚举不为0的时候，使用第一种调用方式，还是会使用第一种构造函数，确实令人看不懂。</p>
+        <ul>
+<li>N+1设计。永远不少于两个，通常为三个。</li>
+<li>回滚设计。确保系统可以回滚到以前发布过的任何版本。</li>
+<li>禁用设计。能够关闭任何发布的功能。</li>
+<li>监控设计。在设计阶段就必须考虑监控，而不是在实施完之后补充。</li>
+<li>设计多活数据中心。不要被一个数据中心的解决方案把自己限制住。</li>
+<li>使用成熟的技术。只用确实好用的技术。</li>
+<li>异步设计。只有在绝对必要的时候才进行同步调用。</li>
+<li>无状态系统。只有当业务确实需要的时候，才使用状态。</li>
+<li>水平扩展非垂直升级。永远不要依赖更大、更快的系统。</li>
+<li>设计至少要有两个步骤的前瞻性。在扩展性问题发生前考虑下一步的行动计划。</li>
+<li>非核心则购买。如果不是你擅长的，也提供不了差异化的竞争优势则直接购买。</li>
+<li>使用商品化硬件。在大多数情况下，便宜的是最好的。</li>
+<li>小构建，小发布，快试错。全部研发要小构建，不断迭代，让系统不断成长。</li>
+<li>隔离故障。实现故障隔离设计，通过断路保护避免故障传播和交叉影响。</li>
+<li>自动化。设计和构建自动化的过程。如果机器可以做，就不要依赖于人。</li>
+</ul>
 
       
     </div>
@@ -313,13 +349,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2017/06/11/MySqlParameter的坑/">MySqlParameter的坑</a></p>
+        <p><span>Title:</span><a href="/2018/11/11/常用的15个架构原则/">常用的15个架构原则</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Eric Qin</a></p>
-        <p><span>Created:</span>2017-06-11, 17:01:47</p>
-        <p><span>Updated:</span>2017-09-03, 22:49:04</p>
+        <p><span>Created:</span>2018-11-11, 22:04:15</p>
+        <p><span>Updated:</span>2018-11-11, 22:12:06</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2017/06/11/MySqlParameter的坑/" title="MySqlParameter的坑">http://code4cocoa.com/2017/06/11/MySqlParameter的坑/</a>
-            <span class="copy-path" data-clipboard-text="From http://code4cocoa.com/2017/06/11/MySqlParameter的坑/　　By Eric Qin" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2018/11/11/常用的15个架构原则/" title="常用的15个架构原则">http://code4cocoa.com/2018/11/11/常用的15个架构原则/</a>
+            <span class="copy-path" data-clipboard-text="From http://code4cocoa.com/2018/11/11/常用的15个架构原则/　　By Eric Qin" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -331,16 +367,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/07/30/罗伯特议事规则/">
-                    罗伯特议事规则
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/05/21/行为驱动开发/">
-                    行为驱动开发
+                <a href="/2018/10/27/单机软件和SaaS的反向对接/">
+                    单机软件和SaaS的反向对接
                 </a>
             </div>
         
@@ -388,7 +418,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"MySqlParameter的坑　| Code4Cocoa　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"常用的15个架构原则　| Code4Cocoa　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -408,15 +438,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/07/30/罗伯特议事规则/" title="Pre: 罗伯特议事规则">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/05/21/行为驱动开发/" title="Next: 行为驱动开发">
+            <a href="/2018/10/27/单机软件和SaaS的反向对接/" title="Next: 单机软件和SaaS的反向对接">
                 <i class="fa fa-angle-right"></i>
             </a>
         
