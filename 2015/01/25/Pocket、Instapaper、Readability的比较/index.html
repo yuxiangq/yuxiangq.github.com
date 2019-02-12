@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Pocket、Instapaper、Readability的比较 | Code4Cocoa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。 大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫uDee云阅读。貌似已经挂了，官网已经变成建站系统了o(╯">
+<meta name="keywords" content="App比较,稍后读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pocket、Instapaper、Readability的比较">
+<meta property="og:url" content="http://code4cocoa.com/2015/01/25/Pocket、Instapaper、Readability的比较/index.html">
+<meta property="og:site_name" content="Code4Cocoa">
+<meta property="og:description" content="在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。 大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫uDee云阅读。貌似已经挂了，官网已经变成建站系统了o(╯">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E5%88%97%E8%A1%A8.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E8%8F%9C%E5%8D%95.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E7%BD%91%E9%A1%B5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20Mac.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20%E5%88%97%E8%A1%A8.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20%E8%8F%9C%E5%8D%95.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20Web.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20%E5%88%97%E8%A1%A8.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/readability%20%E8%8F%9C%E5%8D%95.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20Web.png">
+<meta property="og:updated_time" content="2019-01-24T02:33:50.525Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pocket、Instapaper、Readability的比较">
+<meta name="twitter:description" content="在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。 大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫uDee云阅读。貌似已经挂了，官网已经变成建站系统了o(╯">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E5%88%97%E8%A1%A8.PNG">
+  
+    <link rel="alternate" href="/atom.xml" title="Code4Cocoa" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Code4Cocoa</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A Programer&#39;s Home</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://code4cocoa.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Pocket、Instapaper、Readability的比较" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/25/Pocket、Instapaper、Readability的比较/" class="article-date">
+  <time datetime="2015-01-25T10:47:54.000Z" itemprop="datePublished">2015-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Pocket、Instapaper、Readability的比较
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。</p>
+<p>大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫<a href="http://www.udee.cn/" target="_blank" rel="noopener">uDee云阅读</a>。貌似已经挂了，官网已经变成建站系统了o(╯□╰)o。相关的介绍可以看这里<a href="http://www.36kr.com/p/99352.html" target="_blank" rel="noopener">36kr关于uDee云阅读的介绍</a>。</p>
+<p>后来我入手了The New iPad，TouchPad就送给老爸看电影了。在iOS上我开始使用<a href="https://getpocket.com/" target="_blank" rel="noopener">Pocket</a>，那个时候还叫Read it later。用了一段时间后发现Pocket对CocoaChina支持不是很好，只能抓取到标题，查看内容的时候还得跳转到原网页，实在是麻烦，于是开始寻找其他类似产品。</p>
+<p>某天在朋友手机上看到<a href="https://www.instapaper.com/" target="_blank" rel="noopener">Instapaper</a>，于是果断收了它(当时还是收费的)，完美支持CocoaChina，而且Instapaper的图标也比Pocket好看，所以开始同时使用二者，Pocket主力，Instapaper辅助。</p>
+<p>不久入了Reeder，配合着两大神器，让我阅读了不少好文。但是Reeder也无法完整显示CocoaChina的内容，每次阅读的时候我都要先保存到Instapaper，实在是麻烦。后来无意中点了一下内容上方的小板凳图标，发现竟然将内容完整的显示出来了。后来知道了那是<a href="https://www.readability.com/" target="_blank" rel="noopener">Readability</a>，果断入手。</p>
+<p>于是三大稍后读神器都被我凑齐了。用了一段时间后有些感悟，想和大家一起分享。</p>
+<p><strong>Pocket</strong></p>
+<p>我用得最久的稍后读类APP。 支持Chrome插件，通过插件保存网页。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>文章列表界面清爽简洁，是我喜欢的风格。在列表界面提供搜索栏，很方便。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>软件的层级架构采用抽屉式结构，给了内容更多的展示空间。同时设置里面提供深色主题，方便夜晚阅读。唯一的遗憾是主题颜色不支持自动切换。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E7%BD%91%E9%A1%B5.png" alt="image"><br>Web端配色和APP保持一致，简洁不失优雅。并且Web端提供平铺和列表两种展示方式。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20Mac.png" alt="image"><br>Pocket也是三款软件中唯一有Mac客户端的。</p>
+<p><strong>Instapaper</strong></p>
+<p>个人认为是最精致的稍后读类APP。利用JS脚本保存内容，不支持浏览器插件。需要占用一个标签栏位置，这是让我很不爽的地方。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>文章列表简洁，整个界面更偏平，可惜的是不支持搜索。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>菜单仍然是抽屉式结构，搜索功能隐藏在了这里。其他东西和Pocket大同小异。同时支持深色主题(目前包含四款主题)，更令人欣喜的是，Instapaper可以根据您的位置(需要用到GPS)和日落时间，自动调整主题的颜色。这真的是非常棒的功能。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20Web.png" alt="image"><br>Web端的整体布局和APP差异不大，唯一的变化是将搜索栏放到了列表上。</p>
+<p><strong>Readability</strong></p>
+<p>我的感觉是抓取能力最强的了，但是界面不讨个人喜欢。支持Chrome插件。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>支持搜索及分类，较Instapaper和Pocket都更强大，可以说是结合了二者的有点。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/readability%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>同样是抽屉式侧拉菜单o(╯□╰)o，非常简洁，另外我不是很喜欢那种全红的背景。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20Web.png" alt="image"><br>整体布局和APP类似，可惜的是没有了搜索功能。</p>
+<p><strong>PS:以上就是我使用了三款APP后的一些浅薄看法。其实说起来它们对于我来说，都有一个很致命的缺点。就是对于代码块的处理都不尽如人意。本来文章中排版很舒服的代码，经过它们处理后就和普通文本混杂在一起，实在是一件很头痛的事情，希望能有一款稍后读类的APP能针对程序员定制。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/01/25/Pocket、Instapaper、Readability的比较/" data-id="cjs1brzig000m1w19i3xi6bnk" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App比较/">App比较</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/稍后读/">稍后读</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/01/Swift学习笔记六/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Swift学习笔记六
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/12/NumberTextField/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">NumberTextField</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App比较/">App比较</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BDD/">BDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DDoS/">DDoS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eventkit/">Eventkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPS/">GPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-APP/">Mac APP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swfit/">Swfit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UICollectionViewController/">UICollectionViewController</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIImage/">UIImage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableVIewCell/">UITableVIewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableViewCell/">UITableViewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VFL/">VFL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebAPP/">WebAPP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/下拉刷新/">下拉刷新</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人总结/">个人总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串行请求/">串行请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小工具/">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发模式/">开发模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手势/">手势</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针变量/">指针变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序/">程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/稍后读/">稍后读</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻墙/">翻墙</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动布局/">自动布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自定义控件/">自定义控件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行业发展/">行业发展</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/请求队列/">请求队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目管理/">项目管理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/App比较/" style="font-size: 10px;">App比较</a> <a href="/tags/BDD/" style="font-size: 10px;">BDD</a> <a href="/tags/DDoS/" style="font-size: 10px;">DDoS</a> <a href="/tags/Eventkit/" style="font-size: 10px;">Eventkit</a> <a href="/tags/GFW/" style="font-size: 10px;">GFW</a> <a href="/tags/GPS/" style="font-size: 10px;">GPS</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Mac-APP/" style="font-size: 10px;">Mac APP</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/Swfit/" style="font-size: 10px;">Swfit</a> <a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/UICollectionViewController/" style="font-size: 10px;">UICollectionViewController</a> <a href="/tags/UIImage/" style="font-size: 10px;">UIImage</a> <a href="/tags/UITableVIewCell/" style="font-size: 10px;">UITableVIewCell</a> <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/UITableViewCell/" style="font-size: 10px;">UITableViewCell</a> <a href="/tags/VFL/" style="font-size: 12.5px;">VFL</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/WebAPP/" style="font-size: 10px;">WebAPP</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/下拉刷新/" style="font-size: 10px;">下拉刷新</a> <a href="/tags/个人总结/" style="font-size: 10px;">个人总结</a> <a href="/tags/串行请求/" style="font-size: 10px;">串行请求</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/开发模式/" style="font-size: 10px;">开发模式</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/手势/" style="font-size: 10px;">手势</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针变量/" style="font-size: 10px;">指针变量</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/架构/" style="font-size: 12.5px;">架构</a> <a href="/tags/程序/" style="font-size: 10px;">程序</a> <a href="/tags/稍后读/" style="font-size: 10px;">稍后读</a> <a href="/tags/编程/" style="font-size: 12.5px;">编程</a> <a href="/tags/翻墙/" style="font-size: 10px;">翻墙</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义控件/" style="font-size: 12.5px;">自定义控件</a> <a href="/tags/行业发展/" style="font-size: 10px;">行业发展</a> <a href="/tags/请求队列/" style="font-size: 10px;">请求队列</a> <a href="/tags/读书笔记/" style="font-size: 12.5px;">读书笔记</a> <a href="/tags/随笔/" style="font-size: 17.5px;">随笔</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/24/新的开始/">新的开始</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/11/常用的15个架构原则/">常用的15个架构原则</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/27/单机软件和SaaS的反向对接/">单机软件和SaaS的反向对接</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/">思考：应该引入更多的语言还是更少的语言去设计API呢？</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/31/如何培养自学能力/">如何培养自学能力</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Eric Qin<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

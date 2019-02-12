@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>单机软件和SaaS的反向对接 | Code4Cocoa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="看标题可能比较懵逼，这篇文章到底要说什么。那么我介绍一下项目背景。 项目背景目前在做的产品是一款SaaS产品，年初的时候因为产品方向变化，需要和公司其他产品进行数据对接，需要对接的产品为公司的PC版产品（这里统一简称H）。 按照正常设想的数据对接方式，为了实现数据的对接，作为SaaS模式产品，我们需要提供Open API供H使用，由H产品发起数据相关的请求。但公司战略上不允许H产品进行这方面的改动">
+<meta name="keywords" content="随笔,架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单机软件和SaaS的反向对接">
+<meta property="og:url" content="http://code4cocoa.com/2018/10/27/单机软件和SaaS的反向对接/index.html">
+<meta property="og:site_name" content="Code4Cocoa">
+<meta property="og:description" content="看标题可能比较懵逼，这篇文章到底要说什么。那么我介绍一下项目背景。 项目背景目前在做的产品是一款SaaS产品，年初的时候因为产品方向变化，需要和公司其他产品进行数据对接，需要对接的产品为公司的PC版产品（这里统一简称H）。 按照正常设想的数据对接方式，为了实现数据的对接，作为SaaS模式产品，我们需要提供Open API供H使用，由H产品发起数据相关的请求。但公司战略上不允许H产品进行这方面的改动">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://code4cocoa.com/media/%E5%AF%B9%E6%8E%A5%E5%85%8D%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:updated_time" content="2019-01-24T02:33:50.528Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="单机软件和SaaS的反向对接">
+<meta name="twitter:description" content="看标题可能比较懵逼，这篇文章到底要说什么。那么我介绍一下项目背景。 项目背景目前在做的产品是一款SaaS产品，年初的时候因为产品方向变化，需要和公司其他产品进行数据对接，需要对接的产品为公司的PC版产品（这里统一简称H）。 按照正常设想的数据对接方式，为了实现数据的对接，作为SaaS模式产品，我们需要提供Open API供H使用，由H产品发起数据相关的请求。但公司战略上不允许H产品进行这方面的改动">
+<meta name="twitter:image" content="http://code4cocoa.com/media/%E5%AF%B9%E6%8E%A5%E5%85%8D%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%A8%A1%E5%BC%8F.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Code4Cocoa" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Code4Cocoa</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A Programer&#39;s Home</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://code4cocoa.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-单机软件和SaaS的反向对接" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/27/单机软件和SaaS的反向对接/" class="article-date">
+  <time datetime="2018-10-27T12:56:30.000Z" itemprop="datePublished">2018-10-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      单机软件和SaaS的反向对接
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看标题可能比较懵逼，这篇文章到底要说什么。那么我介绍一下项目背景。</p>
+<h1 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h1><p>目前在做的产品是一款SaaS产品，年初的时候因为产品方向变化，需要和公司其他产品进行数据对接，需要对接的产品为公司的PC版产品（这里统一简称H）。</p>
+<p>按照正常设想的数据对接方式，为了实现数据的对接，作为SaaS模式产品，我们需要提供Open API供H使用，由H产品发起数据相关的请求。但公司战略上不允许H产品进行这方面的改动，并且通过沟通也不允许H产品提供Open API。那么这次数据的对接只能完全由我们项目组自己负责处理。</p>
+<h1 id="对接方案"><a href="#对接方案" class="headerlink" title="对接方案"></a>对接方案</h1><p>在团队讨论对接方案的时候，讨论出了两种方案：</p>
+<h2 id="中间件对接"><a href="#中间件对接" class="headerlink" title="中间件对接"></a>中间件对接</h2><p>在PC端安装一个中间件程序，负责向SaaS服务提供数据接口。客户在安装完中间件后，需要将中间件地址（使用内网穿透工具）和SaaS产品的账号绑定，以便我们能找到对应的地址。</p>
+<p>在中间件的设计上我们设想了两种，重中间件和轻中间件。重中间件即中间件直接提供业务接口，并需要判断H产品的版本（H产品活跃的版本非常之多，客户没有升级习惯），保证业务接口能被正常调用。轻中间件则提供数据查询接口，业务处理由服务器端进行，中间件相当于远程的SqlHelper，参数传递为了方便简单处理，都统一为字典。</p>
+<p>重中间件模式首先Pass掉了，因为采用重中间件模式，后期迭代新功能的时候，中间件也需要升级。H产品的客户升级欲望低，再加上前期产品迭代较快，会导致升级平凡，体验不好。所以我们选择了轻中间件模式。但在第一版研发中，还是发现一些问题，并且不能很好的适配云部署的H产品（即将多个客户使用的H产品部署到一台阿阿里云服务器上），所以我们在后续版本使用了数据库直连方式，并使用至今。</p>
+<h2 id="数据库直连"><a href="#数据库直连" class="headerlink" title="数据库直连"></a>数据库直连</h2><p>通过将H产品的数据库直接映射到外网，然后在SaaS产品的Web端和账号进行绑定。这样我们就能访问到客户的H产品数据库，并获取数据。</p>
+<p>这种方式在研发效率上非常高，并且将业务逻辑放在SaaS服务器，避免了产品升级而导致需要升级中间件等问题。但同时也会面临安全问题，大部分客户的数据库密码为弱密码，甚至为空，所以在映射的时候，通常会修改数据库端口号，并修改数据库密码为强密码。</p>
+<p>该方式虽然不用安装中间件，但也需要用花生壳等内网穿透软件将数据库映射到外网。H产品大部分客户使用的数据库为SQL Server 2000精简版，无法通过网络访问。就算是完整版的SQL Server 2000也需要安装SP4补丁才行。整个操作流程还是相当复杂，而且内网穿透软件也是需要付费的，免费版本不稳定。对客户来说使用成本又增加了，那么有没有一种方案能不使用内网穿透软件呢？</p>
+<h2 id="基于中间件的免内网穿透模式"><a href="#基于中间件的免内网穿透模式" class="headerlink" title="基于中间件的免内网穿透模式"></a>基于中间件的免内网穿透模式</h2><p>这个思路基于轻中间件模式，在此基础上让中间件启动之后即和SaaS服务保持长连接，这样服务器端就可以随时向中间件请求数据，并且不用使用内网穿透工具，极大降低了安装操作难度。本质上是需要实现一个双工的RPC。目前成熟的RPC框架还是挺多的，比如Facebook的Thrift，Google的gRPC，网上也有不少基于它们的双向通信方案值得借鉴。大致思路如下图：<br><img src="/media/%E5%AF%B9%E6%8E%A5%E5%85%8D%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%A8%A1%E5%BC%8F.png" alt="对接免内网穿透模式"><br>同时需要对业务服务和Socket服务进行一个拆分，保证他们职责的清晰。Socket服务和中间价本身应是业务无关的，应该保持SqlHelper的角色。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2018/10/27/单机软件和SaaS的反向对接/" data-id="cjs1brzj0001t1w19ulr7jsi3" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/11/常用的15个架构原则/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          常用的15个架构原则
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">思考：应该引入更多的语言还是更少的语言去设计API呢？</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App比较/">App比较</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BDD/">BDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DDoS/">DDoS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eventkit/">Eventkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPS/">GPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-APP/">Mac APP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swfit/">Swfit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UICollectionViewController/">UICollectionViewController</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIImage/">UIImage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableVIewCell/">UITableVIewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableViewCell/">UITableViewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VFL/">VFL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebAPP/">WebAPP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/下拉刷新/">下拉刷新</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人总结/">个人总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串行请求/">串行请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小工具/">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发模式/">开发模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手势/">手势</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针变量/">指针变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序/">程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/稍后读/">稍后读</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻墙/">翻墙</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动布局/">自动布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自定义控件/">自定义控件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行业发展/">行业发展</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/请求队列/">请求队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目管理/">项目管理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/App比较/" style="font-size: 10px;">App比较</a> <a href="/tags/BDD/" style="font-size: 10px;">BDD</a> <a href="/tags/DDoS/" style="font-size: 10px;">DDoS</a> <a href="/tags/Eventkit/" style="font-size: 10px;">Eventkit</a> <a href="/tags/GFW/" style="font-size: 10px;">GFW</a> <a href="/tags/GPS/" style="font-size: 10px;">GPS</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Mac-APP/" style="font-size: 10px;">Mac APP</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/Swfit/" style="font-size: 10px;">Swfit</a> <a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/UICollectionViewController/" style="font-size: 10px;">UICollectionViewController</a> <a href="/tags/UIImage/" style="font-size: 10px;">UIImage</a> <a href="/tags/UITableVIewCell/" style="font-size: 10px;">UITableVIewCell</a> <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/UITableViewCell/" style="font-size: 10px;">UITableViewCell</a> <a href="/tags/VFL/" style="font-size: 12.5px;">VFL</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/WebAPP/" style="font-size: 10px;">WebAPP</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/下拉刷新/" style="font-size: 10px;">下拉刷新</a> <a href="/tags/个人总结/" style="font-size: 10px;">个人总结</a> <a href="/tags/串行请求/" style="font-size: 10px;">串行请求</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/开发模式/" style="font-size: 10px;">开发模式</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/手势/" style="font-size: 10px;">手势</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针变量/" style="font-size: 10px;">指针变量</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/架构/" style="font-size: 12.5px;">架构</a> <a href="/tags/程序/" style="font-size: 10px;">程序</a> <a href="/tags/稍后读/" style="font-size: 10px;">稍后读</a> <a href="/tags/编程/" style="font-size: 12.5px;">编程</a> <a href="/tags/翻墙/" style="font-size: 10px;">翻墙</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义控件/" style="font-size: 12.5px;">自定义控件</a> <a href="/tags/行业发展/" style="font-size: 10px;">行业发展</a> <a href="/tags/请求队列/" style="font-size: 10px;">请求队列</a> <a href="/tags/读书笔记/" style="font-size: 12.5px;">读书笔记</a> <a href="/tags/随笔/" style="font-size: 17.5px;">随笔</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/24/新的开始/">新的开始</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/11/常用的15个架构原则/">常用的15个架构原则</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/27/单机软件和SaaS的反向对接/">单机软件和SaaS的反向对接</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/">思考：应该引入更多的语言还是更少的语言去设计API呢？</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/31/如何培养自学能力/">如何培养自学能力</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Eric Qin<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

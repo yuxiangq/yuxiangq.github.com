@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Code4Cocoa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Code4Cocoa">
+<meta property="og:url" content="http://code4cocoa.com/page/3/index.html">
+<meta property="og:site_name" content="Code4Cocoa">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Code4Cocoa">
+  
+    <link rel="alternate" href="/atom.xml" title="Code4Cocoa" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Code4Cocoa</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A Programer&#39;s Home</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://code4cocoa.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-iOS实现判断程序关闭、关机的思路" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/25/iOS实现判断程序关闭、关机的思路/" class="article-date">
+  <time datetime="2015-10-25T02:46:52.000Z" itemprop="datePublished">2015-10-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/25/iOS实现判断程序关闭、关机的思路/">iOS实现判断程序关闭、关机的思路</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在研究竞品的时候，发现其实现了检测APP是否关闭，用户是否关机的功能。当然我们知道以iOS的情况来说，是没有API能直接做到的。不过简单想了想，觉得利用多种方式配合，或许我们还是可以「判断」关机和APP关闭的。</p>
+<ol>
+<li>APP使用心跳机制和服务器保持通信。</li>
+<li>APP监听手机的网络状态变化，并将数据上传给服务器。</li>
+<li>服务器定时利用Slient Remote Notifications判断APP是否有反应。</li>
+</ol>
+<p><strong>判断</strong></p>
+<p>服务器发现客户端心跳不正常，判断是否有网络异常状态，如果有网络异常状态则判断为「网络异常」。<br>如果没有网络异常状态，则向APP发送Slient Remote Notifications，如果APP没响应，则判断为「关机」。<br>如果有响应，则判断为「APP关闭」</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/10/25/iOS实现判断程序关闭、关机的思路/" data-id="cjs1brzit001c1w1928zwrr14" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-UITableView实现下拉刷新" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/13/UITableView实现下拉刷新/" class="article-date">
+  <time datetime="2015-09-13T10:45:45.000Z" itemprop="datePublished">2015-09-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/13/UITableView实现下拉刷新/">UITableView实现下拉刷新</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>下拉刷新</strong>实在是很了不起得创意。目前几乎所有APP只要涉及刷新的功能，都会采用这种方式，这已经是刷新交互的标配。</p>
+<p>在Github上有大量的开源组件能实现<strong>下拉刷新</strong>和<strong>上拉加载</strong>，在这里我推荐<strong><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="noopener">MJRefresh</a></strong>，它能帮我们很优雅的实现以上两种功能。</p>
+<p>下拉刷新的原理，大家很容易理解，就是利用UITableView偏移到一定程度，然后调用刷新方法即可。但是有些童鞋可能发现了一个问题，就是UITableViewDelegate中并没有拖动相关的方法，这是怎么回事呢？其实那是因为UITableView本身继承自UIScrollView，所以我们只需要实现UIScrollViewDelegete中的- (void)scrollViewDidScroll:(UIScrollView * )scrollView方法即可。</p>
+<p><pre><code><br>//只提供关键方法<br>-(void)p_InitUITableView<br>{<br>if(self.tableView==nil)<br>{<br>self.tableView=[UITableView alloc] init];<br>self.tableView.delegate=self;<br>self.tableView.datasource=self;<br>}<br>}<br>//拉动UITableView的时候会调用该方法<br>-(void)scrollViewDidScroll:(UIScrollView * )scrollView<br>{<br>//判断是否处于刷新状态<br>if(self.isLoading)<br>{<br>//获取实际内容的高度,及UITableViewCell集合的高度，包括超出屏幕部分。<br>float contentHeight=scrollView.contentSize.height;<br>//获取TableView的高度<br>float tableViewHeight=self.tableView.frame.size.height;<br>//获取展示内容的高度,如果内容高度大于UITableView高度，就以UITableView高度为准；<br>//如果内容高度小于UITableView高度，就以内容高度为准。<br>float displayHeight=contentHeight&gt;tableViewHeight?tableViewHeight:contentHeight;<br>//接下来我们需要计算，我们拉动UITableView的时候，我们的展示内容displayHeight偏移了多少。<br>//假设相对于displayHeight往上或往下偏移20%的距离及算触发刷新。<br>if ((displayHeight - scrollView.contentSize.height + scrollView.contentOffset.y) / displayHeight &gt; 0.2)<br>{<br>// 调用上拉加载方法，在这里可以处理一些刷新动画<br>}<br>//scrollView.contentOffset.y表示整个内容在y轴上的偏移量，下拉的时候内容是向y轴负方向移动<br>//所以计算的时候要取反<br>if (- scrollView.contentOffset.y / self.tableView.frame.size.height &gt; 0.2)<br>{<br>// 调用下拉刷新方法，在这里可以处理一些刷新动画<br>}<br>}<br></code></pre><br>另外我们在添加下拉刷新的箭头的时候，Header不要添加在TableViewHeader上，要添加在UITableView的subView中。否则Header会一直在顶端，不会被覆盖。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/09/13/UITableView实现下拉刷新/" data-id="cjs1brzir00161w19f5avlaxq" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/下拉刷新/">下拉刷新</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-WebAPP将迎来一个好时代" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/29/WebAPP将迎来一个好时代/" class="article-date">
+  <time datetime="2015-08-29T07:47:07.000Z" itemprop="datePublished">2015-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/29/WebAPP将迎来一个好时代/">WebAPP将迎来一个好时代</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>随着4G网络的普及，以及手机性能、浏览器性能的提升，WebAPP正迎来自己的时代。</p>
+<p>想起2-3年前的时候，就有很多人在说WebAPP将崛起与NativeAPP平分秋色。但事实是WebAPP并没有真正占据一定份额。主要原因莫过于响应速度和体验远逊于NativeAPP，当然也有优化到极端的例子，效果可以说无限接近NativeAPP，但那毕竟是少数。大多数的WebAPP采用「JQueryMobile」、「SenchaTouch」等框架，在具体研发中遇到过的坑那是相当多，尝试过开发商业项目的童鞋应该心有余悸。</p>
+<p>最近一年，4G网络的加紧推广及流量价格的降低，解决了WebAPP很大的一个短板，也让我们看到了WebAPP崛起的希望。其实移动网络的加速，对整个APP开发都是有益的，对于小团队来说，就不用将太多的精力投入到基础通讯的优化上。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/08/29/WebAPP将迎来一个好时代/" data-id="cjs1brzis001b1w197jngsffp" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebAPP/">WebAPP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/行业发展/">行业发展</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-手机是如何定位的" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/19/手机是如何定位的/" class="article-date">
+  <time datetime="2015-06-19T14:00:10.000Z" itemprop="datePublished">2015-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/19/手机是如何定位的/">手机是如何定位的</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们目前了解到的手机定位方式，主要有四种：GPS、A-GPS、Wi-Fi、基站定位。</p>
+<h4 id="GPS"><a href="#GPS" class="headerlink" title="GPS"></a>GPS</h4><p>即全球定位系统，它是利用GPS定位卫星，在全球范围内实时进行定位、导航的系统。民用定位精度为10米左右，定位精度取决于上方遮盖物，周围环境，当地政策等。所以室内是无法使用GPS进行定位的。在空旷的地方GPS定位精度高于城市中。</p>
+<p><em>优点:精度高、不依赖网络。</em></p>
+<p><em>缺点:定位速度慢，因为GPS的使用需要搜索卫星，并且不同的设备，不同的环境搜索卫星的速度都会不一样。所以当需要快速定位，对位置精度要求不高的场景，GPS不是一个很好的选择。</em></p>
+<pre><code>
+关于手机GPS和车载GPS速度的比较:
+
+GPS定位的时候是需要通过卫星的位置、用户到卫星的距离来确定用户的位置。而卫星在运行时轨道不可避免的会产生误差和变动，这就需要用户使用最新的卫星轨道参数来求得卫星位置，卫星的这些参数叫做星历。GPS定位的快慢，和获取星历的快慢，有直接关系。
+
+在有网络连接的情况下，手机可以从网络服务器下载星历，从而提高首次定位的速度(几秒到几十秒)，而没有网络的时候，手机GPS只能像车载GPS一样从卫星上下载星历，传输速率低很多，首次定位时长增加到2-5分钟。
+
+用户GPS设备，在长时间关闭(或丢失信号)后，星历可能发生较大变化，甚至完全不同，或者有些GPS设备没有关闭后存储星历的功能，就需要下载新的星历，这就是「冷启动」。而热启动就是短时间关闭或丢失信号之后再进行定位，星历可能只需要略加变动或没有变动，不需要花大量的时间下载星历，可以直接用存储的星历进行解算。
+
+</code></pre>
+
+<h4 id="A-GPS-Assisted-GPS"><a href="#A-GPS-Assisted-GPS" class="headerlink" title="A-GPS(Assisted GPS)"></a>A-GPS(Assisted GPS)</h4><p>A-GPS（Assisted GPS：辅助全球卫星定位系统）是结合GSM/GPRS与传统卫星定位，利用基地台代送辅助卫星信息，以缩减GPS芯片获取卫星信号的延迟时间，受遮盖的室内也能借基地台讯号弥补，减轻GPS芯片对卫星的依赖度。简而言之，就是有网络辅助的GPS。</p>
+<p>A-GPS解决方案的优势主要在其定位精度上，在室外等空旷地区，其精度在正常的GPS工作环境下，可达10米左右，堪称目前定位精度最高的一种定位技术。该技术的另一优点为：首次捕获GPS信号的时间一般仅需几秒，不像GPS的首次捕获时间可能要2～3分钟。</p>
+<p><em>优点:定位速度快、精度高。</em></p>
+<p><em>缺点:不支持室内定位、依赖网络。</em></p>
+<h4 id="Wi-Fi定位"><a href="#Wi-Fi定位" class="headerlink" title="Wi-Fi定位"></a>Wi-Fi定位</h4><p>Wi-Fi定位的原理并不是很多人想的那样依靠IP地址定位，它实际是利用Wi-Fi信号来定位。当你的手机能收到某个Wi-Fi信号时，手机就会去服务器查找这个Wi-Fi信号的位置，然后再通过Wi-Fi信号强度进行纠正。比如在iOS中，系统就会提示用户，开启Wi-Fi以便获取更精确的位置信息。</p>
+<pre><code>
+关于Wi-Fi信息的采集，Apple会使用专门的采集车，沿街道扫描Wi-Fi信号，并将Wi-Fi信号的强度、经纬度等相关信息上传到服务器。同时当我们的手机连接到某个Wi-F时i，手机系统也会记录下该Wi-Fi的相关信息，并尝试获取经纬度(例如通过基站定位)然后将其上传。百度地图、谷歌地图等地图相关的APP，差不多都有这样的采集措施。
+</code></pre>
+
+<p><em>优点:可室内定位，速度较快，定位精度较高、不依赖网络。</em><br><em>缺点:定位精度稳定性不高</em></p>
+<h4 id="基站定位"><a href="#基站定位" class="headerlink" title="基站定位"></a>基站定位</h4><p>基站定位技术一般应用于手机，它是通过电信移动运营商的网络(如GSM网)获取移动终端用户的位置信息的技术。<br>基站定位的大致原理为：移动电话测量不同基站的下行导频信号，得到不同基站下行导频的TOA(Time of Arrival，到达时刻)或TDOA(Time Difference of Arrival，到达时间差)，根据该测量结果并结合基站的坐标，一般采用三角公式估算法，就能够算出移动电话的位置。实际的位置估计算法要考虑多基站(3个或3个以上)定位的情况，一般而言，附近基站数目越多，定位精度越高。</p>
+<p><em>优点：可以室内定位，定位速度快、不依赖网络。</em></p>
+<p><em>缺点：定位精度受基站覆盖率影响，定位精度不稳定。</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/06/19/手机是如何定位的/" data-id="cjs1brzj400271w1936z7uydj" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GPS/">GPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/定位/">定位</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Swift学习笔记七" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/21/Swift学习笔记七/" class="article-date">
+  <time datetime="2015-05-21T13:32:56.000Z" itemprop="datePublished">2015-05-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/21/Swift学习笔记七/">Swift学习笔记七</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="关于Swfit中的构造器"><a href="#关于Swfit中的构造器" class="headerlink" title="关于Swfit中的构造器"></a>关于Swfit中的构造器</h4><p><strong>构造器</strong>其实就是我们在其他语言中常说的<strong>构造函数</strong>。</p>
+<pre>与Objective-C中**构造函数**不同的是，Swfit的**构造器**无需返回值，它们的主要任务是保证新实例在第一次使用前完成正确的初始化(这个初始化过程包括为实例中属性值设置初始值等)。</pre>
+<pre>当你为存储型属性设置默认值或者在构造器中为其赋值时，它们的值是被直接设置的，不会触发任何属性观测器（property observers）。</pre>
+**构造器**的最简形式类似于一个不带任何参数的实例方法，以关键字*init*命名，例如：
+<pre><code>
+//在这里我们定义一个结构体
+struct test{
+var testNum:Double
+init(){
+testNum=1.1
+}
+}
+//该结构体定义了一个不带参数的构造器，并且将属性testNum的值设置为1.1。
+</code></pre>
+你也可以在定义构造器时提供构造参数，为其提供定制化构造所需值的类型和名字。构造器参数的功能和语法跟函数和方法参数相同，例如：
+<pre><code>
+struct test{
+var testNum:Double
+init(fromTestNum t:Double){
+testNum=t
+}
+}
+</code></pre>
+<pre>
+跟函数和方法参数相同，构造参数也存在一个在构造器内部使用的参数名字和一个在调用构造器时使用的外部参数名字。然而，构造器并不像函数和方法那样在括号前有一个可辨别的名字。所以在调用构造器时，主要通过构造器中的参数名和类型来确定需要调用的构造器。正因为参数如此重要，如果你在定义构造器时没有提供参数的外部名字，Swift 会为每个构造器的参数自动生成一个跟内部名字相同的外部名，就相当于在每个构造参数之前加了一个哈希符号。
+</pre>
+
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/05/21/Swift学习笔记七/" data-id="cjs1brzih000r1w198ovvrkcg" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-自定义UITableViewCell，使用VFL布局" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/12/自定义UITableViewCell，使用VFL布局/" class="article-date">
+  <time datetime="2015-04-12T12:57:39.000Z" itemprop="datePublished">2015-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/12/自定义UITableViewCell，使用VFL布局/">自定义UITableViewCell，使用VFL布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自定义UITableViewCell自动布局的文章网上又挺多的，但是大部分都是采用的xib进行布局，所以这一块其实水挺深的。经过自己的实践和不断的查找资料，终于实现了使用纯VFL布局，实现方式在这里和大家一起分享一下，<a href="https://github.com/yuxiangq/UITableViewCell4VFL/commits?author=yuxiangq" target="_blank" rel="noopener">Demo比较简单</a></p>
+<ul>
+<li><p>首先我们新建一个工程，命名为CustomCellWithVFLDemo，如下图所示：<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_1.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/create_project_2.png" alt="image"></p>
+</li>
+<li><p>让我们的ViewController继承UITableViewController。继承UITableViewController能帮我们省不少事情。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/CustomCellVFL/viewcontroller_uitableviewcontroller.png" alt="image"></p>
+</li>
+<li><p>新建CustomCell，我们在其中新建一个UILabel，叫contentLabel，用于展示文本数据并允许换行。</p>
+<script src="https://gist.github.com/yuxiangq/96c5ffeb2ab9d718a33e.js"></script>
+</li>
+<li><p>为contentLabel设置约束，这里我们的约束可以看做Margin(5,5,5,5)。</p>
+<script src="https://gist.github.com/yuxiangq/dc9faab124f1eedf82a8.js"></script>
+</li>
+<li><p>在ViewController中添加一个原型cell，动态计算高度的时候使用。</p>
+<script src="https://gist.github.com/yuxiangq/6c282d9899fe28fe59e4.js"></script>
+
+</li>
+</ul>
+<pre>
+涉及换行的UILabel，请一定要注意**preferredMaxLayoutWidth**属性的设置，否则换行会出问题。
+</pre>
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/04/12/自定义UITableViewCell，使用VFL布局/" data-id="cjs1brzjb002p1w19p11x4gn0" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UITableViewCell/">UITableViewCell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VFL/">VFL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-我的2014总结" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/04/我的2014总结/" class="article-date">
+  <time datetime="2015-02-04T07:25:13.000Z" itemprop="datePublished">2015-02-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/04/我的2014总结/">我的2014总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2014已经结束了，在这元旦假期的最后一天，就让我来总结一下自己去年技术上的收获及见闻。</p>
+<h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><p>去年我的主要角色是整个团队的iOS工程师及技术总负责人。当然同时还会兼职产品经理，运维等其他角色o(╯□╰)o。</p>
+<h2 id="VFL"><a href="#VFL" class="headerlink" title="VFL"></a>VFL</h2><p>首先是学会使用了VFL，真是布局神器，强烈推荐。为此我将产品中大部分的布局都使用VFL进行了重写。这感觉，谁用谁知道。</p>
+<h2 id="ARC"><a href="#ARC" class="headerlink" title="ARC"></a>ARC</h2><p>今年初的时候产品不再支持iOS4(我的决定^_^)，于是启用了ARC。这感觉，谁用谁知道</p>
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a><a href="https://github.com/yuxiangq" target="_blank" rel="noopener">Github</a></h2><p>在上面发现了不少优秀的代码，自己也参与了一些。这才是程序员的SNS。</p>
+<h3 id="XHImageViewer"><a href="#XHImageViewer" class="headerlink" title="XHImageViewer"></a><a href="https://github.com/JackTeam/XHImageViewer" target="_blank" rel="noopener">XHImageViewer</a></h3><p>一个图片查看控件，支持图片缩放。我为其添加了Block支持。目前正在研究用其查看超大图片。</p>
+<h3 id="AFNetworking"><a href="#AFNetworking" class="headerlink" title="AFNetworking"></a>AFNetworking</h3><p>将产品的网络请求全部替换为AFNetworking 2.0，因为前期对网络请求层进行了一次封装，所以替换起来很顺利。</p>
+<h3 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="noopener">NumberTextField</a></h3><p>自己写的一个只允许输入数字的控件，在新的一年中还需要将其完善。</p>
+<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><p>一个优秀的第三方库管理工具，今年初的时候产品的大部分第三方库已经用其管理。</p>
+<h3 id="Alfred"><a href="#Alfred" class="headerlink" title="Alfred"></a>Alfred</h3><p>Mac下的优秀的快速启动工具，目前我已经是它的重度用户。配合workflow，实在是神器。自己也在用Python为其编写插件。</p>
+<h3 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h3><p>有条不紊的学习中，因为自己对C#的熟悉，所以很多Swift的新特性个人感觉并不是很惊艳。</p>
+<h1 id="Net"><a href="#Net" class="headerlink" title=".Net"></a>.Net</h1><p>去年写.Net的时间较少，更多的是在技术大方向上的把握。</p>
+<h2 id="WebAPI"><a href="#WebAPI" class="headerlink" title="WebAPI"></a>WebAPI</h2><p>一直在计划将服务器框架由WCF替换为WebAPI，在年中的时候进行了框架搭建，可惜的是因为产品功能迭代较快，没有时间完成框架替换。</p>
+<h2 id="Nuget"><a href="#Nuget" class="headerlink" title="Nuget"></a>Nuget</h2><p>在新服务器工程中使用的引用管理工具。</p>
+<h2 id="Dapper"><a href="#Dapper" class="headerlink" title="Dapper"></a><a href="https://github.com/yuxiangq/dapper-dot-net" target="_blank" rel="noopener">Dapper</a></h2><p>一个轻量级高效率的ORM框架，重要的是针对MySQL的支持同样优秀。相较于EF的繁琐，对于习惯使用ADO.NET的朋友来说，该框架实在是太合适了。</p>
+<h1 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h1><p>14年阅读了挺多经典的书籍，还有部分书没来得及读。除了技术相关书籍还读了部分马伯庸的小说，真的非常好。</p>
+<h2 id="Effective-Objective-C-2-0"><a href="#Effective-Objective-C-2-0" class="headerlink" title="Effective Objective-C 2.0"></a><a href="http://book.douban.com/subject/21370593/" target="_blank" rel="noopener">Effective Objective-C 2.0</a></h2><p>一本很棒的书，讲了很多有关Objective-C的技巧，不过翻译挺烂的。</p>
+<h2 id="文明之光"><a href="#文明之光" class="headerlink" title="文明之光"></a><a href="http://book.douban.com/subject/25902942/" target="_blank" rel="noopener">文明之光</a></h2><p>吴军老师的书，作为一名IT工作者，开阔的视野是必不可少的，推荐阅读。</p>
+<h2 id="ASP-NET-Web-API-2框架揭秘"><a href="#ASP-NET-Web-API-2框架揭秘" class="headerlink" title="ASP.NET Web API 2框架揭秘"></a><a href="http://book.douban.com/subject/25923644/" target="_blank" rel="noopener">ASP.NET Web API 2框架揭秘</a></h2><p>讲解WebAPI的书，目前主要当词典用。</p>
+<h2 id="菊与刀"><a href="#菊与刀" class="headerlink" title="菊与刀"></a><a href="http://book.douban.com/subject/1022238/" target="_blank" rel="noopener">菊与刀</a></h2><p>从美国人的角度来看日本的书。</p>
+<h2 id="死于技术：索尼衰亡启示"><a href="#死于技术：索尼衰亡启示" class="headerlink" title="死于技术：索尼衰亡启示 "></a><a href="http://book.douban.com/subject/25835910/" target="_blank" rel="noopener">死于技术：索尼衰亡启示 </a></h2><p>索尼确实已经衰落了，卖掉了经典的VAIO，这本书全面的剖析了索尼衰落的原因。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/02/04/我的2014总结/" data-id="cjs1brzj200201w19fmihfqpq" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人总结/">个人总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Swift学习笔记六" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/01/Swift学习笔记六/" class="article-date">
+  <time datetime="2015-02-01T14:02:12.000Z" itemprop="datePublished">2015-02-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/01/Swift学习笔记六/">Swift学习笔记六</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Swift中的枚举拥有很棒的特性，至少以前我是没有接触过的。</p>
+<p>####枚举语法####<br>使用<strong>enum</strong>关键字，并将其整个定义放在大括号内：</p>
+<pre><code>
+enum demo{
+//定义枚举相关类容
+}
+</code></pre>
+假设我们定义指南针的四个方向：
+<pre><code>
+enum CompassPoint {
+case North
+case South
+case East
+case West
+}
+</code></pre>
+一个枚举中被定义的值是枚举的**成员值**(或者**成员**)。
+**case**关键字表明新的一样关键字被定义。
+
+多个成员值也可以出现在同一行上，用逗号隔开：
+<pre><code>
+enum CompassPoint {
+case North,South,East,West
+}
+
+//使用方法
+var directionToHead = CompassPoint.West
+directionToHead = .North
+</code></pre>
+
+<blockquote>
+<p>注意：<br>不像 C 和 Objective-C 一样，Swift 的枚举成员在被创建时不会被赋予一个默认的整数值。在上面的CompassPoints例子中，North，South，East和West不是隐式的等于0，1，2和3。相反的，这些不同的枚举成员在CompassPoint的一种显示定义中拥有各自不同的值。</p>
+</blockquote>
+<p>####相关值####<br>Swift的枚举可以存储任何类型的相关值，如果需要的话每个成员的数据类型是可以不同的。</p>
+<p>比如我们可以定义两种商品条码的枚举：</p>
+<p><pre><code><br>enum Barcode {<br>case UPCA(Int, Int, Int)<br>case QRCode(String)<br>}<br></code></pre><br>然后可以使用任何一种条码类型创建新的条码：</p>
+<p><pre><code><br>var productBarcode = Barcode.UPCA(8, 85909_51226, 3)<br>productBarcode = .QRCode(“ABCDEFGHIJKLMNOP”)<br>//使用Switch-case<br>switch productBarcode {<br>case .UPCA(let numberSystem, let identifier, let check):<br>println(“UPC-A with value of (numberSystem), (identifier), (check).”)<br>case .QRCode(let productCode):<br>println(“QR code with value of (productCode).”)<br>}<br></code></pre></p>
+<p>####原始值####<br>作为相关值的替代，枚举成员可以被默认值（称为原始值）预先填充，其中这些原始值具有相同的类型。</p>
+<p>这是一个枚举成员存储原始ASCII的例子：</p>
+<p><pre><code><br>enum ASCIIControlCharacter: Character {<br>case Tab = “\t”<br>case LineFeed = “\n”<br>case CarriageReturn = “\r”<br>}<br></code></pre><br>原始值可以是字符串，字符，或者任何整型值或浮点型值。每个原始值在它的枚举声明中必须是唯一的。当整型值被用于原始值，如果其他枚举成员没有值时，它们会自动递增。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/02/01/Swift学习笔记六/" data-id="cjs1brzim000z1w19h1gckaly" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Pocket、Instapaper、Readability的比较" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/25/Pocket、Instapaper、Readability的比较/" class="article-date">
+  <time datetime="2015-01-25T10:47:54.000Z" itemprop="datePublished">2015-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/25/Pocket、Instapaper、Readability的比较/">Pocket、Instapaper、Readability的比较</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在接触「稍后读」软件之前，我一直是使用Evernote来保存暂时无法阅读的文章。</p>
+<p>大概是在两年前，我使用了第一款稍后读类的软件。当时自己入手了一台TouchPad(现在想起来相当后悔没有入手iPad啊)，刷成Android后主要用来看电子书和新闻，还用它在公司内部分享上查看演讲提纲(逼格很高啊)。这款APP是由原淘宝工程师开发的一款软件，叫<a href="http://www.udee.cn/" target="_blank" rel="noopener">uDee云阅读</a>。貌似已经挂了，官网已经变成建站系统了o(╯□╰)o。相关的介绍可以看这里<a href="http://www.36kr.com/p/99352.html" target="_blank" rel="noopener">36kr关于uDee云阅读的介绍</a>。</p>
+<p>后来我入手了The New iPad，TouchPad就送给老爸看电影了。在iOS上我开始使用<a href="https://getpocket.com/" target="_blank" rel="noopener">Pocket</a>，那个时候还叫Read it later。用了一段时间后发现Pocket对CocoaChina支持不是很好，只能抓取到标题，查看内容的时候还得跳转到原网页，实在是麻烦，于是开始寻找其他类似产品。</p>
+<p>某天在朋友手机上看到<a href="https://www.instapaper.com/" target="_blank" rel="noopener">Instapaper</a>，于是果断收了它(当时还是收费的)，完美支持CocoaChina，而且Instapaper的图标也比Pocket好看，所以开始同时使用二者，Pocket主力，Instapaper辅助。</p>
+<p>不久入了Reeder，配合着两大神器，让我阅读了不少好文。但是Reeder也无法完整显示CocoaChina的内容，每次阅读的时候我都要先保存到Instapaper，实在是麻烦。后来无意中点了一下内容上方的小板凳图标，发现竟然将内容完整的显示出来了。后来知道了那是<a href="https://www.readability.com/" target="_blank" rel="noopener">Readability</a>，果断入手。</p>
+<p>于是三大稍后读神器都被我凑齐了。用了一段时间后有些感悟，想和大家一起分享。</p>
+<p><strong>Pocket</strong></p>
+<p>我用得最久的稍后读类APP。 支持Chrome插件，通过插件保存网页。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>文章列表界面清爽简洁，是我喜欢的风格。在列表界面提供搜索栏，很方便。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>软件的层级架构采用抽屉式结构，给了内容更多的展示空间。同时设置里面提供深色主题，方便夜晚阅读。唯一的遗憾是主题颜色不支持自动切换。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20%E7%BD%91%E9%A1%B5.png" alt="image"><br>Web端配色和APP保持一致，简洁不失优雅。并且Web端提供平铺和列表两种展示方式。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Pocket%20Mac.png" alt="image"><br>Pocket也是三款软件中唯一有Mac客户端的。</p>
+<p><strong>Instapaper</strong></p>
+<p>个人认为是最精致的稍后读类APP。利用JS脚本保存内容，不支持浏览器插件。需要占用一个标签栏位置，这是让我很不爽的地方。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>文章列表简洁，整个界面更偏平，可惜的是不支持搜索。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>菜单仍然是抽屉式结构，搜索功能隐藏在了这里。其他东西和Pocket大同小异。同时支持深色主题(目前包含四款主题)，更令人欣喜的是，Instapaper可以根据您的位置(需要用到GPS)和日落时间，自动调整主题的颜色。这真的是非常棒的功能。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Instapaper%20Web.png" alt="image"><br>Web端的整体布局和APP差异不大，唯一的变化是将搜索栏放到了列表上。</p>
+<p><strong>Readability</strong></p>
+<p>我的感觉是抓取能力最强的了，但是界面不讨个人喜欢。支持Chrome插件。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20%E5%88%97%E8%A1%A8.PNG" alt="image"><br>支持搜索及分类，较Instapaper和Pocket都更强大，可以说是结合了二者的有点。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/readability%20%E8%8F%9C%E5%8D%95.PNG" alt="image"><br>同样是抽屉式侧拉菜单o(╯□╰)o，非常简洁，另外我不是很喜欢那种全红的背景。</p>
+<p><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/Pocket%E3%80%81Instapaper%E3%80%81Readability%E6%AF%94%E8%BE%83/Readability%20Web.png" alt="image"><br>整体布局和APP类似，可惜的是没有了搜索功能。</p>
+<p><strong>PS:以上就是我使用了三款APP后的一些浅薄看法。其实说起来它们对于我来说，都有一个很致命的缺点。就是对于代码块的处理都不尽如人意。本来文章中排版很舒服的代码，经过它们处理后就和普通文本混杂在一起，实在是一件很头痛的事情，希望能有一款稍后读类的APP能针对程序员定制。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/01/25/Pocket、Instapaper、Readability的比较/" data-id="cjs1brzig000m1w19i3xi6bnk" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App比较/">App比较</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/稍后读/">稍后读</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-NumberTextField" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/12/NumberTextField/" class="article-date">
+  <time datetime="2015-01-12T12:46:26.000Z" itemprop="datePublished">2015-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/12/NumberTextField/">NumberTextField</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NumberTextField"><a href="#NumberTextField" class="headerlink" title="NumberTextField"></a><a href="https://github.com/yuxiangq/NumberTextField" target="_blank" rel="noopener">NumberTextField</a></h1><p>这是我做的一个只能输入数字的控件。<br>可以限制输入的数字长度及小数点位数。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p><script src="https://gist.github.com/yuxiangq/71a2ac1dabac7b4fa556.js"></script></p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><p>去除数字前多余的0。例如，输入000123，当控件失去焦点，或者通过text获取值的时候，数字会被处理为123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/before.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/after.png" alt="image"></p>
+</li>
+<li><p>小数自动补0。例如，输入.123，当控件失去焦点，或者通过text获取值的时候，数字会处理为0.123。<br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotbefore.png" alt="image"><br><img src="https://raw.githubusercontent.com/yuxiangq/articlescreenshots/master/NumberTextField/dotafter.png" alt="image"></p>
+</li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><pre><code><br>-(NSString*)trimText;<br></code></pre><br>调用该函数可以直接获取经过处理的数字。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/01/12/NumberTextField/" data-id="cjs1brzi900091w194n41lpg7" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义控件/">自定义控件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Swift学习笔记五" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/01/Swift学习笔记五/" class="article-date">
+  <time datetime="2015-01-01T09:29:59.000Z" itemprop="datePublished">2015-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/01/Swift学习笔记五/">Swift学习笔记五</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="函数的定义及调用"><a href="#函数的定义及调用" class="headerlink" title="函数的定义及调用"></a>函数的定义及调用</h1><p>我们使用func关键字来定义函数:</p>
+<pre><code>
+
+func test( / * 这里是函数参数，通常如此定义  parameter:String * / )->String{
+return "test"
+}
+
+test() //调用函数
+</code></pre>
+
+<h1 id="默认参数值"><a href="#默认参数值" class="headerlink" title="默认参数值"></a>默认参数值</h1><p>给函数的参数定义默认值的方式和C#是一样的:</p>
+<pre><code>
+func test(s:string= "defaultValue")->String {
+return s;//如果s没有传值，则会返回defaultValue
+}
+</code></pre>
+
+<h1 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h1><p>用来输入不确定数量的参数，但是参数的类型必须一致:</p>
+<pre><code>
+func test(numbers:Double...)->Double {
+var total: Double = 0
+for number in numbers {
+total += number
+}
+return total
+}
+</code></pre>
+**注意:一个函数至多能有一个可变参数，而且它必须是参数表中最后的一个。这样做是为了避免函数调用时出现歧义。**
+
+# 常量参数和变量参数
+这是要注意的是，函数中默认的参数为常量参数是不可以被重新赋值的。变量参数则需要显示定义。
+<pre><code>
+func test(s:String)->String{
+s="test" //这里会报错，参数s为常量参数，不能被重新赋值
+return s
+}
+
+func test(/ * 显示定位为变量 * /var s:String)->String{
+s="test" //正常
+return s
+}
+</code></pre>
+**注意： 对变量参数所进行的修改在函数调用结束后便消失了，并且对于函数体外是不可见的。变量参数仅仅存在于函数调用的生命周期中。**
+
+# 输入输出参数
+这个和C#中的**ref,out**是类似的。如果你需要一个参数能在函数体内被修改，并且在函数调用结束后修改仍然存在，就需要使用**inout**关键字来定义参数。
+<pre><code>
+//交换两个变量的值
+func swapTwoInts(inout a: Int, inout b: Int) {
+let temporaryA = a
+a = b
+b = temporaryA
+}
+</code></pre>
+
+<h1 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h1><p>函数其实就是C#中的委托类型，也就是我们所说的函数指针。当然它相较于函数指针是类型安全的。</p>
+<p><pre><code><br>func addTwoInts(a: Int, b: Int) -&gt; Int {<br>return a + b<br>}</code></pre></p>
+<p>var mathFunction: (Int, Int) -&gt; Int = addTwoInts //mathFunction就是指向addTowInts函数的变量<br><br>如果我们要用一个变量来表示addTowInts这个函数，那么这个变量的类型就是<strong>(Int, Int) -&gt; Int</strong>，可以读作“这个函数类型，它有两个 Int 型的参数并返回一个 Int 型的值。”。<br>函数类型也是可以作为函数参数或函数返回值的。</p>
+<h1 id="嵌套函数"><a href="#嵌套函数" class="headerlink" title="嵌套函数"></a>嵌套函数</h1><p>默认情况下，嵌套函数是对外界不可见的，但是可以被他们封闭函数（enclosing function）来调用。一个封闭函数也可以返回它的某一个嵌套函数，使得这个函数可以在其他域中被使用。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2015/01/01/Swift学习笔记五/" data-id="cjs1brzil000x1w19gnvubif4" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swfit/">Swfit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="near-Lock，一款有趣的应用" class="article article-type-near" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/19/Lock，一款有趣的应用/" class="article-date">
+  <time datetime="2014-12-19T12:36:07.000Z" itemprop="datePublished">2014-12-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/19/Lock，一款有趣的应用/">Lock，一款有趣的应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天发现了一款有趣的应用，名字叫<a href="http://www.nearlock.me/" target="_blank" rel="noopener">Near Lock</a>。它有Mac版和iPhone版，二者是配合使用的。</p>
+<p>它能让我们优雅的通过iPhone来解锁Mac。你只需要将iPhone带在身上，当你靠近自己的Mac的时候，它就是解锁状态，当你离开Mac的时候它又会自动锁上。</p>
+<p>Pro版在中国区市场是25块，它能在后台运行。</p>
+<p>经过我的体验，距离设置在2米左右比较合适。如果使用默认的1米，当手机刚连接上的时候，蓝牙测距不是很稳定，会在1米 ~ 2米直接跳动，导致一会儿锁屏，一会儿解锁。另外如果离开电脑时间较长再回来的话，蓝牙连接有很大的几率连接不上，希望以后的版本会有所改进。总的来说还是一款很不错的软件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2014/12/19/Lock，一款有趣的应用/" data-id="cjs1brzi600051w19epfuxeai" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac-APP/">Mac APP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-UICollectionViewController的用法" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/14/UICollectionViewController的用法/" class="article-date">
+  <time datetime="2014-12-14T14:16:58.000Z" itemprop="datePublished">2014-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/14/UICollectionViewController的用法/">UICollectionViewController的用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>UICollectionView和UICollectionViewController是iOS6中新增加的控件，主要用于复杂的布局。你可以简单的把它理解为Grid。<br>在最近的版本中，我在做表单界面的时候，放弃了UITableViewController，改用UICollectionViewController来进行布局，个人感觉挺好用的，在这里我简单给大家分享一下UICollectionViewController的用法。</p>
+<p><strong>首先请大家注意的是，记得为UICollectionView的collectionViewLayout属性设置UICollectionViewLayout的子类。否则是会报错的。</strong></p>
+<p>UICollectionView的使用方式与UITableView相比没有什么区别，都是DataSource为View提供数据源，告诉View要显示什么东西以及如何显示他们，Delegate提供一些样式的小细节及用户交互的响应。</p>
+<p><strong>初始化UICollectionView</strong></p>
+<p><script src="https://gist.github.com/yuxiangq/93fdc5d139747b410488.js"></script><br><strong>UICollectionViewDataSource回调方法</strong></p>
+<p><script src="https://gist.github.com/yuxiangq/0c5aa8c4dd9ebc97047a.js"></script><br>以上三个方法都是UICollectionViewDataSource的基本方法，这些方法在UITableViewDataSource中也是有的，所以使用起来难度不大。<br>另外我们需要注意的是控制Cell尺寸的方法并不在UIcollectionViewDelegate的回调中，而是在UICollectionViewDelegateFlowLayout中</p>
+<pre><code>
+- (CGSize)collectionView:(UICollectionView * )collectionView layout:(UICollectionViewLayout* )collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * )indexPath;
+</code></pre>
+
+<p>关于UICollectionView中的Supplementary Views和Decoration Views我还没有用到。目前了解到的是Supplementary Views类似UITableView中的Header和Footer。Decoration Views用作背景展示。<br>因为UICollectionView比UITableView复杂得多，所以它的布局样式并不是通过Style来改变，而是通过UICollectionViewLayout，这也是UICollectionView的精髓所在。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2014/12/14/UICollectionViewController的用法/" data-id="cjs1brzip00131w1928q8a1to" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UICollectionViewController/">UICollectionViewController</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-关于如何学习一门新语言" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/05/关于如何学习一门新语言/" class="article-date">
+  <time datetime="2014-12-05T14:53:35.000Z" itemprop="datePublished">2014-12-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/05/关于如何学习一门新语言/">关于如何学习一门新语言</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作为一名程序员，我们肯定会在必要的时候学习一门新的编程语言，这个时候好的学习方法会帮助我们节省很多时间，在这里谈谈我的学习方法。</p>
+<p>####快速了解语法####<br>我通常会快速了解该门语言的语法，并将其和已学会的语言进行比较。比如我在学习Objective-C的时候就是将其和C#进行比较，思考两者的差异。<br>C#中的委托，在Objective-C中有什么可以实现？<br>C#中的泛型，Objective-C中有吗？<br>如何实现单例？<br>C#中的拉姆达表达式，Objective-C有吗？<br>等等，等等。</p>
+<p>####写Demo练习####<br>实际的练习也是必不可少的。可以通过很多小项目和算法来练习自己对新语言掌握的程度。比如写一个简单的计算器。</p>
+<p>经历了以上两部分，我们就能较好的在实际项目中使用新语言了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2014/12/05/关于如何学习一门新语言/" data-id="cjs1brzix001n1w199nmclqcz" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程/">编程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-VFL布局学习" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/04/VFL布局学习/" class="article-date">
+  <time datetime="2014-12-04T15:17:14.000Z" itemprop="datePublished">2014-12-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/04/VFL布局学习/">VFL布局学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>随着iPhone6及iPhone6+的发布，适配大屏幕也提上了日程。有些童鞋习惯用xib配合iOS6时出现的autolayout进行界面的布局，但是我个人觉得xib实在是有点难用，特别是在macbook的小屏幕上，觉得xib要配一个大屏幕用起来才爽。还有就是用过Visual Studio的可视化编程后，始终觉得xib的易用性不够好。大屏幕又不得不适配，怎么办呢，如果像以前那样算坐标的话倒是也行，但毕竟比较繁琐，又不想用xib，那就只好用<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage/VisualFormatLanguage.html" target="_blank" rel="noopener">Visual Format Language</a>。</p>
+<p>初看VFL，肯定觉得莫名奇妙，给我的感觉就像第一次看到正则表达式的时候一样(个人以为VFL可比正则表达式简单多了)。不过VFL的符号比较少且简单，用2-3次估计就都记住了，大家可以看看上面官方文档的链接。我在这里简单介绍一下常用的符号表示的意思(我会用<strong>方引号(「」)</strong>将符号括起来)：</p>
+<p><strong>「V:」</strong>或<strong>「H:」</strong>分别表示垂直方向和水平方向。</p>
+<p><strong>「|」</strong>表示父视图。</p>
+<p><strong>「[loginButton]」</strong>表示一个名叫loginButton的视图</p>
+<p><strong>「H:|-10-[loginButton]-10-|」</strong> 表示 <strong>loginButton在水平方向左边距离父视图10，右边距离父视图也是10</strong>。</p>
+<p><strong>「H:|-15-[buttonOne(80)]-5-[buttonTwo(90)]」</strong> 表示<strong>buttonOne在水平方向左边距离父视图是15，本身宽度是80，右边与buttonTwo的距离为5，buttonTwo的宽度为90</strong>。</p>
+<p>以上这些就是常用的符号，掌握着几种最基本的也足够我们进行大部分的界面布局了。<br>接下来我们简单写一个例子。我们假设大家都是有一定iOS编程基础的童鞋，所以怎么创建Single View Application这种事情就不罗嗦了，我们假设大家已经创建好了，接下来的我们将在View上添加一个Button，并用VFL来控制它的位置和大小。</p>
+<p><pre><code><br>//我们在这里创建一个Buton<br>-(void)viewDidLoad<br>{<br>[super viewDidLoad];<br>UIButton* button=[[UIButton alloc] init];</code></pre></p>
+<p>//切记在这里一定要将该属性设置为NO，否则View<br>//会按照以往的autoresizingMask进行计算。<br>button.translatesAutoresizingMaskIntoConstraints=NO;</p>
+<p>[button setTitle:@”测试” forState:UIControlStateNormal];<br>[self.view addSubview:button];<br>//当然，就这么执行程序是没有任何效果的，我们看不到Button出现在View上。</p>
+<p>//用于存储约束<br>NSMutableArray *constraints = [NSMutableArray array];</p>
+<p>//添加按钮的水平约束，意思是该按钮宽度90，距离父控件右边30。<br>[constraints<br>addObjectsFromArray:<br>[NSLayoutConstraint<br>constraintsWithVisualFormat:@”H:[button(90)]-30-|”<br>options:0<br>metrics:nil<br>views:NSDictionaryOfVariableBindings(<br>button)]];</p>
+<p>//添加按钮的垂直约束，意思是该按钮高度40，距离父控件上边100。<br>[constraints<br>addObjectsFromArray:<br>[NSLayoutConstraint<br>constraintsWithVisualFormat:@”V:|-100-[button(40)]”<br>options:0<br>metrics:nil<br>views:NSDictionaryOfVariableBindings(<br>button)]];</p>
+<p>//将约束添加到View中。<br>[self.view addConstraints:constraints];<br>}<br><br>看完例子有木有觉得很简单，很有趣？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2014/12/04/VFL布局学习/" data-id="cjs1brzir00181w19ywdo0yq9" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VFL/">VFL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动布局/">自动布局</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App比较/">App比较</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BDD/">BDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DDoS/">DDoS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eventkit/">Eventkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPS/">GPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-APP/">Mac APP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swfit/">Swfit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UICollectionViewController/">UICollectionViewController</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIImage/">UIImage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableVIewCell/">UITableVIewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableViewCell/">UITableViewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VFL/">VFL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebAPP/">WebAPP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/下拉刷新/">下拉刷新</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人总结/">个人总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串行请求/">串行请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小工具/">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发模式/">开发模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手势/">手势</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针变量/">指针变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序/">程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/稍后读/">稍后读</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻墙/">翻墙</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动布局/">自动布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自定义控件/">自定义控件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行业发展/">行业发展</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/请求队列/">请求队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目管理/">项目管理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/App比较/" style="font-size: 10px;">App比较</a> <a href="/tags/BDD/" style="font-size: 10px;">BDD</a> <a href="/tags/DDoS/" style="font-size: 10px;">DDoS</a> <a href="/tags/Eventkit/" style="font-size: 10px;">Eventkit</a> <a href="/tags/GFW/" style="font-size: 10px;">GFW</a> <a href="/tags/GPS/" style="font-size: 10px;">GPS</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Mac-APP/" style="font-size: 10px;">Mac APP</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/Swfit/" style="font-size: 10px;">Swfit</a> <a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/UICollectionViewController/" style="font-size: 10px;">UICollectionViewController</a> <a href="/tags/UIImage/" style="font-size: 10px;">UIImage</a> <a href="/tags/UITableVIewCell/" style="font-size: 10px;">UITableVIewCell</a> <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/UITableViewCell/" style="font-size: 10px;">UITableViewCell</a> <a href="/tags/VFL/" style="font-size: 12.5px;">VFL</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/WebAPP/" style="font-size: 10px;">WebAPP</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/下拉刷新/" style="font-size: 10px;">下拉刷新</a> <a href="/tags/个人总结/" style="font-size: 10px;">个人总结</a> <a href="/tags/串行请求/" style="font-size: 10px;">串行请求</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/开发模式/" style="font-size: 10px;">开发模式</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/手势/" style="font-size: 10px;">手势</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针变量/" style="font-size: 10px;">指针变量</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/架构/" style="font-size: 12.5px;">架构</a> <a href="/tags/程序/" style="font-size: 10px;">程序</a> <a href="/tags/稍后读/" style="font-size: 10px;">稍后读</a> <a href="/tags/编程/" style="font-size: 12.5px;">编程</a> <a href="/tags/翻墙/" style="font-size: 10px;">翻墙</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义控件/" style="font-size: 12.5px;">自定义控件</a> <a href="/tags/行业发展/" style="font-size: 10px;">行业发展</a> <a href="/tags/请求队列/" style="font-size: 10px;">请求队列</a> <a href="/tags/读书笔记/" style="font-size: 12.5px;">读书笔记</a> <a href="/tags/随笔/" style="font-size: 17.5px;">随笔</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/24/新的开始/">新的开始</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/11/常用的15个架构原则/">常用的15个架构原则</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/27/单机软件和SaaS的反向对接/">单机软件和SaaS的反向对接</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/">思考：应该引入更多的语言还是更少的语言去设计API呢？</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/31/如何培养自学能力/">如何培养自学能力</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Eric Qin<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
