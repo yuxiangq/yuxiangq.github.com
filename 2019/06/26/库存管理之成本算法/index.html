@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>库存管理之成本算法 | Code4Cocoa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="库存管理，是指企业对尚未售出货物与原材料的管理。它是企业运营需求上的重要一环，也是管理者极为关心的课题。比如，依照著名的摩尔定律，计算机运算能力每18个月会加倍，故导致科技产品的生命周期过短，一项新产品的销售热潮经常仅在3~9个月。在销售热潮期间，如果库存不足的话，会无法满足客户需求，流失部分订单。如果库存过多的话，则会积压公司资金。 成本，指已销售商品的进价。由于商品的进价不会固定维持在一个价格">
+<meta name="keywords" content="随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="库存管理之成本算法">
+<meta property="og:url" content="http://code4cocoa.com/2019/06/26/库存管理之成本算法/index.html">
+<meta property="og:site_name" content="Code4Cocoa">
+<meta property="og:description" content="库存管理，是指企业对尚未售出货物与原材料的管理。它是企业运营需求上的重要一环，也是管理者极为关心的课题。比如，依照著名的摩尔定律，计算机运算能力每18个月会加倍，故导致科技产品的生命周期过短，一项新产品的销售热潮经常仅在3~9个月。在销售热潮期间，如果库存不足的话，会无法满足客户需求，流失部分订单。如果库存过多的话，则会积压公司资金。 成本，指已销售商品的进价。由于商品的进价不会固定维持在一个价格">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-20T02:50:38.079Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="库存管理之成本算法">
+<meta name="twitter:description" content="库存管理，是指企业对尚未售出货物与原材料的管理。它是企业运营需求上的重要一环，也是管理者极为关心的课题。比如，依照著名的摩尔定律，计算机运算能力每18个月会加倍，故导致科技产品的生命周期过短，一项新产品的销售热潮经常仅在3~9个月。在销售热潮期间，如果库存不足的话，会无法满足客户需求，流失部分订单。如果库存过多的话，则会积压公司资金。 成本，指已销售商品的进价。由于商品的进价不会固定维持在一个价格">
+  
+    <link rel="alternate" href="/atom.xml" title="Code4Cocoa" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Code4Cocoa</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A Programer&#39;s Home</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://code4cocoa.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-库存管理之成本算法" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/26/库存管理之成本算法/" class="article-date">
+  <time datetime="2019-06-26T02:24:37.000Z" itemprop="datePublished">2019-06-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      库存管理之成本算法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>库存管理</strong>，是指企业对尚未售出货物与原材料的管理。它是企业运营需求上的重要一环，也是管理者极为关心的课题。比如，依照著名的摩尔定律，计算机运算能力每18个月会加倍，故导致科技产品的生命周期过短，一项新产品的销售热潮经常仅在3~9个月。在销售热潮期间，如果库存不足的话，会无法满足客户需求，流失部分订单。如果库存过多的话，则会积压公司资金。</p>
+<p><strong>成本</strong>，指已销售商品的进价。由于商品的进价不会固定维持在一个价格，可能因为进货渠道的改变、付款方式的改变、商品原材料价格波动等等导致变化。销售商品的时候，我们需要一些方式来确定一个适当的进货价格，以计算商品销售成本和确定库存价值，据此核算商品销售损益，用以反映企业的经营状况。不同的成本算法还会影响企业的税收负担、现金流等。常见的成本算法有四种：加权平均、移动加权平均、先进先出、后进先出。</p>
+<h2 id="加权平均"><a href="#加权平均" class="headerlink" title="加权平均"></a>加权平均</h2><p><strong>加权平均</strong> 是以采购历史中的商品采购均价作为商品成本，最后以 <strong>商品采购均价</strong> 乘以销售数量得到销售成本，乘以库存数量得到库存成本，其计算方式如下：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">商品采购均价  =（期初库存金额 + 本期购入金额）/（期初库存数量 + 本期购入数量）</span><br><span class="line">库存成本 = 商品采购均价 <span class="symbol">*</span> 库存数量</span><br><span class="line">商品销售成本 = 商品采购均价 <span class="symbol">*</span> 销售数量</span><br><span class="line"></span><br><span class="line">|<span class="string">日期 </span>|<span class="string">操作</span>|<span class="string">商品</span>|<span class="string">金额</span>|<span class="string">数量</span>|</span><br><span class="line">|<span class="string"> :--- </span>|<span class="string"> :--- </span>|<span class="string"> :--- </span>|<span class="string"> :--- </span>|<span class="string"> :--- </span>|</span><br><span class="line">|<span class="string">01-02</span>|<span class="string">购买</span>|<span class="string">A</span>|<span class="string">1</span>|<span class="string">10</span>|</span><br><span class="line">|<span class="string">01-05</span>|<span class="string">购买</span>|<span class="string">A</span>|<span class="string">1</span>|<span class="string">5</span>|</span><br><span class="line">|<span class="string">01-06</span>|<span class="string">销售</span>|<span class="string">A</span>|<span class="string">2</span>|<span class="string">5</span>|</span><br><span class="line">|<span class="string">01-10</span>|<span class="string">购买</span>|<span class="string">A</span>|<span class="string">0.5</span>|<span class="string">10</span>|</span><br><span class="line">|<span class="string">01-14</span>|<span class="string">销售</span>|<span class="string">A</span>|<span class="string">2</span>|<span class="string">10</span>|</span><br><span class="line"></span><br><span class="line">从以上流水我们可以看出进行了三次采购操作，则商品的采购均价为 0.8 = ( 1 <span class="symbol">*</span> 10  + 1 <span class="symbol">*</span> 5  + 0.5 <span class="symbol">*</span> 10 ) / ( 10 + 5  + 10 ) </span><br><span class="line">库存成本我们通过流水可知一共购买了25个A商品，销售了15个A商品，剩余10个，则库存成本为 8 = 0.8 <span class="symbol">*</span> 10</span><br><span class="line">商品销售成本为 12 = 0.8 <span class="symbol">*</span> 15 </span><br><span class="line">商品销售利润为 18 = 2 <span class="symbol">*</span> 15 - 0.8 <span class="symbol">*</span> 15</span><br></pre></td></tr></table></figure>
+<p>在使用 <strong>加权平均</strong> 的情况下，如果商品的采购金额经常发生变化，则成本的计算会受到历史采购的影响，不能较好真实的反映当前情况，从而影响销售利润和库存成本的计算。</p>
+<h2 id="移动加权平均"><a href="#移动加权平均" class="headerlink" title="移动加权平均"></a>移动加权平均</h2><p><strong>移动加权平均</strong> 会记录每次库存发生变化后的成本，可以准确计算单笔销售的利润，其计算方式如下：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string">日期 </span>|<span class="string">操作</span>|<span class="string">商品</span>|<span class="string">金额</span>|<span class="string">数量</span>|</span><br><span class="line">|<span class="string"> :--- </span>|<span class="string"> :--- </span>|<span class="string"> :--- </span>|<span class="string"> :--- </span>|<span class="string"> :--- </span>|</span><br><span class="line">|<span class="string">01-02</span>|<span class="string">购买</span>|<span class="string">A</span>|<span class="string">1</span>|<span class="string">10</span>|</span><br><span class="line">|<span class="string">01-05</span>|<span class="string">购买</span>|<span class="string">A</span>|<span class="string">1</span>|<span class="string">5</span>|</span><br><span class="line">|<span class="string">01-06</span>|<span class="string">销售</span>|<span class="string">A</span>|<span class="string">2</span>|<span class="string">5</span>|</span><br><span class="line">|<span class="string">01-10</span>|<span class="string">购买</span>|<span class="string">A</span>|<span class="string">0.5</span>|<span class="string">10</span>|</span><br><span class="line">|<span class="string">01-14</span>|<span class="string">销售</span>|<span class="string">A</span>|<span class="string">2</span>|<span class="string">10</span>|</span><br><span class="line"></span><br><span class="line">使用移动加权平均法的情况下</span><br><span class="line">1月2号、1月5号连续同采购价格采购15个A商品后，库存成本为 1 <span class="symbol">*</span> 10 + 1 <span class="symbol">*</span> 5 = 15，成本单价为1</span><br><span class="line"></span><br><span class="line">1月6号销售5个A商品， 商品销售成本为 1 <span class="symbol">*</span> 5 = 5 商品销售利润为 2 <span class="symbol">*</span> 5 - 1 <span class="symbol">*</span> 5 = 5，库存成本变为 1 <span class="symbol">*</span> 10 = 10</span><br><span class="line"></span><br><span class="line">1月10号以0.5的采购价格，采购了10个A商品，这时库存成本为 1 <span class="symbol">*</span> 10 + 0.5 <span class="symbol">*</span> 10 = 15 成本单价为 ( 1 <span class="symbol">*</span> 10 + 0.5 <span class="symbol">*</span> 10 )  / ( 10 + 10 ) = 0.75</span><br><span class="line"></span><br><span class="line">1月14号销售10个A商品，商品销售成本为 0.75 <span class="symbol">*</span> 10 = 7.5 商品销售利润为 2 <span class="symbol">*</span> 10 - 0.75 <span class="symbol">*</span> 10 = 12.5</span><br><span class="line"></span><br><span class="line">综上到期末最终数据为</span><br><span class="line">库存数量为 10 </span><br><span class="line">库存成本为 7.5 = 0.75 <span class="symbol">*</span> 10</span><br><span class="line">商品销售成本为 12.5 = 1 <span class="symbol">*</span> 5 + 0.75 <span class="symbol">*</span> 10</span><br><span class="line">商品销售利润为 17.5 = 5 + 12.5</span><br></pre></td></tr></table></figure>
+<p><strong>移动加权平均</strong> 计算的商品销售成本相对均衡准确，但计算的过程相对复杂。</p>
+<h2 id="先进先出"><a href="#先进先出" class="headerlink" title="先进先出"></a>先进先出</h2><p><strong>先进先出</strong> 是在销售商品时，将最早购入的商品卖出并将其进价作为成本的一种方法，即先购入先销售。这种方法一般适用于易变质的商品，比如生鲜类商品。其计算方式如下：</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">|日期 |操作|商品|金额|数量|</span><br><span class="line">| :--- | :--- | :--- | :--- | :--- |</span><br><span class="line">|01-02|购买|A|1|10|</span><br><span class="line">|01-05|购买|A|1|5|</span><br><span class="line">|01-06|销售|A|2|5|</span><br><span class="line">|01-10|购买|A|0.5|10|</span><br><span class="line">|01-14|销售|A|2|10|</span><br><span class="line"></span><br><span class="line">还是这个流水，在使用先进先出算法情况下我们需要按批次记录商品数量和采购价，所以需要关注的东西较多</span><br><span class="line"></span><br><span class="line">1月2号采购A商品10个，采购单价为1，这批商品记为 批次一</span><br><span class="line"></span><br><span class="line">1月5号采购A商品5个，采购单价为1，这批商品记为 批次二 这时A商品库存数量为<span class="number"> 15 </span>=<span class="number"> 10 </span>[ 批次一 ] +<span class="number"> 5 </span>[ 批次一 ]，库存成本为<span class="number"> 15 </span>=<span class="number"> 1 </span>*<span class="number"> 10 </span>[ 批次一 ] +<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次一 ]</span><br><span class="line"></span><br><span class="line">1月6号销售5个A商品，根据先进先出规则，我们应当先销售 批次一  的商品，所以商品销售成本为<span class="number"> 5 </span>=<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次一 ]，商品销售利润为<span class="number"> 5 </span>=<span class="number"> 2 </span>*<span class="number"> 5 </span>[ 批次一 ] -<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次一 ]，库存数量为<span class="number"> 10 </span>=<span class="number"> 5 </span>[ 批次一 ] +<span class="number"> 5 </span>[ 批次二 ] </span><br><span class="line">库存成本为<span class="number"> 10 </span>=<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次一 ]  +<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次二 ] </span><br><span class="line"> </span><br><span class="line">1月10号采购A商品10个，采购单价为0.5，这批商品记为 批次三  这时A商品库存数量为<span class="number"> 20 </span>=<span class="number"> 5 </span>[ 批次一 ]  +<span class="number"> 5 </span>[ 批次二 ]  +<span class="number"> 10 </span>[ 批次三 ]，库存成本为<span class="number"> 15 </span>=<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次一 ] +<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次二 ] + 0.5 *<span class="number"> 10 </span>[ 批次三 ]</span><br><span class="line"></span><br><span class="line">1月14号销售10个A商品，根据先进先出规则，我们应当先销售 批次一 的商品，但批次一商品库存不够，我们应当按采购顺序销售 批次二 商品，所以商品销售成本为<span class="number"> 10 </span>=<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次一 ] +<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次二 ]</span><br><span class="line">商品销售利润为<span class="number"> 10 </span>= (<span class="number"> 2 </span>*<span class="number"> 5 </span>[ 批次一 ]  +<span class="number"> 2 </span>*<span class="number"> 5 </span>[ 批次二 ] ) - (1 *<span class="number"> 5 </span>[ 批次一 ]  +<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次二 ] )</span><br><span class="line"> </span><br><span class="line">综上到期末最终数据为</span><br><span class="line">库存数量为<span class="number"> 10 </span>[批次三]  </span><br><span class="line">库存成本为<span class="number"> 5 </span>= 0.5 *<span class="number"> 10 </span>[ 批次三 ] </span><br><span class="line">商品销售成本为<span class="number"> 15 </span>=<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次一 ] +<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次一 ] +<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次二 ]</span><br><span class="line">商品销售利润为<span class="number"> 15 </span>=<span class="number"> 5 </span>+ 10</span><br></pre></td></tr></table></figure>
+<p>使用 <strong>先进先出</strong> 计算的期末库存成本，比较接近市场价。在商品价格波动，且物价普遍处于上涨状态的情况下，先购进的货物其成本相对较低，后购进的货物成本偏高。这样销售的货物价值就低于市场价值，货物销售成本偏低，而期末存货成本偏高。但因货物的售价是按近期市价计算，因而收入较多，销售收入和销售成本不符合配比原则，以此计算出来的利润就偏高。</p>
+<p>利润偏高有利于增强投资人信心，同时不少企业按照利润水平的高低来评价管理人员，并提供一定的奖励。此时管理人员往往乐于采用先进先出法，因为这样做会高估任期内的利润水平，从而多得眼前利益。但偏高的利润也会加重企业的所得税负担，以及向投资人的分红，从而导致企业现金流出量增加。</p>
+<h2 id="后进先出"><a href="#后进先出" class="headerlink" title="后进先出"></a>后进先出</h2><p><strong>后进先出</strong> 和 <strong>先进先出</strong> 正好相反，是将最近购入的商品卖出并将其进价作为成本的一种方式，即后购入先销售。其计算方式如下：</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">|日期 |操作|商品|金额|数量|</span><br><span class="line">| :--- | :--- | :--- | :--- | :--- |</span><br><span class="line">|01-02|购买|A|1|10|</span><br><span class="line">|01-05|购买|A|1|5|</span><br><span class="line">|01-06|销售|A|2|5|</span><br><span class="line">|01-10|购买|A|0.5|10|</span><br><span class="line">|01-14|销售|A|2|10|</span><br><span class="line"></span><br><span class="line">依然是这个流水，后进先出法的计算大体上和先进先出差不多</span><br><span class="line"></span><br><span class="line">1月2号采购A商品10个，采购单价为1，这批商品记为 批次一</span><br><span class="line"></span><br><span class="line">1月5号采购A商品5个，采购单价为1，这批商品记为 批次二 这时A商品库存数量为<span class="number"> 15 </span>=<span class="number"> 10 </span>[ 批次一 ] +<span class="number"> 5 </span>[ 批次一 ]，库存成本为<span class="number"> 15 </span>=<span class="number"> 1 </span>*<span class="number"> 10 </span>[ 批次一 ] +<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次一 ] </span><br><span class="line"></span><br><span class="line">1月6号销售5个A商品，根据后进先出规则，我们应先销售 批次二  的商品，所以商品销售成本为<span class="number"> 5 </span>=<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次二 ]，商品销售利润为<span class="number"> 5 </span>=<span class="number"> 2 </span>*<span class="number"> 5 </span>[ 批次二 ] -<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次二 ]，库存数量为<span class="number"> 10 </span>[ 批次一 ] </span><br><span class="line"> 库存成本为<span class="number"> 10 </span>=<span class="number"> 1 </span>*<span class="number"> 10 </span>[ 批次一 ] </span><br><span class="line"> </span><br><span class="line">1月10号采购A商品10个，采购单价为0.5，这批商品记为 批次三  这时A商品库存数量为<span class="number"> 20 </span>=<span class="number"> 10 </span>[ 批次一 ]   +<span class="number"> 10 </span>[ 批次三 ]，库存成本为<span class="number"> 15 </span>=<span class="number"> 1 </span>*<span class="number"> 10 </span>[ 批次一 ] + 0.5 *<span class="number"> 10 </span>[ 批次三 ]</span><br><span class="line"></span><br><span class="line">1月14号销售10个A商品，根据后进先出规则，我们应当先销售 批次三 商品，所以商品销售成本为<span class="number"> 5 </span>= 0.5 *<span class="number"> 10 </span>[ 批次三 ]，商品销售利润为<span class="number"> 15 </span>=<span class="number"> 2 </span>*<span class="number"> 10 </span>- 0.5 *<span class="number"> 10 </span>[ 批次三 ]</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">综上到期末最终数据为</span><br><span class="line">库存数量为<span class="number"> 10 </span>[批次一]  </span><br><span class="line">库存成本为<span class="number"> 10 </span>=<span class="number"> 1 </span>*<span class="number"> 10 </span>[ 批次一 ] </span><br><span class="line">商品销售成本为<span class="number"> 10 </span>=<span class="number"> 1 </span>*<span class="number"> 5 </span>[ 批次二 ] + 0.5 *<span class="number"> 10 </span>[ 批次三 ] </span><br><span class="line">商品销售利润为<span class="number"> 20 </span>=<span class="number"> 5 </span>+ 15</span><br></pre></td></tr></table></figure>
+<p>使用 <strong>后进先出</strong> 法，且物价波动较大的情况下，期末库存成本和市价偏离较大，不能反映当时存货的实际成本。但利润和销售成本和市场接近，较能反映当时的损益水平。对企业来说在预期物价上涨的情况下，采用后进先出可以达到递延所得税支出的目的。</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">企业在选择成本算法的时候，首要因素是库存货物的特点及管理要求。在大多数情况下货物都符合 先进先出 的特点，所以 先进先出 的使用比较多一点。</span><br><span class="line"> </span><br><span class="line">第二方面的因素就是对企业财务的影响，不同的成本算法会直接影响期末库存价值的确定和销售成本的计算，进而对企业的利润、税收负担、现金流量、财务比率等产生影响。在物价持续上涨的情况下，采用 后进先进 会导致较低的 期末库存、销售毛利、所得税和净收益额；而采用 先进先出 其结果恰好相反。如果物价持续下跌，则会得出相反的结论。不论物价如何变动，采用 平均法 <span class="comment">( 包括 加权平均 和 移动平均 )</span> 核算的结果，总是介于 先进先出 和 后进先出 之间。但是，上述存成本算法对企业的一般财务影响又会因企业自身的特点及其所处的不同时期而产生差异。例如：周转很快、库存积压很少，则 后进先出 的优势也不会充分显示。</span><br><span class="line"> </span><br><span class="line">第三面的因素则是对企业经营管理和业绩评价的影响。由于库存货物的管理一般是 先进先出，如采用 后进先出 核算，其结果可能与实际情况不符。不仅如此，后进先出 虽然能够减少所得税，但同时会导致较低的净收益，影响企业经营管理者的经营业绩，影响以净收益为基础的各种奖励和报酬。因此，从内部管理及业绩评价的角度出发，采用 先进先出 比采用 后迸先出 更为合理。此外，在不同企业之间进行经营业绩的比较时，成本算法的不同也将影响业绩评价的正确性。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://code4cocoa.com/2019/06/26/库存管理之成本算法/" data-id="cjyaxr69d005tkh1988bfua0m" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/24/新的开始/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">新的开始</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App比较/">App比较</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BDD/">BDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DDoS/">DDoS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eventkit/">Eventkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPS/">GPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-APP/">Mac APP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swfit/">Swfit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UICollectionViewController/">UICollectionViewController</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIImage/">UIImage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableVIewCell/">UITableVIewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableViewCell/">UITableViewCell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VFL/">VFL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebAPP/">WebAPP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/下拉刷新/">下拉刷新</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人总结/">个人总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串行请求/">串行请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小工具/">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发模式/">开发模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手势/">手势</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针变量/">指针变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序/">程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/稍后读/">稍后读</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻墙/">翻墙</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动布局/">自动布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自定义控件/">自定义控件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行业发展/">行业发展</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/请求队列/">请求队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目管理/">项目管理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/App比较/" style="font-size: 10px;">App比较</a> <a href="/tags/BDD/" style="font-size: 10px;">BDD</a> <a href="/tags/DDoS/" style="font-size: 10px;">DDoS</a> <a href="/tags/Eventkit/" style="font-size: 10px;">Eventkit</a> <a href="/tags/GFW/" style="font-size: 10px;">GFW</a> <a href="/tags/GPS/" style="font-size: 10px;">GPS</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Mac-APP/" style="font-size: 10px;">Mac APP</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/Swfit/" style="font-size: 10px;">Swfit</a> <a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/UICollectionViewController/" style="font-size: 10px;">UICollectionViewController</a> <a href="/tags/UIImage/" style="font-size: 10px;">UIImage</a> <a href="/tags/UITableVIewCell/" style="font-size: 10px;">UITableVIewCell</a> <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/UITableViewCell/" style="font-size: 10px;">UITableViewCell</a> <a href="/tags/VFL/" style="font-size: 12.5px;">VFL</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/WebAPP/" style="font-size: 10px;">WebAPP</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/下拉刷新/" style="font-size: 10px;">下拉刷新</a> <a href="/tags/个人总结/" style="font-size: 10px;">个人总结</a> <a href="/tags/串行请求/" style="font-size: 10px;">串行请求</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/开发模式/" style="font-size: 10px;">开发模式</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/手势/" style="font-size: 10px;">手势</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针变量/" style="font-size: 10px;">指针变量</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/架构/" style="font-size: 12.5px;">架构</a> <a href="/tags/程序/" style="font-size: 10px;">程序</a> <a href="/tags/稍后读/" style="font-size: 10px;">稍后读</a> <a href="/tags/编程/" style="font-size: 12.5px;">编程</a> <a href="/tags/翻墙/" style="font-size: 10px;">翻墙</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义控件/" style="font-size: 12.5px;">自定义控件</a> <a href="/tags/行业发展/" style="font-size: 10px;">行业发展</a> <a href="/tags/请求队列/" style="font-size: 10px;">请求队列</a> <a href="/tags/读书笔记/" style="font-size: 12.5px;">读书笔记</a> <a href="/tags/随笔/" style="font-size: 17.5px;">随笔</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/26/库存管理之成本算法/">库存管理之成本算法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/24/新的开始/">新的开始</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/11/常用的15个架构原则/">常用的15个架构原则</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/27/单机软件和SaaS的反向对接/">单机软件和SaaS的反向对接</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/24/思考：应该引入更多的语言还是更少的语言去设计API呢？/">思考：应该引入更多的语言还是更少的语言去设计API呢？</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Eric Qin<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
