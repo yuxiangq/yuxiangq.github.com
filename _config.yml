@@ -4,7 +4,7 @@
 
 # Site
 title: Code4Cocoa
-subtitle: A Programer's Home
+subtitle: A ThoughtWorker's Home
 description: 
 author: Eric Qin
 language:
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: again
 
 stylus:
   compress: true
