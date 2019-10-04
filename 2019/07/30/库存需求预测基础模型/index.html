@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>库存需求预测基础模型 | Code4Cocoa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+</html>
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">home</a>
+    
+  
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2019/07/30/库存需求预测基础模型/">库存需求预测基础模型</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">July 30 2019</p>
+  </section>
+
+  <section class="article-entry">
+    <p><strong>库存预测</strong>是库存管理中的重要一环，也是是库存计划的基石。关于库存预测，我们首先要了解的是：</p>
+<p>“预测”不是“预言”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">预测，是研究和预估未来将会发生的事件及结果。预测类似预言、预知、占卜，前者可能是可供检测的科学方法，后者则常常无法证伪。</span><br></pre></td></tr></table></figure>
+<p>我们需要基于已有的历史数据，推断出未来某个时间点或时间范围的数据。推断的方法，经过人们不断的归纳总结，最终变为目前我们熟知的预测模型。</p>
+<p><strong>库存预测</strong>通常是在历史数据的基础上，找到拟合度最高的预测模型。但现在的业务通常都受多方面因素的影响，我们在选择预测模型的时候要考虑一定的灵活性。灵活度有保证的情况下，必然会影响预测的准度，这是需要我们来平衡的问题。</p>
+<h1 id="幼稚预测"><a href="#幼稚预测" class="headerlink" title="幼稚预测"></a>幼稚预测</h1><p>顾名思义，这是一种“不预测”的预测方式，它的方式是<strong>用上一次的需求值，作为这一次的预测值</strong>。</p>
+<h1 id="移动平均"><a href="#移动平均" class="headerlink" title="移动平均"></a>移动平均</h1><h1 id="指数平滑"><a href="#指数平滑" class="headerlink" title="指数平滑"></a>指数平滑</h1>
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="http://7xrcp8.com1.z0.glb.clouddn.com/avatar.png" alt="avatar">
+    <div class="grid-item">
+      <p class="title"> Code4Cocoa </p>
+      <p class="subtitle"> A ThoughWorker </p>
+    <div>
+  </div></div></section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text=<strong>库存预测</strong">
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'drakeleung';
+  
+  var disqus_url = 'http://code4cocoa.com/2019/07/30/库存需求预测基础模型/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+</body>
+</html>
