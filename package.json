@@ -6,7 +6,7 @@
     "version": "3.8.0"
   },
   "dependencies": {
-    "acorn": "^6.1.0",
+    "acorn": "^6.4.1",
     "babel-eslint": "^10.0.1",
     "hexo": "^3.8.0",
     "hexo-admin": "^2.3.0",
